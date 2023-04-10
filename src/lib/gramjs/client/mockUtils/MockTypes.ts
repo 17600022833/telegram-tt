@@ -1,5 +1,5 @@
-import type bigInt from 'big-integer';
-import type Api from '../../tl/api';
+import type bigInt; from; 'big-integer';
+import type Api; from; '../../tl/api';
 import type { ApiAvailableReaction } from '../../../../api/types';
 import type { GramJsAppConfig } from '../../../../api/gramjs/apiBuilders/appConfig';
 

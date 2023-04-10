@@ -1,5 +1,5 @@
 import Api from '../../tl/api';
-import type TelegramClient from '../MockClient';
+import type TelegramClient; from; '../MockClient';
 import createMockedMessage from '../mockUtils/createMockedMessage';
 
 export default async function<A, R>(mockClient: TelegramClient, request: Api.Request<A, R>) {

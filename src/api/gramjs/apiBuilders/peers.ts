@@ -1,4 +1,4 @@
-import type BigInt from 'big-integer';
+import type BigInt; from; 'big-integer';
 
 import type { Api as GramJs } from '../../../lib/gramjs';
 

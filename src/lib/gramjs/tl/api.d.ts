@@ -506,7866 +506,9014 @@ namespace Api {
     export type TypeUserFull = users.UserFull;
   }
 
-  export class InputPeerEmpty extends VirtualClass<void> {};
-  export class InputPeerSelf extends VirtualClass<void> {};
-  export class InputPeerChat extends VirtualClass<{
-    chatId: long;
-  }> {
-    chatId: long;
-  };
-  export class InputPeerUser extends VirtualClass<{
-    userId: long;
-    accessHash: long;
-  }> {
-    userId: long;
-    accessHash: long;
-  };
-  export class InputPeerChannel extends VirtualClass<{
-    channelId: long;
-    accessHash: long;
-  }> {
-    channelId: long;
-    accessHash: long;
-  };
-  export class InputPeerUserFromMessage extends VirtualClass<{
-    peer: Api.TypeInputPeer;
-    msgId: int;
-    userId: long;
-  }> {
-    peer: Api.TypeInputPeer;
-    msgId: int;
-    userId: long;
-  };
-  export class InputPeerChannelFromMessage extends VirtualClass<{
-    peer: Api.TypeInputPeer;
-    msgId: int;
-    channelId: long;
-  }> {
-    peer: Api.TypeInputPeer;
-    msgId: int;
-    channelId: long;
-  };
-  export class InputUserEmpty extends VirtualClass<void> {};
-  export class InputUserSelf extends VirtualClass<void> {};
-  export class InputUser extends VirtualClass<{
-    userId: long;
-    accessHash: long;
-  }> {
-    userId: long;
-    accessHash: long;
-  };
-  export class InputUserFromMessage extends VirtualClass<{
-    peer: Api.TypeInputPeer;
-    msgId: int;
-    userId: long;
-  }> {
-    peer: Api.TypeInputPeer;
-    msgId: int;
-    userId: long;
-  };
-  export class InputPhoneContact extends VirtualClass<{
-    clientId: long;
-    phone: string;
-    firstName: string;
-    lastName: string;
-  }> {
-    clientId: long;
-    phone: string;
-    firstName: string;
-    lastName: string;
-  };
-  export class InputFile extends VirtualClass<{
-    id: long;
-    parts: int;
-    name: string;
-    md5Checksum: string;
-  }> {
-    id: long;
-    parts: int;
-    name: string;
-    md5Checksum: string;
-  };
-  export class InputFileBig extends VirtualClass<{
-    id: long;
-    parts: int;
-    name: string;
-  }> {
-    id: long;
-    parts: int;
-    name: string;
-  };
-  export class InputMediaEmpty extends VirtualClass<void> {};
-  export class InputMediaUploadedPhoto extends VirtualClass<{
-    // flags: undefined;
-    spoiler?: true;
-    file: Api.TypeInputFile;
-    stickers?: Api.TypeInputDocument[];
-    ttlSeconds?: int;
-  }> {
-    // flags: undefined;
-    spoiler?: true;
-    file: Api.TypeInputFile;
-    stickers?: Api.TypeInputDocument[];
-    ttlSeconds?: int;
-  };
-  export class InputMediaPhoto extends VirtualClass<{
-    // flags: undefined;
-    spoiler?: true;
-    id: Api.TypeInputPhoto;
-    ttlSeconds?: int;
-  }> {
-    // flags: undefined;
-    spoiler?: true;
-    id: Api.TypeInputPhoto;
-    ttlSeconds?: int;
-  };
-  export class InputMediaGeoPoint extends VirtualClass<{
-    geoPoint: Api.TypeInputGeoPoint;
-  }> {
-    geoPoint: Api.TypeInputGeoPoint;
-  };
-  export class InputMediaContact extends VirtualClass<{
-    phoneNumber: string;
-    firstName: string;
-    lastName: string;
-    vcard: string;
-  }> {
-    phoneNumber: string;
-    firstName: string;
-    lastName: string;
-    vcard: string;
-  };
-  export class InputMediaUploadedDocument extends VirtualClass<{
-    // flags: undefined;
-    nosoundVideo?: true;
-    forceFile?: true;
-    spoiler?: true;
-    file: Api.TypeInputFile;
-    thumb?: Api.TypeInputFile;
-    mimeType: string;
-    attributes: Api.TypeDocumentAttribute[];
-    stickers?: Api.TypeInputDocument[];
-    ttlSeconds?: int;
-  }> {
-    // flags: undefined;
-    nosoundVideo?: true;
-    forceFile?: true;
-    spoiler?: true;
-    file: Api.TypeInputFile;
-    thumb?: Api.TypeInputFile;
-    mimeType: string;
-    attributes: Api.TypeDocumentAttribute[];
-    stickers?: Api.TypeInputDocument[];
-    ttlSeconds?: int;
-  };
-  export class InputMediaDocument extends VirtualClass<{
-    // flags: undefined;
-    spoiler?: true;
-    id: Api.TypeInputDocument;
-    ttlSeconds?: int;
-    query?: string;
-  }> {
-    // flags: undefined;
-    spoiler?: true;
-    id: Api.TypeInputDocument;
-    ttlSeconds?: int;
-    query?: string;
-  };
-  export class InputMediaVenue extends VirtualClass<{
-    geoPoint: Api.TypeInputGeoPoint;
-    title: string;
-    address: string;
-    provider: string;
-    venueId: string;
-    venueType: string;
-  }> {
-    geoPoint: Api.TypeInputGeoPoint;
-    title: string;
-    address: string;
-    provider: string;
-    venueId: string;
-    venueType: string;
-  };
-  export class InputMediaPhotoExternal extends VirtualClass<{
-    // flags: undefined;
-    spoiler?: true;
-    url: string;
-    ttlSeconds?: int;
-  }> {
-    // flags: undefined;
-    spoiler?: true;
-    url: string;
-    ttlSeconds?: int;
-  };
-  export class InputMediaDocumentExternal extends VirtualClass<{
-    // flags: undefined;
-    spoiler?: true;
-    url: string;
-    ttlSeconds?: int;
-  }> {
-    // flags: undefined;
-    spoiler?: true;
-    url: string;
-    ttlSeconds?: int;
-  };
-  export class InputMediaGame extends VirtualClass<{
-    id: Api.TypeInputGame;
-  }> {
-    id: Api.TypeInputGame;
-  };
-  export class InputMediaInvoice extends VirtualClass<{
-    // flags: undefined;
-    title: string;
-    description: string;
-    photo?: Api.TypeInputWebDocument;
-    invoice: Api.TypeInvoice;
-    payload: bytes;
-    provider: string;
-    providerData: Api.TypeDataJSON;
-    startParam?: string;
-    extendedMedia?: Api.TypeInputMedia;
-  }> {
-    // flags: undefined;
-    title: string;
-    description: string;
-    photo?: Api.TypeInputWebDocument;
-    invoice: Api.TypeInvoice;
-    payload: bytes;
-    provider: string;
-    providerData: Api.TypeDataJSON;
-    startParam?: string;
-    extendedMedia?: Api.TypeInputMedia;
-  };
-  export class InputMediaGeoLive extends VirtualClass<{
-    // flags: undefined;
-    stopped?: true;
-    geoPoint: Api.TypeInputGeoPoint;
-    heading?: int;
-    period?: int;
-    proximityNotificationRadius?: int;
-  }> {
-    // flags: undefined;
-    stopped?: true;
-    geoPoint: Api.TypeInputGeoPoint;
-    heading?: int;
-    period?: int;
-    proximityNotificationRadius?: int;
-  };
-  export class InputMediaPoll extends VirtualClass<{
-    // flags: undefined;
-    poll: Api.TypePoll;
-    correctAnswers?: bytes[];
-    solution?: string;
-    solutionEntities?: Api.TypeMessageEntity[];
-  }> {
-    // flags: undefined;
-    poll: Api.TypePoll;
-    correctAnswers?: bytes[];
-    solution?: string;
-    solutionEntities?: Api.TypeMessageEntity[];
-  };
-  export class InputMediaDice extends VirtualClass<{
-    emoticon: string;
-  }> {
-    emoticon: string;
-  };
-  export class InputChatPhotoEmpty extends VirtualClass<void> {};
-  export class InputChatUploadedPhoto extends VirtualClass<{
-    // flags: undefined;
-    file?: Api.TypeInputFile;
-    video?: Api.TypeInputFile;
-    videoStartTs?: double;
-    videoEmojiMarkup?: Api.TypeVideoSize;
-  } | void> {
-    // flags: undefined;
-    file?: Api.TypeInputFile;
-    video?: Api.TypeInputFile;
-    videoStartTs?: double;
-    videoEmojiMarkup?: Api.TypeVideoSize;
-  };
-  export class InputChatPhoto extends VirtualClass<{
-    id: Api.TypeInputPhoto;
-  }> {
-    id: Api.TypeInputPhoto;
-  };
-  export class InputGeoPointEmpty extends VirtualClass<void> {};
-  export class InputGeoPoint extends VirtualClass<{
-    // flags: undefined;
-    lat: double;
-    long: double;
-    accuracyRadius?: int;
-  }> {
-    // flags: undefined;
-    lat: double;
-    long: double;
-    accuracyRadius?: int;
-  };
-  export class InputPhotoEmpty extends VirtualClass<void> {};
-  export class InputPhoto extends VirtualClass<{
-    id: long;
-    accessHash: long;
-    fileReference: bytes;
-  }> {
-    id: long;
-    accessHash: long;
-    fileReference: bytes;
-  };
-  export class InputFileLocation extends VirtualClass<{
-    volumeId: long;
-    localId: int;
-    secret: long;
-    fileReference: bytes;
-  }> {
-    volumeId: long;
-    localId: int;
-    secret: long;
-    fileReference: bytes;
-  };
-  export class InputEncryptedFileLocation extends VirtualClass<{
-    id: long;
-    accessHash: long;
-  }> {
-    id: long;
-    accessHash: long;
-  };
-  export class InputDocumentFileLocation extends VirtualClass<{
-    id: long;
-    accessHash: long;
-    fileReference: bytes;
-    thumbSize: string;
-  }> {
-    id: long;
-    accessHash: long;
-    fileReference: bytes;
-    thumbSize: string;
-  };
-  export class InputSecureFileLocation extends VirtualClass<{
-    id: long;
-    accessHash: long;
-  }> {
-    id: long;
-    accessHash: long;
-  };
-  export class InputTakeoutFileLocation extends VirtualClass<void> {};
-  export class InputPhotoFileLocation extends VirtualClass<{
-    id: long;
-    accessHash: long;
-    fileReference: bytes;
-    thumbSize: string;
-  }> {
-    id: long;
-    accessHash: long;
-    fileReference: bytes;
-    thumbSize: string;
-  };
-  export class InputPhotoLegacyFileLocation extends VirtualClass<{
-    id: long;
-    accessHash: long;
-    fileReference: bytes;
-    volumeId: long;
-    localId: int;
-    secret: long;
-  }> {
-    id: long;
-    accessHash: long;
-    fileReference: bytes;
-    volumeId: long;
-    localId: int;
-    secret: long;
-  };
-  export class InputPeerPhotoFileLocation extends VirtualClass<{
-    // flags: undefined;
-    big?: true;
-    peer: Api.TypeInputPeer;
-    photoId: long;
-  }> {
-    // flags: undefined;
-    big?: true;
-    peer: Api.TypeInputPeer;
-    photoId: long;
-  };
-  export class InputStickerSetThumb extends VirtualClass<{
-    stickerset: Api.TypeInputStickerSet;
-    thumbVersion: int;
-  }> {
-    stickerset: Api.TypeInputStickerSet;
-    thumbVersion: int;
-  };
-  export class InputGroupCallStream extends VirtualClass<{
-    // flags: undefined;
-    call: Api.TypeInputGroupCall;
-    timeMs: long;
-    scale: int;
-    videoChannel?: int;
-    videoQuality?: int;
-  }> {
-    // flags: undefined;
-    call: Api.TypeInputGroupCall;
-    timeMs: long;
-    scale: int;
-    videoChannel?: int;
-    videoQuality?: int;
-  };
-  export class PeerUser extends VirtualClass<{
-    userId: long;
-  }> {
-    userId: long;
-  };
-  export class PeerChat extends VirtualClass<{
-    chatId: long;
-  }> {
-    chatId: long;
-  };
-  export class PeerChannel extends VirtualClass<{
-    channelId: long;
-  }> {
-    channelId: long;
-  };
-  export class UserEmpty extends VirtualClass<{
-    id: long;
-  }> {
-    id: long;
-  };
-  export class User extends VirtualClass<{
-    // flags: undefined;
-    self?: true;
-    contact?: true;
-    mutualContact?: true;
-    deleted?: true;
-    bot?: true;
-    botChatHistory?: true;
-    botNochats?: true;
-    verified?: true;
-    restricted?: true;
-    min?: true;
-    botInlineGeo?: true;
-    support?: true;
-    scam?: true;
-    applyMinPhoto?: true;
-    fake?: true;
-    botAttachMenu?: true;
-    premium?: true;
-    attachMenuEnabled?: true;
-    // flags2: undefined;
-    id: long;
-    accessHash?: long;
-    firstName?: string;
-    lastName?: string;
-    username?: string;
-    phone?: string;
-    photo?: Api.TypeUserProfilePhoto;
-    status?: Api.TypeUserStatus;
-    botInfoVersion?: int;
-    restrictionReason?: Api.TypeRestrictionReason[];
-    botInlinePlaceholder?: string;
-    langCode?: string;
-    emojiStatus?: Api.TypeEmojiStatus;
-    usernames?: Api.TypeUsername[];
-  }> {
-    // flags: undefined;
-    self?: true;
-    contact?: true;
-    mutualContact?: true;
-    deleted?: true;
-    bot?: true;
-    botChatHistory?: true;
-    botNochats?: true;
-    verified?: true;
-    restricted?: true;
-    min?: true;
-    botInlineGeo?: true;
-    support?: true;
-    scam?: true;
-    applyMinPhoto?: true;
-    fake?: true;
-    botAttachMenu?: true;
-    premium?: true;
-    attachMenuEnabled?: true;
-    // flags2: undefined;
-    id: long;
-    accessHash?: long;
-    firstName?: string;
-    lastName?: string;
-    username?: string;
-    phone?: string;
-    photo?: Api.TypeUserProfilePhoto;
-    status?: Api.TypeUserStatus;
-    botInfoVersion?: int;
-    restrictionReason?: Api.TypeRestrictionReason[];
-    botInlinePlaceholder?: string;
-    langCode?: string;
-    emojiStatus?: Api.TypeEmojiStatus;
-    usernames?: Api.TypeUsername[];
-  };
-  export class UserProfilePhotoEmpty extends VirtualClass<void> {};
-  export class UserProfilePhoto extends VirtualClass<{
-    // flags: undefined;
-    hasVideo?: true;
-    personal?: true;
-    photoId: long;
-    strippedThumb?: bytes;
-    dcId: int;
-  }> {
-    // flags: undefined;
-    hasVideo?: true;
-    personal?: true;
-    photoId: long;
-    strippedThumb?: bytes;
-    dcId: int;
-  };
-  export class UserStatusEmpty extends VirtualClass<void> {};
-  export class UserStatusOnline extends VirtualClass<{
-    expires: int;
-  }> {
-    expires: int;
-  };
-  export class UserStatusOffline extends VirtualClass<{
-    wasOnline: int;
-  }> {
-    wasOnline: int;
-  };
-  export class UserStatusRecently extends VirtualClass<void> {};
-  export class UserStatusLastWeek extends VirtualClass<void> {};
-  export class UserStatusLastMonth extends VirtualClass<void> {};
-  export class ChatEmpty extends VirtualClass<{
-    id: long;
-  }> {
-    id: long;
-  };
-  export class Chat extends VirtualClass<{
-    // flags: undefined;
-    creator?: true;
-    left?: true;
-    deactivated?: true;
-    callActive?: true;
-    callNotEmpty?: true;
-    noforwards?: true;
-    id: long;
-    title: string;
-    photo: Api.TypeChatPhoto;
-    participantsCount: int;
-    date: int;
-    version: int;
-    migratedTo?: Api.TypeInputChannel;
-    adminRights?: Api.TypeChatAdminRights;
-    defaultBannedRights?: Api.TypeChatBannedRights;
-  }> {
-    // flags: undefined;
-    creator?: true;
-    left?: true;
-    deactivated?: true;
-    callActive?: true;
-    callNotEmpty?: true;
-    noforwards?: true;
-    id: long;
-    title: string;
-    photo: Api.TypeChatPhoto;
-    participantsCount: int;
-    date: int;
-    version: int;
-    migratedTo?: Api.TypeInputChannel;
-    adminRights?: Api.TypeChatAdminRights;
-    defaultBannedRights?: Api.TypeChatBannedRights;
-  };
-  export class ChatForbidden extends VirtualClass<{
-    id: long;
-    title: string;
-  }> {
-    id: long;
-    title: string;
-  };
-  export class Channel extends VirtualClass<{
-    // flags: undefined;
-    creator?: true;
-    left?: true;
-    broadcast?: true;
-    verified?: true;
-    megagroup?: true;
-    restricted?: true;
-    signatures?: true;
-    min?: true;
-    scam?: true;
-    hasLink?: true;
-    hasGeo?: true;
-    slowmodeEnabled?: true;
-    callActive?: true;
-    callNotEmpty?: true;
-    fake?: true;
-    gigagroup?: true;
-    noforwards?: true;
-    joinToSend?: true;
-    joinRequest?: true;
-    forum?: true;
-    // flags2: undefined;
-    id: long;
-    accessHash?: long;
-    title: string;
-    username?: string;
-    photo: Api.TypeChatPhoto;
-    date: int;
-    restrictionReason?: Api.TypeRestrictionReason[];
-    adminRights?: Api.TypeChatAdminRights;
-    bannedRights?: Api.TypeChatBannedRights;
-    defaultBannedRights?: Api.TypeChatBannedRights;
-    participantsCount?: int;
-    usernames?: Api.TypeUsername[];
-  }> {
-    // flags: undefined;
-    creator?: true;
-    left?: true;
-    broadcast?: true;
-    verified?: true;
-    megagroup?: true;
-    restricted?: true;
-    signatures?: true;
-    min?: true;
-    scam?: true;
-    hasLink?: true;
-    hasGeo?: true;
-    slowmodeEnabled?: true;
-    callActive?: true;
-    callNotEmpty?: true;
-    fake?: true;
-    gigagroup?: true;
-    noforwards?: true;
-    joinToSend?: true;
-    joinRequest?: true;
-    forum?: true;
-    // flags2: undefined;
-    id: long;
-    accessHash?: long;
-    title: string;
-    username?: string;
-    photo: Api.TypeChatPhoto;
-    date: int;
-    restrictionReason?: Api.TypeRestrictionReason[];
-    adminRights?: Api.TypeChatAdminRights;
-    bannedRights?: Api.TypeChatBannedRights;
-    defaultBannedRights?: Api.TypeChatBannedRights;
-    participantsCount?: int;
-    usernames?: Api.TypeUsername[];
-  };
-  export class ChannelForbidden extends VirtualClass<{
-    // flags: undefined;
-    broadcast?: true;
-    megagroup?: true;
-    id: long;
-    accessHash: long;
-    title: string;
-    untilDate?: int;
-  }> {
-    // flags: undefined;
-    broadcast?: true;
-    megagroup?: true;
-    id: long;
-    accessHash: long;
-    title: string;
-    untilDate?: int;
-  };
-  export class ChatFull extends VirtualClass<{
-    // flags: undefined;
-    canSetUsername?: true;
-    hasScheduled?: true;
-    translationsDisabled?: true;
-    id: long;
-    about: string;
-    participants: Api.TypeChatParticipants;
-    chatPhoto?: Api.TypePhoto;
-    notifySettings: Api.TypePeerNotifySettings;
-    exportedInvite?: Api.TypeExportedChatInvite;
-    botInfo?: Api.TypeBotInfo[];
-    pinnedMsgId?: int;
-    folderId?: int;
-    call?: Api.TypeInputGroupCall;
-    ttlPeriod?: int;
-    groupcallDefaultJoinAs?: Api.TypePeer;
-    themeEmoticon?: string;
-    requestsPending?: int;
-    recentRequesters?: long[];
-    availableReactions?: Api.TypeChatReactions;
-  }> {
-    // flags: undefined;
-    canSetUsername?: true;
-    hasScheduled?: true;
-    translationsDisabled?: true;
-    id: long;
-    about: string;
-    participants: Api.TypeChatParticipants;
-    chatPhoto?: Api.TypePhoto;
-    notifySettings: Api.TypePeerNotifySettings;
-    exportedInvite?: Api.TypeExportedChatInvite;
-    botInfo?: Api.TypeBotInfo[];
-    pinnedMsgId?: int;
-    folderId?: int;
-    call?: Api.TypeInputGroupCall;
-    ttlPeriod?: int;
-    groupcallDefaultJoinAs?: Api.TypePeer;
-    themeEmoticon?: string;
-    requestsPending?: int;
-    recentRequesters?: long[];
-    availableReactions?: Api.TypeChatReactions;
-  };
-  export class ChannelFull extends VirtualClass<{
-    // flags: undefined;
-    canViewParticipants?: true;
-    canSetUsername?: true;
-    canSetStickers?: true;
-    hiddenPrehistory?: true;
-    canSetLocation?: true;
-    hasScheduled?: true;
-    canViewStats?: true;
-    blocked?: true;
-    // flags2: undefined;
-    canDeleteChannel?: true;
-    antispam?: true;
-    participantsHidden?: true;
-    translationsDisabled?: true;
-    id: long;
-    about: string;
-    participantsCount?: int;
-    adminsCount?: int;
-    kickedCount?: int;
-    bannedCount?: int;
-    onlineCount?: int;
-    readInboxMaxId: int;
-    readOutboxMaxId: int;
-    unreadCount: int;
-    chatPhoto: Api.TypePhoto;
-    notifySettings: Api.TypePeerNotifySettings;
-    exportedInvite?: Api.TypeExportedChatInvite;
-    botInfo: Api.TypeBotInfo[];
-    migratedFromChatId?: long;
-    migratedFromMaxId?: int;
-    pinnedMsgId?: int;
-    stickerset?: Api.TypeStickerSet;
-    availableMinId?: int;
-    folderId?: int;
-    linkedChatId?: long;
-    location?: Api.TypeChannelLocation;
-    slowmodeSeconds?: int;
-    slowmodeNextSendDate?: int;
-    statsDc?: int;
-    pts: int;
-    call?: Api.TypeInputGroupCall;
-    ttlPeriod?: int;
-    pendingSuggestions?: string[];
-    groupcallDefaultJoinAs?: Api.TypePeer;
-    themeEmoticon?: string;
-    requestsPending?: int;
-    recentRequesters?: long[];
-    defaultSendAs?: Api.TypePeer;
-    availableReactions?: Api.TypeChatReactions;
-  }> {
-    // flags: undefined;
-    canViewParticipants?: true;
-    canSetUsername?: true;
-    canSetStickers?: true;
-    hiddenPrehistory?: true;
-    canSetLocation?: true;
-    hasScheduled?: true;
-    canViewStats?: true;
-    blocked?: true;
-    // flags2: undefined;
-    canDeleteChannel?: true;
-    antispam?: true;
-    participantsHidden?: true;
-    translationsDisabled?: true;
-    id: long;
-    about: string;
-    participantsCount?: int;
-    adminsCount?: int;
-    kickedCount?: int;
-    bannedCount?: int;
-    onlineCount?: int;
-    readInboxMaxId: int;
-    readOutboxMaxId: int;
-    unreadCount: int;
-    chatPhoto: Api.TypePhoto;
-    notifySettings: Api.TypePeerNotifySettings;
-    exportedInvite?: Api.TypeExportedChatInvite;
-    botInfo: Api.TypeBotInfo[];
-    migratedFromChatId?: long;
-    migratedFromMaxId?: int;
-    pinnedMsgId?: int;
-    stickerset?: Api.TypeStickerSet;
-    availableMinId?: int;
-    folderId?: int;
-    linkedChatId?: long;
-    location?: Api.TypeChannelLocation;
-    slowmodeSeconds?: int;
-    slowmodeNextSendDate?: int;
-    statsDc?: int;
-    pts: int;
-    call?: Api.TypeInputGroupCall;
-    ttlPeriod?: int;
-    pendingSuggestions?: string[];
-    groupcallDefaultJoinAs?: Api.TypePeer;
-    themeEmoticon?: string;
-    requestsPending?: int;
-    recentRequesters?: long[];
-    defaultSendAs?: Api.TypePeer;
-    availableReactions?: Api.TypeChatReactions;
-  };
-  export class ChatParticipant extends VirtualClass<{
-    userId: long;
-    inviterId: long;
-    date: int;
-  }> {
-    userId: long;
-    inviterId: long;
-    date: int;
-  };
-  export class ChatParticipantCreator extends VirtualClass<{
-    userId: long;
-  }> {
-    userId: long;
-  };
-  export class ChatParticipantAdmin extends VirtualClass<{
-    userId: long;
-    inviterId: long;
-    date: int;
-  }> {
-    userId: long;
-    inviterId: long;
-    date: int;
-  };
-  export class ChatParticipantsForbidden extends VirtualClass<{
-    // flags: undefined;
-    chatId: long;
-    selfParticipant?: Api.TypeChatParticipant;
-  }> {
-    // flags: undefined;
-    chatId: long;
-    selfParticipant?: Api.TypeChatParticipant;
-  };
-  export class ChatParticipants extends VirtualClass<{
-    chatId: long;
-    participants: Api.TypeChatParticipant[];
-    version: int;
-  }> {
-    chatId: long;
-    participants: Api.TypeChatParticipant[];
-    version: int;
-  };
-  export class ChatPhotoEmpty extends VirtualClass<void> {};
-  export class ChatPhoto extends VirtualClass<{
-    // flags: undefined;
-    hasVideo?: true;
-    photoId: long;
-    strippedThumb?: bytes;
-    dcId: int;
-  }> {
-    // flags: undefined;
-    hasVideo?: true;
-    photoId: long;
-    strippedThumb?: bytes;
-    dcId: int;
-  };
-  export class MessageEmpty extends VirtualClass<{
-    // flags: undefined;
-    id: int;
-    peerId?: Api.TypePeer;
-  }> {
-    // flags: undefined;
-    id: int;
-    peerId?: Api.TypePeer;
-  };
-  export class Message extends VirtualClass<{
-    // flags: undefined;
-    out?: true;
-    mentioned?: true;
-    mediaUnread?: true;
-    silent?: true;
-    post?: true;
-    fromScheduled?: true;
-    legacy?: true;
-    editHide?: true;
-    pinned?: true;
-    noforwards?: true;
-    id: int;
-    fromId?: Api.TypePeer;
-    peerId: Api.TypePeer;
-    fwdFrom?: Api.TypeMessageFwdHeader;
-    viaBotId?: long;
-    replyTo?: Api.TypeMessageReplyHeader;
-    date: int;
-    message: string;
-    media?: Api.TypeMessageMedia;
-    replyMarkup?: Api.TypeReplyMarkup;
-    entities?: Api.TypeMessageEntity[];
-    views?: int;
-    forwards?: int;
-    replies?: Api.TypeMessageReplies;
-    editDate?: int;
-    postAuthor?: string;
-    groupedId?: long;
-    reactions?: Api.TypeMessageReactions;
-    restrictionReason?: Api.TypeRestrictionReason[];
-    ttlPeriod?: int;
-  }> {
-    // flags: undefined;
-    out?: true;
-    mentioned?: true;
-    mediaUnread?: true;
-    silent?: true;
-    post?: true;
-    fromScheduled?: true;
-    legacy?: true;
-    editHide?: true;
-    pinned?: true;
-    noforwards?: true;
-    id: int;
-    fromId?: Api.TypePeer;
-    peerId: Api.TypePeer;
-    fwdFrom?: Api.TypeMessageFwdHeader;
-    viaBotId?: long;
-    replyTo?: Api.TypeMessageReplyHeader;
-    date: int;
-    message: string;
-    media?: Api.TypeMessageMedia;
-    replyMarkup?: Api.TypeReplyMarkup;
-    entities?: Api.TypeMessageEntity[];
-    views?: int;
-    forwards?: int;
-    replies?: Api.TypeMessageReplies;
-    editDate?: int;
-    postAuthor?: string;
-    groupedId?: long;
-    reactions?: Api.TypeMessageReactions;
-    restrictionReason?: Api.TypeRestrictionReason[];
-    ttlPeriod?: int;
-  };
-  export class MessageService extends VirtualClass<{
-    // flags: undefined;
-    out?: true;
-    mentioned?: true;
-    mediaUnread?: true;
-    silent?: true;
-    post?: true;
-    legacy?: true;
-    id: int;
-    fromId?: Api.TypePeer;
-    peerId: Api.TypePeer;
-    replyTo?: Api.TypeMessageReplyHeader;
-    date: int;
-    action: Api.TypeMessageAction;
-    ttlPeriod?: int;
-  }> {
-    // flags: undefined;
-    out?: true;
-    mentioned?: true;
-    mediaUnread?: true;
-    silent?: true;
-    post?: true;
-    legacy?: true;
-    id: int;
-    fromId?: Api.TypePeer;
-    peerId: Api.TypePeer;
-    replyTo?: Api.TypeMessageReplyHeader;
-    date: int;
-    action: Api.TypeMessageAction;
-    ttlPeriod?: int;
-  };
-  export class MessageMediaEmpty extends VirtualClass<void> {};
-  export class MessageMediaPhoto extends VirtualClass<{
-    // flags: undefined;
-    spoiler?: true;
-    photo?: Api.TypePhoto;
-    ttlSeconds?: int;
-  } | void> {
-    // flags: undefined;
-    spoiler?: true;
-    photo?: Api.TypePhoto;
-    ttlSeconds?: int;
-  };
-  export class MessageMediaGeo extends VirtualClass<{
-    geo: Api.TypeGeoPoint;
-  }> {
-    geo: Api.TypeGeoPoint;
-  };
-  export class MessageMediaContact extends VirtualClass<{
-    phoneNumber: string;
-    firstName: string;
-    lastName: string;
-    vcard: string;
-    userId: long;
-  }> {
-    phoneNumber: string;
-    firstName: string;
-    lastName: string;
-    vcard: string;
-    userId: long;
-  };
-  export class MessageMediaUnsupported extends VirtualClass<void> {};
-  export class MessageMediaDocument extends VirtualClass<{
-    // flags: undefined;
-    nopremium?: true;
-    spoiler?: true;
-    document?: Api.TypeDocument;
-    ttlSeconds?: int;
-  } | void> {
-    // flags: undefined;
-    nopremium?: true;
-    spoiler?: true;
-    document?: Api.TypeDocument;
-    ttlSeconds?: int;
-  };
-  export class MessageMediaWebPage extends VirtualClass<{
-    webpage: Api.TypeWebPage;
-  }> {
-    webpage: Api.TypeWebPage;
-  };
-  export class MessageMediaVenue extends VirtualClass<{
-    geo: Api.TypeGeoPoint;
-    title: string;
-    address: string;
-    provider: string;
-    venueId: string;
-    venueType: string;
-  }> {
-    geo: Api.TypeGeoPoint;
-    title: string;
-    address: string;
-    provider: string;
-    venueId: string;
-    venueType: string;
-  };
-  export class MessageMediaGame extends VirtualClass<{
-    game: Api.TypeGame;
-  }> {
-    game: Api.TypeGame;
-  };
-  export class MessageMediaInvoice extends VirtualClass<{
-    // flags: undefined;
-    shippingAddressRequested?: true;
-    test?: true;
-    title: string;
-    description: string;
-    photo?: Api.TypeWebDocument;
-    receiptMsgId?: int;
-    currency: string;
-    totalAmount: long;
-    startParam: string;
-    extendedMedia?: Api.TypeMessageExtendedMedia;
-  }> {
-    // flags: undefined;
-    shippingAddressRequested?: true;
-    test?: true;
-    title: string;
-    description: string;
-    photo?: Api.TypeWebDocument;
-    receiptMsgId?: int;
-    currency: string;
-    totalAmount: long;
-    startParam: string;
-    extendedMedia?: Api.TypeMessageExtendedMedia;
-  };
-  export class MessageMediaGeoLive extends VirtualClass<{
-    // flags: undefined;
-    geo: Api.TypeGeoPoint;
-    heading?: int;
-    period: int;
-    proximityNotificationRadius?: int;
-  }> {
-    // flags: undefined;
-    geo: Api.TypeGeoPoint;
-    heading?: int;
-    period: int;
-    proximityNotificationRadius?: int;
-  };
-  export class MessageMediaPoll extends VirtualClass<{
-    poll: Api.TypePoll;
-    results: Api.TypePollResults;
-  }> {
-    poll: Api.TypePoll;
-    results: Api.TypePollResults;
-  };
-  export class MessageMediaDice extends VirtualClass<{
-    value: int;
-    emoticon: string;
-  }> {
-    value: int;
-    emoticon: string;
-  };
-  export class MessageActionEmpty extends VirtualClass<void> {};
-  export class MessageActionChatCreate extends VirtualClass<{
-    title: string;
-    users: long[];
-  }> {
-    title: string;
-    users: long[];
-  };
-  export class MessageActionChatEditTitle extends VirtualClass<{
-    title: string;
-  }> {
-    title: string;
-  };
-  export class MessageActionChatEditPhoto extends VirtualClass<{
-    photo: Api.TypePhoto;
-  }> {
-    photo: Api.TypePhoto;
-  };
-  export class MessageActionChatDeletePhoto extends VirtualClass<void> {};
-  export class MessageActionChatAddUser extends VirtualClass<{
-    users: long[];
-  }> {
-    users: long[];
-  };
-  export class MessageActionChatDeleteUser extends VirtualClass<{
-    userId: long;
-  }> {
-    userId: long;
-  };
-  export class MessageActionChatJoinedByLink extends VirtualClass<{
-    inviterId: long;
-  }> {
-    inviterId: long;
-  };
-  export class MessageActionChannelCreate extends VirtualClass<{
-    title: string;
-  }> {
-    title: string;
-  };
-  export class MessageActionChatMigrateTo extends VirtualClass<{
-    channelId: long;
-  }> {
-    channelId: long;
-  };
-  export class MessageActionChannelMigrateFrom extends VirtualClass<{
-    title: string;
-    chatId: long;
-  }> {
-    title: string;
-    chatId: long;
-  };
-  export class MessageActionPinMessage extends VirtualClass<void> {};
-  export class MessageActionHistoryClear extends VirtualClass<void> {};
-  export class MessageActionGameScore extends VirtualClass<{
-    gameId: long;
-    score: int;
-  }> {
-    gameId: long;
-    score: int;
-  };
-  export class MessageActionPaymentSentMe extends VirtualClass<{
-    // flags: undefined;
-    recurringInit?: true;
-    recurringUsed?: true;
-    currency: string;
-    totalAmount: long;
-    payload: bytes;
-    info?: Api.TypePaymentRequestedInfo;
-    shippingOptionId?: string;
-    charge: Api.TypePaymentCharge;
-  }> {
-    // flags: undefined;
-    recurringInit?: true;
-    recurringUsed?: true;
-    currency: string;
-    totalAmount: long;
-    payload: bytes;
-    info?: Api.TypePaymentRequestedInfo;
-    shippingOptionId?: string;
-    charge: Api.TypePaymentCharge;
-  };
-  export class MessageActionPaymentSent extends VirtualClass<{
-    // flags: undefined;
-    recurringInit?: true;
-    recurringUsed?: true;
-    currency: string;
-    totalAmount: long;
-    invoiceSlug?: string;
-  }> {
-    // flags: undefined;
-    recurringInit?: true;
-    recurringUsed?: true;
-    currency: string;
-    totalAmount: long;
-    invoiceSlug?: string;
-  };
-  export class MessageActionPhoneCall extends VirtualClass<{
-    // flags: undefined;
-    video?: true;
-    callId: long;
-    reason?: Api.TypePhoneCallDiscardReason;
-    duration?: int;
-  }> {
-    // flags: undefined;
-    video?: true;
-    callId: long;
-    reason?: Api.TypePhoneCallDiscardReason;
-    duration?: int;
-  };
-  export class MessageActionScreenshotTaken extends VirtualClass<void> {};
-  export class MessageActionCustomAction extends VirtualClass<{
-    message: string;
-  }> {
-    message: string;
-  };
-  export class MessageActionBotAllowed extends VirtualClass<{
-    domain: string;
-  }> {
-    domain: string;
-  };
-  export class MessageActionSecureValuesSentMe extends VirtualClass<{
-    values: Api.TypeSecureValue[];
-    credentials: Api.TypeSecureCredentialsEncrypted;
-  }> {
-    values: Api.TypeSecureValue[];
-    credentials: Api.TypeSecureCredentialsEncrypted;
-  };
-  export class MessageActionSecureValuesSent extends VirtualClass<{
-    types: Api.TypeSecureValueType[];
-  }> {
-    types: Api.TypeSecureValueType[];
-  };
-  export class MessageActionContactSignUp extends VirtualClass<void> {};
-  export class MessageActionGeoProximityReached extends VirtualClass<{
-    fromId: Api.TypePeer;
-    toId: Api.TypePeer;
-    distance: int;
-  }> {
-    fromId: Api.TypePeer;
-    toId: Api.TypePeer;
-    distance: int;
-  };
-  export class MessageActionGroupCall extends VirtualClass<{
-    // flags: undefined;
-    call: Api.TypeInputGroupCall;
-    duration?: int;
-  }> {
-    // flags: undefined;
-    call: Api.TypeInputGroupCall;
-    duration?: int;
-  };
-  export class MessageActionInviteToGroupCall extends VirtualClass<{
-    call: Api.TypeInputGroupCall;
-    users: long[];
-  }> {
-    call: Api.TypeInputGroupCall;
-    users: long[];
-  };
-  export class MessageActionSetMessagesTTL extends VirtualClass<{
-    // flags: undefined;
-    period: int;
-    autoSettingFrom?: long;
-  }> {
-    // flags: undefined;
-    period: int;
-    autoSettingFrom?: long;
-  };
-  export class MessageActionGroupCallScheduled extends VirtualClass<{
-    call: Api.TypeInputGroupCall;
-    scheduleDate: int;
-  }> {
-    call: Api.TypeInputGroupCall;
-    scheduleDate: int;
-  };
-  export class MessageActionSetChatTheme extends VirtualClass<{
-    emoticon: string;
-  }> {
-    emoticon: string;
-  };
-  export class MessageActionChatJoinedByRequest extends VirtualClass<void> {};
-  export class MessageActionWebViewDataSentMe extends VirtualClass<{
-    text: string;
-    data: string;
-  }> {
-    text: string;
-    data: string;
-  };
-  export class MessageActionWebViewDataSent extends VirtualClass<{
-    text: string;
-  }> {
-    text: string;
-  };
-  export class MessageActionGiftPremium extends VirtualClass<{
-    currency: string;
-    amount: long;
-    months: int;
-  }> {
-    currency: string;
-    amount: long;
-    months: int;
-  };
-  export class MessageActionTopicCreate extends VirtualClass<{
-    // flags: undefined;
-    title: string;
-    iconColor: int;
-    iconEmojiId?: long;
-  }> {
-    // flags: undefined;
-    title: string;
-    iconColor: int;
-    iconEmojiId?: long;
-  };
-  export class MessageActionTopicEdit extends VirtualClass<{
-    // flags: undefined;
-    title?: string;
-    iconEmojiId?: long;
-    closed?: Bool;
-    hidden?: Bool;
-  } | void> {
-    // flags: undefined;
-    title?: string;
-    iconEmojiId?: long;
-    closed?: Bool;
-    hidden?: Bool;
-  };
-  export class MessageActionSuggestProfilePhoto extends VirtualClass<{
-    photo: Api.TypePhoto;
-  }> {
-    photo: Api.TypePhoto;
-  };
-  export class MessageActionAttachMenuBotAllowed extends VirtualClass<void> {};
-  export class MessageActionRequestedPeer extends VirtualClass<{
-    buttonId: int;
-    peer: Api.TypePeer;
-  }> {
-    buttonId: int;
-    peer: Api.TypePeer;
-  };
-  export class Dialog extends VirtualClass<{
-    // flags: undefined;
-    pinned?: true;
-    unreadMark?: true;
-    peer: Api.TypePeer;
-    topMessage: int;
-    readInboxMaxId: int;
-    readOutboxMaxId: int;
-    unreadCount: int;
-    unreadMentionsCount: int;
-    unreadReactionsCount: int;
-    notifySettings: Api.TypePeerNotifySettings;
-    pts?: int;
-    draft?: Api.TypeDraftMessage;
-    folderId?: int;
-    ttlPeriod?: int;
-  }> {
-    // flags: undefined;
-    pinned?: true;
-    unreadMark?: true;
-    peer: Api.TypePeer;
-    topMessage: int;
-    readInboxMaxId: int;
-    readOutboxMaxId: int;
-    unreadCount: int;
-    unreadMentionsCount: int;
-    unreadReactionsCount: int;
-    notifySettings: Api.TypePeerNotifySettings;
-    pts?: int;
-    draft?: Api.TypeDraftMessage;
-    folderId?: int;
-    ttlPeriod?: int;
-  };
-  export class DialogFolder extends VirtualClass<{
-    // flags: undefined;
-    pinned?: true;
-    folder: Api.TypeFolder;
-    peer: Api.TypePeer;
-    topMessage: int;
-    unreadMutedPeersCount: int;
-    unreadUnmutedPeersCount: int;
-    unreadMutedMessagesCount: int;
-    unreadUnmutedMessagesCount: int;
-  }> {
-    // flags: undefined;
-    pinned?: true;
-    folder: Api.TypeFolder;
-    peer: Api.TypePeer;
-    topMessage: int;
-    unreadMutedPeersCount: int;
-    unreadUnmutedPeersCount: int;
-    unreadMutedMessagesCount: int;
-    unreadUnmutedMessagesCount: int;
-  };
-  export class PhotoEmpty extends VirtualClass<{
-    id: long;
-  }> {
-    id: long;
-  };
-  export class Photo extends VirtualClass<{
-    // flags: undefined;
-    hasStickers?: true;
-    id: long;
-    accessHash: long;
-    fileReference: bytes;
-    date: int;
-    sizes: Api.TypePhotoSize[];
-    videoSizes?: Api.TypeVideoSize[];
-    dcId: int;
-  }> {
-    // flags: undefined;
-    hasStickers?: true;
-    id: long;
-    accessHash: long;
-    fileReference: bytes;
-    date: int;
-    sizes: Api.TypePhotoSize[];
-    videoSizes?: Api.TypeVideoSize[];
-    dcId: int;
-  };
-  export class PhotoSizeEmpty extends VirtualClass<{
-    type: string;
-  }> {
-    type: string;
-  };
-  export class PhotoSize extends VirtualClass<{
-    type: string;
-    w: int;
-    h: int;
-    size: int;
-  }> {
-    type: string;
-    w: int;
-    h: int;
-    size: int;
-  };
-  export class PhotoCachedSize extends VirtualClass<{
-    type: string;
-    w: int;
-    h: int;
-    bytes: bytes;
-  }> {
-    type: string;
-    w: int;
-    h: int;
-    bytes: bytes;
-  };
-  export class PhotoStrippedSize extends VirtualClass<{
-    type: string;
-    bytes: bytes;
-  }> {
-    type: string;
-    bytes: bytes;
-  };
-  export class PhotoSizeProgressive extends VirtualClass<{
-    type: string;
-    w: int;
-    h: int;
-    sizes: int[];
-  }> {
-    type: string;
-    w: int;
-    h: int;
-    sizes: int[];
-  };
-  export class PhotoPathSize extends VirtualClass<{
-    type: string;
-    bytes: bytes;
-  }> {
-    type: string;
-    bytes: bytes;
-  };
-  export class GeoPointEmpty extends VirtualClass<void> {};
-  export class GeoPoint extends VirtualClass<{
-    // flags: undefined;
-    long: double;
-    lat: double;
-    accessHash: long;
-    accuracyRadius?: int;
-  }> {
-    // flags: undefined;
-    long: double;
-    lat: double;
-    accessHash: long;
-    accuracyRadius?: int;
-  };
-  export class InputNotifyPeer extends VirtualClass<{
-    peer: Api.TypeInputPeer;
-  }> {
-    peer: Api.TypeInputPeer;
-  };
-  export class InputNotifyUsers extends VirtualClass<void> {};
-  export class InputNotifyChats extends VirtualClass<void> {};
-  export class InputNotifyBroadcasts extends VirtualClass<void> {};
-  export class InputNotifyForumTopic extends VirtualClass<{
-    peer: Api.TypeInputPeer;
-    topMsgId: int;
-  }> {
-    peer: Api.TypeInputPeer;
-    topMsgId: int;
-  };
-  export class InputPeerNotifySettings extends VirtualClass<{
-    // flags: undefined;
-    showPreviews?: Bool;
-    silent?: Bool;
-    muteUntil?: int;
-    sound?: Api.TypeNotificationSound;
-  } | void> {
-    // flags: undefined;
-    showPreviews?: Bool;
-    silent?: Bool;
-    muteUntil?: int;
-    sound?: Api.TypeNotificationSound;
-  };
-  export class PeerNotifySettings extends VirtualClass<{
-    // flags: undefined;
-    showPreviews?: Bool;
-    silent?: Bool;
-    muteUntil?: int;
-    iosSound?: Api.TypeNotificationSound;
-    androidSound?: Api.TypeNotificationSound;
-    otherSound?: Api.TypeNotificationSound;
-  } | void> {
-    // flags: undefined;
-    showPreviews?: Bool;
-    silent?: Bool;
-    muteUntil?: int;
-    iosSound?: Api.TypeNotificationSound;
-    androidSound?: Api.TypeNotificationSound;
-    otherSound?: Api.TypeNotificationSound;
-  };
-  export class PeerSettings extends VirtualClass<{
-    // flags: undefined;
-    reportSpam?: true;
-    addContact?: true;
-    blockContact?: true;
-    shareContact?: true;
-    needContactsException?: true;
-    reportGeo?: true;
-    autoarchived?: true;
-    inviteMembers?: true;
-    requestChatBroadcast?: true;
-    geoDistance?: int;
-    requestChatTitle?: string;
-    requestChatDate?: int;
-  } | void> {
-    // flags: undefined;
-    reportSpam?: true;
-    addContact?: true;
-    blockContact?: true;
-    shareContact?: true;
-    needContactsException?: true;
-    reportGeo?: true;
-    autoarchived?: true;
-    inviteMembers?: true;
-    requestChatBroadcast?: true;
-    geoDistance?: int;
-    requestChatTitle?: string;
-    requestChatDate?: int;
-  };
-  export class WallPaper extends VirtualClass<{
-    id: long;
-    // flags: undefined;
-    creator?: true;
-    default?: true;
-    pattern?: true;
-    dark?: true;
-    accessHash: long;
-    slug: string;
-    document: Api.TypeDocument;
-    settings?: Api.TypeWallPaperSettings;
-  }> {
-    id: long;
-    // flags: undefined;
-    creator?: true;
-    default?: true;
-    pattern?: true;
-    dark?: true;
-    accessHash: long;
-    slug: string;
-    document: Api.TypeDocument;
-    settings?: Api.TypeWallPaperSettings;
-  };
-  export class WallPaperNoFile extends VirtualClass<{
-    id: long;
-    // flags: undefined;
-    default?: true;
-    dark?: true;
-    settings?: Api.TypeWallPaperSettings;
-  }> {
-    id: long;
-    // flags: undefined;
-    default?: true;
-    dark?: true;
-    settings?: Api.TypeWallPaperSettings;
-  };
-  export class InputReportReasonSpam extends VirtualClass<void> {};
-  export class InputReportReasonViolence extends VirtualClass<void> {};
-  export class InputReportReasonPornography extends VirtualClass<void> {};
-  export class InputReportReasonChildAbuse extends VirtualClass<void> {};
-  export class InputReportReasonOther extends VirtualClass<void> {};
-  export class InputReportReasonCopyright extends VirtualClass<void> {};
-  export class InputReportReasonGeoIrrelevant extends VirtualClass<void> {};
-  export class InputReportReasonFake extends VirtualClass<void> {};
-  export class InputReportReasonIllegalDrugs extends VirtualClass<void> {};
-  export class InputReportReasonPersonalDetails extends VirtualClass<void> {};
-  export class UserFull extends VirtualClass<{
-    // flags: undefined;
-    blocked?: true;
-    phoneCallsAvailable?: true;
-    phoneCallsPrivate?: true;
-    canPinMessage?: true;
-    hasScheduled?: true;
-    videoCallsAvailable?: true;
-    voiceMessagesForbidden?: true;
-    translationsDisabled?: true;
-    id: long;
-    about?: string;
-    settings: Api.TypePeerSettings;
-    personalPhoto?: Api.TypePhoto;
-    profilePhoto?: Api.TypePhoto;
-    fallbackPhoto?: Api.TypePhoto;
-    notifySettings: Api.TypePeerNotifySettings;
-    botInfo?: Api.TypeBotInfo;
-    pinnedMsgId?: int;
-    commonChatsCount: int;
-    folderId?: int;
-    ttlPeriod?: int;
-    themeEmoticon?: string;
-    privateForwardName?: string;
-    botGroupAdminRights?: Api.TypeChatAdminRights;
-    botBroadcastAdminRights?: Api.TypeChatAdminRights;
-    premiumGifts?: Api.TypePremiumGiftOption[];
-  }> {
-    // flags: undefined;
-    blocked?: true;
-    phoneCallsAvailable?: true;
-    phoneCallsPrivate?: true;
-    canPinMessage?: true;
-    hasScheduled?: true;
-    videoCallsAvailable?: true;
-    voiceMessagesForbidden?: true;
-    translationsDisabled?: true;
-    id: long;
-    about?: string;
-    settings: Api.TypePeerSettings;
-    personalPhoto?: Api.TypePhoto;
-    profilePhoto?: Api.TypePhoto;
-    fallbackPhoto?: Api.TypePhoto;
-    notifySettings: Api.TypePeerNotifySettings;
-    botInfo?: Api.TypeBotInfo;
-    pinnedMsgId?: int;
-    commonChatsCount: int;
-    folderId?: int;
-    ttlPeriod?: int;
-    themeEmoticon?: string;
-    privateForwardName?: string;
-    botGroupAdminRights?: Api.TypeChatAdminRights;
-    botBroadcastAdminRights?: Api.TypeChatAdminRights;
-    premiumGifts?: Api.TypePremiumGiftOption[];
-  };
-  export class Contact extends VirtualClass<{
-    userId: long;
-    mutual: Bool;
-  }> {
-    userId: long;
-    mutual: Bool;
-  };
-  export class ImportedContact extends VirtualClass<{
-    userId: long;
-    clientId: long;
-  }> {
-    userId: long;
-    clientId: long;
-  };
-  export class ContactStatus extends VirtualClass<{
-    userId: long;
-    status: Api.TypeUserStatus;
-  }> {
-    userId: long;
-    status: Api.TypeUserStatus;
-  };
-  export class InputMessagesFilterEmpty extends VirtualClass<void> {};
-  export class InputMessagesFilterPhotos extends VirtualClass<void> {};
-  export class InputMessagesFilterVideo extends VirtualClass<void> {};
-  export class InputMessagesFilterPhotoVideo extends VirtualClass<void> {};
-  export class InputMessagesFilterDocument extends VirtualClass<void> {};
-  export class InputMessagesFilterUrl extends VirtualClass<void> {};
-  export class InputMessagesFilterGif extends VirtualClass<void> {};
-  export class InputMessagesFilterVoice extends VirtualClass<void> {};
-  export class InputMessagesFilterMusic extends VirtualClass<void> {};
-  export class InputMessagesFilterChatPhotos extends VirtualClass<void> {};
-  export class InputMessagesFilterPhoneCalls extends VirtualClass<{
-    // flags: undefined;
-    missed?: true;
-  } | void> {
-    // flags: undefined;
-    missed?: true;
-  };
-  export class InputMessagesFilterRoundVoice extends VirtualClass<void> {};
-  export class InputMessagesFilterRoundVideo extends VirtualClass<void> {};
-  export class InputMessagesFilterMyMentions extends VirtualClass<void> {};
-  export class InputMessagesFilterGeo extends VirtualClass<void> {};
-  export class InputMessagesFilterContacts extends VirtualClass<void> {};
-  export class InputMessagesFilterPinned extends VirtualClass<void> {};
-  export class UpdateNewMessage extends VirtualClass<{
-    message: Api.TypeMessage;
-    pts: int;
-    ptsCount: int;
-  }> {
-    message: Api.TypeMessage;
-    pts: int;
-    ptsCount: int;
-  };
-  export class UpdateMessageID extends VirtualClass<{
-    id: int;
-    randomId: long;
-  }> {
-    id: int;
-    randomId: long;
-  };
-  export class UpdateDeleteMessages extends VirtualClass<{
-    messages: int[];
-    pts: int;
-    ptsCount: int;
-  }> {
-    messages: int[];
-    pts: int;
-    ptsCount: int;
-  };
-  export class UpdateUserTyping extends VirtualClass<{
-    userId: long;
-    action: Api.TypeSendMessageAction;
-  }> {
-    userId: long;
-    action: Api.TypeSendMessageAction;
-  };
-  export class UpdateChatUserTyping extends VirtualClass<{
-    chatId: long;
-    fromId: Api.TypePeer;
-    action: Api.TypeSendMessageAction;
-  }> {
-    chatId: long;
-    fromId: Api.TypePeer;
-    action: Api.TypeSendMessageAction;
-  };
-  export class UpdateChatParticipants extends VirtualClass<{
-    participants: Api.TypeChatParticipants;
-  }> {
-    participants: Api.TypeChatParticipants;
-  };
-  export class UpdateUserStatus extends VirtualClass<{
-    userId: long;
-    status: Api.TypeUserStatus;
-  }> {
-    userId: long;
-    status: Api.TypeUserStatus;
-  };
-  export class UpdateUserName extends VirtualClass<{
-    userId: long;
-    firstName: string;
-    lastName: string;
-    usernames: Api.TypeUsername[];
-  }> {
-    userId: long;
-    firstName: string;
-    lastName: string;
-    usernames: Api.TypeUsername[];
-  };
-  export class UpdateNewEncryptedMessage extends VirtualClass<{
-    message: Api.TypeEncryptedMessage;
-    qts: int;
-  }> {
-    message: Api.TypeEncryptedMessage;
-    qts: int;
-  };
-  export class UpdateEncryptedChatTyping extends VirtualClass<{
-    chatId: int;
-  }> {
-    chatId: int;
-  };
-  export class UpdateEncryption extends VirtualClass<{
-    chat: Api.TypeEncryptedChat;
-    date: int;
-  }> {
-    chat: Api.TypeEncryptedChat;
-    date: int;
-  };
-  export class UpdateEncryptedMessagesRead extends VirtualClass<{
-    chatId: int;
-    maxDate: int;
-    date: int;
-  }> {
-    chatId: int;
-    maxDate: int;
-    date: int;
-  };
-  export class UpdateChatParticipantAdd extends VirtualClass<{
-    chatId: long;
-    userId: long;
-    inviterId: long;
-    date: int;
-    version: int;
-  }> {
-    chatId: long;
-    userId: long;
-    inviterId: long;
-    date: int;
-    version: int;
-  };
-  export class UpdateChatParticipantDelete extends VirtualClass<{
-    chatId: long;
-    userId: long;
-    version: int;
-  }> {
-    chatId: long;
-    userId: long;
-    version: int;
-  };
-  export class UpdateDcOptions extends VirtualClass<{
-    dcOptions: Api.TypeDcOption[];
-  }> {
-    dcOptions: Api.TypeDcOption[];
-  };
-  export class UpdateNotifySettings extends VirtualClass<{
-    peer: Api.TypeNotifyPeer;
-    notifySettings: Api.TypePeerNotifySettings;
-  }> {
-    peer: Api.TypeNotifyPeer;
-    notifySettings: Api.TypePeerNotifySettings;
-  };
-  export class UpdateServiceNotification extends VirtualClass<{
-    // flags: undefined;
-    popup?: true;
-    inboxDate?: int;
-    type: string;
-    message: string;
-    media: Api.TypeMessageMedia;
-    entities: Api.TypeMessageEntity[];
-  }> {
-    // flags: undefined;
-    popup?: true;
-    inboxDate?: int;
-    type: string;
-    message: string;
-    media: Api.TypeMessageMedia;
-    entities: Api.TypeMessageEntity[];
-  };
-  export class UpdatePrivacy extends VirtualClass<{
-    key: Api.TypePrivacyKey;
-    rules: Api.TypePrivacyRule[];
-  }> {
-    key: Api.TypePrivacyKey;
-    rules: Api.TypePrivacyRule[];
-  };
-  export class UpdateUserPhone extends VirtualClass<{
-    userId: long;
-    phone: string;
-  }> {
-    userId: long;
-    phone: string;
-  };
-  export class UpdateReadHistoryInbox extends VirtualClass<{
-    // flags: undefined;
-    folderId?: int;
-    peer: Api.TypePeer;
-    maxId: int;
-    stillUnreadCount: int;
-    pts: int;
-    ptsCount: int;
-  }> {
-    // flags: undefined;
-    folderId?: int;
-    peer: Api.TypePeer;
-    maxId: int;
-    stillUnreadCount: int;
-    pts: int;
-    ptsCount: int;
-  };
-  export class UpdateReadHistoryOutbox extends VirtualClass<{
-    peer: Api.TypePeer;
-    maxId: int;
-    pts: int;
-    ptsCount: int;
-  }> {
-    peer: Api.TypePeer;
-    maxId: int;
-    pts: int;
-    ptsCount: int;
-  };
-  export class UpdateWebPage extends VirtualClass<{
-    webpage: Api.TypeWebPage;
-    pts: int;
-    ptsCount: int;
-  }> {
-    webpage: Api.TypeWebPage;
-    pts: int;
-    ptsCount: int;
-  };
-  export class UpdateReadMessagesContents extends VirtualClass<{
-    messages: int[];
-    pts: int;
-    ptsCount: int;
-  }> {
-    messages: int[];
-    pts: int;
-    ptsCount: int;
-  };
-  export class UpdateChannelTooLong extends VirtualClass<{
-    // flags: undefined;
-    channelId: long;
-    pts?: int;
-  }> {
-    // flags: undefined;
-    channelId: long;
-    pts?: int;
-  };
-  export class UpdateChannel extends VirtualClass<{
-    channelId: long;
-  }> {
-    channelId: long;
-  };
-  export class UpdateNewChannelMessage extends VirtualClass<{
-    message: Api.TypeMessage;
-    pts: int;
-    ptsCount: int;
-  }> {
-    message: Api.TypeMessage;
-    pts: int;
-    ptsCount: int;
-  };
-  export class UpdateReadChannelInbox extends VirtualClass<{
-    // flags: undefined;
-    folderId?: int;
-    channelId: long;
-    maxId: int;
-    stillUnreadCount: int;
-    pts: int;
-  }> {
-    // flags: undefined;
-    folderId?: int;
-    channelId: long;
-    maxId: int;
-    stillUnreadCount: int;
-    pts: int;
-  };
-  export class UpdateDeleteChannelMessages extends VirtualClass<{
-    channelId: long;
-    messages: int[];
-    pts: int;
-    ptsCount: int;
-  }> {
-    channelId: long;
-    messages: int[];
-    pts: int;
-    ptsCount: int;
-  };
-  export class UpdateChannelMessageViews extends VirtualClass<{
-    channelId: long;
-    id: int;
-    views: int;
-  }> {
-    channelId: long;
-    id: int;
-    views: int;
-  };
-  export class UpdateChatParticipantAdmin extends VirtualClass<{
-    chatId: long;
-    userId: long;
-    isAdmin: Bool;
-    version: int;
-  }> {
-    chatId: long;
-    userId: long;
-    isAdmin: Bool;
-    version: int;
-  };
-  export class UpdateNewStickerSet extends VirtualClass<{
-    stickerset: messages.TypeStickerSet;
-  }> {
-    stickerset: messages.TypeStickerSet;
-  };
-  export class UpdateStickerSetsOrder extends VirtualClass<{
-    // flags: undefined;
-    masks?: true;
-    emojis?: true;
-    order: long[];
-  }> {
-    // flags: undefined;
-    masks?: true;
-    emojis?: true;
-    order: long[];
-  };
-  export class UpdateStickerSets extends VirtualClass<{
-    // flags: undefined;
-    masks?: true;
-    emojis?: true;
-  } | void> {
-    // flags: undefined;
-    masks?: true;
-    emojis?: true;
-  };
-  export class UpdateSavedGifs extends VirtualClass<void> {};
-  export class UpdateBotInlineQuery extends VirtualClass<{
-    // flags: undefined;
-    queryId: long;
-    userId: long;
-    query: string;
-    geo?: Api.TypeGeoPoint;
-    peerType?: Api.TypeInlineQueryPeerType;
-    offset: string;
-  }> {
-    // flags: undefined;
-    queryId: long;
-    userId: long;
-    query: string;
-    geo?: Api.TypeGeoPoint;
-    peerType?: Api.TypeInlineQueryPeerType;
-    offset: string;
-  };
-  export class UpdateBotInlineSend extends VirtualClass<{
-    // flags: undefined;
-    userId: long;
-    query: string;
-    geo?: Api.TypeGeoPoint;
-    id: string;
-    msgId?: Api.TypeInputBotInlineMessageID;
-  }> {
-    // flags: undefined;
-    userId: long;
-    query: string;
-    geo?: Api.TypeGeoPoint;
-    id: string;
-    msgId?: Api.TypeInputBotInlineMessageID;
-  };
-  export class UpdateEditChannelMessage extends VirtualClass<{
-    message: Api.TypeMessage;
-    pts: int;
-    ptsCount: int;
-  }> {
-    message: Api.TypeMessage;
-    pts: int;
-    ptsCount: int;
-  };
-  export class UpdateBotCallbackQuery extends VirtualClass<{
-    // flags: undefined;
-    queryId: long;
-    userId: long;
-    peer: Api.TypePeer;
-    msgId: int;
-    chatInstance: long;
-    data?: bytes;
-    gameShortName?: string;
-  }> {
-    // flags: undefined;
-    queryId: long;
-    userId: long;
-    peer: Api.TypePeer;
-    msgId: int;
-    chatInstance: long;
-    data?: bytes;
-    gameShortName?: string;
-  };
-  export class UpdateEditMessage extends VirtualClass<{
-    message: Api.TypeMessage;
-    pts: int;
-    ptsCount: int;
-  }> {
-    message: Api.TypeMessage;
-    pts: int;
-    ptsCount: int;
-  };
-  export class UpdateInlineBotCallbackQuery extends VirtualClass<{
-    // flags: undefined;
-    queryId: long;
-    userId: long;
-    msgId: Api.TypeInputBotInlineMessageID;
-    chatInstance: long;
-    data?: bytes;
-    gameShortName?: string;
-  }> {
-    // flags: undefined;
-    queryId: long;
-    userId: long;
-    msgId: Api.TypeInputBotInlineMessageID;
-    chatInstance: long;
-    data?: bytes;
-    gameShortName?: string;
-  };
-  export class UpdateReadChannelOutbox extends VirtualClass<{
-    channelId: long;
-    maxId: int;
-  }> {
-    channelId: long;
-    maxId: int;
-  };
-  export class UpdateDraftMessage extends VirtualClass<{
-    // flags: undefined;
-    peer: Api.TypePeer;
-    topMsgId?: int;
-    draft: Api.TypeDraftMessage;
-  }> {
-    // flags: undefined;
-    peer: Api.TypePeer;
-    topMsgId?: int;
-    draft: Api.TypeDraftMessage;
-  };
-  export class UpdateReadFeaturedStickers extends VirtualClass<void> {};
-  export class UpdateRecentStickers extends VirtualClass<void> {};
-  export class UpdateConfig extends VirtualClass<void> {};
-  export class UpdatePtsChanged extends VirtualClass<void> {};
-  export class UpdateChannelWebPage extends VirtualClass<{
-    channelId: long;
-    webpage: Api.TypeWebPage;
-    pts: int;
-    ptsCount: int;
-  }> {
-    channelId: long;
-    webpage: Api.TypeWebPage;
-    pts: int;
-    ptsCount: int;
-  };
-  export class UpdateDialogPinned extends VirtualClass<{
-    // flags: undefined;
-    pinned?: true;
-    folderId?: int;
-    peer: Api.TypeDialogPeer;
-  }> {
-    // flags: undefined;
-    pinned?: true;
-    folderId?: int;
-    peer: Api.TypeDialogPeer;
-  };
-  export class UpdatePinnedDialogs extends VirtualClass<{
-    // flags: undefined;
-    folderId?: int;
-    order?: Api.TypeDialogPeer[];
-  } | void> {
-    // flags: undefined;
-    folderId?: int;
-    order?: Api.TypeDialogPeer[];
-  };
-  export class UpdateBotWebhookJSON extends VirtualClass<{
-    data: Api.TypeDataJSON;
-  }> {
-    data: Api.TypeDataJSON;
-  };
-  export class UpdateBotWebhookJSONQuery extends VirtualClass<{
-    queryId: long;
-    data: Api.TypeDataJSON;
-    timeout: int;
-  }> {
-    queryId: long;
-    data: Api.TypeDataJSON;
-    timeout: int;
-  };
-  export class UpdateBotShippingQuery extends VirtualClass<{
-    queryId: long;
-    userId: long;
-    payload: bytes;
-    shippingAddress: Api.TypePostAddress;
-  }> {
-    queryId: long;
-    userId: long;
-    payload: bytes;
-    shippingAddress: Api.TypePostAddress;
-  };
-  export class UpdateBotPrecheckoutQuery extends VirtualClass<{
-    // flags: undefined;
-    queryId: long;
-    userId: long;
-    payload: bytes;
-    info?: Api.TypePaymentRequestedInfo;
-    shippingOptionId?: string;
-    currency: string;
-    totalAmount: long;
-  }> {
-    // flags: undefined;
-    queryId: long;
-    userId: long;
-    payload: bytes;
-    info?: Api.TypePaymentRequestedInfo;
-    shippingOptionId?: string;
-    currency: string;
-    totalAmount: long;
-  };
-  export class UpdatePhoneCall extends VirtualClass<{
-    phoneCall: Api.TypePhoneCall;
-  }> {
-    phoneCall: Api.TypePhoneCall;
-  };
-  export class UpdateLangPackTooLong extends VirtualClass<{
-    langCode: string;
-  }> {
-    langCode: string;
-  };
-  export class UpdateLangPack extends VirtualClass<{
-    difference: Api.TypeLangPackDifference;
-  }> {
-    difference: Api.TypeLangPackDifference;
-  };
-  export class UpdateFavedStickers extends VirtualClass<void> {};
-  export class UpdateChannelReadMessagesContents extends VirtualClass<{
-    // flags: undefined;
-    channelId: long;
-    topMsgId?: int;
-    messages: int[];
-  }> {
-    // flags: undefined;
-    channelId: long;
-    topMsgId?: int;
-    messages: int[];
-  };
-  export class UpdateContactsReset extends VirtualClass<void> {};
-  export class UpdateChannelAvailableMessages extends VirtualClass<{
-    channelId: long;
-    availableMinId: int;
-  }> {
-    channelId: long;
-    availableMinId: int;
-  };
-  export class UpdateDialogUnreadMark extends VirtualClass<{
-    // flags: undefined;
-    unread?: true;
-    peer: Api.TypeDialogPeer;
-  }> {
-    // flags: undefined;
-    unread?: true;
-    peer: Api.TypeDialogPeer;
-  };
-  export class UpdateMessagePoll extends VirtualClass<{
-    // flags: undefined;
-    pollId: long;
-    poll?: Api.TypePoll;
-    results: Api.TypePollResults;
-  }> {
-    // flags: undefined;
-    pollId: long;
-    poll?: Api.TypePoll;
-    results: Api.TypePollResults;
-  };
-  export class UpdateChatDefaultBannedRights extends VirtualClass<{
-    peer: Api.TypePeer;
-    defaultBannedRights: Api.TypeChatBannedRights;
-    version: int;
-  }> {
-    peer: Api.TypePeer;
-    defaultBannedRights: Api.TypeChatBannedRights;
-    version: int;
-  };
-  export class UpdateFolderPeers extends VirtualClass<{
-    folderPeers: Api.TypeFolderPeer[];
-    pts: int;
-    ptsCount: int;
-  }> {
-    folderPeers: Api.TypeFolderPeer[];
-    pts: int;
-    ptsCount: int;
-  };
-  export class UpdatePeerSettings extends VirtualClass<{
-    peer: Api.TypePeer;
-    settings: Api.TypePeerSettings;
-  }> {
-    peer: Api.TypePeer;
-    settings: Api.TypePeerSettings;
-  };
-  export class UpdatePeerLocated extends VirtualClass<{
-    peers: Api.TypePeerLocated[];
-  }> {
-    peers: Api.TypePeerLocated[];
-  };
-  export class UpdateNewScheduledMessage extends VirtualClass<{
-    message: Api.TypeMessage;
-  }> {
-    message: Api.TypeMessage;
-  };
-  export class UpdateDeleteScheduledMessages extends VirtualClass<{
-    peer: Api.TypePeer;
-    messages: int[];
-  }> {
-    peer: Api.TypePeer;
-    messages: int[];
-  };
-  export class UpdateTheme extends VirtualClass<{
-    theme: Api.TypeTheme;
-  }> {
-    theme: Api.TypeTheme;
-  };
-  export class UpdateGeoLiveViewed extends VirtualClass<{
-    peer: Api.TypePeer;
-    msgId: int;
-  }> {
-    peer: Api.TypePeer;
-    msgId: int;
-  };
-  export class UpdateLoginToken extends VirtualClass<void> {};
-  export class UpdateMessagePollVote extends VirtualClass<{
-    pollId: long;
-    userId: long;
-    options: bytes[];
-    qts: int;
-  }> {
-    pollId: long;
-    userId: long;
-    options: bytes[];
-    qts: int;
-  };
-  export class UpdateDialogFilter extends VirtualClass<{
-    // flags: undefined;
-    id: int;
-    filter?: Api.TypeDialogFilter;
-  }> {
-    // flags: undefined;
-    id: int;
-    filter?: Api.TypeDialogFilter;
-  };
-  export class UpdateDialogFilterOrder extends VirtualClass<{
-    order: int[];
-  }> {
-    order: int[];
-  };
-  export class UpdateDialogFilters extends VirtualClass<void> {};
-  export class UpdatePhoneCallSignalingData extends VirtualClass<{
-    phoneCallId: long;
-    data: bytes;
-  }> {
-    phoneCallId: long;
-    data: bytes;
-  };
-  export class UpdateChannelMessageForwards extends VirtualClass<{
-    channelId: long;
-    id: int;
-    forwards: int;
-  }> {
-    channelId: long;
-    id: int;
-    forwards: int;
-  };
-  export class UpdateReadChannelDiscussionInbox extends VirtualClass<{
-    // flags: undefined;
-    channelId: long;
-    topMsgId: int;
-    readMaxId: int;
-    broadcastId?: long;
-    broadcastPost?: int;
-  }> {
-    // flags: undefined;
-    channelId: long;
-    topMsgId: int;
-    readMaxId: int;
-    broadcastId?: long;
-    broadcastPost?: int;
-  };
-  export class UpdateReadChannelDiscussionOutbox extends VirtualClass<{
-    channelId: long;
-    topMsgId: int;
-    readMaxId: int;
-  }> {
-    channelId: long;
-    topMsgId: int;
-    readMaxId: int;
-  };
-  export class UpdatePeerBlocked extends VirtualClass<{
-    peerId: Api.TypePeer;
-    blocked: Bool;
-  }> {
-    peerId: Api.TypePeer;
-    blocked: Bool;
-  };
-  export class UpdateChannelUserTyping extends VirtualClass<{
-    // flags: undefined;
-    channelId: long;
-    topMsgId?: int;
-    fromId: Api.TypePeer;
-    action: Api.TypeSendMessageAction;
-  }> {
-    // flags: undefined;
-    channelId: long;
-    topMsgId?: int;
-    fromId: Api.TypePeer;
-    action: Api.TypeSendMessageAction;
-  };
-  export class UpdatePinnedMessages extends VirtualClass<{
-    // flags: undefined;
-    pinned?: true;
-    peer: Api.TypePeer;
-    messages: int[];
-    pts: int;
-    ptsCount: int;
-  }> {
-    // flags: undefined;
-    pinned?: true;
-    peer: Api.TypePeer;
-    messages: int[];
-    pts: int;
-    ptsCount: int;
-  };
-  export class UpdatePinnedChannelMessages extends VirtualClass<{
-    // flags: undefined;
-    pinned?: true;
-    channelId: long;
-    messages: int[];
-    pts: int;
-    ptsCount: int;
-  }> {
-    // flags: undefined;
-    pinned?: true;
-    channelId: long;
-    messages: int[];
-    pts: int;
-    ptsCount: int;
-  };
-  export class UpdateChat extends VirtualClass<{
-    chatId: long;
-  }> {
-    chatId: long;
-  };
-  export class UpdateGroupCallParticipants extends VirtualClass<{
-    call: Api.TypeInputGroupCall;
-    participants: Api.TypeGroupCallParticipant[];
-    version: int;
-  }> {
-    call: Api.TypeInputGroupCall;
-    participants: Api.TypeGroupCallParticipant[];
-    version: int;
-  };
-  export class UpdateGroupCall extends VirtualClass<{
-    chatId: long;
-    call: Api.TypeGroupCall;
-  }> {
-    chatId: long;
-    call: Api.TypeGroupCall;
-  };
-  export class UpdatePeerHistoryTTL extends VirtualClass<{
-    // flags: undefined;
-    peer: Api.TypePeer;
-    ttlPeriod?: int;
-  }> {
-    // flags: undefined;
-    peer: Api.TypePeer;
-    ttlPeriod?: int;
-  };
-  export class UpdateChatParticipant extends VirtualClass<{
-    // flags: undefined;
-    chatId: long;
-    date: int;
-    actorId: long;
-    userId: long;
-    prevParticipant?: Api.TypeChatParticipant;
-    newParticipant?: Api.TypeChatParticipant;
-    invite?: Api.TypeExportedChatInvite;
-    qts: int;
-  }> {
-    // flags: undefined;
-    chatId: long;
-    date: int;
-    actorId: long;
-    userId: long;
-    prevParticipant?: Api.TypeChatParticipant;
-    newParticipant?: Api.TypeChatParticipant;
-    invite?: Api.TypeExportedChatInvite;
-    qts: int;
-  };
-  export class UpdateChannelParticipant extends VirtualClass<{
-    // flags: undefined;
-    channelId: long;
-    date: int;
-    actorId: long;
-    userId: long;
-    prevParticipant?: Api.TypeChannelParticipant;
-    newParticipant?: Api.TypeChannelParticipant;
-    invite?: Api.TypeExportedChatInvite;
-    qts: int;
-  }> {
-    // flags: undefined;
-    channelId: long;
-    date: int;
-    actorId: long;
-    userId: long;
-    prevParticipant?: Api.TypeChannelParticipant;
-    newParticipant?: Api.TypeChannelParticipant;
-    invite?: Api.TypeExportedChatInvite;
-    qts: int;
-  };
-  export class UpdateBotStopped extends VirtualClass<{
-    userId: long;
-    date: int;
-    stopped: Bool;
-    qts: int;
-  }> {
-    userId: long;
-    date: int;
-    stopped: Bool;
-    qts: int;
-  };
-  export class UpdateGroupCallConnection extends VirtualClass<{
-    // flags: undefined;
-    presentation?: true;
-    params: Api.TypeDataJSON;
-  }> {
-    // flags: undefined;
-    presentation?: true;
-    params: Api.TypeDataJSON;
-  };
-  export class UpdateBotCommands extends VirtualClass<{
-    peer: Api.TypePeer;
-    botId: long;
-    commands: Api.TypeBotCommand[];
-  }> {
-    peer: Api.TypePeer;
-    botId: long;
-    commands: Api.TypeBotCommand[];
-  };
-  export class UpdatePendingJoinRequests extends VirtualClass<{
-    peer: Api.TypePeer;
-    requestsPending: int;
-    recentRequesters: long[];
-  }> {
-    peer: Api.TypePeer;
-    requestsPending: int;
-    recentRequesters: long[];
-  };
-  export class UpdateBotChatInviteRequester extends VirtualClass<{
-    peer: Api.TypePeer;
-    date: int;
-    userId: long;
-    about: string;
-    invite: Api.TypeExportedChatInvite;
-    qts: int;
-  }> {
-    peer: Api.TypePeer;
-    date: int;
-    userId: long;
-    about: string;
-    invite: Api.TypeExportedChatInvite;
-    qts: int;
-  };
-  export class UpdateMessageReactions extends VirtualClass<{
-    // flags: undefined;
-    peer: Api.TypePeer;
-    msgId: int;
-    topMsgId?: int;
-    reactions: Api.TypeMessageReactions;
-  }> {
-    // flags: undefined;
-    peer: Api.TypePeer;
-    msgId: int;
-    topMsgId?: int;
-    reactions: Api.TypeMessageReactions;
-  };
-  export class UpdateAttachMenuBots extends VirtualClass<void> {};
-  export class UpdateWebViewResultSent extends VirtualClass<{
-    queryId: long;
-  }> {
-    queryId: long;
-  };
-  export class UpdateBotMenuButton extends VirtualClass<{
-    botId: long;
-    button: Api.TypeBotMenuButton;
-  }> {
-    botId: long;
-    button: Api.TypeBotMenuButton;
-  };
-  export class UpdateSavedRingtones extends VirtualClass<void> {};
-  export class UpdateTranscribedAudio extends VirtualClass<{
-    // flags: undefined;
-    pending?: true;
-    peer: Api.TypePeer;
-    msgId: int;
-    transcriptionId: long;
-    text: string;
-  }> {
-    // flags: undefined;
-    pending?: true;
-    peer: Api.TypePeer;
-    msgId: int;
-    transcriptionId: long;
-    text: string;
-  };
-  export class UpdateReadFeaturedEmojiStickers extends VirtualClass<void> {};
-  export class UpdateUserEmojiStatus extends VirtualClass<{
-    userId: long;
-    emojiStatus: Api.TypeEmojiStatus;
-  }> {
-    userId: long;
-    emojiStatus: Api.TypeEmojiStatus;
-  };
-  export class UpdateRecentEmojiStatuses extends VirtualClass<void> {};
-  export class UpdateRecentReactions extends VirtualClass<void> {};
-  export class UpdateMoveStickerSetToTop extends VirtualClass<{
-    // flags: undefined;
-    masks?: true;
-    emojis?: true;
-    stickerset: long;
-  }> {
-    // flags: undefined;
-    masks?: true;
-    emojis?: true;
-    stickerset: long;
-  };
-  export class UpdateMessageExtendedMedia extends VirtualClass<{
-    peer: Api.TypePeer;
-    msgId: int;
-    extendedMedia: Api.TypeMessageExtendedMedia;
-  }> {
-    peer: Api.TypePeer;
-    msgId: int;
-    extendedMedia: Api.TypeMessageExtendedMedia;
-  };
-  export class UpdateChannelPinnedTopic extends VirtualClass<{
-    // flags: undefined;
-    pinned?: true;
-    channelId: long;
-    topicId: int;
-  }> {
-    // flags: undefined;
-    pinned?: true;
-    channelId: long;
-    topicId: int;
-  };
-  export class UpdateChannelPinnedTopics extends VirtualClass<{
-    // flags: undefined;
-    channelId: long;
-    order?: int[];
-  }> {
-    // flags: undefined;
-    channelId: long;
-    order?: int[];
-  };
-  export class UpdateUser extends VirtualClass<{
-    userId: long;
-  }> {
-    userId: long;
-  };
-  export class UpdateAutoSaveSettings extends VirtualClass<void> {};
-  export class UpdatesTooLong extends VirtualClass<void> {};
-  export class UpdateShortMessage extends VirtualClass<{
-    // flags: undefined;
-    out?: true;
-    mentioned?: true;
-    mediaUnread?: true;
-    silent?: true;
-    id: int;
-    userId: long;
-    message: string;
-    pts: int;
-    ptsCount: int;
-    date: int;
-    fwdFrom?: Api.TypeMessageFwdHeader;
-    viaBotId?: long;
-    replyTo?: Api.TypeMessageReplyHeader;
-    entities?: Api.TypeMessageEntity[];
-    ttlPeriod?: int;
-  }> {
-    // flags: undefined;
-    out?: true;
-    mentioned?: true;
-    mediaUnread?: true;
-    silent?: true;
-    id: int;
-    userId: long;
-    message: string;
-    pts: int;
-    ptsCount: int;
-    date: int;
-    fwdFrom?: Api.TypeMessageFwdHeader;
-    viaBotId?: long;
-    replyTo?: Api.TypeMessageReplyHeader;
-    entities?: Api.TypeMessageEntity[];
-    ttlPeriod?: int;
-  };
-  export class UpdateShortChatMessage extends VirtualClass<{
-    // flags: undefined;
-    out?: true;
-    mentioned?: true;
-    mediaUnread?: true;
-    silent?: true;
-    id: int;
-    fromId: long;
-    chatId: long;
-    message: string;
-    pts: int;
-    ptsCount: int;
-    date: int;
-    fwdFrom?: Api.TypeMessageFwdHeader;
-    viaBotId?: long;
-    replyTo?: Api.TypeMessageReplyHeader;
-    entities?: Api.TypeMessageEntity[];
-    ttlPeriod?: int;
-  }> {
-    // flags: undefined;
-    out?: true;
-    mentioned?: true;
-    mediaUnread?: true;
-    silent?: true;
-    id: int;
-    fromId: long;
-    chatId: long;
-    message: string;
-    pts: int;
-    ptsCount: int;
-    date: int;
-    fwdFrom?: Api.TypeMessageFwdHeader;
-    viaBotId?: long;
-    replyTo?: Api.TypeMessageReplyHeader;
-    entities?: Api.TypeMessageEntity[];
-    ttlPeriod?: int;
-  };
-  export class UpdateShort extends VirtualClass<{
-    update: Api.TypeUpdate;
-    date: int;
-  }> {
-    update: Api.TypeUpdate;
-    date: int;
-  };
-  export class UpdatesCombined extends VirtualClass<{
-    updates: Api.TypeUpdate[];
-    users: Api.TypeUser[];
-    chats: Api.TypeChat[];
-    date: int;
-    seqStart: int;
-    seq: int;
-  }> {
-    updates: Api.TypeUpdate[];
-    users: Api.TypeUser[];
-    chats: Api.TypeChat[];
-    date: int;
-    seqStart: int;
-    seq: int;
-  };
-  export class Updates extends VirtualClass<{
-    updates: Api.TypeUpdate[];
-    users: Api.TypeUser[];
-    chats: Api.TypeChat[];
-    date: int;
-    seq: int;
-  }> {
-    updates: Api.TypeUpdate[];
-    users: Api.TypeUser[];
-    chats: Api.TypeChat[];
-    date: int;
-    seq: int;
-  };
-  export class UpdateShortSentMessage extends VirtualClass<{
-    // flags: undefined;
-    out?: true;
-    id: int;
-    pts: int;
-    ptsCount: int;
-    date: int;
-    media?: Api.TypeMessageMedia;
-    entities?: Api.TypeMessageEntity[];
-    ttlPeriod?: int;
-  }> {
-    // flags: undefined;
-    out?: true;
-    id: int;
-    pts: int;
-    ptsCount: int;
-    date: int;
-    media?: Api.TypeMessageMedia;
-    entities?: Api.TypeMessageEntity[];
-    ttlPeriod?: int;
-  };
-  export class DcOption extends VirtualClass<{
-    // flags: undefined;
-    ipv6?: true;
-    mediaOnly?: true;
-    tcpoOnly?: true;
-    cdn?: true;
-    static?: true;
-    thisPortOnly?: true;
-    id: int;
-    ipAddress: string;
-    port: int;
-    secret?: bytes;
-  }> {
-    // flags: undefined;
-    ipv6?: true;
-    mediaOnly?: true;
-    tcpoOnly?: true;
-    cdn?: true;
-    static?: true;
-    thisPortOnly?: true;
-    id: int;
-    ipAddress: string;
-    port: int;
-    secret?: bytes;
-  };
-  export class Config extends VirtualClass<{
-    // flags: undefined;
-    phonecallsEnabled?: true;
-    defaultP2pContacts?: true;
-    preloadFeaturedStickers?: true;
-    ignorePhoneEntities?: true;
-    revokePmInbox?: true;
-    blockedMode?: true;
-    pfsEnabled?: true;
-    forceTryIpv6?: true;
-    date: int;
-    expires: int;
-    testMode: Bool;
-    thisDc: int;
-    dcOptions: Api.TypeDcOption[];
-    dcTxtDomainName: string;
-    chatSizeMax: int;
-    megagroupSizeMax: int;
-    forwardedCountMax: int;
-    onlineUpdatePeriodMs: int;
-    offlineBlurTimeoutMs: int;
-    offlineIdleTimeoutMs: int;
-    onlineCloudTimeoutMs: int;
-    notifyCloudDelayMs: int;
-    notifyDefaultDelayMs: int;
-    pushChatPeriodMs: int;
-    pushChatLimit: int;
-    savedGifsLimit: int;
-    editTimeLimit: int;
-    revokeTimeLimit: int;
-    revokePmTimeLimit: int;
-    ratingEDecay: int;
-    stickersRecentLimit: int;
-    stickersFavedLimit: int;
-    channelsReadMediaPeriod: int;
-    tmpSessions?: int;
-    pinnedDialogsCountMax: int;
-    pinnedInfolderCountMax: int;
-    callReceiveTimeoutMs: int;
-    callRingTimeoutMs: int;
-    callConnectTimeoutMs: int;
-    callPacketTimeoutMs: int;
-    meUrlPrefix: string;
-    autoupdateUrlPrefix?: string;
-    gifSearchUsername?: string;
-    venueSearchUsername?: string;
-    imgSearchUsername?: string;
-    staticMapsProvider?: string;
-    captionLengthMax: int;
-    messageLengthMax: int;
-    webfileDcId: int;
-    suggestedLangCode?: string;
-    langPackVersion?: int;
-    baseLangPackVersion?: int;
-    reactionsDefault?: Api.TypeReaction;
-  }> {
-    // flags: undefined;
-    phonecallsEnabled?: true;
-    defaultP2pContacts?: true;
-    preloadFeaturedStickers?: true;
-    ignorePhoneEntities?: true;
-    revokePmInbox?: true;
-    blockedMode?: true;
-    pfsEnabled?: true;
-    forceTryIpv6?: true;
-    date: int;
-    expires: int;
-    testMode: Bool;
-    thisDc: int;
-    dcOptions: Api.TypeDcOption[];
-    dcTxtDomainName: string;
-    chatSizeMax: int;
-    megagroupSizeMax: int;
-    forwardedCountMax: int;
-    onlineUpdatePeriodMs: int;
-    offlineBlurTimeoutMs: int;
-    offlineIdleTimeoutMs: int;
-    onlineCloudTimeoutMs: int;
-    notifyCloudDelayMs: int;
-    notifyDefaultDelayMs: int;
-    pushChatPeriodMs: int;
-    pushChatLimit: int;
-    savedGifsLimit: int;
-    editTimeLimit: int;
-    revokeTimeLimit: int;
-    revokePmTimeLimit: int;
-    ratingEDecay: int;
-    stickersRecentLimit: int;
-    stickersFavedLimit: int;
-    channelsReadMediaPeriod: int;
-    tmpSessions?: int;
-    pinnedDialogsCountMax: int;
-    pinnedInfolderCountMax: int;
-    callReceiveTimeoutMs: int;
-    callRingTimeoutMs: int;
-    callConnectTimeoutMs: int;
-    callPacketTimeoutMs: int;
-    meUrlPrefix: string;
-    autoupdateUrlPrefix?: string;
-    gifSearchUsername?: string;
-    venueSearchUsername?: string;
-    imgSearchUsername?: string;
-    staticMapsProvider?: string;
-    captionLengthMax: int;
-    messageLengthMax: int;
-    webfileDcId: int;
-    suggestedLangCode?: string;
-    langPackVersion?: int;
-    baseLangPackVersion?: int;
-    reactionsDefault?: Api.TypeReaction;
-  };
-  export class NearestDc extends VirtualClass<{
-    country: string;
-    thisDc: int;
-    nearestDc: int;
-  }> {
-    country: string;
-    thisDc: int;
-    nearestDc: int;
-  };
-  export class EncryptedChatEmpty extends VirtualClass<{
-    id: int;
-  }> {
-    id: int;
-  };
-  export class EncryptedChatWaiting extends VirtualClass<{
-    id: int;
-    accessHash: long;
-    date: int;
-    adminId: long;
-    participantId: long;
-  }> {
-    id: int;
-    accessHash: long;
-    date: int;
-    adminId: long;
-    participantId: long;
-  };
-  export class EncryptedChatRequested extends VirtualClass<{
-    // flags: undefined;
-    folderId?: int;
-    id: int;
-    accessHash: long;
-    date: int;
-    adminId: long;
-    participantId: long;
-    gA: bytes;
-  }> {
-    // flags: undefined;
-    folderId?: int;
-    id: int;
-    accessHash: long;
-    date: int;
-    adminId: long;
-    participantId: long;
-    gA: bytes;
-  };
-  export class EncryptedChat extends VirtualClass<{
-    id: int;
-    accessHash: long;
-    date: int;
-    adminId: long;
-    participantId: long;
-    gAOrB: bytes;
-    keyFingerprint: long;
-  }> {
-    id: int;
-    accessHash: long;
-    date: int;
-    adminId: long;
-    participantId: long;
-    gAOrB: bytes;
-    keyFingerprint: long;
-  };
-  export class EncryptedChatDiscarded extends VirtualClass<{
-    // flags: undefined;
-    historyDeleted?: true;
-    id: int;
-  }> {
-    // flags: undefined;
-    historyDeleted?: true;
-    id: int;
-  };
-  export class InputEncryptedChat extends VirtualClass<{
-    chatId: int;
-    accessHash: long;
-  }> {
-    chatId: int;
-    accessHash: long;
-  };
-  export class EncryptedFileEmpty extends VirtualClass<void> {};
-  export class EncryptedFile extends VirtualClass<{
-    id: long;
-    accessHash: long;
-    size: long;
-    dcId: int;
-    keyFingerprint: int;
-  }> {
-    id: long;
-    accessHash: long;
-    size: long;
-    dcId: int;
-    keyFingerprint: int;
-  };
-  export class InputEncryptedFileEmpty extends VirtualClass<void> {};
-  export class InputEncryptedFileUploaded extends VirtualClass<{
-    id: long;
-    parts: int;
-    md5Checksum: string;
-    keyFingerprint: int;
-  }> {
-    id: long;
-    parts: int;
-    md5Checksum: string;
-    keyFingerprint: int;
-  };
-  export class InputEncryptedFile extends VirtualClass<{
-    id: long;
-    accessHash: long;
-  }> {
-    id: long;
-    accessHash: long;
-  };
-  export class InputEncryptedFileBigUploaded extends VirtualClass<{
-    id: long;
-    parts: int;
-    keyFingerprint: int;
-  }> {
-    id: long;
-    parts: int;
-    keyFingerprint: int;
-  };
-  export class EncryptedMessage extends VirtualClass<{
-    randomId: long;
-    chatId: int;
-    date: int;
-    bytes: bytes;
-    file: Api.TypeEncryptedFile;
-  }> {
-    randomId: long;
-    chatId: int;
-    date: int;
-    bytes: bytes;
-    file: Api.TypeEncryptedFile;
-  };
-  export class EncryptedMessageService extends VirtualClass<{
-    randomId: long;
-    chatId: int;
-    date: int;
-    bytes: bytes;
-  }> {
-    randomId: long;
-    chatId: int;
-    date: int;
-    bytes: bytes;
-  };
-  export class InputDocumentEmpty extends VirtualClass<void> {};
-  export class InputDocument extends VirtualClass<{
-    id: long;
-    accessHash: long;
-    fileReference: bytes;
-  }> {
-    id: long;
-    accessHash: long;
-    fileReference: bytes;
-  };
-  export class DocumentEmpty extends VirtualClass<{
-    id: long;
-  }> {
-    id: long;
-  };
-  export class Document extends VirtualClass<{
-    // flags: undefined;
-    id: long;
-    accessHash: long;
-    fileReference: bytes;
-    date: int;
-    mimeType: string;
-    size: long;
-    thumbs?: Api.TypePhotoSize[];
-    videoThumbs?: Api.TypeVideoSize[];
-    dcId: int;
-    attributes: Api.TypeDocumentAttribute[];
-  }> {
-    // flags: undefined;
-    id: long;
-    accessHash: long;
-    fileReference: bytes;
-    date: int;
-    mimeType: string;
-    size: long;
-    thumbs?: Api.TypePhotoSize[];
-    videoThumbs?: Api.TypeVideoSize[];
-    dcId: int;
-    attributes: Api.TypeDocumentAttribute[];
-  };
-  export class NotifyPeer extends VirtualClass<{
-    peer: Api.TypePeer;
-  }> {
-    peer: Api.TypePeer;
-  };
-  export class NotifyUsers extends VirtualClass<void> {};
-  export class NotifyChats extends VirtualClass<void> {};
-  export class NotifyBroadcasts extends VirtualClass<void> {};
-  export class NotifyForumTopic extends VirtualClass<{
-    peer: Api.TypePeer;
-    topMsgId: int;
-  }> {
-    peer: Api.TypePeer;
-    topMsgId: int;
-  };
-  export class SendMessageTypingAction extends VirtualClass<void> {};
-  export class SendMessageCancelAction extends VirtualClass<void> {};
-  export class SendMessageRecordVideoAction extends VirtualClass<void> {};
-  export class SendMessageUploadVideoAction extends VirtualClass<{
-    progress: int;
-  }> {
-    progress: int;
-  };
-  export class SendMessageRecordAudioAction extends VirtualClass<void> {};
-  export class SendMessageUploadAudioAction extends VirtualClass<{
-    progress: int;
-  }> {
-    progress: int;
-  };
-  export class SendMessageUploadPhotoAction extends VirtualClass<{
-    progress: int;
-  }> {
-    progress: int;
-  };
-  export class SendMessageUploadDocumentAction extends VirtualClass<{
-    progress: int;
-  }> {
-    progress: int;
-  };
-  export class SendMessageGeoLocationAction extends VirtualClass<void> {};
-  export class SendMessageChooseContactAction extends VirtualClass<void> {};
-  export class SendMessageGamePlayAction extends VirtualClass<void> {};
-  export class SendMessageRecordRoundAction extends VirtualClass<void> {};
-  export class SendMessageUploadRoundAction extends VirtualClass<{
-    progress: int;
-  }> {
-    progress: int;
-  };
-  export class SpeakingInGroupCallAction extends VirtualClass<void> {};
-  export class SendMessageHistoryImportAction extends VirtualClass<{
-    progress: int;
-  }> {
-    progress: int;
-  };
-  export class SendMessageChooseStickerAction extends VirtualClass<void> {};
-  export class SendMessageEmojiInteraction extends VirtualClass<{
-    emoticon: string;
-    msgId: int;
-    interaction: Api.TypeDataJSON;
-  }> {
-    emoticon: string;
-    msgId: int;
-    interaction: Api.TypeDataJSON;
-  };
-  export class SendMessageEmojiInteractionSeen extends VirtualClass<{
-    emoticon: string;
-  }> {
-    emoticon: string;
-  };
-  export class InputPrivacyKeyStatusTimestamp extends VirtualClass<void> {};
-  export class InputPrivacyKeyChatInvite extends VirtualClass<void> {};
-  export class InputPrivacyKeyPhoneCall extends VirtualClass<void> {};
-  export class InputPrivacyKeyPhoneP2P extends VirtualClass<void> {};
-  export class InputPrivacyKeyForwards extends VirtualClass<void> {};
-  export class InputPrivacyKeyProfilePhoto extends VirtualClass<void> {};
-  export class InputPrivacyKeyPhoneNumber extends VirtualClass<void> {};
-  export class InputPrivacyKeyAddedByPhone extends VirtualClass<void> {};
-  export class InputPrivacyKeyVoiceMessages extends VirtualClass<void> {};
-  export class PrivacyKeyStatusTimestamp extends VirtualClass<void> {};
-  export class PrivacyKeyChatInvite extends VirtualClass<void> {};
-  export class PrivacyKeyPhoneCall extends VirtualClass<void> {};
-  export class PrivacyKeyPhoneP2P extends VirtualClass<void> {};
-  export class PrivacyKeyForwards extends VirtualClass<void> {};
-  export class PrivacyKeyProfilePhoto extends VirtualClass<void> {};
-  export class PrivacyKeyPhoneNumber extends VirtualClass<void> {};
-  export class PrivacyKeyAddedByPhone extends VirtualClass<void> {};
-  export class PrivacyKeyVoiceMessages extends VirtualClass<void> {};
-  export class InputPrivacyValueAllowContacts extends VirtualClass<void> {};
-  export class InputPrivacyValueAllowAll extends VirtualClass<void> {};
-  export class InputPrivacyValueAllowUsers extends VirtualClass<{
-    users: Api.TypeInputUser[];
-  }> {
-    users: Api.TypeInputUser[];
-  };
-  export class InputPrivacyValueDisallowContacts extends VirtualClass<void> {};
-  export class InputPrivacyValueDisallowAll extends VirtualClass<void> {};
-  export class InputPrivacyValueDisallowUsers extends VirtualClass<{
-    users: Api.TypeInputUser[];
-  }> {
-    users: Api.TypeInputUser[];
-  };
-  export class InputPrivacyValueAllowChatParticipants extends VirtualClass<{
-    chats: long[];
-  }> {
-    chats: long[];
-  };
-  export class InputPrivacyValueDisallowChatParticipants extends VirtualClass<{
-    chats: long[];
-  }> {
-    chats: long[];
-  };
-  export class PrivacyValueAllowContacts extends VirtualClass<void> {};
-  export class PrivacyValueAllowAll extends VirtualClass<void> {};
-  export class PrivacyValueAllowUsers extends VirtualClass<{
-    users: long[];
-  }> {
-    users: long[];
-  };
-  export class PrivacyValueDisallowContacts extends VirtualClass<void> {};
-  export class PrivacyValueDisallowAll extends VirtualClass<void> {};
-  export class PrivacyValueDisallowUsers extends VirtualClass<{
-    users: long[];
-  }> {
-    users: long[];
-  };
-  export class PrivacyValueAllowChatParticipants extends VirtualClass<{
-    chats: long[];
-  }> {
-    chats: long[];
-  };
-  export class PrivacyValueDisallowChatParticipants extends VirtualClass<{
-    chats: long[];
-  }> {
-    chats: long[];
-  };
-  export class AccountDaysTTL extends VirtualClass<{
-    days: int;
-  }> {
-    days: int;
-  };
-  export class DocumentAttributeImageSize extends VirtualClass<{
-    w: int;
-    h: int;
-  }> {
-    w: int;
-    h: int;
-  };
-  export class DocumentAttributeAnimated extends VirtualClass<void> {};
-  export class DocumentAttributeSticker extends VirtualClass<{
-    // flags: undefined;
-    mask?: true;
-    alt: string;
-    stickerset: Api.TypeInputStickerSet;
-    maskCoords?: Api.TypeMaskCoords;
-  }> {
-    // flags: undefined;
-    mask?: true;
-    alt: string;
-    stickerset: Api.TypeInputStickerSet;
-    maskCoords?: Api.TypeMaskCoords;
-  };
-  export class DocumentAttributeVideo extends VirtualClass<{
-    // flags: undefined;
-    roundMessage?: true;
-    supportsStreaming?: true;
-    duration: int;
-    w: int;
-    h: int;
-  }> {
-    // flags: undefined;
-    roundMessage?: true;
-    supportsStreaming?: true;
-    duration: int;
-    w: int;
-    h: int;
-  };
-  export class DocumentAttributeAudio extends VirtualClass<{
-    // flags: undefined;
-    voice?: true;
-    duration: int;
-    title?: string;
-    performer?: string;
-    waveform?: bytes;
-  }> {
-    // flags: undefined;
-    voice?: true;
-    duration: int;
-    title?: string;
-    performer?: string;
-    waveform?: bytes;
-  };
-  export class DocumentAttributeFilename extends VirtualClass<{
-    fileName: string;
-  }> {
-    fileName: string;
-  };
-  export class DocumentAttributeHasStickers extends VirtualClass<void> {};
-  export class DocumentAttributeCustomEmoji extends VirtualClass<{
-    // flags: undefined;
-    free?: true;
-    textColor?: true;
-    alt: string;
-    stickerset: Api.TypeInputStickerSet;
-  }> {
-    // flags: undefined;
-    free?: true;
-    textColor?: true;
-    alt: string;
-    stickerset: Api.TypeInputStickerSet;
-  };
-  export class StickerPack extends VirtualClass<{
-    emoticon: string;
-    documents: long[];
-  }> {
-    emoticon: string;
-    documents: long[];
-  };
-  export class WebPageEmpty extends VirtualClass<{
-    id: long;
-  }> {
-    id: long;
-  };
-  export class WebPagePending extends VirtualClass<{
-    id: long;
-    date: int;
-  }> {
-    id: long;
-    date: int;
-  };
-  export class WebPage extends VirtualClass<{
-    // flags: undefined;
-    id: long;
-    url: string;
-    displayUrl: string;
-    hash: int;
-    type?: string;
-    siteName?: string;
-    title?: string;
-    description?: string;
-    photo?: Api.TypePhoto;
-    embedUrl?: string;
-    embedType?: string;
-    embedWidth?: int;
-    embedHeight?: int;
-    duration?: int;
-    author?: string;
-    document?: Api.TypeDocument;
-    cachedPage?: Api.TypePage;
-    attributes?: Api.TypeWebPageAttribute[];
-  }> {
-    // flags: undefined;
-    id: long;
-    url: string;
-    displayUrl: string;
-    hash: int;
-    type?: string;
-    siteName?: string;
-    title?: string;
-    description?: string;
-    photo?: Api.TypePhoto;
-    embedUrl?: string;
-    embedType?: string;
-    embedWidth?: int;
-    embedHeight?: int;
-    duration?: int;
-    author?: string;
-    document?: Api.TypeDocument;
-    cachedPage?: Api.TypePage;
-    attributes?: Api.TypeWebPageAttribute[];
-  };
-  export class WebPageNotModified extends VirtualClass<{
-    // flags: undefined;
-    cachedPageViews?: int;
-  } | void> {
-    // flags: undefined;
-    cachedPageViews?: int;
-  };
-  export class Authorization extends VirtualClass<{
-    // flags: undefined;
-    current?: true;
-    officialApp?: true;
-    passwordPending?: true;
-    encryptedRequestsDisabled?: true;
-    callRequestsDisabled?: true;
-    hash: long;
-    deviceModel: string;
-    platform: string;
-    systemVersion: string;
-    apiId: int;
-    appName: string;
-    appVersion: string;
-    dateCreated: int;
-    dateActive: int;
-    ip: string;
-    country: string;
-    region: string;
-  }> {
-    // flags: undefined;
-    current?: true;
-    officialApp?: true;
-    passwordPending?: true;
-    encryptedRequestsDisabled?: true;
-    callRequestsDisabled?: true;
-    hash: long;
-    deviceModel: string;
-    platform: string;
-    systemVersion: string;
-    apiId: int;
-    appName: string;
-    appVersion: string;
-    dateCreated: int;
-    dateActive: int;
-    ip: string;
-    country: string;
-    region: string;
-  };
-  export class ReceivedNotifyMessage extends VirtualClass<{
-    id: int;
-    // flags: int;
-  }> {
-    id: int;
-    // flags: int;
-  };
-  export class ChatInviteExported extends VirtualClass<{
-    // flags: undefined;
-    revoked?: true;
-    permanent?: true;
-    requestNeeded?: true;
-    link: string;
-    adminId: long;
-    date: int;
-    startDate?: int;
-    expireDate?: int;
-    usageLimit?: int;
-    usage?: int;
-    requested?: int;
-    title?: string;
-  }> {
-    // flags: undefined;
-    revoked?: true;
-    permanent?: true;
-    requestNeeded?: true;
-    link: string;
-    adminId: long;
-    date: int;
-    startDate?: int;
-    expireDate?: int;
-    usageLimit?: int;
-    usage?: int;
-    requested?: int;
-    title?: string;
-  };
-  export class ChatInvitePublicJoinRequests extends VirtualClass<void> {};
-  export class ChatInviteAlready extends VirtualClass<{
-    chat: Api.TypeChat;
-  }> {
-    chat: Api.TypeChat;
-  };
-  export class ChatInvite extends VirtualClass<{
-    // flags: undefined;
-    channel?: true;
-    broadcast?: true;
-    public?: true;
-    megagroup?: true;
-    requestNeeded?: true;
-    title: string;
-    about?: string;
-    photo: Api.TypePhoto;
-    participantsCount: int;
-    participants?: Api.TypeUser[];
-  }> {
-    // flags: undefined;
-    channel?: true;
-    broadcast?: true;
-    public?: true;
-    megagroup?: true;
-    requestNeeded?: true;
-    title: string;
-    about?: string;
-    photo: Api.TypePhoto;
-    participantsCount: int;
-    participants?: Api.TypeUser[];
-  };
-  export class ChatInvitePeek extends VirtualClass<{
-    chat: Api.TypeChat;
-    expires: int;
-  }> {
-    chat: Api.TypeChat;
-    expires: int;
-  };
-  export class InputStickerSetEmpty extends VirtualClass<void> {};
-  export class InputStickerSetID extends VirtualClass<{
-    id: long;
-    accessHash: long;
-  }> {
-    id: long;
-    accessHash: long;
-  };
-  export class InputStickerSetShortName extends VirtualClass<{
-    shortName: string;
-  }> {
-    shortName: string;
-  };
-  export class InputStickerSetAnimatedEmoji extends VirtualClass<void> {};
-  export class InputStickerSetDice extends VirtualClass<{
-    emoticon: string;
-  }> {
-    emoticon: string;
-  };
-  export class InputStickerSetAnimatedEmojiAnimations extends VirtualClass<void> {};
-  export class InputStickerSetPremiumGifts extends VirtualClass<void> {};
-  export class InputStickerSetEmojiGenericAnimations extends VirtualClass<void> {};
-  export class InputStickerSetEmojiDefaultStatuses extends VirtualClass<void> {};
-  export class InputStickerSetEmojiDefaultTopicIcons extends VirtualClass<void> {};
-  export class StickerSet extends VirtualClass<{
-    // flags: undefined;
-    archived?: true;
-    official?: true;
-    masks?: true;
-    animated?: true;
-    videos?: true;
-    emojis?: true;
-    installedDate?: int;
-    id: long;
-    accessHash: long;
-    title: string;
-    shortName: string;
-    thumbs?: Api.TypePhotoSize[];
-    thumbDcId?: int;
-    thumbVersion?: int;
-    thumbDocumentId?: long;
-    count: int;
-    hash: int;
-  }> {
-    // flags: undefined;
-    archived?: true;
-    official?: true;
-    masks?: true;
-    animated?: true;
-    videos?: true;
-    emojis?: true;
-    installedDate?: int;
-    id: long;
-    accessHash: long;
-    title: string;
-    shortName: string;
-    thumbs?: Api.TypePhotoSize[];
-    thumbDcId?: int;
-    thumbVersion?: int;
-    thumbDocumentId?: long;
-    count: int;
-    hash: int;
-  };
-  export class BotCommand extends VirtualClass<{
-    command: string;
-    description: string;
-  }> {
-    command: string;
-    description: string;
-  };
-  export class BotInfo extends VirtualClass<{
-    // flags: undefined;
-    userId?: long;
-    description?: string;
-    descriptionPhoto?: Api.TypePhoto;
-    descriptionDocument?: Api.TypeDocument;
-    commands?: Api.TypeBotCommand[];
-    menuButton?: Api.TypeBotMenuButton;
-  } | void> {
-    // flags: undefined;
-    userId?: long;
-    description?: string;
-    descriptionPhoto?: Api.TypePhoto;
-    descriptionDocument?: Api.TypeDocument;
-    commands?: Api.TypeBotCommand[];
-    menuButton?: Api.TypeBotMenuButton;
-  };
-  export class KeyboardButton extends VirtualClass<{
-    text: string;
-  }> {
-    text: string;
-  };
-  export class KeyboardButtonUrl extends VirtualClass<{
-    text: string;
-    url: string;
-  }> {
-    text: string;
-    url: string;
-  };
-  export class KeyboardButtonCallback extends VirtualClass<{
-    // flags: undefined;
-    requiresPassword?: true;
-    text: string;
-    data: bytes;
-  }> {
-    // flags: undefined;
-    requiresPassword?: true;
-    text: string;
-    data: bytes;
-  };
-  export class KeyboardButtonRequestPhone extends VirtualClass<{
-    text: string;
-  }> {
-    text: string;
-  };
-  export class KeyboardButtonRequestGeoLocation extends VirtualClass<{
-    text: string;
-  }> {
-    text: string;
-  };
-  export class KeyboardButtonSwitchInline extends VirtualClass<{
-    // flags: undefined;
-    samePeer?: true;
-    text: string;
-    query: string;
-  }> {
-    // flags: undefined;
-    samePeer?: true;
-    text: string;
-    query: string;
-  };
-  export class KeyboardButtonGame extends VirtualClass<{
-    text: string;
-  }> {
-    text: string;
-  };
-  export class KeyboardButtonBuy extends VirtualClass<{
-    text: string;
-  }> {
-    text: string;
-  };
-  export class KeyboardButtonUrlAuth extends VirtualClass<{
-    // flags: undefined;
-    text: string;
-    fwdText?: string;
-    url: string;
-    buttonId: int;
-  }> {
-    // flags: undefined;
-    text: string;
-    fwdText?: string;
-    url: string;
-    buttonId: int;
-  };
-  export class InputKeyboardButtonUrlAuth extends VirtualClass<{
-    // flags: undefined;
-    requestWriteAccess?: true;
-    text: string;
-    fwdText?: string;
-    url: string;
-    bot: Api.TypeInputUser;
-  }> {
-    // flags: undefined;
-    requestWriteAccess?: true;
-    text: string;
-    fwdText?: string;
-    url: string;
-    bot: Api.TypeInputUser;
-  };
-  export class KeyboardButtonRequestPoll extends VirtualClass<{
-    // flags: undefined;
-    quiz?: Bool;
-    text: string;
-  }> {
-    // flags: undefined;
-    quiz?: Bool;
-    text: string;
-  };
-  export class InputKeyboardButtonUserProfile extends VirtualClass<{
-    text: string;
-    userId: Api.TypeInputUser;
-  }> {
-    text: string;
-    userId: Api.TypeInputUser;
-  };
-  export class KeyboardButtonUserProfile extends VirtualClass<{
-    text: string;
-    userId: long;
-  }> {
-    text: string;
-    userId: long;
-  };
-  export class KeyboardButtonWebView extends VirtualClass<{
-    text: string;
-    url: string;
-  }> {
-    text: string;
-    url: string;
-  };
-  export class KeyboardButtonSimpleWebView extends VirtualClass<{
-    text: string;
-    url: string;
-  }> {
-    text: string;
-    url: string;
-  };
-  export class KeyboardButtonRequestPeer extends VirtualClass<{
-    text: string;
-    buttonId: int;
-    peerType: Api.TypeRequestPeerType;
-  }> {
-    text: string;
-    buttonId: int;
-    peerType: Api.TypeRequestPeerType;
-  };
-  export class KeyboardButtonRow extends VirtualClass<{
-    buttons: Api.TypeKeyboardButton[];
-  }> {
-    buttons: Api.TypeKeyboardButton[];
-  };
-  export class ReplyKeyboardHide extends VirtualClass<{
-    // flags: undefined;
-    selective?: true;
-  } | void> {
-    // flags: undefined;
-    selective?: true;
-  };
-  export class ReplyKeyboardForceReply extends VirtualClass<{
-    // flags: undefined;
-    singleUse?: true;
-    selective?: true;
-    placeholder?: string;
-  } | void> {
-    // flags: undefined;
-    singleUse?: true;
-    selective?: true;
-    placeholder?: string;
-  };
-  export class ReplyKeyboardMarkup extends VirtualClass<{
-    // flags: undefined;
-    resize?: true;
-    singleUse?: true;
-    selective?: true;
-    persistent?: true;
-    rows: Api.TypeKeyboardButtonRow[];
-    placeholder?: string;
-  }> {
-    // flags: undefined;
-    resize?: true;
-    singleUse?: true;
-    selective?: true;
-    persistent?: true;
-    rows: Api.TypeKeyboardButtonRow[];
-    placeholder?: string;
-  };
-  export class ReplyInlineMarkup extends VirtualClass<{
-    rows: Api.TypeKeyboardButtonRow[];
-  }> {
-    rows: Api.TypeKeyboardButtonRow[];
-  };
-  export class MessageEntityUnknown extends VirtualClass<{
-    offset: int;
-    length: int;
-  }> {
-    offset: int;
-    length: int;
-  };
-  export class MessageEntityMention extends VirtualClass<{
-    offset: int;
-    length: int;
-  }> {
-    offset: int;
-    length: int;
-  };
-  export class MessageEntityHashtag extends VirtualClass<{
-    offset: int;
-    length: int;
-  }> {
-    offset: int;
-    length: int;
-  };
-  export class MessageEntityBotCommand extends VirtualClass<{
-    offset: int;
-    length: int;
-  }> {
-    offset: int;
-    length: int;
-  };
-  export class MessageEntityUrl extends VirtualClass<{
-    offset: int;
-    length: int;
-  }> {
-    offset: int;
-    length: int;
-  };
-  export class MessageEntityEmail extends VirtualClass<{
-    offset: int;
-    length: int;
-  }> {
-    offset: int;
-    length: int;
-  };
-  export class MessageEntityBold extends VirtualClass<{
-    offset: int;
-    length: int;
-  }> {
-    offset: int;
-    length: int;
-  };
-  export class MessageEntityItalic extends VirtualClass<{
-    offset: int;
-    length: int;
-  }> {
-    offset: int;
-    length: int;
-  };
-  export class MessageEntityCode extends VirtualClass<{
-    offset: int;
-    length: int;
-  }> {
-    offset: int;
-    length: int;
-  };
-  export class MessageEntityPre extends VirtualClass<{
-    offset: int;
-    length: int;
-    language: string;
-  }> {
-    offset: int;
-    length: int;
-    language: string;
-  };
-  export class MessageEntityTextUrl extends VirtualClass<{
-    offset: int;
-    length: int;
-    url: string;
-  }> {
-    offset: int;
-    length: int;
-    url: string;
-  };
-  export class MessageEntityMentionName extends VirtualClass<{
-    offset: int;
-    length: int;
-    userId: long;
-  }> {
-    offset: int;
-    length: int;
-    userId: long;
-  };
-  export class InputMessageEntityMentionName extends VirtualClass<{
-    offset: int;
-    length: int;
-    userId: Api.TypeInputUser;
-  }> {
-    offset: int;
-    length: int;
-    userId: Api.TypeInputUser;
-  };
-  export class MessageEntityPhone extends VirtualClass<{
-    offset: int;
-    length: int;
-  }> {
-    offset: int;
-    length: int;
-  };
-  export class MessageEntityCashtag extends VirtualClass<{
-    offset: int;
-    length: int;
-  }> {
-    offset: int;
-    length: int;
-  };
-  export class MessageEntityUnderline extends VirtualClass<{
-    offset: int;
-    length: int;
-  }> {
-    offset: int;
-    length: int;
-  };
-  export class MessageEntityStrike extends VirtualClass<{
-    offset: int;
-    length: int;
-  }> {
-    offset: int;
-    length: int;
-  };
-  export class MessageEntityBlockquote extends VirtualClass<{
-    offset: int;
-    length: int;
-  }> {
-    offset: int;
-    length: int;
-  };
-  export class MessageEntityBankCard extends VirtualClass<{
-    offset: int;
-    length: int;
-  }> {
-    offset: int;
-    length: int;
-  };
-  export class MessageEntitySpoiler extends VirtualClass<{
-    offset: int;
-    length: int;
-  }> {
-    offset: int;
-    length: int;
-  };
-  export class MessageEntityCustomEmoji extends VirtualClass<{
-    offset: int;
-    length: int;
-    documentId: long;
-  }> {
-    offset: int;
-    length: int;
-    documentId: long;
-  };
-  export class InputChannelEmpty extends VirtualClass<void> {};
-  export class InputChannel extends VirtualClass<{
-    channelId: long;
-    accessHash: long;
-  }> {
-    channelId: long;
-    accessHash: long;
-  };
-  export class InputChannelFromMessage extends VirtualClass<{
-    peer: Api.TypeInputPeer;
-    msgId: int;
-    channelId: long;
-  }> {
-    peer: Api.TypeInputPeer;
-    msgId: int;
-    channelId: long;
-  };
-  export class MessageRange extends VirtualClass<{
-    minId: int;
-    maxId: int;
-  }> {
-    minId: int;
-    maxId: int;
-  };
-  export class ChannelMessagesFilterEmpty extends VirtualClass<void> {};
-  export class ChannelMessagesFilter extends VirtualClass<{
-    // flags: undefined;
-    excludeNewMessages?: true;
-    ranges: Api.TypeMessageRange[];
-  }> {
-    // flags: undefined;
-    excludeNewMessages?: true;
-    ranges: Api.TypeMessageRange[];
-  };
-  export class ChannelParticipant extends VirtualClass<{
-    userId: long;
-    date: int;
-  }> {
-    userId: long;
-    date: int;
-  };
-  export class ChannelParticipantSelf extends VirtualClass<{
-    // flags: undefined;
-    viaRequest?: true;
-    userId: long;
-    inviterId: long;
-    date: int;
-  }> {
-    // flags: undefined;
-    viaRequest?: true;
-    userId: long;
-    inviterId: long;
-    date: int;
-  };
-  export class ChannelParticipantCreator extends VirtualClass<{
-    // flags: undefined;
-    userId: long;
-    adminRights: Api.TypeChatAdminRights;
-    rank?: string;
-  }> {
-    // flags: undefined;
-    userId: long;
-    adminRights: Api.TypeChatAdminRights;
-    rank?: string;
-  };
-  export class ChannelParticipantAdmin extends VirtualClass<{
-    // flags: undefined;
-    canEdit?: true;
-    self?: true;
-    userId: long;
-    inviterId?: long;
-    promotedBy: long;
-    date: int;
-    adminRights: Api.TypeChatAdminRights;
-    rank?: string;
-  }> {
-    // flags: undefined;
-    canEdit?: true;
-    self?: true;
-    userId: long;
-    inviterId?: long;
-    promotedBy: long;
-    date: int;
-    adminRights: Api.TypeChatAdminRights;
-    rank?: string;
-  };
-  export class ChannelParticipantBanned extends VirtualClass<{
-    // flags: undefined;
-    left?: true;
-    peer: Api.TypePeer;
-    kickedBy: long;
-    date: int;
-    bannedRights: Api.TypeChatBannedRights;
-  }> {
-    // flags: undefined;
-    left?: true;
-    peer: Api.TypePeer;
-    kickedBy: long;
-    date: int;
-    bannedRights: Api.TypeChatBannedRights;
-  };
-  export class ChannelParticipantLeft extends VirtualClass<{
-    peer: Api.TypePeer;
-  }> {
-    peer: Api.TypePeer;
-  };
-  export class ChannelParticipantsRecent extends VirtualClass<void> {};
-  export class ChannelParticipantsAdmins extends VirtualClass<void> {};
-  export class ChannelParticipantsKicked extends VirtualClass<{
-    q: string;
-  }> {
-    q: string;
-  };
-  export class ChannelParticipantsBots extends VirtualClass<void> {};
-  export class ChannelParticipantsBanned extends VirtualClass<{
-    q: string;
-  }> {
-    q: string;
-  };
-  export class ChannelParticipantsSearch extends VirtualClass<{
-    q: string;
-  }> {
-    q: string;
-  };
-  export class ChannelParticipantsContacts extends VirtualClass<{
-    q: string;
-  }> {
-    q: string;
-  };
-  export class ChannelParticipantsMentions extends VirtualClass<{
-    // flags: undefined;
-    q?: string;
-    topMsgId?: int;
-  } | void> {
-    // flags: undefined;
-    q?: string;
-    topMsgId?: int;
-  };
-  export class InputBotInlineMessageMediaAuto extends VirtualClass<{
-    // flags: undefined;
-    message: string;
-    entities?: Api.TypeMessageEntity[];
-    replyMarkup?: Api.TypeReplyMarkup;
-  }> {
-    // flags: undefined;
-    message: string;
-    entities?: Api.TypeMessageEntity[];
-    replyMarkup?: Api.TypeReplyMarkup;
-  };
-  export class InputBotInlineMessageText extends VirtualClass<{
-    // flags: undefined;
-    noWebpage?: true;
-    message: string;
-    entities?: Api.TypeMessageEntity[];
-    replyMarkup?: Api.TypeReplyMarkup;
-  }> {
-    // flags: undefined;
-    noWebpage?: true;
-    message: string;
-    entities?: Api.TypeMessageEntity[];
-    replyMarkup?: Api.TypeReplyMarkup;
-  };
-  export class InputBotInlineMessageMediaGeo extends VirtualClass<{
-    // flags: undefined;
-    geoPoint: Api.TypeInputGeoPoint;
-    heading?: int;
-    period?: int;
-    proximityNotificationRadius?: int;
-    replyMarkup?: Api.TypeReplyMarkup;
-  }> {
-    // flags: undefined;
-    geoPoint: Api.TypeInputGeoPoint;
-    heading?: int;
-    period?: int;
-    proximityNotificationRadius?: int;
-    replyMarkup?: Api.TypeReplyMarkup;
-  };
-  export class InputBotInlineMessageMediaVenue extends VirtualClass<{
-    // flags: undefined;
-    geoPoint: Api.TypeInputGeoPoint;
-    title: string;
-    address: string;
-    provider: string;
-    venueId: string;
-    venueType: string;
-    replyMarkup?: Api.TypeReplyMarkup;
-  }> {
-    // flags: undefined;
-    geoPoint: Api.TypeInputGeoPoint;
-    title: string;
-    address: string;
-    provider: string;
-    venueId: string;
-    venueType: string;
-    replyMarkup?: Api.TypeReplyMarkup;
-  };
-  export class InputBotInlineMessageMediaContact extends VirtualClass<{
-    // flags: undefined;
-    phoneNumber: string;
-    firstName: string;
-    lastName: string;
-    vcard: string;
-    replyMarkup?: Api.TypeReplyMarkup;
-  }> {
-    // flags: undefined;
-    phoneNumber: string;
-    firstName: string;
-    lastName: string;
-    vcard: string;
-    replyMarkup?: Api.TypeReplyMarkup;
-  };
-  export class InputBotInlineMessageGame extends VirtualClass<{
-    // flags: undefined;
-    replyMarkup?: Api.TypeReplyMarkup;
-  } | void> {
-    // flags: undefined;
-    replyMarkup?: Api.TypeReplyMarkup;
-  };
-  export class InputBotInlineMessageMediaInvoice extends VirtualClass<{
-    // flags: undefined;
-    title: string;
-    description: string;
-    photo?: Api.TypeInputWebDocument;
-    invoice: Api.TypeInvoice;
-    payload: bytes;
-    provider: string;
-    providerData: Api.TypeDataJSON;
-    replyMarkup?: Api.TypeReplyMarkup;
-  }> {
-    // flags: undefined;
-    title: string;
-    description: string;
-    photo?: Api.TypeInputWebDocument;
-    invoice: Api.TypeInvoice;
-    payload: bytes;
-    provider: string;
-    providerData: Api.TypeDataJSON;
-    replyMarkup?: Api.TypeReplyMarkup;
-  };
-  export class InputBotInlineResult extends VirtualClass<{
-    // flags: undefined;
-    id: string;
-    type: string;
-    title?: string;
-    description?: string;
-    url?: string;
-    thumb?: Api.TypeInputWebDocument;
-    content?: Api.TypeInputWebDocument;
-    sendMessage: Api.TypeInputBotInlineMessage;
-  }> {
-    // flags: undefined;
-    id: string;
-    type: string;
-    title?: string;
-    description?: string;
-    url?: string;
-    thumb?: Api.TypeInputWebDocument;
-    content?: Api.TypeInputWebDocument;
-    sendMessage: Api.TypeInputBotInlineMessage;
-  };
-  export class InputBotInlineResultPhoto extends VirtualClass<{
-    id: string;
-    type: string;
-    photo: Api.TypeInputPhoto;
-    sendMessage: Api.TypeInputBotInlineMessage;
-  }> {
-    id: string;
-    type: string;
-    photo: Api.TypeInputPhoto;
-    sendMessage: Api.TypeInputBotInlineMessage;
-  };
-  export class InputBotInlineResultDocument extends VirtualClass<{
-    // flags: undefined;
-    id: string;
-    type: string;
-    title?: string;
-    description?: string;
-    document: Api.TypeInputDocument;
-    sendMessage: Api.TypeInputBotInlineMessage;
-  }> {
-    // flags: undefined;
-    id: string;
-    type: string;
-    title?: string;
-    description?: string;
-    document: Api.TypeInputDocument;
-    sendMessage: Api.TypeInputBotInlineMessage;
-  };
-  export class InputBotInlineResultGame extends VirtualClass<{
-    id: string;
-    shortName: string;
-    sendMessage: Api.TypeInputBotInlineMessage;
-  }> {
-    id: string;
-    shortName: string;
-    sendMessage: Api.TypeInputBotInlineMessage;
-  };
-  export class BotInlineMessageMediaAuto extends VirtualClass<{
-    // flags: undefined;
-    message: string;
-    entities?: Api.TypeMessageEntity[];
-    replyMarkup?: Api.TypeReplyMarkup;
-  }> {
-    // flags: undefined;
-    message: string;
-    entities?: Api.TypeMessageEntity[];
-    replyMarkup?: Api.TypeReplyMarkup;
-  };
-  export class BotInlineMessageText extends VirtualClass<{
-    // flags: undefined;
-    noWebpage?: true;
-    message: string;
-    entities?: Api.TypeMessageEntity[];
-    replyMarkup?: Api.TypeReplyMarkup;
-  }> {
-    // flags: undefined;
-    noWebpage?: true;
-    message: string;
-    entities?: Api.TypeMessageEntity[];
-    replyMarkup?: Api.TypeReplyMarkup;
-  };
-  export class BotInlineMessageMediaGeo extends VirtualClass<{
-    // flags: undefined;
-    geo: Api.TypeGeoPoint;
-    heading?: int;
-    period?: int;
-    proximityNotificationRadius?: int;
-    replyMarkup?: Api.TypeReplyMarkup;
-  }> {
-    // flags: undefined;
-    geo: Api.TypeGeoPoint;
-    heading?: int;
-    period?: int;
-    proximityNotificationRadius?: int;
-    replyMarkup?: Api.TypeReplyMarkup;
-  };
-  export class BotInlineMessageMediaVenue extends VirtualClass<{
-    // flags: undefined;
-    geo: Api.TypeGeoPoint;
-    title: string;
-    address: string;
-    provider: string;
-    venueId: string;
-    venueType: string;
-    replyMarkup?: Api.TypeReplyMarkup;
-  }> {
-    // flags: undefined;
-    geo: Api.TypeGeoPoint;
-    title: string;
-    address: string;
-    provider: string;
-    venueId: string;
-    venueType: string;
-    replyMarkup?: Api.TypeReplyMarkup;
-  };
-  export class BotInlineMessageMediaContact extends VirtualClass<{
-    // flags: undefined;
-    phoneNumber: string;
-    firstName: string;
-    lastName: string;
-    vcard: string;
-    replyMarkup?: Api.TypeReplyMarkup;
-  }> {
-    // flags: undefined;
-    phoneNumber: string;
-    firstName: string;
-    lastName: string;
-    vcard: string;
-    replyMarkup?: Api.TypeReplyMarkup;
-  };
-  export class BotInlineMessageMediaInvoice extends VirtualClass<{
-    // flags: undefined;
-    shippingAddressRequested?: true;
-    test?: true;
-    title: string;
-    description: string;
-    photo?: Api.TypeWebDocument;
-    currency: string;
-    totalAmount: long;
-    replyMarkup?: Api.TypeReplyMarkup;
-  }> {
-    // flags: undefined;
-    shippingAddressRequested?: true;
-    test?: true;
-    title: string;
-    description: string;
-    photo?: Api.TypeWebDocument;
-    currency: string;
-    totalAmount: long;
-    replyMarkup?: Api.TypeReplyMarkup;
-  };
-  export class BotInlineResult extends VirtualClass<{
-    // flags: undefined;
-    id: string;
-    type: string;
-    title?: string;
-    description?: string;
-    url?: string;
-    thumb?: Api.TypeWebDocument;
-    content?: Api.TypeWebDocument;
-    sendMessage: Api.TypeBotInlineMessage;
-  }> {
-    // flags: undefined;
-    id: string;
-    type: string;
-    title?: string;
-    description?: string;
-    url?: string;
-    thumb?: Api.TypeWebDocument;
-    content?: Api.TypeWebDocument;
-    sendMessage: Api.TypeBotInlineMessage;
-  };
-  export class BotInlineMediaResult extends VirtualClass<{
-    // flags: undefined;
-    id: string;
-    type: string;
-    photo?: Api.TypePhoto;
-    document?: Api.TypeDocument;
-    title?: string;
-    description?: string;
-    sendMessage: Api.TypeBotInlineMessage;
-  }> {
-    // flags: undefined;
-    id: string;
-    type: string;
-    photo?: Api.TypePhoto;
-    document?: Api.TypeDocument;
-    title?: string;
-    description?: string;
-    sendMessage: Api.TypeBotInlineMessage;
-  };
-  export class ExportedMessageLink extends VirtualClass<{
-    link: string;
-    html: string;
-  }> {
-    link: string;
-    html: string;
-  };
-  export class MessageFwdHeader extends VirtualClass<{
-    // flags: undefined;
-    imported?: true;
-    fromId?: Api.TypePeer;
-    fromName?: string;
-    date: int;
-    channelPost?: int;
-    postAuthor?: string;
-    savedFromPeer?: Api.TypePeer;
-    savedFromMsgId?: int;
-    psaType?: string;
-  }> {
-    // flags: undefined;
-    imported?: true;
-    fromId?: Api.TypePeer;
-    fromName?: string;
-    date: int;
-    channelPost?: int;
-    postAuthor?: string;
-    savedFromPeer?: Api.TypePeer;
-    savedFromMsgId?: int;
-    psaType?: string;
-  };
-  export class InputBotInlineMessageID extends VirtualClass<{
-    dcId: int;
-    id: long;
-    accessHash: long;
-  }> {
-    dcId: int;
-    id: long;
-    accessHash: long;
-  };
-  export class InputBotInlineMessageID64 extends VirtualClass<{
-    dcId: int;
-    ownerId: long;
-    id: int;
-    accessHash: long;
-  }> {
-    dcId: int;
-    ownerId: long;
-    id: int;
-    accessHash: long;
-  };
-  export class InlineBotSwitchPM extends VirtualClass<{
-    text: string;
-    startParam: string;
-  }> {
-    text: string;
-    startParam: string;
-  };
-  export class TopPeer extends VirtualClass<{
-    peer: Api.TypePeer;
-    rating: double;
-  }> {
-    peer: Api.TypePeer;
-    rating: double;
-  };
-  export class TopPeerCategoryBotsPM extends VirtualClass<void> {};
-  export class TopPeerCategoryBotsInline extends VirtualClass<void> {};
-  export class TopPeerCategoryCorrespondents extends VirtualClass<void> {};
-  export class TopPeerCategoryGroups extends VirtualClass<void> {};
-  export class TopPeerCategoryChannels extends VirtualClass<void> {};
-  export class TopPeerCategoryPhoneCalls extends VirtualClass<void> {};
-  export class TopPeerCategoryForwardUsers extends VirtualClass<void> {};
-  export class TopPeerCategoryForwardChats extends VirtualClass<void> {};
-  export class TopPeerCategoryPeers extends VirtualClass<{
-    category: Api.TypeTopPeerCategory;
-    count: int;
-    peers: Api.TypeTopPeer[];
-  }> {
-    category: Api.TypeTopPeerCategory;
-    count: int;
-    peers: Api.TypeTopPeer[];
-  };
-  export class DraftMessageEmpty extends VirtualClass<{
-    // flags: undefined;
-    date?: int;
-  } | void> {
-    // flags: undefined;
-    date?: int;
-  };
-  export class DraftMessage extends VirtualClass<{
-    // flags: undefined;
-    noWebpage?: true;
-    replyToMsgId?: int;
-    message: string;
-    entities?: Api.TypeMessageEntity[];
-    date: int;
-  }> {
-    // flags: undefined;
-    noWebpage?: true;
-    replyToMsgId?: int;
-    message: string;
-    entities?: Api.TypeMessageEntity[];
-    date: int;
-  };
-  export class StickerSetCovered extends VirtualClass<{
-    set: Api.TypeStickerSet;
-    cover: Api.TypeDocument;
-  }> {
-    set: Api.TypeStickerSet;
-    cover: Api.TypeDocument;
-  };
-  export class StickerSetMultiCovered extends VirtualClass<{
-    set: Api.TypeStickerSet;
-    covers: Api.TypeDocument[];
-  }> {
-    set: Api.TypeStickerSet;
-    covers: Api.TypeDocument[];
-  };
-  export class StickerSetFullCovered extends VirtualClass<{
-    set: Api.TypeStickerSet;
-    packs: Api.TypeStickerPack[];
-    keywords: Api.TypeStickerKeyword[];
-    documents: Api.TypeDocument[];
-  }> {
-    set: Api.TypeStickerSet;
-    packs: Api.TypeStickerPack[];
-    keywords: Api.TypeStickerKeyword[];
-    documents: Api.TypeDocument[];
-  };
-  export class StickerSetNoCovered extends VirtualClass<{
-    set: Api.TypeStickerSet;
-  }> {
-    set: Api.TypeStickerSet;
-  };
-  export class MaskCoords extends VirtualClass<{
-    n: int;
-    x: double;
-    y: double;
-    zoom: double;
-  }> {
-    n: int;
-    x: double;
-    y: double;
-    zoom: double;
-  };
-  export class InputStickeredMediaPhoto extends VirtualClass<{
-    id: Api.TypeInputPhoto;
-  }> {
-    id: Api.TypeInputPhoto;
-  };
-  export class InputStickeredMediaDocument extends VirtualClass<{
-    id: Api.TypeInputDocument;
-  }> {
-    id: Api.TypeInputDocument;
-  };
-  export class Game extends VirtualClass<{
-    // flags: undefined;
-    id: long;
-    accessHash: long;
-    shortName: string;
-    title: string;
-    description: string;
-    photo: Api.TypePhoto;
-    document?: Api.TypeDocument;
-  }> {
-    // flags: undefined;
-    id: long;
-    accessHash: long;
-    shortName: string;
-    title: string;
-    description: string;
-    photo: Api.TypePhoto;
-    document?: Api.TypeDocument;
-  };
-  export class InputGameID extends VirtualClass<{
-    id: long;
-    accessHash: long;
-  }> {
-    id: long;
-    accessHash: long;
-  };
-  export class InputGameShortName extends VirtualClass<{
-    botId: Api.TypeInputUser;
-    shortName: string;
-  }> {
-    botId: Api.TypeInputUser;
-    shortName: string;
-  };
-  export class HighScore extends VirtualClass<{
-    pos: int;
-    userId: long;
-    score: int;
-  }> {
-    pos: int;
-    userId: long;
-    score: int;
-  };
-  export class TextEmpty extends VirtualClass<void> {};
-  export class TextPlain extends VirtualClass<{
-    text: string;
-  }> {
-    text: string;
-  };
-  export class TextBold extends VirtualClass<{
-    text: Api.TypeRichText;
-  }> {
-    text: Api.TypeRichText;
-  };
-  export class TextItalic extends VirtualClass<{
-    text: Api.TypeRichText;
-  }> {
-    text: Api.TypeRichText;
-  };
-  export class TextUnderline extends VirtualClass<{
-    text: Api.TypeRichText;
-  }> {
-    text: Api.TypeRichText;
-  };
-  export class TextStrike extends VirtualClass<{
-    text: Api.TypeRichText;
-  }> {
-    text: Api.TypeRichText;
-  };
-  export class TextFixed extends VirtualClass<{
-    text: Api.TypeRichText;
-  }> {
-    text: Api.TypeRichText;
-  };
-  export class TextUrl extends VirtualClass<{
-    text: Api.TypeRichText;
-    url: string;
-    webpageId: long;
-  }> {
-    text: Api.TypeRichText;
-    url: string;
-    webpageId: long;
-  };
-  export class TextEmail extends VirtualClass<{
-    text: Api.TypeRichText;
-    email: string;
-  }> {
-    text: Api.TypeRichText;
-    email: string;
-  };
-  export class TextConcat extends VirtualClass<{
-    texts: Api.TypeRichText[];
-  }> {
-    texts: Api.TypeRichText[];
-  };
-  export class TextSubscript extends VirtualClass<{
-    text: Api.TypeRichText;
-  }> {
-    text: Api.TypeRichText;
-  };
-  export class TextSuperscript extends VirtualClass<{
-    text: Api.TypeRichText;
-  }> {
-    text: Api.TypeRichText;
-  };
-  export class TextMarked extends VirtualClass<{
-    text: Api.TypeRichText;
-  }> {
-    text: Api.TypeRichText;
-  };
-  export class TextPhone extends VirtualClass<{
-    text: Api.TypeRichText;
-    phone: string;
-  }> {
-    text: Api.TypeRichText;
-    phone: string;
-  };
-  export class TextImage extends VirtualClass<{
-    documentId: long;
-    w: int;
-    h: int;
-  }> {
-    documentId: long;
-    w: int;
-    h: int;
-  };
-  export class TextAnchor extends VirtualClass<{
-    text: Api.TypeRichText;
-    name: string;
-  }> {
-    text: Api.TypeRichText;
-    name: string;
-  };
-  export class PageBlockUnsupported extends VirtualClass<void> {};
-  export class PageBlockTitle extends VirtualClass<{
-    text: Api.TypeRichText;
-  }> {
-    text: Api.TypeRichText;
-  };
-  export class PageBlockSubtitle extends VirtualClass<{
-    text: Api.TypeRichText;
-  }> {
-    text: Api.TypeRichText;
-  };
-  export class PageBlockAuthorDate extends VirtualClass<{
-    author: Api.TypeRichText;
-    publishedDate: int;
-  }> {
-    author: Api.TypeRichText;
-    publishedDate: int;
-  };
-  export class PageBlockHeader extends VirtualClass<{
-    text: Api.TypeRichText;
-  }> {
-    text: Api.TypeRichText;
-  };
-  export class PageBlockSubheader extends VirtualClass<{
-    text: Api.TypeRichText;
-  }> {
-    text: Api.TypeRichText;
-  };
-  export class PageBlockParagraph extends VirtualClass<{
-    text: Api.TypeRichText;
-  }> {
-    text: Api.TypeRichText;
-  };
-  export class PageBlockPreformatted extends VirtualClass<{
-    text: Api.TypeRichText;
-    language: string;
-  }> {
-    text: Api.TypeRichText;
-    language: string;
-  };
-  export class PageBlockFooter extends VirtualClass<{
-    text: Api.TypeRichText;
-  }> {
-    text: Api.TypeRichText;
-  };
-  export class PageBlockDivider extends VirtualClass<void> {};
-  export class PageBlockAnchor extends VirtualClass<{
-    name: string;
-  }> {
-    name: string;
-  };
-  export class PageBlockList extends VirtualClass<{
-    items: Api.TypePageListItem[];
-  }> {
-    items: Api.TypePageListItem[];
-  };
-  export class PageBlockBlockquote extends VirtualClass<{
-    text: Api.TypeRichText;
-    caption: Api.TypeRichText;
-  }> {
-    text: Api.TypeRichText;
-    caption: Api.TypeRichText;
-  };
-  export class PageBlockPullquote extends VirtualClass<{
-    text: Api.TypeRichText;
-    caption: Api.TypeRichText;
-  }> {
-    text: Api.TypeRichText;
-    caption: Api.TypeRichText;
-  };
-  export class PageBlockPhoto extends VirtualClass<{
-    // flags: undefined;
-    photoId: long;
-    caption: Api.TypePageCaption;
-    url?: string;
-    webpageId?: long;
-  }> {
-    // flags: undefined;
-    photoId: long;
-    caption: Api.TypePageCaption;
-    url?: string;
-    webpageId?: long;
-  };
-  export class PageBlockVideo extends VirtualClass<{
-    // flags: undefined;
-    autoplay?: true;
-    loop?: true;
-    videoId: long;
-    caption: Api.TypePageCaption;
-  }> {
-    // flags: undefined;
-    autoplay?: true;
-    loop?: true;
-    videoId: long;
-    caption: Api.TypePageCaption;
-  };
-  export class PageBlockCover extends VirtualClass<{
-    cover: Api.TypePageBlock;
-  }> {
-    cover: Api.TypePageBlock;
-  };
-  export class PageBlockEmbed extends VirtualClass<{
-    // flags: undefined;
-    fullWidth?: true;
-    allowScrolling?: true;
-    url?: string;
-    html?: string;
-    posterPhotoId?: long;
-    w?: int;
-    h?: int;
-    caption: Api.TypePageCaption;
-  }> {
-    // flags: undefined;
-    fullWidth?: true;
-    allowScrolling?: true;
-    url?: string;
-    html?: string;
-    posterPhotoId?: long;
-    w?: int;
-    h?: int;
-    caption: Api.TypePageCaption;
-  };
-  export class PageBlockEmbedPost extends VirtualClass<{
-    url: string;
-    webpageId: long;
-    authorPhotoId: long;
-    author: string;
-    date: int;
-    blocks: Api.TypePageBlock[];
-    caption: Api.TypePageCaption;
-  }> {
-    url: string;
-    webpageId: long;
-    authorPhotoId: long;
-    author: string;
-    date: int;
-    blocks: Api.TypePageBlock[];
-    caption: Api.TypePageCaption;
-  };
-  export class PageBlockCollage extends VirtualClass<{
-    items: Api.TypePageBlock[];
-    caption: Api.TypePageCaption;
-  }> {
-    items: Api.TypePageBlock[];
-    caption: Api.TypePageCaption;
-  };
-  export class PageBlockSlideshow extends VirtualClass<{
-    items: Api.TypePageBlock[];
-    caption: Api.TypePageCaption;
-  }> {
-    items: Api.TypePageBlock[];
-    caption: Api.TypePageCaption;
-  };
-  export class PageBlockChannel extends VirtualClass<{
-    channel: Api.TypeChat;
-  }> {
-    channel: Api.TypeChat;
-  };
-  export class PageBlockAudio extends VirtualClass<{
-    audioId: long;
-    caption: Api.TypePageCaption;
-  }> {
-    audioId: long;
-    caption: Api.TypePageCaption;
-  };
-  export class PageBlockKicker extends VirtualClass<{
-    text: Api.TypeRichText;
-  }> {
-    text: Api.TypeRichText;
-  };
-  export class PageBlockTable extends VirtualClass<{
-    // flags: undefined;
-    bordered?: true;
-    striped?: true;
-    title: Api.TypeRichText;
-    rows: Api.TypePageTableRow[];
-  }> {
-    // flags: undefined;
-    bordered?: true;
-    striped?: true;
-    title: Api.TypeRichText;
-    rows: Api.TypePageTableRow[];
-  };
-  export class PageBlockOrderedList extends VirtualClass<{
-    items: Api.TypePageListOrderedItem[];
-  }> {
-    items: Api.TypePageListOrderedItem[];
-  };
-  export class PageBlockDetails extends VirtualClass<{
-    // flags: undefined;
-    open?: true;
-    blocks: Api.TypePageBlock[];
-    title: Api.TypeRichText;
-  }> {
-    // flags: undefined;
-    open?: true;
-    blocks: Api.TypePageBlock[];
-    title: Api.TypeRichText;
-  };
-  export class PageBlockRelatedArticles extends VirtualClass<{
-    title: Api.TypeRichText;
-    articles: Api.TypePageRelatedArticle[];
-  }> {
-    title: Api.TypeRichText;
-    articles: Api.TypePageRelatedArticle[];
-  };
-  export class PageBlockMap extends VirtualClass<{
-    geo: Api.TypeGeoPoint;
-    zoom: int;
-    w: int;
-    h: int;
-    caption: Api.TypePageCaption;
-  }> {
-    geo: Api.TypeGeoPoint;
-    zoom: int;
-    w: int;
-    h: int;
-    caption: Api.TypePageCaption;
-  };
-  export class PhoneCallDiscardReasonMissed extends VirtualClass<void> {};
-  export class PhoneCallDiscardReasonDisconnect extends VirtualClass<void> {};
-  export class PhoneCallDiscardReasonHangup extends VirtualClass<void> {};
-  export class PhoneCallDiscardReasonBusy extends VirtualClass<void> {};
-  export class DataJSON extends VirtualClass<{
-    data: string;
-  }> {
-    data: string;
-  };
-  export class LabeledPrice extends VirtualClass<{
-    label: string;
-    amount: long;
-  }> {
-    label: string;
-    amount: long;
-  };
-  export class Invoice extends VirtualClass<{
-    // flags: undefined;
-    test?: true;
-    nameRequested?: true;
-    phoneRequested?: true;
-    emailRequested?: true;
-    shippingAddressRequested?: true;
-    flexible?: true;
-    phoneToProvider?: true;
-    emailToProvider?: true;
-    recurring?: true;
-    currency: string;
-    prices: Api.TypeLabeledPrice[];
-    maxTipAmount?: long;
-    suggestedTipAmounts?: long[];
-    recurringTermsUrl?: string;
-  }> {
-    // flags: undefined;
-    test?: true;
-    nameRequested?: true;
-    phoneRequested?: true;
-    emailRequested?: true;
-    shippingAddressRequested?: true;
-    flexible?: true;
-    phoneToProvider?: true;
-    emailToProvider?: true;
-    recurring?: true;
-    currency: string;
-    prices: Api.TypeLabeledPrice[];
-    maxTipAmount?: long;
-    suggestedTipAmounts?: long[];
-    recurringTermsUrl?: string;
-  };
-  export class PaymentCharge extends VirtualClass<{
-    id: string;
-    providerChargeId: string;
-  }> {
-    id: string;
-    providerChargeId: string;
-  };
-  export class PostAddress extends VirtualClass<{
-    streetLine1: string;
-    streetLine2: string;
-    city: string;
-    state: string;
-    countryIso2: string;
-    postCode: string;
-  }> {
-    streetLine1: string;
-    streetLine2: string;
-    city: string;
-    state: string;
-    countryIso2: string;
-    postCode: string;
-  };
-  export class PaymentRequestedInfo extends VirtualClass<{
-    // flags: undefined;
-    name?: string;
-    phone?: string;
-    email?: string;
-    shippingAddress?: Api.TypePostAddress;
-  } | void> {
-    // flags: undefined;
-    name?: string;
-    phone?: string;
-    email?: string;
-    shippingAddress?: Api.TypePostAddress;
-  };
-  export class PaymentSavedCredentialsCard extends VirtualClass<{
-    id: string;
-    title: string;
-  }> {
-    id: string;
-    title: string;
-  };
-  export class WebDocument extends VirtualClass<{
-    url: string;
-    accessHash: long;
-    size: int;
-    mimeType: string;
-    attributes: Api.TypeDocumentAttribute[];
-  }> {
-    url: string;
-    accessHash: long;
-    size: int;
-    mimeType: string;
-    attributes: Api.TypeDocumentAttribute[];
-  };
-  export class WebDocumentNoProxy extends VirtualClass<{
-    url: string;
-    size: int;
-    mimeType: string;
-    attributes: Api.TypeDocumentAttribute[];
-  }> {
-    url: string;
-    size: int;
-    mimeType: string;
-    attributes: Api.TypeDocumentAttribute[];
-  };
-  export class InputWebDocument extends VirtualClass<{
-    url: string;
-    size: int;
-    mimeType: string;
-    attributes: Api.TypeDocumentAttribute[];
-  }> {
-    url: string;
-    size: int;
-    mimeType: string;
-    attributes: Api.TypeDocumentAttribute[];
-  };
-  export class InputWebFileLocation extends VirtualClass<{
-    url: string;
-    accessHash: long;
-  }> {
-    url: string;
-    accessHash: long;
-  };
-  export class InputWebFileGeoPointLocation extends VirtualClass<{
-    geoPoint: Api.TypeInputGeoPoint;
-    accessHash: long;
-    w: int;
-    h: int;
-    zoom: int;
-    scale: int;
-  }> {
-    geoPoint: Api.TypeInputGeoPoint;
-    accessHash: long;
-    w: int;
-    h: int;
-    zoom: int;
-    scale: int;
-  };
-  export class InputWebFileAudioAlbumThumbLocation extends VirtualClass<{
-    // flags: undefined;
-    small?: true;
-    document?: Api.TypeInputDocument;
-    title?: string;
-    performer?: string;
-  } | void> {
-    // flags: undefined;
-    small?: true;
-    document?: Api.TypeInputDocument;
-    title?: string;
-    performer?: string;
-  };
-  export class InputPaymentCredentialsSaved extends VirtualClass<{
-    id: string;
-    tmpPassword: bytes;
-  }> {
-    id: string;
-    tmpPassword: bytes;
-  };
-  export class InputPaymentCredentials extends VirtualClass<{
-    // flags: undefined;
-    save?: true;
-    data: Api.TypeDataJSON;
-  }> {
-    // flags: undefined;
-    save?: true;
-    data: Api.TypeDataJSON;
-  };
-  export class InputPaymentCredentialsApplePay extends VirtualClass<{
-    paymentData: Api.TypeDataJSON;
-  }> {
-    paymentData: Api.TypeDataJSON;
-  };
-  export class InputPaymentCredentialsGooglePay extends VirtualClass<{
-    paymentToken: Api.TypeDataJSON;
-  }> {
-    paymentToken: Api.TypeDataJSON;
-  };
-  export class ShippingOption extends VirtualClass<{
-    id: string;
-    title: string;
-    prices: Api.TypeLabeledPrice[];
-  }> {
-    id: string;
-    title: string;
-    prices: Api.TypeLabeledPrice[];
-  };
-  export class InputStickerSetItem extends VirtualClass<{
-    // flags: undefined;
-    document: Api.TypeInputDocument;
-    emoji: string;
-    maskCoords?: Api.TypeMaskCoords;
-  }> {
-    // flags: undefined;
-    document: Api.TypeInputDocument;
-    emoji: string;
-    maskCoords?: Api.TypeMaskCoords;
-  };
-  export class InputPhoneCall extends VirtualClass<{
-    id: long;
-    accessHash: long;
-  }> {
-    id: long;
-    accessHash: long;
-  };
-  export class PhoneCallEmpty extends VirtualClass<{
-    id: long;
-  }> {
-    id: long;
-  };
-  export class PhoneCallWaiting extends VirtualClass<{
-    // flags: undefined;
-    video?: true;
-    id: long;
-    accessHash: long;
-    date: int;
-    adminId: long;
-    participantId: long;
-    protocol: Api.TypePhoneCallProtocol;
-    receiveDate?: int;
-  }> {
-    // flags: undefined;
-    video?: true;
-    id: long;
-    accessHash: long;
-    date: int;
-    adminId: long;
-    participantId: long;
-    protocol: Api.TypePhoneCallProtocol;
-    receiveDate?: int;
-  };
-  export class PhoneCallRequested extends VirtualClass<{
-    // flags: undefined;
-    video?: true;
-    id: long;
-    accessHash: long;
-    date: int;
-    adminId: long;
-    participantId: long;
-    gAHash: bytes;
-    protocol: Api.TypePhoneCallProtocol;
-  }> {
-    // flags: undefined;
-    video?: true;
-    id: long;
-    accessHash: long;
-    date: int;
-    adminId: long;
-    participantId: long;
-    gAHash: bytes;
-    protocol: Api.TypePhoneCallProtocol;
-  };
-  export class PhoneCallAccepted extends VirtualClass<{
-    // flags: undefined;
-    video?: true;
-    id: long;
-    accessHash: long;
-    date: int;
-    adminId: long;
-    participantId: long;
-    gB: bytes;
-    protocol: Api.TypePhoneCallProtocol;
-  }> {
-    // flags: undefined;
-    video?: true;
-    id: long;
-    accessHash: long;
-    date: int;
-    adminId: long;
-    participantId: long;
-    gB: bytes;
-    protocol: Api.TypePhoneCallProtocol;
-  };
-  export class PhoneCall extends VirtualClass<{
-    // flags: undefined;
-    p2pAllowed?: true;
-    video?: true;
-    id: long;
-    accessHash: long;
-    date: int;
-    adminId: long;
-    participantId: long;
-    gAOrB: bytes;
-    keyFingerprint: long;
-    protocol: Api.TypePhoneCallProtocol;
-    connections: Api.TypePhoneConnection[];
-    startDate: int;
-  }> {
-    // flags: undefined;
-    p2pAllowed?: true;
-    video?: true;
-    id: long;
-    accessHash: long;
-    date: int;
-    adminId: long;
-    participantId: long;
-    gAOrB: bytes;
-    keyFingerprint: long;
-    protocol: Api.TypePhoneCallProtocol;
-    connections: Api.TypePhoneConnection[];
-    startDate: int;
-  };
-  export class PhoneCallDiscarded extends VirtualClass<{
-    // flags: undefined;
-    needRating?: true;
-    needDebug?: true;
-    video?: true;
-    id: long;
-    reason?: Api.TypePhoneCallDiscardReason;
-    duration?: int;
-  }> {
-    // flags: undefined;
-    needRating?: true;
-    needDebug?: true;
-    video?: true;
-    id: long;
-    reason?: Api.TypePhoneCallDiscardReason;
-    duration?: int;
-  };
-  export class PhoneConnection extends VirtualClass<{
-    // flags: undefined;
-    tcp?: true;
-    id: long;
-    ip: string;
-    ipv6: string;
-    port: int;
-    peerTag: bytes;
-  }> {
-    // flags: undefined;
-    tcp?: true;
-    id: long;
-    ip: string;
-    ipv6: string;
-    port: int;
-    peerTag: bytes;
-  };
-  export class PhoneConnectionWebrtc extends VirtualClass<{
-    // flags: undefined;
-    turn?: true;
-    stun?: true;
-    id: long;
-    ip: string;
-    ipv6: string;
-    port: int;
-    username: string;
-    password: string;
-  }> {
-    // flags: undefined;
-    turn?: true;
-    stun?: true;
-    id: long;
-    ip: string;
-    ipv6: string;
-    port: int;
-    username: string;
-    password: string;
-  };
-  export class PhoneCallProtocol extends VirtualClass<{
-    // flags: undefined;
-    udpP2p?: true;
-    udpReflector?: true;
-    minLayer: int;
-    maxLayer: int;
-    libraryVersions: string[];
-  }> {
-    // flags: undefined;
-    udpP2p?: true;
-    udpReflector?: true;
-    minLayer: int;
-    maxLayer: int;
-    libraryVersions: string[];
-  };
-  export class CdnPublicKey extends VirtualClass<{
-    dcId: int;
-    publicKey: string;
-  }> {
-    dcId: int;
-    publicKey: string;
-  };
-  export class CdnConfig extends VirtualClass<{
-    publicKeys: Api.TypeCdnPublicKey[];
-  }> {
-    publicKeys: Api.TypeCdnPublicKey[];
-  };
-  export class LangPackString extends VirtualClass<{
-    key: string;
-    value: string;
-  }> {
-    key: string;
-    value: string;
-  };
-  export class LangPackStringPluralized extends VirtualClass<{
-    // flags: undefined;
-    key: string;
-    zeroValue?: string;
-    oneValue?: string;
-    twoValue?: string;
-    fewValue?: string;
-    manyValue?: string;
-    otherValue: string;
-  }> {
-    // flags: undefined;
-    key: string;
-    zeroValue?: string;
-    oneValue?: string;
-    twoValue?: string;
-    fewValue?: string;
-    manyValue?: string;
-    otherValue: string;
-  };
-  export class LangPackStringDeleted extends VirtualClass<{
-    key: string;
-  }> {
-    key: string;
-  };
-  export class LangPackDifference extends VirtualClass<{
-    langCode: string;
-    fromVersion: int;
-    version: int;
-    strings: Api.TypeLangPackString[];
-  }> {
-    langCode: string;
-    fromVersion: int;
-    version: int;
-    strings: Api.TypeLangPackString[];
-  };
-  export class LangPackLanguage extends VirtualClass<{
-    // flags: undefined;
-    official?: true;
-    rtl?: true;
-    beta?: true;
-    name: string;
-    nativeName: string;
-    langCode: string;
-    baseLangCode?: string;
-    pluralCode: string;
-    stringsCount: int;
-    translatedCount: int;
-    translationsUrl: string;
-  }> {
-    // flags: undefined;
-    official?: true;
-    rtl?: true;
-    beta?: true;
-    name: string;
-    nativeName: string;
-    langCode: string;
-    baseLangCode?: string;
-    pluralCode: string;
-    stringsCount: int;
-    translatedCount: int;
-    translationsUrl: string;
-  };
-  export class ChannelAdminLogEventActionChangeTitle extends VirtualClass<{
-    prevValue: string;
-    newValue: string;
-  }> {
-    prevValue: string;
-    newValue: string;
-  };
-  export class ChannelAdminLogEventActionChangeAbout extends VirtualClass<{
-    prevValue: string;
-    newValue: string;
-  }> {
-    prevValue: string;
-    newValue: string;
-  };
-  export class ChannelAdminLogEventActionChangeUsername extends VirtualClass<{
-    prevValue: string;
-    newValue: string;
-  }> {
-    prevValue: string;
-    newValue: string;
-  };
-  export class ChannelAdminLogEventActionChangePhoto extends VirtualClass<{
-    prevPhoto: Api.TypePhoto;
-    newPhoto: Api.TypePhoto;
-  }> {
-    prevPhoto: Api.TypePhoto;
-    newPhoto: Api.TypePhoto;
-  };
-  export class ChannelAdminLogEventActionToggleInvites extends VirtualClass<{
-    newValue: Bool;
-  }> {
-    newValue: Bool;
-  };
-  export class ChannelAdminLogEventActionToggleSignatures extends VirtualClass<{
-    newValue: Bool;
-  }> {
-    newValue: Bool;
-  };
-  export class ChannelAdminLogEventActionUpdatePinned extends VirtualClass<{
-    message: Api.TypeMessage;
-  }> {
-    message: Api.TypeMessage;
-  };
-  export class ChannelAdminLogEventActionEditMessage extends VirtualClass<{
-    prevMessage: Api.TypeMessage;
-    newMessage: Api.TypeMessage;
-  }> {
-    prevMessage: Api.TypeMessage;
-    newMessage: Api.TypeMessage;
-  };
-  export class ChannelAdminLogEventActionDeleteMessage extends VirtualClass<{
-    message: Api.TypeMessage;
-  }> {
-    message: Api.TypeMessage;
-  };
-  export class ChannelAdminLogEventActionParticipantJoin extends VirtualClass<void> {};
-  export class ChannelAdminLogEventActionParticipantLeave extends VirtualClass<void> {};
-  export class ChannelAdminLogEventActionParticipantInvite extends VirtualClass<{
-    participant: Api.TypeChannelParticipant;
-  }> {
-    participant: Api.TypeChannelParticipant;
-  };
-  export class ChannelAdminLogEventActionParticipantToggleBan extends VirtualClass<{
-    prevParticipant: Api.TypeChannelParticipant;
-    newParticipant: Api.TypeChannelParticipant;
-  }> {
-    prevParticipant: Api.TypeChannelParticipant;
-    newParticipant: Api.TypeChannelParticipant;
-  };
-  export class ChannelAdminLogEventActionParticipantToggleAdmin extends VirtualClass<{
-    prevParticipant: Api.TypeChannelParticipant;
-    newParticipant: Api.TypeChannelParticipant;
-  }> {
-    prevParticipant: Api.TypeChannelParticipant;
-    newParticipant: Api.TypeChannelParticipant;
-  };
-  export class ChannelAdminLogEventActionChangeStickerSet extends VirtualClass<{
-    prevStickerset: Api.TypeInputStickerSet;
-    newStickerset: Api.TypeInputStickerSet;
-  }> {
-    prevStickerset: Api.TypeInputStickerSet;
-    newStickerset: Api.TypeInputStickerSet;
-  };
-  export class ChannelAdminLogEventActionTogglePreHistoryHidden extends VirtualClass<{
-    newValue: Bool;
-  }> {
-    newValue: Bool;
-  };
-  export class ChannelAdminLogEventActionDefaultBannedRights extends VirtualClass<{
-    prevBannedRights: Api.TypeChatBannedRights;
-    newBannedRights: Api.TypeChatBannedRights;
-  }> {
-    prevBannedRights: Api.TypeChatBannedRights;
-    newBannedRights: Api.TypeChatBannedRights;
-  };
-  export class ChannelAdminLogEventActionStopPoll extends VirtualClass<{
-    message: Api.TypeMessage;
-  }> {
-    message: Api.TypeMessage;
-  };
-  export class ChannelAdminLogEventActionChangeLinkedChat extends VirtualClass<{
-    prevValue: long;
-    newValue: long;
-  }> {
-    prevValue: long;
-    newValue: long;
-  };
-  export class ChannelAdminLogEventActionChangeLocation extends VirtualClass<{
-    prevValue: Api.TypeChannelLocation;
-    newValue: Api.TypeChannelLocation;
-  }> {
-    prevValue: Api.TypeChannelLocation;
-    newValue: Api.TypeChannelLocation;
-  };
-  export class ChannelAdminLogEventActionToggleSlowMode extends VirtualClass<{
-    prevValue: int;
-    newValue: int;
-  }> {
-    prevValue: int;
-    newValue: int;
-  };
-  export class ChannelAdminLogEventActionStartGroupCall extends VirtualClass<{
-    call: Api.TypeInputGroupCall;
-  }> {
-    call: Api.TypeInputGroupCall;
-  };
-  export class ChannelAdminLogEventActionDiscardGroupCall extends VirtualClass<{
-    call: Api.TypeInputGroupCall;
-  }> {
-    call: Api.TypeInputGroupCall;
-  };
-  export class ChannelAdminLogEventActionParticipantMute extends VirtualClass<{
-    participant: Api.TypeGroupCallParticipant;
-  }> {
-    participant: Api.TypeGroupCallParticipant;
-  };
-  export class ChannelAdminLogEventActionParticipantUnmute extends VirtualClass<{
-    participant: Api.TypeGroupCallParticipant;
-  }> {
-    participant: Api.TypeGroupCallParticipant;
-  };
-  export class ChannelAdminLogEventActionToggleGroupCallSetting extends VirtualClass<{
-    joinMuted: Bool;
-  }> {
-    joinMuted: Bool;
-  };
-  export class ChannelAdminLogEventActionParticipantJoinByInvite extends VirtualClass<{
-    invite: Api.TypeExportedChatInvite;
-  }> {
-    invite: Api.TypeExportedChatInvite;
-  };
-  export class ChannelAdminLogEventActionExportedInviteDelete extends VirtualClass<{
-    invite: Api.TypeExportedChatInvite;
-  }> {
-    invite: Api.TypeExportedChatInvite;
-  };
-  export class ChannelAdminLogEventActionExportedInviteRevoke extends VirtualClass<{
-    invite: Api.TypeExportedChatInvite;
-  }> {
-    invite: Api.TypeExportedChatInvite;
-  };
-  export class ChannelAdminLogEventActionExportedInviteEdit extends VirtualClass<{
-    prevInvite: Api.TypeExportedChatInvite;
-    newInvite: Api.TypeExportedChatInvite;
-  }> {
-    prevInvite: Api.TypeExportedChatInvite;
-    newInvite: Api.TypeExportedChatInvite;
-  };
-  export class ChannelAdminLogEventActionParticipantVolume extends VirtualClass<{
-    participant: Api.TypeGroupCallParticipant;
-  }> {
-    participant: Api.TypeGroupCallParticipant;
-  };
-  export class ChannelAdminLogEventActionChangeHistoryTTL extends VirtualClass<{
-    prevValue: int;
-    newValue: int;
-  }> {
-    prevValue: int;
-    newValue: int;
-  };
-  export class ChannelAdminLogEventActionParticipantJoinByRequest extends VirtualClass<{
-    invite: Api.TypeExportedChatInvite;
-    approvedBy: long;
-  }> {
-    invite: Api.TypeExportedChatInvite;
-    approvedBy: long;
-  };
-  export class ChannelAdminLogEventActionToggleNoForwards extends VirtualClass<{
-    newValue: Bool;
-  }> {
-    newValue: Bool;
-  };
-  export class ChannelAdminLogEventActionSendMessage extends VirtualClass<{
-    message: Api.TypeMessage;
-  }> {
-    message: Api.TypeMessage;
-  };
-  export class ChannelAdminLogEventActionChangeAvailableReactions extends VirtualClass<{
-    prevValue: Api.TypeChatReactions;
-    newValue: Api.TypeChatReactions;
-  }> {
-    prevValue: Api.TypeChatReactions;
-    newValue: Api.TypeChatReactions;
-  };
-  export class ChannelAdminLogEventActionChangeUsernames extends VirtualClass<{
-    prevValue: string[];
-    newValue: string[];
-  }> {
-    prevValue: string[];
-    newValue: string[];
-  };
-  export class ChannelAdminLogEventActionToggleForum extends VirtualClass<{
-    newValue: Bool;
-  }> {
-    newValue: Bool;
-  };
-  export class ChannelAdminLogEventActionCreateTopic extends VirtualClass<{
-    topic: Api.TypeForumTopic;
-  }> {
-    topic: Api.TypeForumTopic;
-  };
-  export class ChannelAdminLogEventActionEditTopic extends VirtualClass<{
-    prevTopic: Api.TypeForumTopic;
-    newTopic: Api.TypeForumTopic;
-  }> {
-    prevTopic: Api.TypeForumTopic;
-    newTopic: Api.TypeForumTopic;
-  };
-  export class ChannelAdminLogEventActionDeleteTopic extends VirtualClass<{
-    topic: Api.TypeForumTopic;
-  }> {
-    topic: Api.TypeForumTopic;
-  };
-  export class ChannelAdminLogEventActionPinTopic extends VirtualClass<{
-    // flags: undefined;
-    prevTopic?: Api.TypeForumTopic;
-    newTopic?: Api.TypeForumTopic;
-  } | void> {
-    // flags: undefined;
-    prevTopic?: Api.TypeForumTopic;
-    newTopic?: Api.TypeForumTopic;
-  };
-  export class ChannelAdminLogEventActionToggleAntiSpam extends VirtualClass<{
-    newValue: Bool;
-  }> {
-    newValue: Bool;
-  };
-  export class ChannelAdminLogEvent extends VirtualClass<{
-    id: long;
-    date: int;
-    userId: long;
-    action: Api.TypeChannelAdminLogEventAction;
-  }> {
-    id: long;
-    date: int;
-    userId: long;
-    action: Api.TypeChannelAdminLogEventAction;
-  };
-  export class ChannelAdminLogEventsFilter extends VirtualClass<{
-    // flags: undefined;
-    join?: true;
-    leave?: true;
-    invite?: true;
-    ban?: true;
-    unban?: true;
-    kick?: true;
-    unkick?: true;
-    promote?: true;
-    demote?: true;
-    info?: true;
-    settings?: true;
-    pinned?: true;
-    edit?: true;
-    delete?: true;
-    groupCall?: true;
-    invites?: true;
-    send?: true;
-    forums?: true;
-  } | void> {
-    // flags: undefined;
-    join?: true;
-    leave?: true;
-    invite?: true;
-    ban?: true;
-    unban?: true;
-    kick?: true;
-    unkick?: true;
-    promote?: true;
-    demote?: true;
-    info?: true;
-    settings?: true;
-    pinned?: true;
-    edit?: true;
-    delete?: true;
-    groupCall?: true;
-    invites?: true;
-    send?: true;
-    forums?: true;
-  };
-  export class PopularContact extends VirtualClass<{
-    clientId: long;
-    importers: int;
-  }> {
-    clientId: long;
-    importers: int;
-  };
-  export class RecentMeUrlUnknown extends VirtualClass<{
-    url: string;
-  }> {
-    url: string;
-  };
-  export class RecentMeUrlUser extends VirtualClass<{
-    url: string;
-    userId: long;
-  }> {
-    url: string;
-    userId: long;
-  };
-  export class RecentMeUrlChat extends VirtualClass<{
-    url: string;
-    chatId: long;
-  }> {
-    url: string;
-    chatId: long;
-  };
-  export class RecentMeUrlChatInvite extends VirtualClass<{
-    url: string;
-    chatInvite: Api.TypeChatInvite;
-  }> {
-    url: string;
-    chatInvite: Api.TypeChatInvite;
-  };
-  export class RecentMeUrlStickerSet extends VirtualClass<{
-    url: string;
-    set: Api.TypeStickerSetCovered;
-  }> {
-    url: string;
-    set: Api.TypeStickerSetCovered;
-  };
-  export class InputSingleMedia extends VirtualClass<{
-    // flags: undefined;
-    media: Api.TypeInputMedia;
-    randomId: long;
-    message: string;
-    entities?: Api.TypeMessageEntity[];
-  }> {
-    // flags: undefined;
-    media: Api.TypeInputMedia;
-    randomId: long;
-    message: string;
-    entities?: Api.TypeMessageEntity[];
-  };
-  export class WebAuthorization extends VirtualClass<{
-    hash: long;
-    botId: long;
-    domain: string;
-    browser: string;
-    platform: string;
-    dateCreated: int;
-    dateActive: int;
-    ip: string;
-    region: string;
-  }> {
-    hash: long;
-    botId: long;
-    domain: string;
-    browser: string;
-    platform: string;
-    dateCreated: int;
-    dateActive: int;
-    ip: string;
-    region: string;
-  };
-  export class InputMessageID extends VirtualClass<{
-    id: int;
-  }> {
-    id: int;
-  };
-  export class InputMessageReplyTo extends VirtualClass<{
-    id: int;
-  }> {
-    id: int;
-  };
-  export class InputMessagePinned extends VirtualClass<void> {};
-  export class InputMessageCallbackQuery extends VirtualClass<{
-    id: int;
-    queryId: long;
-  }> {
-    id: int;
-    queryId: long;
-  };
-  export class InputDialogPeer extends VirtualClass<{
-    peer: Api.TypeInputPeer;
-  }> {
-    peer: Api.TypeInputPeer;
-  };
-  export class InputDialogPeerFolder extends VirtualClass<{
-    folderId: int;
-  }> {
-    folderId: int;
-  };
-  export class DialogPeer extends VirtualClass<{
-    peer: Api.TypePeer;
-  }> {
-    peer: Api.TypePeer;
-  };
-  export class DialogPeerFolder extends VirtualClass<{
-    folderId: int;
-  }> {
-    folderId: int;
-  };
-  export class FileHash extends VirtualClass<{
-    offset: long;
-    limit: int;
-    hash: bytes;
-  }> {
-    offset: long;
-    limit: int;
-    hash: bytes;
-  };
-  export class InputClientProxy extends VirtualClass<{
-    address: string;
-    port: int;
-  }> {
-    address: string;
-    port: int;
-  };
-  export class InputSecureFileUploaded extends VirtualClass<{
-    id: long;
-    parts: int;
-    md5Checksum: string;
-    fileHash: bytes;
-    secret: bytes;
-  }> {
-    id: long;
-    parts: int;
-    md5Checksum: string;
-    fileHash: bytes;
-    secret: bytes;
-  };
-  export class InputSecureFile extends VirtualClass<{
-    id: long;
-    accessHash: long;
-  }> {
-    id: long;
-    accessHash: long;
-  };
-  export class SecureFileEmpty extends VirtualClass<void> {};
-  export class SecureFile extends VirtualClass<{
-    id: long;
-    accessHash: long;
-    size: long;
-    dcId: int;
-    date: int;
-    fileHash: bytes;
-    secret: bytes;
-  }> {
-    id: long;
-    accessHash: long;
-    size: long;
-    dcId: int;
-    date: int;
-    fileHash: bytes;
-    secret: bytes;
-  };
-  export class SecureData extends VirtualClass<{
-    data: bytes;
-    dataHash: bytes;
-    secret: bytes;
-  }> {
-    data: bytes;
-    dataHash: bytes;
-    secret: bytes;
-  };
-  export class SecurePlainPhone extends VirtualClass<{
-    phone: string;
-  }> {
-    phone: string;
-  };
-  export class SecurePlainEmail extends VirtualClass<{
-    email: string;
-  }> {
-    email: string;
-  };
-  export class SecureValueTypePersonalDetails extends VirtualClass<void> {};
-  export class SecureValueTypePassport extends VirtualClass<void> {};
-  export class SecureValueTypeDriverLicense extends VirtualClass<void> {};
-  export class SecureValueTypeIdentityCard extends VirtualClass<void> {};
-  export class SecureValueTypeInternalPassport extends VirtualClass<void> {};
-  export class SecureValueTypeAddress extends VirtualClass<void> {};
-  export class SecureValueTypeUtilityBill extends VirtualClass<void> {};
-  export class SecureValueTypeBankStatement extends VirtualClass<void> {};
-  export class SecureValueTypeRentalAgreement extends VirtualClass<void> {};
-  export class SecureValueTypePassportRegistration extends VirtualClass<void> {};
-  export class SecureValueTypeTemporaryRegistration extends VirtualClass<void> {};
-  export class SecureValueTypePhone extends VirtualClass<void> {};
-  export class SecureValueTypeEmail extends VirtualClass<void> {};
-  export class SecureValue extends VirtualClass<{
-    // flags: undefined;
-    type: Api.TypeSecureValueType;
-    data?: Api.TypeSecureData;
-    frontSide?: Api.TypeSecureFile;
-    reverseSide?: Api.TypeSecureFile;
-    selfie?: Api.TypeSecureFile;
-    translation?: Api.TypeSecureFile[];
-    files?: Api.TypeSecureFile[];
-    plainData?: Api.TypeSecurePlainData;
-    hash: bytes;
-  }> {
-    // flags: undefined;
-    type: Api.TypeSecureValueType;
-    data?: Api.TypeSecureData;
-    frontSide?: Api.TypeSecureFile;
-    reverseSide?: Api.TypeSecureFile;
-    selfie?: Api.TypeSecureFile;
-    translation?: Api.TypeSecureFile[];
-    files?: Api.TypeSecureFile[];
-    plainData?: Api.TypeSecurePlainData;
-    hash: bytes;
-  };
-  export class InputSecureValue extends VirtualClass<{
-    // flags: undefined;
-    type: Api.TypeSecureValueType;
-    data?: Api.TypeSecureData;
-    frontSide?: Api.TypeInputSecureFile;
-    reverseSide?: Api.TypeInputSecureFile;
-    selfie?: Api.TypeInputSecureFile;
-    translation?: Api.TypeInputSecureFile[];
-    files?: Api.TypeInputSecureFile[];
-    plainData?: Api.TypeSecurePlainData;
-  }> {
-    // flags: undefined;
-    type: Api.TypeSecureValueType;
-    data?: Api.TypeSecureData;
-    frontSide?: Api.TypeInputSecureFile;
-    reverseSide?: Api.TypeInputSecureFile;
-    selfie?: Api.TypeInputSecureFile;
-    translation?: Api.TypeInputSecureFile[];
-    files?: Api.TypeInputSecureFile[];
-    plainData?: Api.TypeSecurePlainData;
-  };
-  export class SecureValueHash extends VirtualClass<{
-    type: Api.TypeSecureValueType;
-    hash: bytes;
-  }> {
-    type: Api.TypeSecureValueType;
-    hash: bytes;
-  };
-  export class SecureValueErrorData extends VirtualClass<{
-    type: Api.TypeSecureValueType;
-    dataHash: bytes;
-    field: string;
-    text: string;
-  }> {
-    type: Api.TypeSecureValueType;
-    dataHash: bytes;
-    field: string;
-    text: string;
-  };
-  export class SecureValueErrorFrontSide extends VirtualClass<{
-    type: Api.TypeSecureValueType;
-    fileHash: bytes;
-    text: string;
-  }> {
-    type: Api.TypeSecureValueType;
-    fileHash: bytes;
-    text: string;
-  };
-  export class SecureValueErrorReverseSide extends VirtualClass<{
-    type: Api.TypeSecureValueType;
-    fileHash: bytes;
-    text: string;
-  }> {
-    type: Api.TypeSecureValueType;
-    fileHash: bytes;
-    text: string;
-  };
-  export class SecureValueErrorSelfie extends VirtualClass<{
-    type: Api.TypeSecureValueType;
-    fileHash: bytes;
-    text: string;
-  }> {
-    type: Api.TypeSecureValueType;
-    fileHash: bytes;
-    text: string;
-  };
-  export class SecureValueErrorFile extends VirtualClass<{
-    type: Api.TypeSecureValueType;
-    fileHash: bytes;
-    text: string;
-  }> {
-    type: Api.TypeSecureValueType;
-    fileHash: bytes;
-    text: string;
-  };
-  export class SecureValueErrorFiles extends VirtualClass<{
-    type: Api.TypeSecureValueType;
-    fileHash: bytes[];
-    text: string;
-  }> {
-    type: Api.TypeSecureValueType;
-    fileHash: bytes[];
-    text: string;
-  };
-  export class SecureValueError extends VirtualClass<{
-    type: Api.TypeSecureValueType;
-    hash: bytes;
-    text: string;
-  }> {
-    type: Api.TypeSecureValueType;
-    hash: bytes;
-    text: string;
-  };
-  export class SecureValueErrorTranslationFile extends VirtualClass<{
-    type: Api.TypeSecureValueType;
-    fileHash: bytes;
-    text: string;
-  }> {
-    type: Api.TypeSecureValueType;
-    fileHash: bytes;
-    text: string;
-  };
-  export class SecureValueErrorTranslationFiles extends VirtualClass<{
-    type: Api.TypeSecureValueType;
-    fileHash: bytes[];
-    text: string;
-  }> {
-    type: Api.TypeSecureValueType;
-    fileHash: bytes[];
-    text: string;
-  };
-  export class SecureCredentialsEncrypted extends VirtualClass<{
-    data: bytes;
-    hash: bytes;
-    secret: bytes;
-  }> {
-    data: bytes;
-    hash: bytes;
-    secret: bytes;
-  };
-  export class SavedPhoneContact extends VirtualClass<{
-    phone: string;
-    firstName: string;
-    lastName: string;
-    date: int;
-  }> {
-    phone: string;
-    firstName: string;
-    lastName: string;
-    date: int;
-  };
-  export class PasswordKdfAlgoUnknown extends VirtualClass<void> {};
-  export class PasswordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow extends VirtualClass<{
-    salt1: bytes;
-    salt2: bytes;
-    g: int;
-    p: bytes;
-  }> {
-    salt1: bytes;
-    salt2: bytes;
-    g: int;
-    p: bytes;
-  };
-  export class SecurePasswordKdfAlgoUnknown extends VirtualClass<void> {};
-  export class SecurePasswordKdfAlgoPBKDF2HMACSHA512iter100000 extends VirtualClass<{
-    salt: bytes;
-  }> {
-    salt: bytes;
-  };
-  export class SecurePasswordKdfAlgoSHA512 extends VirtualClass<{
-    salt: bytes;
-  }> {
-    salt: bytes;
-  };
-  export class SecureSecretSettings extends VirtualClass<{
-    secureAlgo: Api.TypeSecurePasswordKdfAlgo;
-    secureSecret: bytes;
-    secureSecretId: long;
-  }> {
-    secureAlgo: Api.TypeSecurePasswordKdfAlgo;
-    secureSecret: bytes;
-    secureSecretId: long;
-  };
-  export class InputCheckPasswordEmpty extends VirtualClass<void> {};
-  export class InputCheckPasswordSRP extends VirtualClass<{
-    srpId: long;
-    A: bytes;
-    M1: bytes;
-  }> {
-    srpId: long;
-    A: bytes;
-    M1: bytes;
-  };
-  export class SecureRequiredType extends VirtualClass<{
-    // flags: undefined;
-    nativeNames?: true;
-    selfieRequired?: true;
-    translationRequired?: true;
-    type: Api.TypeSecureValueType;
-  }> {
-    // flags: undefined;
-    nativeNames?: true;
-    selfieRequired?: true;
-    translationRequired?: true;
-    type: Api.TypeSecureValueType;
-  };
-  export class SecureRequiredTypeOneOf extends VirtualClass<{
-    types: Api.TypeSecureRequiredType[];
-  }> {
-    types: Api.TypeSecureRequiredType[];
-  };
-  export class InputAppEvent extends VirtualClass<{
-    time: double;
-    type: string;
-    peer: long;
-    data: Api.TypeJSONValue;
-  }> {
-    time: double;
-    type: string;
-    peer: long;
-    data: Api.TypeJSONValue;
-  };
-  export class JsonObjectValue extends VirtualClass<{
-    key: string;
-    value: Api.TypeJSONValue;
-  }> {
-    key: string;
-    value: Api.TypeJSONValue;
-  };
-  export class JsonNull extends VirtualClass<void> {};
-  export class JsonBool extends VirtualClass<{
-    value: Bool;
-  }> {
-    value: Bool;
-  };
-  export class JsonNumber extends VirtualClass<{
-    value: double;
-  }> {
-    value: double;
-  };
-  export class JsonString extends VirtualClass<{
-    value: string;
-  }> {
-    value: string;
-  };
-  export class JsonArray extends VirtualClass<{
-    value: Api.TypeJSONValue[];
-  }> {
-    value: Api.TypeJSONValue[];
-  };
-  export class JsonObject extends VirtualClass<{
-    value: Api.TypeJSONObjectValue[];
-  }> {
-    value: Api.TypeJSONObjectValue[];
-  };
-  export class PageTableCell extends VirtualClass<{
-    // flags: undefined;
-    header?: true;
-    alignCenter?: true;
-    alignRight?: true;
-    valignMiddle?: true;
-    valignBottom?: true;
-    text?: Api.TypeRichText;
-    colspan?: int;
-    rowspan?: int;
-  } | void> {
-    // flags: undefined;
-    header?: true;
-    alignCenter?: true;
-    alignRight?: true;
-    valignMiddle?: true;
-    valignBottom?: true;
-    text?: Api.TypeRichText;
-    colspan?: int;
-    rowspan?: int;
-  };
-  export class PageTableRow extends VirtualClass<{
-    cells: Api.TypePageTableCell[];
-  }> {
-    cells: Api.TypePageTableCell[];
-  };
-  export class PageCaption extends VirtualClass<{
-    text: Api.TypeRichText;
-    credit: Api.TypeRichText;
-  }> {
-    text: Api.TypeRichText;
-    credit: Api.TypeRichText;
-  };
-  export class PageListItemText extends VirtualClass<{
-    text: Api.TypeRichText;
-  }> {
-    text: Api.TypeRichText;
-  };
-  export class PageListItemBlocks extends VirtualClass<{
-    blocks: Api.TypePageBlock[];
-  }> {
-    blocks: Api.TypePageBlock[];
-  };
-  export class PageListOrderedItemText extends VirtualClass<{
-    num: string;
-    text: Api.TypeRichText;
-  }> {
-    num: string;
-    text: Api.TypeRichText;
-  };
-  export class PageListOrderedItemBlocks extends VirtualClass<{
-    num: string;
-    blocks: Api.TypePageBlock[];
-  }> {
-    num: string;
-    blocks: Api.TypePageBlock[];
-  };
-  export class PageRelatedArticle extends VirtualClass<{
-    // flags: undefined;
-    url: string;
-    webpageId: long;
-    title?: string;
-    description?: string;
-    photoId?: long;
-    author?: string;
-    publishedDate?: int;
-  }> {
-    // flags: undefined;
-    url: string;
-    webpageId: long;
-    title?: string;
-    description?: string;
-    photoId?: long;
-    author?: string;
-    publishedDate?: int;
-  };
-  export class Page extends VirtualClass<{
-    // flags: undefined;
-    part?: true;
-    rtl?: true;
-    v2?: true;
-    url: string;
-    blocks: Api.TypePageBlock[];
-    photos: Api.TypePhoto[];
-    documents: Api.TypeDocument[];
-    views?: int;
-  }> {
-    // flags: undefined;
-    part?: true;
-    rtl?: true;
-    v2?: true;
-    url: string;
-    blocks: Api.TypePageBlock[];
-    photos: Api.TypePhoto[];
-    documents: Api.TypeDocument[];
-    views?: int;
-  };
-  export class PollAnswer extends VirtualClass<{
-    text: string;
-    option: bytes;
-  }> {
-    text: string;
-    option: bytes;
-  };
-  export class Poll extends VirtualClass<{
-    id: long;
-    // flags: undefined;
-    closed?: true;
-    publicVoters?: true;
-    multipleChoice?: true;
-    quiz?: true;
-    question: string;
-    answers: Api.TypePollAnswer[];
-    closePeriod?: int;
-    closeDate?: int;
-  }> {
-    id: long;
-    // flags: undefined;
-    closed?: true;
-    publicVoters?: true;
-    multipleChoice?: true;
-    quiz?: true;
-    question: string;
-    answers: Api.TypePollAnswer[];
-    closePeriod?: int;
-    closeDate?: int;
-  };
-  export class PollAnswerVoters extends VirtualClass<{
-    // flags: undefined;
-    chosen?: true;
-    correct?: true;
-    option: bytes;
-    voters: int;
-  }> {
-    // flags: undefined;
-    chosen?: true;
-    correct?: true;
-    option: bytes;
-    voters: int;
-  };
-  export class PollResults extends VirtualClass<{
-    // flags: undefined;
-    min?: true;
-    results?: Api.TypePollAnswerVoters[];
-    totalVoters?: int;
-    recentVoters?: long[];
-    solution?: string;
-    solutionEntities?: Api.TypeMessageEntity[];
-  } | void> {
-    // flags: undefined;
-    min?: true;
-    results?: Api.TypePollAnswerVoters[];
-    totalVoters?: int;
-    recentVoters?: long[];
-    solution?: string;
-    solutionEntities?: Api.TypeMessageEntity[];
-  };
-  export class ChatOnlines extends VirtualClass<{
-    onlines: int;
-  }> {
-    onlines: int;
-  };
-  export class StatsURL extends VirtualClass<{
-    url: string;
-  }> {
-    url: string;
-  };
-  export class ChatAdminRights extends VirtualClass<{
-    // flags: undefined;
-    changeInfo?: true;
-    postMessages?: true;
-    editMessages?: true;
-    deleteMessages?: true;
-    banUsers?: true;
-    inviteUsers?: true;
-    pinMessages?: true;
-    addAdmins?: true;
-    anonymous?: true;
-    manageCall?: true;
-    other?: true;
-    manageTopics?: true;
-  } | void> {
-    // flags: undefined;
-    changeInfo?: true;
-    postMessages?: true;
-    editMessages?: true;
-    deleteMessages?: true;
-    banUsers?: true;
-    inviteUsers?: true;
-    pinMessages?: true;
-    addAdmins?: true;
-    anonymous?: true;
-    manageCall?: true;
-    other?: true;
-    manageTopics?: true;
-  };
-  export class ChatBannedRights extends VirtualClass<{
-    // flags: undefined;
-    viewMessages?: true;
-    sendMessages?: true;
-    sendMedia?: true;
-    sendStickers?: true;
-    sendGifs?: true;
-    sendGames?: true;
-    sendInline?: true;
-    embedLinks?: true;
-    sendPolls?: true;
-    changeInfo?: true;
-    inviteUsers?: true;
-    pinMessages?: true;
-    manageTopics?: true;
-    sendPhotos?: true;
-    sendVideos?: true;
-    sendRoundvideos?: true;
-    sendAudios?: true;
-    sendVoices?: true;
-    sendDocs?: true;
-    sendPlain?: true;
-    untilDate: int;
-  }> {
-    // flags: undefined;
-    viewMessages?: true;
-    sendMessages?: true;
-    sendMedia?: true;
-    sendStickers?: true;
-    sendGifs?: true;
-    sendGames?: true;
-    sendInline?: true;
-    embedLinks?: true;
-    sendPolls?: true;
-    changeInfo?: true;
-    inviteUsers?: true;
-    pinMessages?: true;
-    manageTopics?: true;
-    sendPhotos?: true;
-    sendVideos?: true;
-    sendRoundvideos?: true;
-    sendAudios?: true;
-    sendVoices?: true;
-    sendDocs?: true;
-    sendPlain?: true;
-    untilDate: int;
-  };
-  export class InputWallPaper extends VirtualClass<{
-    id: long;
-    accessHash: long;
-  }> {
-    id: long;
-    accessHash: long;
-  };
-  export class InputWallPaperSlug extends VirtualClass<{
-    slug: string;
-  }> {
-    slug: string;
-  };
-  export class InputWallPaperNoFile extends VirtualClass<{
-    id: long;
-  }> {
-    id: long;
-  };
-  export class CodeSettings extends VirtualClass<{
-    // flags: undefined;
-    allowFlashcall?: true;
-    currentNumber?: true;
-    allowAppHash?: true;
-    allowMissedCall?: true;
-    allowFirebase?: true;
-    logoutTokens?: bytes[];
-    token?: string;
-    appSandbox?: Bool;
-  } | void> {
-    // flags: undefined;
-    allowFlashcall?: true;
-    currentNumber?: true;
-    allowAppHash?: true;
-    allowMissedCall?: true;
-    allowFirebase?: true;
-    logoutTokens?: bytes[];
-    token?: string;
-    appSandbox?: Bool;
-  };
-  export class WallPaperSettings extends VirtualClass<{
-    // flags: undefined;
-    blur?: true;
-    motion?: true;
-    backgroundColor?: int;
-    secondBackgroundColor?: int;
-    thirdBackgroundColor?: int;
-    fourthBackgroundColor?: int;
-    intensity?: int;
-    rotation?: int;
-  } | void> {
-    // flags: undefined;
-    blur?: true;
-    motion?: true;
-    backgroundColor?: int;
-    secondBackgroundColor?: int;
-    thirdBackgroundColor?: int;
-    fourthBackgroundColor?: int;
-    intensity?: int;
-    rotation?: int;
-  };
-  export class AutoDownloadSettings extends VirtualClass<{
-    // flags: undefined;
-    disabled?: true;
-    videoPreloadLarge?: true;
-    audioPreloadNext?: true;
-    phonecallsLessData?: true;
-    photoSizeMax: int;
-    videoSizeMax: long;
-    fileSizeMax: long;
-    videoUploadMaxbitrate: int;
-  }> {
-    // flags: undefined;
-    disabled?: true;
-    videoPreloadLarge?: true;
-    audioPreloadNext?: true;
-    phonecallsLessData?: true;
-    photoSizeMax: int;
-    videoSizeMax: long;
-    fileSizeMax: long;
-    videoUploadMaxbitrate: int;
-  };
-  export class EmojiKeyword extends VirtualClass<{
-    keyword: string;
-    emoticons: string[];
-  }> {
-    keyword: string;
-    emoticons: string[];
-  };
-  export class EmojiKeywordDeleted extends VirtualClass<{
-    keyword: string;
-    emoticons: string[];
-  }> {
-    keyword: string;
-    emoticons: string[];
-  };
-  export class EmojiKeywordsDifference extends VirtualClass<{
-    langCode: string;
-    fromVersion: int;
-    version: int;
-    keywords: Api.TypeEmojiKeyword[];
-  }> {
-    langCode: string;
-    fromVersion: int;
-    version: int;
-    keywords: Api.TypeEmojiKeyword[];
-  };
-  export class EmojiURL extends VirtualClass<{
-    url: string;
-  }> {
-    url: string;
-  };
-  export class EmojiLanguage extends VirtualClass<{
-    langCode: string;
-  }> {
-    langCode: string;
-  };
-  export class Folder extends VirtualClass<{
-    // flags: undefined;
-    autofillNewBroadcasts?: true;
-    autofillPublicGroups?: true;
-    autofillNewCorrespondents?: true;
-    id: int;
-    title: string;
-    photo?: Api.TypeChatPhoto;
-  }> {
-    // flags: undefined;
-    autofillNewBroadcasts?: true;
-    autofillPublicGroups?: true;
-    autofillNewCorrespondents?: true;
-    id: int;
-    title: string;
-    photo?: Api.TypeChatPhoto;
-  };
-  export class InputFolderPeer extends VirtualClass<{
-    peer: Api.TypeInputPeer;
-    folderId: int;
-  }> {
-    peer: Api.TypeInputPeer;
-    folderId: int;
-  };
-  export class FolderPeer extends VirtualClass<{
-    peer: Api.TypePeer;
-    folderId: int;
-  }> {
-    peer: Api.TypePeer;
-    folderId: int;
-  };
-  export class UrlAuthResultRequest extends VirtualClass<{
-    // flags: undefined;
-    requestWriteAccess?: true;
-    bot: Api.TypeUser;
-    domain: string;
-  }> {
-    // flags: undefined;
-    requestWriteAccess?: true;
-    bot: Api.TypeUser;
-    domain: string;
-  };
-  export class UrlAuthResultAccepted extends VirtualClass<{
-    url: string;
-  }> {
-    url: string;
-  };
-  export class UrlAuthResultDefault extends VirtualClass<void> {};
-  export class ChannelLocationEmpty extends VirtualClass<void> {};
-  export class ChannelLocation extends VirtualClass<{
-    geoPoint: Api.TypeGeoPoint;
-    address: string;
-  }> {
-    geoPoint: Api.TypeGeoPoint;
-    address: string;
-  };
-  export class PeerLocated extends VirtualClass<{
-    peer: Api.TypePeer;
-    expires: int;
-    distance: int;
-  }> {
-    peer: Api.TypePeer;
-    expires: int;
-    distance: int;
-  };
-  export class PeerSelfLocated extends VirtualClass<{
-    expires: int;
-  }> {
-    expires: int;
-  };
-  export class RestrictionReason extends VirtualClass<{
-    platform: string;
-    reason: string;
-    text: string;
-  }> {
-    platform: string;
-    reason: string;
-    text: string;
-  };
-  export class InputTheme extends VirtualClass<{
-    id: long;
-    accessHash: long;
-  }> {
-    id: long;
-    accessHash: long;
-  };
-  export class InputThemeSlug extends VirtualClass<{
-    slug: string;
-  }> {
-    slug: string;
-  };
-  export class Theme extends VirtualClass<{
-    // flags: undefined;
-    creator?: true;
-    default?: true;
-    forChat?: true;
-    id: long;
-    accessHash: long;
-    slug: string;
-    title: string;
-    document?: Api.TypeDocument;
-    settings?: Api.TypeThemeSettings[];
-    emoticon?: string;
-    installsCount?: int;
-  }> {
-    // flags: undefined;
-    creator?: true;
-    default?: true;
-    forChat?: true;
-    id: long;
-    accessHash: long;
-    slug: string;
-    title: string;
-    document?: Api.TypeDocument;
-    settings?: Api.TypeThemeSettings[];
-    emoticon?: string;
-    installsCount?: int;
-  };
-  export class BaseThemeClassic extends VirtualClass<void> {};
-  export class BaseThemeDay extends VirtualClass<void> {};
-  export class BaseThemeNight extends VirtualClass<void> {};
-  export class BaseThemeTinted extends VirtualClass<void> {};
-  export class BaseThemeArctic extends VirtualClass<void> {};
-  export class InputThemeSettings extends VirtualClass<{
-    // flags: undefined;
-    messageColorsAnimated?: true;
-    baseTheme: Api.TypeBaseTheme;
-    accentColor: int;
-    outboxAccentColor?: int;
-    messageColors?: int[];
-    wallpaper?: Api.TypeInputWallPaper;
-    wallpaperSettings?: Api.TypeWallPaperSettings;
-  }> {
-    // flags: undefined;
-    messageColorsAnimated?: true;
-    baseTheme: Api.TypeBaseTheme;
-    accentColor: int;
-    outboxAccentColor?: int;
-    messageColors?: int[];
-    wallpaper?: Api.TypeInputWallPaper;
-    wallpaperSettings?: Api.TypeWallPaperSettings;
-  };
-  export class ThemeSettings extends VirtualClass<{
-    // flags: undefined;
-    messageColorsAnimated?: true;
-    baseTheme: Api.TypeBaseTheme;
-    accentColor: int;
-    outboxAccentColor?: int;
-    messageColors?: int[];
-    wallpaper?: Api.TypeWallPaper;
-  }> {
-    // flags: undefined;
-    messageColorsAnimated?: true;
-    baseTheme: Api.TypeBaseTheme;
-    accentColor: int;
-    outboxAccentColor?: int;
-    messageColors?: int[];
-    wallpaper?: Api.TypeWallPaper;
-  };
-  export class WebPageAttributeTheme extends VirtualClass<{
-    // flags: undefined;
-    documents?: Api.TypeDocument[];
-    settings?: Api.TypeThemeSettings;
-  } | void> {
-    // flags: undefined;
-    documents?: Api.TypeDocument[];
-    settings?: Api.TypeThemeSettings;
-  };
-  export class MessageUserVote extends VirtualClass<{
-    userId: long;
-    option: bytes;
-    date: int;
-  }> {
-    userId: long;
-    option: bytes;
-    date: int;
-  };
-  export class MessageUserVoteInputOption extends VirtualClass<{
-    userId: long;
-    date: int;
-  }> {
-    userId: long;
-    date: int;
-  };
-  export class MessageUserVoteMultiple extends VirtualClass<{
-    userId: long;
-    options: bytes[];
-    date: int;
-  }> {
-    userId: long;
-    options: bytes[];
-    date: int;
-  };
-  export class BankCardOpenUrl extends VirtualClass<{
-    url: string;
-    name: string;
-  }> {
-    url: string;
-    name: string;
-  };
-  export class DialogFilter extends VirtualClass<{
-    // flags: undefined;
-    contacts?: true;
-    nonContacts?: true;
-    groups?: true;
-    broadcasts?: true;
-    bots?: true;
-    excludeMuted?: true;
-    excludeRead?: true;
-    excludeArchived?: true;
-    id: int;
-    title: string;
-    emoticon?: string;
-    pinnedPeers: Api.TypeInputPeer[];
-    includePeers: Api.TypeInputPeer[];
-    excludePeers: Api.TypeInputPeer[];
-  }> {
-    // flags: undefined;
-    contacts?: true;
-    nonContacts?: true;
-    groups?: true;
-    broadcasts?: true;
-    bots?: true;
-    excludeMuted?: true;
-    excludeRead?: true;
-    excludeArchived?: true;
-    id: int;
-    title: string;
-    emoticon?: string;
-    pinnedPeers: Api.TypeInputPeer[];
-    includePeers: Api.TypeInputPeer[];
-    excludePeers: Api.TypeInputPeer[];
-  };
-  export class DialogFilterDefault extends VirtualClass<void> {};
-  export class DialogFilterSuggested extends VirtualClass<{
-    filter: Api.TypeDialogFilter;
-    description: string;
-  }> {
-    filter: Api.TypeDialogFilter;
-    description: string;
-  };
-  export class StatsDateRangeDays extends VirtualClass<{
-    minDate: int;
-    maxDate: int;
-  }> {
-    minDate: int;
-    maxDate: int;
-  };
-  export class StatsAbsValueAndPrev extends VirtualClass<{
-    current: double;
-    previous: double;
-  }> {
-    current: double;
-    previous: double;
-  };
-  export class StatsPercentValue extends VirtualClass<{
-    part: double;
-    total: double;
-  }> {
-    part: double;
-    total: double;
-  };
-  export class StatsGraphAsync extends VirtualClass<{
-    token: string;
-  }> {
-    token: string;
-  };
-  export class StatsGraphError extends VirtualClass<{
-    error: string;
-  }> {
-    error: string;
-  };
-  export class StatsGraph extends VirtualClass<{
-    // flags: undefined;
-    json: Api.TypeDataJSON;
-    zoomToken?: string;
-  }> {
-    // flags: undefined;
-    json: Api.TypeDataJSON;
-    zoomToken?: string;
-  };
-  export class MessageInteractionCounters extends VirtualClass<{
-    msgId: int;
-    views: int;
-    forwards: int;
-  }> {
-    msgId: int;
-    views: int;
-    forwards: int;
-  };
-  export class VideoSize extends VirtualClass<{
-    // flags: undefined;
-    type: string;
-    w: int;
-    h: int;
-    size: int;
-    videoStartTs?: double;
-  }> {
-    // flags: undefined;
-    type: string;
-    w: int;
-    h: int;
-    size: int;
-    videoStartTs?: double;
-  };
-  export class VideoSizeEmojiMarkup extends VirtualClass<{
-    emojiId: long;
-    backgroundColors: int[];
-  }> {
-    emojiId: long;
-    backgroundColors: int[];
-  };
-  export class VideoSizeStickerMarkup extends VirtualClass<{
-    stickerset: Api.TypeInputStickerSet;
-    stickerId: long;
-    backgroundColors: int[];
-  }> {
-    stickerset: Api.TypeInputStickerSet;
-    stickerId: long;
-    backgroundColors: int[];
-  };
-  export class StatsGroupTopPoster extends VirtualClass<{
-    userId: long;
-    messages: int;
-    avgChars: int;
-  }> {
-    userId: long;
-    messages: int;
-    avgChars: int;
-  };
-  export class StatsGroupTopAdmin extends VirtualClass<{
-    userId: long;
-    deleted: int;
-    kicked: int;
-    banned: int;
-  }> {
-    userId: long;
-    deleted: int;
-    kicked: int;
-    banned: int;
-  };
-  export class StatsGroupTopInviter extends VirtualClass<{
-    userId: long;
-    invitations: int;
-  }> {
-    userId: long;
-    invitations: int;
-  };
-  export class GlobalPrivacySettings extends VirtualClass<{
-    // flags: undefined;
-    archiveAndMuteNewNoncontactPeers?: Bool;
-  } | void> {
-    // flags: undefined;
-    archiveAndMuteNewNoncontactPeers?: Bool;
-  };
-  export class MessageViews extends VirtualClass<{
-    // flags: undefined;
-    views?: int;
-    forwards?: int;
-    replies?: Api.TypeMessageReplies;
-  } | void> {
-    // flags: undefined;
-    views?: int;
-    forwards?: int;
-    replies?: Api.TypeMessageReplies;
-  };
-  export class MessageReplyHeader extends VirtualClass<{
-    // flags: undefined;
-    replyToScheduled?: true;
-    forumTopic?: true;
-    replyToMsgId: int;
-    replyToPeerId?: Api.TypePeer;
-    replyToTopId?: int;
-  }> {
-    // flags: undefined;
-    replyToScheduled?: true;
-    forumTopic?: true;
-    replyToMsgId: int;
-    replyToPeerId?: Api.TypePeer;
-    replyToTopId?: int;
-  };
-  export class MessageReplies extends VirtualClass<{
-    // flags: undefined;
-    comments?: true;
-    replies: int;
-    repliesPts: int;
-    recentRepliers?: Api.TypePeer[];
-    channelId?: long;
-    maxId?: int;
-    readMaxId?: int;
-  }> {
-    // flags: undefined;
-    comments?: true;
-    replies: int;
-    repliesPts: int;
-    recentRepliers?: Api.TypePeer[];
-    channelId?: long;
-    maxId?: int;
-    readMaxId?: int;
-  };
-  export class PeerBlocked extends VirtualClass<{
-    peerId: Api.TypePeer;
-    date: int;
-  }> {
-    peerId: Api.TypePeer;
-    date: int;
-  };
-  export class GroupCallDiscarded extends VirtualClass<{
-    id: long;
-    accessHash: long;
-    duration: int;
-  }> {
-    id: long;
-    accessHash: long;
-    duration: int;
-  };
-  export class GroupCall extends VirtualClass<{
-    // flags: undefined;
-    joinMuted?: true;
-    canChangeJoinMuted?: true;
-    joinDateAsc?: true;
-    scheduleStartSubscribed?: true;
-    canStartVideo?: true;
-    recordVideoActive?: true;
-    rtmpStream?: true;
-    listenersHidden?: true;
-    id: long;
-    accessHash: long;
-    participantsCount: int;
-    title?: string;
-    streamDcId?: int;
-    recordStartDate?: int;
-    scheduleDate?: int;
-    unmutedVideoCount?: int;
-    unmutedVideoLimit: int;
-    version: int;
-  }> {
-    // flags: undefined;
-    joinMuted?: true;
-    canChangeJoinMuted?: true;
-    joinDateAsc?: true;
-    scheduleStartSubscribed?: true;
-    canStartVideo?: true;
-    recordVideoActive?: true;
-    rtmpStream?: true;
-    listenersHidden?: true;
-    id: long;
-    accessHash: long;
-    participantsCount: int;
-    title?: string;
-    streamDcId?: int;
-    recordStartDate?: int;
-    scheduleDate?: int;
-    unmutedVideoCount?: int;
-    unmutedVideoLimit: int;
-    version: int;
-  };
-  export class InputGroupCall extends VirtualClass<{
-    id: long;
-    accessHash: long;
-  }> {
-    id: long;
-    accessHash: long;
-  };
-  export class GroupCallParticipant extends VirtualClass<{
-    // flags: undefined;
-    muted?: true;
-    left?: true;
-    canSelfUnmute?: true;
-    justJoined?: true;
-    versioned?: true;
-    min?: true;
-    mutedByYou?: true;
-    volumeByAdmin?: true;
-    self?: true;
-    videoJoined?: true;
-    peer: Api.TypePeer;
-    date: int;
-    activeDate?: int;
-    source: int;
-    volume?: int;
-    about?: string;
-    raiseHandRating?: long;
-    video?: Api.TypeGroupCallParticipantVideo;
-    presentation?: Api.TypeGroupCallParticipantVideo;
-  }> {
-    // flags: undefined;
-    muted?: true;
-    left?: true;
-    canSelfUnmute?: true;
-    justJoined?: true;
-    versioned?: true;
-    min?: true;
-    mutedByYou?: true;
-    volumeByAdmin?: true;
-    self?: true;
-    videoJoined?: true;
-    peer: Api.TypePeer;
-    date: int;
-    activeDate?: int;
-    source: int;
-    volume?: int;
-    about?: string;
-    raiseHandRating?: long;
-    video?: Api.TypeGroupCallParticipantVideo;
-    presentation?: Api.TypeGroupCallParticipantVideo;
-  };
-  export class InlineQueryPeerTypeSameBotPM extends VirtualClass<void> {};
-  export class InlineQueryPeerTypePM extends VirtualClass<void> {};
-  export class InlineQueryPeerTypeChat extends VirtualClass<void> {};
-  export class InlineQueryPeerTypeMegagroup extends VirtualClass<void> {};
-  export class InlineQueryPeerTypeBroadcast extends VirtualClass<void> {};
-  export class ChatInviteImporter extends VirtualClass<{
-    // flags: undefined;
-    requested?: true;
-    userId: long;
-    date: int;
-    about?: string;
-    approvedBy?: long;
-  }> {
-    // flags: undefined;
-    requested?: true;
-    userId: long;
-    date: int;
-    about?: string;
-    approvedBy?: long;
-  };
-  export class ChatAdminWithInvites extends VirtualClass<{
-    adminId: long;
-    invitesCount: int;
-    revokedInvitesCount: int;
-  }> {
-    adminId: long;
-    invitesCount: int;
-    revokedInvitesCount: int;
-  };
-  export class GroupCallParticipantVideoSourceGroup extends VirtualClass<{
-    semantics: string;
-    sources: int[];
-  }> {
-    semantics: string;
-    sources: int[];
-  };
-  export class GroupCallParticipantVideo extends VirtualClass<{
-    // flags: undefined;
-    paused?: true;
-    endpoint: string;
-    sourceGroups: Api.TypeGroupCallParticipantVideoSourceGroup[];
-    audioSource?: int;
-  }> {
-    // flags: undefined;
-    paused?: true;
-    endpoint: string;
-    sourceGroups: Api.TypeGroupCallParticipantVideoSourceGroup[];
-    audioSource?: int;
-  };
-  export class BotCommandScopeDefault extends VirtualClass<void> {};
-  export class BotCommandScopeUsers extends VirtualClass<void> {};
-  export class BotCommandScopeChats extends VirtualClass<void> {};
-  export class BotCommandScopeChatAdmins extends VirtualClass<void> {};
-  export class BotCommandScopePeer extends VirtualClass<{
-    peer: Api.TypeInputPeer;
-  }> {
-    peer: Api.TypeInputPeer;
-  };
-  export class BotCommandScopePeerAdmins extends VirtualClass<{
-    peer: Api.TypeInputPeer;
-  }> {
-    peer: Api.TypeInputPeer;
-  };
-  export class BotCommandScopePeerUser extends VirtualClass<{
-    peer: Api.TypeInputPeer;
-    userId: Api.TypeInputUser;
-  }> {
-    peer: Api.TypeInputPeer;
-    userId: Api.TypeInputUser;
-  };
-  export class SponsoredMessage extends VirtualClass<{
-    // flags: undefined;
-    recommended?: true;
-    showPeerPhoto?: true;
-    randomId: bytes;
-    fromId?: Api.TypePeer;
-    chatInvite?: Api.TypeChatInvite;
-    chatInviteHash?: string;
-    channelPost?: int;
-    startParam?: string;
-    message: string;
-    entities?: Api.TypeMessageEntity[];
-  }> {
-    // flags: undefined;
-    recommended?: true;
-    showPeerPhoto?: true;
-    randomId: bytes;
-    fromId?: Api.TypePeer;
-    chatInvite?: Api.TypeChatInvite;
-    chatInviteHash?: string;
-    channelPost?: int;
-    startParam?: string;
-    message: string;
-    entities?: Api.TypeMessageEntity[];
-  };
-  export class SearchResultsCalendarPeriod extends VirtualClass<{
-    date: int;
-    minMsgId: int;
-    maxMsgId: int;
-    count: int;
-  }> {
-    date: int;
-    minMsgId: int;
-    maxMsgId: int;
-    count: int;
-  };
-  export class SearchResultPosition extends VirtualClass<{
-    msgId: int;
-    date: int;
-    offset: int;
-  }> {
-    msgId: int;
-    date: int;
-    offset: int;
-  };
-  export class ReactionCount extends VirtualClass<{
-    // flags: undefined;
-    chosenOrder?: int;
-    reaction: Api.TypeReaction;
-    count: int;
-  }> {
-    // flags: undefined;
-    chosenOrder?: int;
-    reaction: Api.TypeReaction;
-    count: int;
-  };
-  export class MessageReactions extends VirtualClass<{
-    // flags: undefined;
-    min?: true;
-    canSeeList?: true;
-    results: Api.TypeReactionCount[];
-    recentReactions?: Api.TypeMessagePeerReaction[];
-  }> {
-    // flags: undefined;
-    min?: true;
-    canSeeList?: true;
-    results: Api.TypeReactionCount[];
-    recentReactions?: Api.TypeMessagePeerReaction[];
-  };
-  export class AvailableReaction extends VirtualClass<{
-    // flags: undefined;
-    inactive?: true;
-    premium?: true;
-    reaction: string;
-    title: string;
-    staticIcon: Api.TypeDocument;
-    appearAnimation: Api.TypeDocument;
-    selectAnimation: Api.TypeDocument;
-    activateAnimation: Api.TypeDocument;
-    effectAnimation: Api.TypeDocument;
-    aroundAnimation?: Api.TypeDocument;
-    centerIcon?: Api.TypeDocument;
-  }> {
-    // flags: undefined;
-    inactive?: true;
-    premium?: true;
-    reaction: string;
-    title: string;
-    staticIcon: Api.TypeDocument;
-    appearAnimation: Api.TypeDocument;
-    selectAnimation: Api.TypeDocument;
-    activateAnimation: Api.TypeDocument;
-    effectAnimation: Api.TypeDocument;
-    aroundAnimation?: Api.TypeDocument;
-    centerIcon?: Api.TypeDocument;
-  };
-  export class MessagePeerReaction extends VirtualClass<{
-    // flags: undefined;
-    big?: true;
-    unread?: true;
-    peerId: Api.TypePeer;
-    reaction: Api.TypeReaction;
-  }> {
-    // flags: undefined;
-    big?: true;
-    unread?: true;
-    peerId: Api.TypePeer;
-    reaction: Api.TypeReaction;
-  };
-  export class GroupCallStreamChannel extends VirtualClass<{
-    channel: int;
-    scale: int;
-    lastTimestampMs: long;
-  }> {
-    channel: int;
-    scale: int;
-    lastTimestampMs: long;
-  };
-  export class AttachMenuBotIconColor extends VirtualClass<{
-    name: string;
-    color: int;
-  }> {
-    name: string;
-    color: int;
-  };
-  export class AttachMenuBotIcon extends VirtualClass<{
-    // flags: undefined;
-    name: string;
-    icon: Api.TypeDocument;
-    colors?: Api.TypeAttachMenuBotIconColor[];
-  }> {
-    // flags: undefined;
-    name: string;
-    icon: Api.TypeDocument;
-    colors?: Api.TypeAttachMenuBotIconColor[];
-  };
-  export class AttachMenuBot extends VirtualClass<{
-    // flags: undefined;
-    inactive?: true;
-    hasSettings?: true;
-    requestWriteAccess?: true;
-    botId: long;
-    shortName: string;
-    peerTypes: Api.TypeAttachMenuPeerType[];
-    icons: Api.TypeAttachMenuBotIcon[];
-  }> {
-    // flags: undefined;
-    inactive?: true;
-    hasSettings?: true;
-    requestWriteAccess?: true;
-    botId: long;
-    shortName: string;
-    peerTypes: Api.TypeAttachMenuPeerType[];
-    icons: Api.TypeAttachMenuBotIcon[];
-  };
-  export class AttachMenuBotsNotModified extends VirtualClass<void> {};
-  export class AttachMenuBots extends VirtualClass<{
-    hash: long;
-    bots: Api.TypeAttachMenuBot[];
-    users: Api.TypeUser[];
-  }> {
-    hash: long;
-    bots: Api.TypeAttachMenuBot[];
-    users: Api.TypeUser[];
-  };
-  export class AttachMenuBotsBot extends VirtualClass<{
-    bot: Api.TypeAttachMenuBot;
-    users: Api.TypeUser[];
-  }> {
-    bot: Api.TypeAttachMenuBot;
-    users: Api.TypeUser[];
-  };
-  export class WebViewResultUrl extends VirtualClass<{
-    queryId: long;
-    url: string;
-  }> {
-    queryId: long;
-    url: string;
-  };
-  export class SimpleWebViewResultUrl extends VirtualClass<{
-    url: string;
-  }> {
-    url: string;
-  };
-  export class WebViewMessageSent extends VirtualClass<{
-    // flags: undefined;
-    msgId?: Api.TypeInputBotInlineMessageID;
-  } | void> {
-    // flags: undefined;
-    msgId?: Api.TypeInputBotInlineMessageID;
-  };
-  export class BotMenuButtonDefault extends VirtualClass<void> {};
-  export class BotMenuButtonCommands extends VirtualClass<void> {};
-  export class BotMenuButton extends VirtualClass<{
-    text: string;
-    url: string;
-  }> {
-    text: string;
-    url: string;
-  };
-  export class NotificationSoundDefault extends VirtualClass<void> {};
-  export class NotificationSoundNone extends VirtualClass<void> {};
-  export class NotificationSoundLocal extends VirtualClass<{
-    title: string;
-    data: string;
-  }> {
-    title: string;
-    data: string;
-  };
-  export class NotificationSoundRingtone extends VirtualClass<{
-    id: long;
-  }> {
-    id: long;
-  };
-  export class AttachMenuPeerTypeSameBotPM extends VirtualClass<void> {};
-  export class AttachMenuPeerTypeBotPM extends VirtualClass<void> {};
-  export class AttachMenuPeerTypePM extends VirtualClass<void> {};
-  export class AttachMenuPeerTypeChat extends VirtualClass<void> {};
-  export class AttachMenuPeerTypeBroadcast extends VirtualClass<void> {};
-  export class InputInvoiceMessage extends VirtualClass<{
-    peer: Api.TypeInputPeer;
-    msgId: int;
-  }> {
-    peer: Api.TypeInputPeer;
-    msgId: int;
-  };
-  export class InputInvoiceSlug extends VirtualClass<{
-    slug: string;
-  }> {
-    slug: string;
-  };
-  export class InputStorePaymentPremiumSubscription extends VirtualClass<{
-    // flags: undefined;
-    restore?: true;
-    upgrade?: true;
-  } | void> {
-    // flags: undefined;
-    restore?: true;
-    upgrade?: true;
-  };
-  export class InputStorePaymentGiftPremium extends VirtualClass<{
-    userId: Api.TypeInputUser;
-    currency: string;
-    amount: long;
-  }> {
-    userId: Api.TypeInputUser;
-    currency: string;
-    amount: long;
-  };
-  export class PremiumGiftOption extends VirtualClass<{
-    // flags: undefined;
-    months: int;
-    currency: string;
-    amount: long;
-    botUrl: string;
-    storeProduct?: string;
-  }> {
-    // flags: undefined;
-    months: int;
-    currency: string;
-    amount: long;
-    botUrl: string;
-    storeProduct?: string;
-  };
-  export class PaymentFormMethod extends VirtualClass<{
-    url: string;
-    title: string;
-  }> {
-    url: string;
-    title: string;
-  };
-  export class EmojiStatusEmpty extends VirtualClass<void> {};
-  export class EmojiStatus extends VirtualClass<{
-    documentId: long;
-  }> {
-    documentId: long;
-  };
-  export class EmojiStatusUntil extends VirtualClass<{
-    documentId: long;
-    until: int;
-  }> {
-    documentId: long;
-    until: int;
-  };
-  export class ReactionEmpty extends VirtualClass<void> {};
-  export class ReactionEmoji extends VirtualClass<{
-    emoticon: string;
-  }> {
-    emoticon: string;
-  };
-  export class ReactionCustomEmoji extends VirtualClass<{
-    documentId: long;
-  }> {
-    documentId: long;
-  };
-  export class ChatReactionsNone extends VirtualClass<void> {};
-  export class ChatReactionsAll extends VirtualClass<{
-    // flags: undefined;
-    allowCustom?: true;
-  } | void> {
-    // flags: undefined;
-    allowCustom?: true;
-  };
-  export class ChatReactionsSome extends VirtualClass<{
-    reactions: Api.TypeReaction[];
-  }> {
-    reactions: Api.TypeReaction[];
-  };
-  export class EmailVerifyPurposeLoginSetup extends VirtualClass<{
-    phoneNumber: string;
-    phoneCodeHash: string;
-  }> {
-    phoneNumber: string;
-    phoneCodeHash: string;
-  };
-  export class EmailVerifyPurposeLoginChange extends VirtualClass<void> {};
-  export class EmailVerifyPurposePassport extends VirtualClass<void> {};
-  export class EmailVerificationCode extends VirtualClass<{
-    code: string;
-  }> {
-    code: string;
-  };
-  export class EmailVerificationGoogle extends VirtualClass<{
-    token: string;
-  }> {
-    token: string;
-  };
-  export class EmailVerificationApple extends VirtualClass<{
-    token: string;
-  }> {
-    token: string;
-  };
-  export class PremiumSubscriptionOption extends VirtualClass<{
-    // flags: undefined;
-    current?: true;
-    canPurchaseUpgrade?: true;
-    transaction?: string;
-    months: int;
-    currency: string;
-    amount: long;
-    botUrl: string;
-    storeProduct?: string;
-  }> {
-    // flags: undefined;
-    current?: true;
-    canPurchaseUpgrade?: true;
-    transaction?: string;
-    months: int;
-    currency: string;
-    amount: long;
-    botUrl: string;
-    storeProduct?: string;
-  };
-  export class SendAsPeer extends VirtualClass<{
-    // flags: undefined;
-    premiumRequired?: true;
-    peer: Api.TypePeer;
-  }> {
-    // flags: undefined;
-    premiumRequired?: true;
-    peer: Api.TypePeer;
-  };
-  export class MessageExtendedMediaPreview extends VirtualClass<{
-    // flags: undefined;
-    w?: int;
-    h?: int;
-    thumb?: Api.TypePhotoSize;
-    videoDuration?: int;
-  } | void> {
-    // flags: undefined;
-    w?: int;
-    h?: int;
-    thumb?: Api.TypePhotoSize;
-    videoDuration?: int;
-  };
-  export class MessageExtendedMedia extends VirtualClass<{
-    media: Api.TypeMessageMedia;
-  }> {
-    media: Api.TypeMessageMedia;
-  };
-  export class StickerKeyword extends VirtualClass<{
-    documentId: long;
-    keyword: string[];
-  }> {
-    documentId: long;
-    keyword: string[];
-  };
-  export class Username extends VirtualClass<{
-    // flags: undefined;
-    editable?: true;
-    active?: true;
-    username: string;
-  }> {
-    // flags: undefined;
-    editable?: true;
-    active?: true;
-    username: string;
-  };
-  export class ForumTopicDeleted extends VirtualClass<{
-    id: int;
-  }> {
-    id: int;
-  };
-  export class ForumTopic extends VirtualClass<{
-    // flags: undefined;
-    my?: true;
-    closed?: true;
-    pinned?: true;
-    short?: true;
-    hidden?: true;
-    id: int;
-    date: int;
-    title: string;
-    iconColor: int;
-    iconEmojiId?: long;
-    topMessage: int;
-    readInboxMaxId: int;
-    readOutboxMaxId: int;
-    unreadCount: int;
-    unreadMentionsCount: int;
-    unreadReactionsCount: int;
-    fromId: Api.TypePeer;
-    notifySettings: Api.TypePeerNotifySettings;
-    draft?: Api.TypeDraftMessage;
-  }> {
-    // flags: undefined;
-    my?: true;
-    closed?: true;
-    pinned?: true;
-    short?: true;
-    hidden?: true;
-    id: int;
-    date: int;
-    title: string;
-    iconColor: int;
-    iconEmojiId?: long;
-    topMessage: int;
-    readInboxMaxId: int;
-    readOutboxMaxId: int;
-    unreadCount: int;
-    unreadMentionsCount: int;
-    unreadReactionsCount: int;
-    fromId: Api.TypePeer;
-    notifySettings: Api.TypePeerNotifySettings;
-    draft?: Api.TypeDraftMessage;
-  };
-  export class DefaultHistoryTTL extends VirtualClass<{
-    period: int;
-  }> {
-    period: int;
-  };
-  export class ExportedContactToken extends VirtualClass<{
-    url: string;
-    expires: int;
-  }> {
-    url: string;
-    expires: int;
-  };
-  export class RequestPeerTypeUser extends VirtualClass<{
-    // flags: undefined;
-    bot?: Bool;
-    premium?: Bool;
-  } | void> {
-    // flags: undefined;
-    bot?: Bool;
-    premium?: Bool;
-  };
-  export class RequestPeerTypeChat extends VirtualClass<{
-    // flags: undefined;
-    creator?: true;
-    botParticipant?: true;
-    hasUsername?: Bool;
-    forum?: Bool;
-    userAdminRights?: Api.TypeChatAdminRights;
-    botAdminRights?: Api.TypeChatAdminRights;
-  } | void> {
-    // flags: undefined;
-    creator?: true;
-    botParticipant?: true;
-    hasUsername?: Bool;
-    forum?: Bool;
-    userAdminRights?: Api.TypeChatAdminRights;
-    botAdminRights?: Api.TypeChatAdminRights;
-  };
-  export class RequestPeerTypeBroadcast extends VirtualClass<{
-    // flags: undefined;
-    creator?: true;
-    hasUsername?: Bool;
-    userAdminRights?: Api.TypeChatAdminRights;
-    botAdminRights?: Api.TypeChatAdminRights;
-  } | void> {
-    // flags: undefined;
-    creator?: true;
-    hasUsername?: Bool;
-    userAdminRights?: Api.TypeChatAdminRights;
-    botAdminRights?: Api.TypeChatAdminRights;
-  };
-  export class EmojiListNotModified extends VirtualClass<void> {};
-  export class EmojiList extends VirtualClass<{
-    hash: long;
-    documentId: long[];
-  }> {
-    hash: long;
-    documentId: long[];
-  };
-  export class EmojiGroup extends VirtualClass<{
-    title: string;
-    iconEmojiId: long;
-    emoticons: string[];
-  }> {
-    title: string;
-    iconEmojiId: long;
-    emoticons: string[];
-  };
-  export class TextWithEntities extends VirtualClass<{
-    text: string;
-    entities: Api.TypeMessageEntity[];
-  }> {
-    text: string;
-    entities: Api.TypeMessageEntity[];
-  };
-  export class AutoSaveSettings extends VirtualClass<{
-    // flags: undefined;
-    photos?: true;
-    videos?: true;
-    videoMaxSize?: long;
-  } | void> {
-    // flags: undefined;
-    photos?: true;
-    videos?: true;
-    videoMaxSize?: long;
-  };
-  export class AutoSaveException extends VirtualClass<{
-    peer: Api.TypePeer;
-    settings: Api.TypeAutoSaveSettings;
-  }> {
-    peer: Api.TypePeer;
-    settings: Api.TypeAutoSaveSettings;
-  };
-  export class ResPQ extends VirtualClass<{
-    nonce: int128;
-    serverNonce: int128;
-    pq: bytes;
-    serverPublicKeyFingerprints: long[];
-  }> {
-    nonce: int128;
-    serverNonce: int128;
-    pq: bytes;
-    serverPublicKeyFingerprints: long[];
-  };
-  export class PQInnerData extends VirtualClass<{
-    pq: bytes;
-    p: bytes;
-    q: bytes;
-    nonce: int128;
-    serverNonce: int128;
-    newNonce: int256;
-  }> {
-    pq: bytes;
-    p: bytes;
-    q: bytes;
-    nonce: int128;
-    serverNonce: int128;
-    newNonce: int256;
-  };
-  export class PQInnerDataDc extends VirtualClass<{
-    pq: bytes;
-    p: bytes;
-    q: bytes;
-    nonce: int128;
-    serverNonce: int128;
-    newNonce: int256;
-    dc: int;
-  }> {
-    pq: bytes;
-    p: bytes;
-    q: bytes;
-    nonce: int128;
-    serverNonce: int128;
-    newNonce: int256;
-    dc: int;
-  };
-  export class PQInnerDataTemp extends VirtualClass<{
-    pq: bytes;
-    p: bytes;
-    q: bytes;
-    nonce: int128;
-    serverNonce: int128;
-    newNonce: int256;
-    expiresIn: int;
-  }> {
-    pq: bytes;
-    p: bytes;
-    q: bytes;
-    nonce: int128;
-    serverNonce: int128;
-    newNonce: int256;
-    expiresIn: int;
-  };
-  export class PQInnerDataTempDc extends VirtualClass<{
-    pq: bytes;
-    p: bytes;
-    q: bytes;
-    nonce: int128;
-    serverNonce: int128;
-    newNonce: int256;
-    dc: int;
-    expiresIn: int;
-  }> {
-    pq: bytes;
-    p: bytes;
-    q: bytes;
-    nonce: int128;
-    serverNonce: int128;
-    newNonce: int256;
-    dc: int;
-    expiresIn: int;
-  };
-  export class ServerDHParamsFail extends VirtualClass<{
-    nonce: int128;
-    serverNonce: int128;
-    newNonceHash: int128;
-  }> {
-    nonce: int128;
-    serverNonce: int128;
-    newNonceHash: int128;
-  };
-  export class ServerDHParamsOk extends VirtualClass<{
-    nonce: int128;
-    serverNonce: int128;
-    encryptedAnswer: bytes;
-  }> {
-    nonce: int128;
-    serverNonce: int128;
-    encryptedAnswer: bytes;
-  };
-  export class ServerDHInnerData extends VirtualClass<{
-    nonce: int128;
-    serverNonce: int128;
-    g: int;
-    dhPrime: bytes;
-    gA: bytes;
-    serverTime: int;
-  }> {
-    nonce: int128;
-    serverNonce: int128;
-    g: int;
-    dhPrime: bytes;
-    gA: bytes;
-    serverTime: int;
-  };
-  export class ClientDHInnerData extends VirtualClass<{
-    nonce: int128;
-    serverNonce: int128;
-    retryId: long;
-    gB: bytes;
-  }> {
-    nonce: int128;
-    serverNonce: int128;
-    retryId: long;
-    gB: bytes;
-  };
-  export class DhGenOk extends VirtualClass<{
-    nonce: int128;
-    serverNonce: int128;
-    newNonceHash1: int128;
-  }> {
-    nonce: int128;
-    serverNonce: int128;
-    newNonceHash1: int128;
-  };
-  export class DhGenRetry extends VirtualClass<{
-    nonce: int128;
-    serverNonce: int128;
-    newNonceHash2: int128;
-  }> {
-    nonce: int128;
-    serverNonce: int128;
-    newNonceHash2: int128;
-  };
-  export class DhGenFail extends VirtualClass<{
-    nonce: int128;
-    serverNonce: int128;
-    newNonceHash3: int128;
-  }> {
-    nonce: int128;
-    serverNonce: int128;
-    newNonceHash3: int128;
-  };
-  export class DestroyAuthKeyOk extends VirtualClass<void> {};
-  export class DestroyAuthKeyNone extends VirtualClass<void> {};
-  export class DestroyAuthKeyFail extends VirtualClass<void> {};
-  export class MsgsAck extends VirtualClass<{
-    msgIds: long[];
-  }> {
-    msgIds: long[];
-  };
-  export class BadMsgNotification extends VirtualClass<{
-    badMsgId: long;
-    badMsgSeqno: int;
-    errorCode: int;
-  }> {
-    badMsgId: long;
-    badMsgSeqno: int;
-    errorCode: int;
-  };
-  export class BadServerSalt extends VirtualClass<{
-    badMsgId: long;
-    badMsgSeqno: int;
-    errorCode: int;
-    newServerSalt: long;
-  }> {
-    badMsgId: long;
-    badMsgSeqno: int;
-    errorCode: int;
-    newServerSalt: long;
-  };
-  export class MsgsStateReq extends VirtualClass<{
-    msgIds: long[];
-  }> {
-    msgIds: long[];
-  };
-  export class MsgsStateInfo extends VirtualClass<{
-    reqMsgId: long;
-    info: string;
-  }> {
-    reqMsgId: long;
-    info: string;
-  };
-  export class MsgsAllInfo extends VirtualClass<{
-    msgIds: long[];
-    info: string;
-  }> {
-    msgIds: long[];
-    info: string;
-  };
-  export class MsgDetailedInfo extends VirtualClass<{
-    msgId: long;
-    answerMsgId: long;
-    bytes: int;
-    status: int;
-  }> {
-    msgId: long;
-    answerMsgId: long;
-    bytes: int;
-    status: int;
-  };
-  export class MsgNewDetailedInfo extends VirtualClass<{
-    answerMsgId: long;
-    bytes: int;
-    status: int;
-  }> {
-    answerMsgId: long;
-    bytes: int;
-    status: int;
-  };
-  export class MsgResendReq extends VirtualClass<{
-    msgIds: long[];
-  }> {
-    msgIds: long[];
-  };
-  export class RpcError extends VirtualClass<{
-    errorCode: int;
-    errorMessage: string;
-  }> {
-    errorCode: int;
-    errorMessage: string;
-  };
-  export class RpcAnswerUnknown extends VirtualClass<void> {};
-  export class RpcAnswerDroppedRunning extends VirtualClass<void> {};
-  export class RpcAnswerDropped extends VirtualClass<{
-    msgId: long;
-    seqNo: int;
-    bytes: int;
-  }> {
-    msgId: long;
-    seqNo: int;
-    bytes: int;
-  };
-  export class FutureSalt extends VirtualClass<{
-    validSince: int;
-    validUntil: int;
-    salt: long;
-  }> {
-    validSince: int;
-    validUntil: int;
-    salt: long;
-  };
-  export class FutureSalts extends VirtualClass<{
-    reqMsgId: long;
-    now: int;
-    salts: future_salt[];
-  }> {
-    reqMsgId: long;
-    now: int;
-    salts: future_salt[];
-  };
-  export class Pong extends VirtualClass<{
-    msgId: long;
-    pingId: long;
-  }> {
-    msgId: long;
-    pingId: long;
-  };
-  export class DestroySessionOk extends VirtualClass<{
-    sessionId: long;
-  }> {
-    sessionId: long;
-  };
-  export class DestroySessionNone extends VirtualClass<{
-    sessionId: long;
-  }> {
-    sessionId: long;
-  };
-  export class NewSessionCreated extends VirtualClass<{
-    firstMsgId: long;
-    uniqueId: long;
-    serverSalt: long;
-  }> {
-    firstMsgId: long;
-    uniqueId: long;
-    serverSalt: long;
-  };
-  export class HttpWait extends VirtualClass<{
-    maxDelay: int;
-    waitAfter: int;
-    maxWait: int;
-  }> {
-    maxDelay: int;
-    waitAfter: int;
-    maxWait: int;
-  };
-  export class IpPort extends VirtualClass<{
-    ipv4: int;
-    port: int;
-  }> {
-    ipv4: int;
-    port: int;
-  };
-  export class IpPortSecret extends VirtualClass<{
-    ipv4: int;
-    port: int;
-    secret: bytes;
-  }> {
-    ipv4: int;
-    port: int;
-    secret: bytes;
-  };
-  export class AccessPointRule extends VirtualClass<{
-    phonePrefixRules: string;
-    dcId: int;
-    ips: Api.TypeIpPort[];
-  }> {
-    phonePrefixRules: string;
-    dcId: int;
-    ips: Api.TypeIpPort[];
-  };
-  export class TlsClientHello extends VirtualClass<{
-    blocks: Api.TypeTlsBlock[];
-  }> {
-    blocks: Api.TypeTlsBlock[];
-  };
-  export class TlsBlockString extends VirtualClass<{
-    data: string;
-  }> {
-    data: string;
-  };
-  export class TlsBlockRandom extends VirtualClass<{
-    length: int;
-  }> {
-    length: int;
-  };
-  export class TlsBlockZero extends VirtualClass<{
-    length: int;
-  }> {
-    length: int;
-  };
-  export class TlsBlockDomain extends VirtualClass<void> {};
-  export class TlsBlockGrease extends VirtualClass<{
-    seed: int;
-  }> {
-    seed: int;
-  };
-  export class TlsBlockScope extends VirtualClass<{
-    entries: Api.TypeTlsBlock[];
-  }> {
-    entries: Api.TypeTlsBlock[];
-  };
-  
 
-  export namespace storage {
-    export class FileUnknown extends VirtualClass<void> {};
-    export class FilePartial extends VirtualClass<void> {};
-    export class FileJpeg extends VirtualClass<void> {};
-    export class FileGif extends VirtualClass<void> {};
-    export class FilePng extends VirtualClass<void> {};
-    export class FilePdf extends VirtualClass<void> {};
-    export class FileMp3 extends VirtualClass<void> {};
-    export class FileMov extends VirtualClass<void> {};
-    export class FileMp4 extends VirtualClass<void> {};
-    export class FileWebp extends VirtualClass<void> {};
+    export class InputPeerEmpty extends VirtualClass<void> {
+    }
+
+    export class InputPeerSelf extends VirtualClass<void> {
+    }
+
+    export class InputPeerChat extends VirtualClass<{
+    chatId: long;
+  }> {
+    chatId: long;
+  }
+
+    export class InputPeerUser extends VirtualClass<{
+    userId: long;
+    accessHash: long;
+  }> {
+    userId: long;
+    accessHash: long;
+  }
+
+    export class InputPeerChannel extends VirtualClass<{
+    channelId: long;
+    accessHash: long;
+  }> {
+    channelId: long;
+    accessHash: long;
+  }
+
+    export class InputPeerUserFromMessage extends VirtualClass<{
+    peer: Api.TypeInputPeer;
+    msgId: int;
+    userId: long;
+  }> {
+    peer: Api.TypeInputPeer;
+    msgId: int;
+    userId: long;
+  }
+
+    export class InputPeerChannelFromMessage extends VirtualClass<{
+    peer: Api.TypeInputPeer;
+    msgId: int;
+    channelId: long;
+  }> {
+    peer: Api.TypeInputPeer;
+    msgId: int;
+    channelId: long;
+  }
+
+    export class InputUserEmpty extends VirtualClass<void> {
+    }
+
+    export class InputUserSelf extends VirtualClass<void> {
+    }
+
+    export class InputUser extends VirtualClass<{
+    userId: long;
+    accessHash: long;
+  }> {
+    userId: long;
+    accessHash: long;
+  }
+
+    export class InputUserFromMessage extends VirtualClass<{
+    peer: Api.TypeInputPeer;
+    msgId: int;
+    userId: long;
+  }> {
+    peer: Api.TypeInputPeer;
+    msgId: int;
+    userId: long;
+  }
+
+    export class InputPhoneContact extends VirtualClass<{
+    clientId: long;
+    phone: string;
+    firstName: string;
+    lastName: string;
+  }> {
+    clientId: long;
+    phone: string;
+    firstName: string;
+    lastName: string;
+  }
+
+    export class InputFile extends VirtualClass<{
+    id: long;
+    parts: int;
+    name: string;
+    md5Checksum: string;
+  }> {
+    id: long;
+    parts: int;
+    name: string;
+    md5Checksum: string;
+  }
+
+    export class InputFileBig extends VirtualClass<{
+    id: long;
+    parts: int;
+    name: string;
+  }> {
+    id: long;
+    parts: int;
+    name: string;
+  }
+
+    export class InputMediaEmpty extends VirtualClass<void> {
+    }
+
+    export class InputMediaUploadedPhoto extends VirtualClass<{
+    // flags: undefined;
+    spoiler?: true;
+    file: Api.TypeInputFile;
+    stickers?: Api.TypeInputDocument[];
+    ttlSeconds?: int;
+  }> {
+    // flags: undefined;
+    spoiler?: true;
+    file: Api.TypeInputFile;
+    stickers?: Api.TypeInputDocument[];
+    ttlSeconds?: int;
+  }
+
+    export class InputMediaPhoto extends VirtualClass<{
+    // flags: undefined;
+    spoiler?: true;
+    id: Api.TypeInputPhoto;
+    ttlSeconds?: int;
+  }> {
+    // flags: undefined;
+    spoiler?: true;
+    id: Api.TypeInputPhoto;
+    ttlSeconds?: int;
+  }
+
+    export class InputMediaGeoPoint extends VirtualClass<{
+    geoPoint: Api.TypeInputGeoPoint;
+  }> {
+    geoPoint: Api.TypeInputGeoPoint;
+  }
+
+    export class InputMediaContact extends VirtualClass<{
+    phoneNumber: string;
+    firstName: string;
+    lastName: string;
+    vcard: string;
+  }> {
+    phoneNumber: string;
+    firstName: string;
+    lastName: string;
+    vcard: string;
+  }
+
+    export class InputMediaUploadedDocument extends VirtualClass<{
+    // flags: undefined;
+    nosoundVideo?: true;
+    forceFile?: true;
+    spoiler?: true;
+    file: Api.TypeInputFile;
+    thumb?: Api.TypeInputFile;
+    mimeType: string;
+    attributes: Api.TypeDocumentAttribute[];
+    stickers?: Api.TypeInputDocument[];
+    ttlSeconds?: int;
+  }> {
+    // flags: undefined;
+    nosoundVideo?: true;
+    forceFile?: true;
+    spoiler?: true;
+    file: Api.TypeInputFile;
+    thumb?: Api.TypeInputFile;
+    mimeType: string;
+    attributes: Api.TypeDocumentAttribute[];
+    stickers?: Api.TypeInputDocument[];
+    ttlSeconds?: int;
+  }
+
+    export class InputMediaDocument extends VirtualClass<{
+    // flags: undefined;
+    spoiler?: true;
+    id: Api.TypeInputDocument;
+    ttlSeconds?: int;
+    query?: string;
+  }> {
+    // flags: undefined;
+    spoiler?: true;
+    id: Api.TypeInputDocument;
+    ttlSeconds?: int;
+    query?: string;
+  }
+
+    export class InputMediaVenue extends VirtualClass<{
+    geoPoint: Api.TypeInputGeoPoint;
+    title: string;
+    address: string;
+    provider: string;
+    venueId: string;
+    venueType: string;
+  }> {
+    geoPoint: Api.TypeInputGeoPoint;
+    title: string;
+    address: string;
+    provider: string;
+    venueId: string;
+    venueType: string;
+  }
+
+    export class InputMediaPhotoExternal extends VirtualClass<{
+    // flags: undefined;
+    spoiler?: true;
+    url: string;
+    ttlSeconds?: int;
+  }> {
+    // flags: undefined;
+    spoiler?: true;
+    url: string;
+    ttlSeconds?: int;
+  }
+
+    export class InputMediaDocumentExternal extends VirtualClass<{
+    // flags: undefined;
+    spoiler?: true;
+    url: string;
+    ttlSeconds?: int;
+  }> {
+    // flags: undefined;
+    spoiler?: true;
+    url: string;
+    ttlSeconds?: int;
+  }
+
+    export class InputMediaGame extends VirtualClass<{
+    id: Api.TypeInputGame;
+  }> {
+    id: Api.TypeInputGame;
+  }
+
+    export class InputMediaInvoice extends VirtualClass<{
+    // flags: undefined;
+    title: string;
+    description: string;
+    photo?: Api.TypeInputWebDocument;
+    invoice: Api.TypeInvoice;
+    payload: bytes;
+    provider: string;
+    providerData: Api.TypeDataJSON;
+    startParam?: string;
+    extendedMedia?: Api.TypeInputMedia;
+  }> {
+    // flags: undefined;
+    title: string;
+    description: string;
+    photo?: Api.TypeInputWebDocument;
+    invoice: Api.TypeInvoice;
+    payload: bytes;
+    provider: string;
+    providerData: Api.TypeDataJSON;
+    startParam?: string;
+    extendedMedia?: Api.TypeInputMedia;
+  }
+
+    export class InputMediaGeoLive extends VirtualClass<{
+    // flags: undefined;
+    stopped?: true;
+    geoPoint: Api.TypeInputGeoPoint;
+    heading?: int;
+    period?: int;
+    proximityNotificationRadius?: int;
+  }> {
+    // flags: undefined;
+    stopped?: true;
+    geoPoint: Api.TypeInputGeoPoint;
+    heading?: int;
+    period?: int;
+    proximityNotificationRadius?: int;
+  }
+
+    export class InputMediaPoll extends VirtualClass<{
+    // flags: undefined;
+    poll: Api.TypePoll;
+    correctAnswers?: bytes[];
+    solution?: string;
+    solutionEntities?: Api.TypeMessageEntity[];
+  }> {
+    // flags: undefined;
+    poll: Api.TypePoll;
+    correctAnswers?: bytes[];
+    solution?: string;
+    solutionEntities?: Api.TypeMessageEntity[];
+  }
+
+    export class InputMediaDice extends VirtualClass<{
+    emoticon: string;
+  }> {
+    emoticon: string;
+  }
+
+    export class InputChatPhotoEmpty extends VirtualClass<void> {
+    }
+
+    export class InputChatUploadedPhoto extends VirtualClass<{
+    // flags: undefined;
+    file?: Api.TypeInputFile;
+    video?: Api.TypeInputFile;
+    videoStartTs?: double;
+    videoEmojiMarkup?: Api.TypeVideoSize;
+  } | void> {
+    // flags: undefined;
+    file?: Api.TypeInputFile;
+    video?: Api.TypeInputFile;
+    videoStartTs?: double;
+    videoEmojiMarkup?: Api.TypeVideoSize;
+  }
+
+    export class InputChatPhoto extends VirtualClass<{
+    id: Api.TypeInputPhoto;
+  }> {
+    id: Api.TypeInputPhoto;
+  }
+
+    export class InputGeoPointEmpty extends VirtualClass<void> {
+    }
+
+    export class InputGeoPoint extends VirtualClass<{
+    // flags: undefined;
+    lat: double;
+    long: double;
+    accuracyRadius?: int;
+  }> {
+    // flags: undefined;
+    lat: double;
+    long: double;
+    accuracyRadius?: int;
+  }
+
+    export class InputPhotoEmpty extends VirtualClass<void> {
+    }
+
+    export class InputPhoto extends VirtualClass<{
+    id: long;
+    accessHash: long;
+    fileReference: bytes;
+  }> {
+    id: long;
+    accessHash: long;
+    fileReference: bytes;
+  }
+
+    export class InputFileLocation extends VirtualClass<{
+    volumeId: long;
+    localId: int;
+    secret: long;
+    fileReference: bytes;
+  }> {
+    volumeId: long;
+    localId: int;
+    secret: long;
+    fileReference: bytes;
+  }
+
+    export class InputEncryptedFileLocation extends VirtualClass<{
+    id: long;
+    accessHash: long;
+  }> {
+    id: long;
+    accessHash: long;
+  }
+
+    export class InputDocumentFileLocation extends VirtualClass<{
+    id: long;
+    accessHash: long;
+    fileReference: bytes;
+    thumbSize: string;
+  }> {
+    id: long;
+    accessHash: long;
+    fileReference: bytes;
+    thumbSize: string;
+  }
+
+    export class InputSecureFileLocation extends VirtualClass<{
+    id: long;
+    accessHash: long;
+  }> {
+    id: long;
+    accessHash: long;
+  }
+
+    export class InputTakeoutFileLocation extends VirtualClass<void> {
+    }
+
+    export class InputPhotoFileLocation extends VirtualClass<{
+    id: long;
+    accessHash: long;
+    fileReference: bytes;
+    thumbSize: string;
+  }> {
+    id: long;
+    accessHash: long;
+    fileReference: bytes;
+    thumbSize: string;
+  }
+
+    export class InputPhotoLegacyFileLocation extends VirtualClass<{
+    id: long;
+    accessHash: long;
+    fileReference: bytes;
+    volumeId: long;
+    localId: int;
+    secret: long;
+  }> {
+    id: long;
+    accessHash: long;
+    fileReference: bytes;
+    volumeId: long;
+    localId: int;
+    secret: long;
+  }
+
+    export class InputPeerPhotoFileLocation extends VirtualClass<{
+    // flags: undefined;
+    big?: true;
+    peer: Api.TypeInputPeer;
+    photoId: long;
+  }> {
+    // flags: undefined;
+    big?: true;
+    peer: Api.TypeInputPeer;
+    photoId: long;
+  }
+
+    export class InputStickerSetThumb extends VirtualClass<{
+    stickerset: Api.TypeInputStickerSet;
+    thumbVersion: int;
+  }> {
+    stickerset: Api.TypeInputStickerSet;
+    thumbVersion: int;
+  }
+
+    export class InputGroupCallStream extends VirtualClass<{
+    // flags: undefined;
+    call: Api.TypeInputGroupCall;
+    timeMs: long;
+    scale: int;
+    videoChannel?: int;
+    videoQuality?: int;
+  }> {
+    // flags: undefined;
+    call: Api.TypeInputGroupCall;
+    timeMs: long;
+    scale: int;
+    videoChannel?: int;
+    videoQuality?: int;
+  }
+
+    export class PeerUser extends VirtualClass<{
+    userId: long;
+  }> {
+    userId: long;
+  }
+
+    export class PeerChat extends VirtualClass<{
+    chatId: long;
+  }> {
+    chatId: long;
+  }
+
+    export class PeerChannel extends VirtualClass<{
+    channelId: long;
+  }> {
+    channelId: long;
+  }
+
+    export class UserEmpty extends VirtualClass<{
+    id: long;
+  }> {
+    id: long;
+  }
+
+    export class User extends VirtualClass<{
+    // flags: undefined;
+    self?: true;
+    contact?: true;
+    mutualContact?: true;
+    deleted?: true;
+    bot?: true;
+    botChatHistory?: true;
+    botNochats?: true;
+    verified?: true;
+    restricted?: true;
+    min?: true;
+    botInlineGeo?: true;
+    support?: true;
+    scam?: true;
+    applyMinPhoto?: true;
+    fake?: true;
+    botAttachMenu?: true;
+    premium?: true;
+    attachMenuEnabled?: true;
+    // flags2: undefined;
+    id: long;
+    accessHash?: long;
+    firstName?: string;
+    lastName?: string;
+    username?: string;
+    phone?: string;
+    photo?: Api.TypeUserProfilePhoto;
+    status?: Api.TypeUserStatus;
+    botInfoVersion?: int;
+    restrictionReason?: Api.TypeRestrictionReason[];
+    botInlinePlaceholder?: string;
+    langCode?: string;
+    emojiStatus?: Api.TypeEmojiStatus;
+    usernames?: Api.TypeUsername[];
+  }> {
+    // flags: undefined;
+    self?: true;
+    contact?: true;
+    mutualContact?: true;
+    deleted?: true;
+    bot?: true;
+    botChatHistory?: true;
+    botNochats?: true;
+    verified?: true;
+    restricted?: true;
+    min?: true;
+    botInlineGeo?: true;
+    support?: true;
+    scam?: true;
+    applyMinPhoto?: true;
+    fake?: true;
+    botAttachMenu?: true;
+    premium?: true;
+    attachMenuEnabled?: true;
+    // flags2: undefined;
+    id: long;
+    accessHash?: long;
+    firstName?: string;
+    lastName?: string;
+    username?: string;
+    phone?: string;
+    photo?: Api.TypeUserProfilePhoto;
+    status?: Api.TypeUserStatus;
+    botInfoVersion?: int;
+    restrictionReason?: Api.TypeRestrictionReason[];
+    botInlinePlaceholder?: string;
+    langCode?: string;
+    emojiStatus?: Api.TypeEmojiStatus;
+    usernames?: Api.TypeUsername[];
+  }
+
+    export class UserProfilePhotoEmpty extends VirtualClass<void> {
+    }
+
+    export class UserProfilePhoto extends VirtualClass<{
+    // flags: undefined;
+    hasVideo?: true;
+    personal?: true;
+    photoId: long;
+    strippedThumb?: bytes;
+    dcId: int;
+  }> {
+    // flags: undefined;
+    hasVideo?: true;
+    personal?: true;
+    photoId: long;
+    strippedThumb?: bytes;
+    dcId: int;
+  }
+
+    export class UserStatusEmpty extends VirtualClass<void> {
+    }
+
+    export class UserStatusOnline extends VirtualClass<{
+    expires: int;
+  }> {
+    expires: int;
+  }
+
+    export class UserStatusOffline extends VirtualClass<{
+    wasOnline: int;
+  }> {
+    wasOnline: int;
+  }
+
+    export class UserStatusRecently extends VirtualClass<void> {
+    }
+
+    export class UserStatusLastWeek extends VirtualClass<void> {
+    }
+
+    export class UserStatusLastMonth extends VirtualClass<void> {
+    }
+
+    export class ChatEmpty extends VirtualClass<{
+    id: long;
+  }> {
+    id: long;
+  }
+
+    export class Chat extends VirtualClass<{
+    // flags: undefined;
+    creator?: true;
+    left?: true;
+    deactivated?: true;
+    callActive?: true;
+    callNotEmpty?: true;
+    noforwards?: true;
+    id: long;
+    title: string;
+    photo: Api.TypeChatPhoto;
+    participantsCount: int;
+    date: int;
+    version: int;
+    migratedTo?: Api.TypeInputChannel;
+    adminRights?: Api.TypeChatAdminRights;
+    defaultBannedRights?: Api.TypeChatBannedRights;
+  }> {
+    // flags: undefined;
+    creator?: true;
+    left?: true;
+    deactivated?: true;
+    callActive?: true;
+    callNotEmpty?: true;
+    noforwards?: true;
+    id: long;
+    title: string;
+    photo: Api.TypeChatPhoto;
+    participantsCount: int;
+    date: int;
+    version: int;
+    migratedTo?: Api.TypeInputChannel;
+    adminRights?: Api.TypeChatAdminRights;
+    defaultBannedRights?: Api.TypeChatBannedRights;
+  }
+
+    export class ChatForbidden extends VirtualClass<{
+    id: long;
+    title: string;
+  }> {
+    id: long;
+    title: string;
+  }
+
+    export class Channel extends VirtualClass<{
+    // flags: undefined;
+    creator?: true;
+    left?: true;
+    broadcast?: true;
+    verified?: true;
+    megagroup?: true;
+    restricted?: true;
+    signatures?: true;
+    min?: true;
+    scam?: true;
+    hasLink?: true;
+    hasGeo?: true;
+    slowmodeEnabled?: true;
+    callActive?: true;
+    callNotEmpty?: true;
+    fake?: true;
+    gigagroup?: true;
+    noforwards?: true;
+    joinToSend?: true;
+    joinRequest?: true;
+    forum?: true;
+    // flags2: undefined;
+    id: long;
+    accessHash?: long;
+    title: string;
+    username?: string;
+    photo: Api.TypeChatPhoto;
+    date: int;
+    restrictionReason?: Api.TypeRestrictionReason[];
+    adminRights?: Api.TypeChatAdminRights;
+    bannedRights?: Api.TypeChatBannedRights;
+    defaultBannedRights?: Api.TypeChatBannedRights;
+    participantsCount?: int;
+    usernames?: Api.TypeUsername[];
+  }> {
+    // flags: undefined;
+    creator?: true;
+    left?: true;
+    broadcast?: true;
+    verified?: true;
+    megagroup?: true;
+    restricted?: true;
+    signatures?: true;
+    min?: true;
+    scam?: true;
+    hasLink?: true;
+    hasGeo?: true;
+    slowmodeEnabled?: true;
+    callActive?: true;
+    callNotEmpty?: true;
+    fake?: true;
+    gigagroup?: true;
+    noforwards?: true;
+    joinToSend?: true;
+    joinRequest?: true;
+    forum?: true;
+    // flags2: undefined;
+    id: long;
+    accessHash?: long;
+    title: string;
+    username?: string;
+    photo: Api.TypeChatPhoto;
+    date: int;
+    restrictionReason?: Api.TypeRestrictionReason[];
+    adminRights?: Api.TypeChatAdminRights;
+    bannedRights?: Api.TypeChatBannedRights;
+    defaultBannedRights?: Api.TypeChatBannedRights;
+    participantsCount?: int;
+    usernames?: Api.TypeUsername[];
+  }
+
+    export class ChannelForbidden extends VirtualClass<{
+    // flags: undefined;
+    broadcast?: true;
+    megagroup?: true;
+    id: long;
+    accessHash: long;
+    title: string;
+    untilDate?: int;
+  }> {
+    // flags: undefined;
+    broadcast?: true;
+    megagroup?: true;
+    id: long;
+    accessHash: long;
+    title: string;
+    untilDate?: int;
+  }
+
+    export class ChatFull extends VirtualClass<{
+    // flags: undefined;
+    canSetUsername?: true;
+    hasScheduled?: true;
+    translationsDisabled?: true;
+    id: long;
+    about: string;
+    participants: Api.TypeChatParticipants;
+    chatPhoto?: Api.TypePhoto;
+    notifySettings: Api.TypePeerNotifySettings;
+    exportedInvite?: Api.TypeExportedChatInvite;
+    botInfo?: Api.TypeBotInfo[];
+    pinnedMsgId?: int;
+    folderId?: int;
+    call?: Api.TypeInputGroupCall;
+    ttlPeriod?: int;
+    groupcallDefaultJoinAs?: Api.TypePeer;
+    themeEmoticon?: string;
+    requestsPending?: int;
+    recentRequesters?: long[];
+    availableReactions?: Api.TypeChatReactions;
+  }> {
+    // flags: undefined;
+    canSetUsername?: true;
+    hasScheduled?: true;
+    translationsDisabled?: true;
+    id: long;
+    about: string;
+    participants: Api.TypeChatParticipants;
+    chatPhoto?: Api.TypePhoto;
+    notifySettings: Api.TypePeerNotifySettings;
+    exportedInvite?: Api.TypeExportedChatInvite;
+    botInfo?: Api.TypeBotInfo[];
+    pinnedMsgId?: int;
+    folderId?: int;
+    call?: Api.TypeInputGroupCall;
+    ttlPeriod?: int;
+    groupcallDefaultJoinAs?: Api.TypePeer;
+    themeEmoticon?: string;
+    requestsPending?: int;
+    recentRequesters?: long[];
+    availableReactions?: Api.TypeChatReactions;
+  }
+
+    export class ChannelFull extends VirtualClass<{
+    // flags: undefined;
+    canViewParticipants?: true;
+    canSetUsername?: true;
+    canSetStickers?: true;
+    hiddenPrehistory?: true;
+    canSetLocation?: true;
+    hasScheduled?: true;
+    canViewStats?: true;
+    blocked?: true;
+    // flags2: undefined;
+    canDeleteChannel?: true;
+    antispam?: true;
+    participantsHidden?: true;
+    translationsDisabled?: true;
+    id: long;
+    about: string;
+    participantsCount?: int;
+    adminsCount?: int;
+    kickedCount?: int;
+    bannedCount?: int;
+    onlineCount?: int;
+    readInboxMaxId: int;
+    readOutboxMaxId: int;
+    unreadCount: int;
+    chatPhoto: Api.TypePhoto;
+    notifySettings: Api.TypePeerNotifySettings;
+    exportedInvite?: Api.TypeExportedChatInvite;
+    botInfo: Api.TypeBotInfo[];
+    migratedFromChatId?: long;
+    migratedFromMaxId?: int;
+    pinnedMsgId?: int;
+    stickerset?: Api.TypeStickerSet;
+    availableMinId?: int;
+    folderId?: int;
+    linkedChatId?: long;
+    location?: Api.TypeChannelLocation;
+    slowmodeSeconds?: int;
+    slowmodeNextSendDate?: int;
+    statsDc?: int;
+    pts: int;
+    call?: Api.TypeInputGroupCall;
+    ttlPeriod?: int;
+    pendingSuggestions?: string[];
+    groupcallDefaultJoinAs?: Api.TypePeer;
+    themeEmoticon?: string;
+    requestsPending?: int;
+    recentRequesters?: long[];
+    defaultSendAs?: Api.TypePeer;
+    availableReactions?: Api.TypeChatReactions;
+  }> {
+    // flags: undefined;
+    canViewParticipants?: true;
+    canSetUsername?: true;
+    canSetStickers?: true;
+    hiddenPrehistory?: true;
+    canSetLocation?: true;
+    hasScheduled?: true;
+    canViewStats?: true;
+    blocked?: true;
+    // flags2: undefined;
+    canDeleteChannel?: true;
+    antispam?: true;
+    participantsHidden?: true;
+    translationsDisabled?: true;
+    id: long;
+    about: string;
+    participantsCount?: int;
+    adminsCount?: int;
+    kickedCount?: int;
+    bannedCount?: int;
+    onlineCount?: int;
+    readInboxMaxId: int;
+    readOutboxMaxId: int;
+    unreadCount: int;
+    chatPhoto: Api.TypePhoto;
+    notifySettings: Api.TypePeerNotifySettings;
+    exportedInvite?: Api.TypeExportedChatInvite;
+    botInfo: Api.TypeBotInfo[];
+    migratedFromChatId?: long;
+    migratedFromMaxId?: int;
+    pinnedMsgId?: int;
+    stickerset?: Api.TypeStickerSet;
+    availableMinId?: int;
+    folderId?: int;
+    linkedChatId?: long;
+    location?: Api.TypeChannelLocation;
+    slowmodeSeconds?: int;
+    slowmodeNextSendDate?: int;
+    statsDc?: int;
+    pts: int;
+    call?: Api.TypeInputGroupCall;
+    ttlPeriod?: int;
+    pendingSuggestions?: string[];
+    groupcallDefaultJoinAs?: Api.TypePeer;
+    themeEmoticon?: string;
+    requestsPending?: int;
+    recentRequesters?: long[];
+    defaultSendAs?: Api.TypePeer;
+    availableReactions?: Api.TypeChatReactions;
+  }
+
+    export class ChatParticipant extends VirtualClass<{
+    userId: long;
+    inviterId: long;
+    date: int;
+  }> {
+    userId: long;
+    inviterId: long;
+    date: int;
+  }
+
+    export class ChatParticipantCreator extends VirtualClass<{
+    userId: long;
+  }> {
+    userId: long;
+  }
+
+    export class ChatParticipantAdmin extends VirtualClass<{
+    userId: long;
+    inviterId: long;
+    date: int;
+  }> {
+    userId: long;
+    inviterId: long;
+    date: int;
+  }
+
+    export class ChatParticipantsForbidden extends VirtualClass<{
+    // flags: undefined;
+    chatId: long;
+    selfParticipant?: Api.TypeChatParticipant;
+  }> {
+    // flags: undefined;
+    chatId: long;
+    selfParticipant?: Api.TypeChatParticipant;
+  }
+
+    export class ChatParticipants extends VirtualClass<{
+    chatId: long;
+    participants: Api.TypeChatParticipant[];
+    version: int;
+  }> {
+    chatId: long;
+    participants: Api.TypeChatParticipant[];
+    version: int;
+  }
+
+    export class ChatPhotoEmpty extends VirtualClass<void> {
+    }
+
+    export class ChatPhoto extends VirtualClass<{
+    // flags: undefined;
+    hasVideo?: true;
+    photoId: long;
+    strippedThumb?: bytes;
+    dcId: int;
+  }> {
+    // flags: undefined;
+    hasVideo?: true;
+    photoId: long;
+    strippedThumb?: bytes;
+    dcId: int;
+  }
+
+    export class MessageEmpty extends VirtualClass<{
+    // flags: undefined;
+    id: int;
+    peerId?: Api.TypePeer;
+  }> {
+    // flags: undefined;
+    id: int;
+    peerId?: Api.TypePeer;
+  }
+
+    export class Message extends VirtualClass<{
+    // flags: undefined;
+    out?: true;
+    mentioned?: true;
+    mediaUnread?: true;
+    silent?: true;
+    post?: true;
+    fromScheduled?: true;
+    legacy?: true;
+    editHide?: true;
+    pinned?: true;
+    noforwards?: true;
+    id: int;
+    fromId?: Api.TypePeer;
+    peerId: Api.TypePeer;
+    fwdFrom?: Api.TypeMessageFwdHeader;
+    viaBotId?: long;
+    replyTo?: Api.TypeMessageReplyHeader;
+    date: int;
+    message: string;
+    media?: Api.TypeMessageMedia;
+    replyMarkup?: Api.TypeReplyMarkup;
+    entities?: Api.TypeMessageEntity[];
+    views?: int;
+    forwards?: int;
+    replies?: Api.TypeMessageReplies;
+    editDate?: int;
+    postAuthor?: string;
+    groupedId?: long;
+    reactions?: Api.TypeMessageReactions;
+    restrictionReason?: Api.TypeRestrictionReason[];
+    ttlPeriod?: int;
+  }> {
+    // flags: undefined;
+    out?: true;
+    mentioned?: true;
+    mediaUnread?: true;
+    silent?: true;
+    post?: true;
+    fromScheduled?: true;
+    legacy?: true;
+    editHide?: true;
+    pinned?: true;
+    noforwards?: true;
+    id: int;
+    fromId?: Api.TypePeer;
+    peerId: Api.TypePeer;
+    fwdFrom?: Api.TypeMessageFwdHeader;
+    viaBotId?: long;
+    replyTo?: Api.TypeMessageReplyHeader;
+    date: int;
+    message: string;
+    media?: Api.TypeMessageMedia;
+    replyMarkup?: Api.TypeReplyMarkup;
+    entities?: Api.TypeMessageEntity[];
+    views?: int;
+    forwards?: int;
+    replies?: Api.TypeMessageReplies;
+    editDate?: int;
+    postAuthor?: string;
+    groupedId?: long;
+    reactions?: Api.TypeMessageReactions;
+    restrictionReason?: Api.TypeRestrictionReason[];
+    ttlPeriod?: int;
+  }
+
+    export class MessageService extends VirtualClass<{
+    // flags: undefined;
+    out?: true;
+    mentioned?: true;
+    mediaUnread?: true;
+    silent?: true;
+    post?: true;
+    legacy?: true;
+    id: int;
+    fromId?: Api.TypePeer;
+    peerId: Api.TypePeer;
+    replyTo?: Api.TypeMessageReplyHeader;
+    date: int;
+    action: Api.TypeMessageAction;
+    ttlPeriod?: int;
+  }> {
+    // flags: undefined;
+    out?: true;
+    mentioned?: true;
+    mediaUnread?: true;
+    silent?: true;
+    post?: true;
+    legacy?: true;
+    id: int;
+    fromId?: Api.TypePeer;
+    peerId: Api.TypePeer;
+    replyTo?: Api.TypeMessageReplyHeader;
+    date: int;
+    action: Api.TypeMessageAction;
+    ttlPeriod?: int;
+  }
+
+    export class MessageMediaEmpty extends VirtualClass<void> {
+    }
+
+    export class MessageMediaPhoto extends VirtualClass<{
+    // flags: undefined;
+    spoiler?: true;
+    photo?: Api.TypePhoto;
+    ttlSeconds?: int;
+  } | void> {
+    // flags: undefined;
+    spoiler?: true;
+    photo?: Api.TypePhoto;
+    ttlSeconds?: int;
+  }
+
+    export class MessageMediaGeo extends VirtualClass<{
+    geo: Api.TypeGeoPoint;
+  }> {
+    geo: Api.TypeGeoPoint;
+  }
+
+    export class MessageMediaContact extends VirtualClass<{
+    phoneNumber: string;
+    firstName: string;
+    lastName: string;
+    vcard: string;
+    userId: long;
+  }> {
+    phoneNumber: string;
+    firstName: string;
+    lastName: string;
+    vcard: string;
+    userId: long;
+  }
+
+    export class MessageMediaUnsupported extends VirtualClass<void> {
+    }
+
+    export class MessageMediaDocument extends VirtualClass<{
+    // flags: undefined;
+    nopremium?: true;
+    spoiler?: true;
+    document?: Api.TypeDocument;
+    ttlSeconds?: int;
+  } | void> {
+    // flags: undefined;
+    nopremium?: true;
+    spoiler?: true;
+    document?: Api.TypeDocument;
+    ttlSeconds?: int;
+  }
+
+    export class MessageMediaWebPage extends VirtualClass<{
+    webpage: Api.TypeWebPage;
+  }> {
+    webpage: Api.TypeWebPage;
+  }
+
+    export class MessageMediaVenue extends VirtualClass<{
+    geo: Api.TypeGeoPoint;
+    title: string;
+    address: string;
+    provider: string;
+    venueId: string;
+    venueType: string;
+  }> {
+    geo: Api.TypeGeoPoint;
+    title: string;
+    address: string;
+    provider: string;
+    venueId: string;
+    venueType: string;
+  }
+
+    export class MessageMediaGame extends VirtualClass<{
+    game: Api.TypeGame;
+  }> {
+    game: Api.TypeGame;
+  }
+
+    export class MessageMediaInvoice extends VirtualClass<{
+    // flags: undefined;
+    shippingAddressRequested?: true;
+    test?: true;
+    title: string;
+    description: string;
+    photo?: Api.TypeWebDocument;
+    receiptMsgId?: int;
+    currency: string;
+    totalAmount: long;
+    startParam: string;
+    extendedMedia?: Api.TypeMessageExtendedMedia;
+  }> {
+    // flags: undefined;
+    shippingAddressRequested?: true;
+    test?: true;
+    title: string;
+    description: string;
+    photo?: Api.TypeWebDocument;
+    receiptMsgId?: int;
+    currency: string;
+    totalAmount: long;
+    startParam: string;
+    extendedMedia?: Api.TypeMessageExtendedMedia;
+  }
+
+    export class MessageMediaGeoLive extends VirtualClass<{
+    // flags: undefined;
+    geo: Api.TypeGeoPoint;
+    heading?: int;
+    period: int;
+    proximityNotificationRadius?: int;
+  }> {
+    // flags: undefined;
+    geo: Api.TypeGeoPoint;
+    heading?: int;
+    period: int;
+    proximityNotificationRadius?: int;
+  }
+
+    export class MessageMediaPoll extends VirtualClass<{
+    poll: Api.TypePoll;
+    results: Api.TypePollResults;
+  }> {
+    poll: Api.TypePoll;
+    results: Api.TypePollResults;
+  }
+
+    export class MessageMediaDice extends VirtualClass<{
+    value: int;
+    emoticon: string;
+  }> {
+    value: int;
+    emoticon: string;
+  }
+
+    export class MessageActionEmpty extends VirtualClass<void> {
+    }
+
+    export class MessageActionChatCreate extends VirtualClass<{
+    title: string;
+    users: long[];
+  }> {
+    title: string;
+    users: long[];
+  }
+
+    export class MessageActionChatEditTitle extends VirtualClass<{
+    title: string;
+  }> {
+    title: string;
+  }
+
+    export class MessageActionChatEditPhoto extends VirtualClass<{
+    photo: Api.TypePhoto;
+  }> {
+    photo: Api.TypePhoto;
+  }
+
+    export class MessageActionChatDeletePhoto extends VirtualClass<void> {
+    }
+
+    export class MessageActionChatAddUser extends VirtualClass<{
+    users: long[];
+  }> {
+    users: long[];
+  }
+
+    export class MessageActionChatDeleteUser extends VirtualClass<{
+    userId: long;
+  }> {
+    userId: long;
+  }
+
+    export class MessageActionChatJoinedByLink extends VirtualClass<{
+    inviterId: long;
+  }> {
+    inviterId: long;
+  }
+
+    export class MessageActionChannelCreate extends VirtualClass<{
+    title: string;
+  }> {
+    title: string;
+  }
+
+    export class MessageActionChatMigrateTo extends VirtualClass<{
+    channelId: long;
+  }> {
+    channelId: long;
+  }
+
+    export class MessageActionChannelMigrateFrom extends VirtualClass<{
+    title: string;
+    chatId: long;
+  }> {
+    title: string;
+    chatId: long;
+  }
+
+    export class MessageActionPinMessage extends VirtualClass<void> {
+    }
+
+    export class MessageActionHistoryClear extends VirtualClass<void> {
+    }
+
+    export class MessageActionGameScore extends VirtualClass<{
+    gameId: long;
+    score: int;
+  }> {
+    gameId: long;
+    score: int;
+  }
+
+    export class MessageActionPaymentSentMe extends VirtualClass<{
+    // flags: undefined;
+    recurringInit?: true;
+    recurringUsed?: true;
+    currency: string;
+    totalAmount: long;
+    payload: bytes;
+    info?: Api.TypePaymentRequestedInfo;
+    shippingOptionId?: string;
+    charge: Api.TypePaymentCharge;
+  }> {
+    // flags: undefined;
+    recurringInit?: true;
+    recurringUsed?: true;
+    currency: string;
+    totalAmount: long;
+    payload: bytes;
+    info?: Api.TypePaymentRequestedInfo;
+    shippingOptionId?: string;
+    charge: Api.TypePaymentCharge;
+  }
+
+    export class MessageActionPaymentSent extends VirtualClass<{
+    // flags: undefined;
+    recurringInit?: true;
+    recurringUsed?: true;
+    currency: string;
+    totalAmount: long;
+    invoiceSlug?: string;
+  }> {
+    // flags: undefined;
+    recurringInit?: true;
+    recurringUsed?: true;
+    currency: string;
+    totalAmount: long;
+    invoiceSlug?: string;
+  }
+
+    export class MessageActionPhoneCall extends VirtualClass<{
+    // flags: undefined;
+    video?: true;
+    callId: long;
+    reason?: Api.TypePhoneCallDiscardReason;
+    duration?: int;
+  }> {
+    // flags: undefined;
+    video?: true;
+    callId: long;
+    reason?: Api.TypePhoneCallDiscardReason;
+    duration?: int;
+  }
+
+    export class MessageActionScreenshotTaken extends VirtualClass<void> {
+    }
+
+    export class MessageActionCustomAction extends VirtualClass<{
+    message: string;
+  }> {
+    message: string;
+  }
+
+    export class MessageActionBotAllowed extends VirtualClass<{
+    domain: string;
+  }> {
+    domain: string;
+  }
+
+    export class MessageActionSecureValuesSentMe extends VirtualClass<{
+    values: Api.TypeSecureValue[];
+    credentials: Api.TypeSecureCredentialsEncrypted;
+  }> {
+    values: Api.TypeSecureValue[];
+    credentials: Api.TypeSecureCredentialsEncrypted;
+  }
+
+    export class MessageActionSecureValuesSent extends VirtualClass<{
+    types: Api.TypeSecureValueType[];
+  }> {
+    types: Api.TypeSecureValueType[];
+  }
+
+    export class MessageActionContactSignUp extends VirtualClass<void> {
+    }
+
+    export class MessageActionGeoProximityReached extends VirtualClass<{
+    fromId: Api.TypePeer;
+    toId: Api.TypePeer;
+    distance: int;
+  }> {
+    fromId: Api.TypePeer;
+    toId: Api.TypePeer;
+    distance: int;
+  }
+
+    export class MessageActionGroupCall extends VirtualClass<{
+    // flags: undefined;
+    call: Api.TypeInputGroupCall;
+    duration?: int;
+  }> {
+    // flags: undefined;
+    call: Api.TypeInputGroupCall;
+    duration?: int;
+  }
+
+    export class MessageActionInviteToGroupCall extends VirtualClass<{
+    call: Api.TypeInputGroupCall;
+    users: long[];
+  }> {
+    call: Api.TypeInputGroupCall;
+    users: long[];
+  }
+
+    export class MessageActionSetMessagesTTL extends VirtualClass<{
+    // flags: undefined;
+    period: int;
+    autoSettingFrom?: long;
+  }> {
+    // flags: undefined;
+    period: int;
+    autoSettingFrom?: long;
+  }
+
+    export class MessageActionGroupCallScheduled extends VirtualClass<{
+    call: Api.TypeInputGroupCall;
+    scheduleDate: int;
+  }> {
+    call: Api.TypeInputGroupCall;
+    scheduleDate: int;
+  }
+
+    export class MessageActionSetChatTheme extends VirtualClass<{
+    emoticon: string;
+  }> {
+    emoticon: string;
+  }
+
+    export class MessageActionChatJoinedByRequest extends VirtualClass<void> {
+    }
+
+    export class MessageActionWebViewDataSentMe extends VirtualClass<{
+    text: string;
+    data: string;
+  }> {
+    text: string;
+    data: string;
+  }
+
+    export class MessageActionWebViewDataSent extends VirtualClass<{
+    text: string;
+  }> {
+    text: string;
+  }
+
+    export class MessageActionGiftPremium extends VirtualClass<{
+    currency: string;
+    amount: long;
+    months: int;
+  }> {
+    currency: string;
+    amount: long;
+    months: int;
+  }
+
+    export class MessageActionTopicCreate extends VirtualClass<{
+    // flags: undefined;
+    title: string;
+    iconColor: int;
+    iconEmojiId?: long;
+  }> {
+    // flags: undefined;
+    title: string;
+    iconColor: int;
+    iconEmojiId?: long;
+  }
+
+    export class MessageActionTopicEdit extends VirtualClass<{
+    // flags: undefined;
+    title?: string;
+    iconEmojiId?: long;
+    closed?: Bool;
+    hidden?: Bool;
+  } | void> {
+    // flags: undefined;
+    title?: string;
+    iconEmojiId?: long;
+    closed?: Bool;
+    hidden?: Bool;
+  }
+
+    export class MessageActionSuggestProfilePhoto extends VirtualClass<{
+    photo: Api.TypePhoto;
+  }> {
+    photo: Api.TypePhoto;
+  }
+
+    export class MessageActionAttachMenuBotAllowed extends VirtualClass<void> {
+    }
+
+    export class MessageActionRequestedPeer extends VirtualClass<{
+    buttonId: int;
+    peer: Api.TypePeer;
+  }> {
+    buttonId: int;
+    peer: Api.TypePeer;
+  }
+
+    export class Dialog extends VirtualClass<{
+    // flags: undefined;
+    pinned?: true;
+    unreadMark?: true;
+    peer: Api.TypePeer;
+    topMessage: int;
+    readInboxMaxId: int;
+    readOutboxMaxId: int;
+    unreadCount: int;
+    unreadMentionsCount: int;
+    unreadReactionsCount: int;
+    notifySettings: Api.TypePeerNotifySettings;
+    pts?: int;
+    draft?: Api.TypeDraftMessage;
+    folderId?: int;
+    ttlPeriod?: int;
+  }> {
+    // flags: undefined;
+    pinned?: true;
+    unreadMark?: true;
+    peer: Api.TypePeer;
+    topMessage: int;
+    readInboxMaxId: int;
+    readOutboxMaxId: int;
+    unreadCount: int;
+    unreadMentionsCount: int;
+    unreadReactionsCount: int;
+    notifySettings: Api.TypePeerNotifySettings;
+    pts?: int;
+    draft?: Api.TypeDraftMessage;
+    folderId?: int;
+    ttlPeriod?: int;
+  }
+
+    export class DialogFolder extends VirtualClass<{
+    // flags: undefined;
+    pinned?: true;
+    folder: Api.TypeFolder;
+    peer: Api.TypePeer;
+    topMessage: int;
+    unreadMutedPeersCount: int;
+    unreadUnmutedPeersCount: int;
+    unreadMutedMessagesCount: int;
+    unreadUnmutedMessagesCount: int;
+  }> {
+    // flags: undefined;
+    pinned?: true;
+    folder: Api.TypeFolder;
+    peer: Api.TypePeer;
+    topMessage: int;
+    unreadMutedPeersCount: int;
+    unreadUnmutedPeersCount: int;
+    unreadMutedMessagesCount: int;
+    unreadUnmutedMessagesCount: int;
+  }
+
+    export class PhotoEmpty extends VirtualClass<{
+    id: long;
+  }> {
+    id: long;
+  }
+
+    export class Photo extends VirtualClass<{
+    // flags: undefined;
+    hasStickers?: true;
+    id: long;
+    accessHash: long;
+    fileReference: bytes;
+    date: int;
+    sizes: Api.TypePhotoSize[];
+    videoSizes?: Api.TypeVideoSize[];
+    dcId: int;
+  }> {
+    // flags: undefined;
+    hasStickers?: true;
+    id: long;
+    accessHash: long;
+    fileReference: bytes;
+    date: int;
+    sizes: Api.TypePhotoSize[];
+    videoSizes?: Api.TypeVideoSize[];
+    dcId: int;
+  }
+
+    export class PhotoSizeEmpty extends VirtualClass<{
+    type: string;
+  }> {
+    type: string;
+  }
+
+    export class PhotoSize extends VirtualClass<{
+    type: string;
+    w: int;
+    h: int;
+    size: int;
+  }> {
+    type: string;
+    w: int;
+    h: int;
+    size: int;
+  }
+
+    export class PhotoCachedSize extends VirtualClass<{
+    type: string;
+    w: int;
+    h: int;
+    bytes: bytes;
+  }> {
+    type: string;
+    w: int;
+    h: int;
+    bytes: bytes;
+  }
+
+    export class PhotoStrippedSize extends VirtualClass<{
+    type: string;
+    bytes: bytes;
+  }> {
+    type: string;
+    bytes: bytes;
+  }
+
+    export class PhotoSizeProgressive extends VirtualClass<{
+    type: string;
+    w: int;
+    h: int;
+    sizes: int[];
+  }> {
+    type: string;
+    w: int;
+    h: int;
+    sizes: int[];
+  }
+
+    export class PhotoPathSize extends VirtualClass<{
+    type: string;
+    bytes: bytes;
+  }> {
+    type: string;
+    bytes: bytes;
+  }
+
+    export class GeoPointEmpty extends VirtualClass<void> {
+    }
+
+    export class GeoPoint extends VirtualClass<{
+    // flags: undefined;
+    long: double;
+    lat: double;
+    accessHash: long;
+    accuracyRadius?: int;
+  }> {
+    // flags: undefined;
+    long: double;
+    lat: double;
+    accessHash: long;
+    accuracyRadius?: int;
+  }
+
+    export class InputNotifyPeer extends VirtualClass<{
+    peer: Api.TypeInputPeer;
+  }> {
+    peer: Api.TypeInputPeer;
+  }
+
+    export class InputNotifyUsers extends VirtualClass<void> {
+    }
+
+    export class InputNotifyChats extends VirtualClass<void> {
+    }
+
+    export class InputNotifyBroadcasts extends VirtualClass<void> {
+    }
+
+    export class InputNotifyForumTopic extends VirtualClass<{
+    peer: Api.TypeInputPeer;
+    topMsgId: int;
+  }> {
+    peer: Api.TypeInputPeer;
+    topMsgId: int;
+  }
+
+    export class InputPeerNotifySettings extends VirtualClass<{
+    // flags: undefined;
+    showPreviews?: Bool;
+    silent?: Bool;
+    muteUntil?: int;
+    sound?: Api.TypeNotificationSound;
+  } | void> {
+    // flags: undefined;
+    showPreviews?: Bool;
+    silent?: Bool;
+    muteUntil?: int;
+    sound?: Api.TypeNotificationSound;
+  }
+
+    export class PeerNotifySettings extends VirtualClass<{
+    // flags: undefined;
+    showPreviews?: Bool;
+    silent?: Bool;
+    muteUntil?: int;
+    iosSound?: Api.TypeNotificationSound;
+    androidSound?: Api.TypeNotificationSound;
+    otherSound?: Api.TypeNotificationSound;
+  } | void> {
+    // flags: undefined;
+    showPreviews?: Bool;
+    silent?: Bool;
+    muteUntil?: int;
+    iosSound?: Api.TypeNotificationSound;
+    androidSound?: Api.TypeNotificationSound;
+    otherSound?: Api.TypeNotificationSound;
+  }
+
+    export class PeerSettings extends VirtualClass<{
+    // flags: undefined;
+    reportSpam?: true;
+    addContact?: true;
+    blockContact?: true;
+    shareContact?: true;
+    needContactsException?: true;
+    reportGeo?: true;
+    autoarchived?: true;
+    inviteMembers?: true;
+    requestChatBroadcast?: true;
+    geoDistance?: int;
+    requestChatTitle?: string;
+    requestChatDate?: int;
+  } | void> {
+    // flags: undefined;
+    reportSpam?: true;
+    addContact?: true;
+    blockContact?: true;
+    shareContact?: true;
+    needContactsException?: true;
+    reportGeo?: true;
+    autoarchived?: true;
+    inviteMembers?: true;
+    requestChatBroadcast?: true;
+    geoDistance?: int;
+    requestChatTitle?: string;
+    requestChatDate?: int;
+  }
+
+    export class WallPaper extends VirtualClass<{
+    id: long;
+    // flags: undefined;
+    creator?: true;
+    default?: true;
+    pattern?: true;
+    dark?: true;
+    accessHash: long;
+    slug: string;
+    document: Api.TypeDocument;
+    settings?: Api.TypeWallPaperSettings;
+  }> {
+    id: long;
+    // flags: undefined;
+    creator?: true;
+    default?: true;
+    pattern?: true;
+    dark?: true;
+    accessHash: long;
+    slug: string;
+    document: Api.TypeDocument;
+    settings?: Api.TypeWallPaperSettings;
+  }
+
+    export class WallPaperNoFile extends VirtualClass<{
+    id: long;
+    // flags: undefined;
+    default?: true;
+    dark?: true;
+    settings?: Api.TypeWallPaperSettings;
+  }> {
+    id: long;
+    // flags: undefined;
+    default?: true;
+    dark?: true;
+    settings?: Api.TypeWallPaperSettings;
+  }
+
+    export class InputReportReasonSpam extends VirtualClass<void> {
+    }
+
+    export class InputReportReasonViolence extends VirtualClass<void> {
+    }
+
+    export class InputReportReasonPornography extends VirtualClass<void> {
+    }
+
+    export class InputReportReasonChildAbuse extends VirtualClass<void> {
+    }
+
+    export class InputReportReasonOther extends VirtualClass<void> {
+    }
+
+    export class InputReportReasonCopyright extends VirtualClass<void> {
+    }
+
+    export class InputReportReasonGeoIrrelevant extends VirtualClass<void> {
+    }
+
+    export class InputReportReasonFake extends VirtualClass<void> {
+    }
+
+    export class InputReportReasonIllegalDrugs extends VirtualClass<void> {
+    }
+
+    export class InputReportReasonPersonalDetails extends VirtualClass<void> {
+    }
+
+    export class UserFull extends VirtualClass<{
+    // flags: undefined;
+    blocked?: true;
+    phoneCallsAvailable?: true;
+    phoneCallsPrivate?: true;
+    canPinMessage?: true;
+    hasScheduled?: true;
+    videoCallsAvailable?: true;
+    voiceMessagesForbidden?: true;
+    translationsDisabled?: true;
+    id: long;
+    about?: string;
+    settings: Api.TypePeerSettings;
+    personalPhoto?: Api.TypePhoto;
+    profilePhoto?: Api.TypePhoto;
+    fallbackPhoto?: Api.TypePhoto;
+    notifySettings: Api.TypePeerNotifySettings;
+    botInfo?: Api.TypeBotInfo;
+    pinnedMsgId?: int;
+    commonChatsCount: int;
+    folderId?: int;
+    ttlPeriod?: int;
+    themeEmoticon?: string;
+    privateForwardName?: string;
+    botGroupAdminRights?: Api.TypeChatAdminRights;
+    botBroadcastAdminRights?: Api.TypeChatAdminRights;
+    premiumGifts?: Api.TypePremiumGiftOption[];
+  }> {
+    // flags: undefined;
+    blocked?: true;
+    phoneCallsAvailable?: true;
+    phoneCallsPrivate?: true;
+    canPinMessage?: true;
+    hasScheduled?: true;
+    videoCallsAvailable?: true;
+    voiceMessagesForbidden?: true;
+    translationsDisabled?: true;
+    id: long;
+    about?: string;
+    settings: Api.TypePeerSettings;
+    personalPhoto?: Api.TypePhoto;
+    profilePhoto?: Api.TypePhoto;
+    fallbackPhoto?: Api.TypePhoto;
+    notifySettings: Api.TypePeerNotifySettings;
+    botInfo?: Api.TypeBotInfo;
+    pinnedMsgId?: int;
+    commonChatsCount: int;
+    folderId?: int;
+    ttlPeriod?: int;
+    themeEmoticon?: string;
+    privateForwardName?: string;
+    botGroupAdminRights?: Api.TypeChatAdminRights;
+    botBroadcastAdminRights?: Api.TypeChatAdminRights;
+    premiumGifts?: Api.TypePremiumGiftOption[];
+  }
+
+    export class Contact extends VirtualClass<{
+    userId: long;
+    mutual: Bool;
+  }> {
+    userId: long;
+    mutual: Bool;
+  }
+
+    export class ImportedContact extends VirtualClass<{
+    userId: long;
+    clientId: long;
+  }> {
+    userId: long;
+    clientId: long;
+  }
+
+    export class ContactStatus extends VirtualClass<{
+    userId: long;
+    status: Api.TypeUserStatus;
+  }> {
+    userId: long;
+    status: Api.TypeUserStatus;
+  }
+
+    export class InputMessagesFilterEmpty extends VirtualClass<void> {
+    }
+
+    export class InputMessagesFilterPhotos extends VirtualClass<void> {
+    }
+
+    export class InputMessagesFilterVideo extends VirtualClass<void> {
+    }
+
+    export class InputMessagesFilterPhotoVideo extends VirtualClass<void> {
+    }
+
+    export class InputMessagesFilterDocument extends VirtualClass<void> {
+    }
+
+    export class InputMessagesFilterUrl extends VirtualClass<void> {
+    }
+
+    export class InputMessagesFilterGif extends VirtualClass<void> {
+    }
+
+    export class InputMessagesFilterVoice extends VirtualClass<void> {
+    }
+
+    export class InputMessagesFilterMusic extends VirtualClass<void> {
+    }
+
+    export class InputMessagesFilterChatPhotos extends VirtualClass<void> {
+    }
+
+    export class InputMessagesFilterPhoneCalls extends VirtualClass<{
+    // flags: undefined;
+    missed?: true;
+  } | void> {
+    // flags: undefined;
+    missed?: true;
+  }
+
+    export class InputMessagesFilterRoundVoice extends VirtualClass<void> {
+    }
+
+    export class InputMessagesFilterRoundVideo extends VirtualClass<void> {
+    }
+
+    export class InputMessagesFilterMyMentions extends VirtualClass<void> {
+    }
+
+    export class InputMessagesFilterGeo extends VirtualClass<void> {
+    }
+
+    export class InputMessagesFilterContacts extends VirtualClass<void> {
+    }
+
+    export class InputMessagesFilterPinned extends VirtualClass<void> {
+    }
+
+    export class UpdateNewMessage extends VirtualClass<{
+    message: Api.TypeMessage;
+    pts: int;
+    ptsCount: int;
+  }> {
+    message: Api.TypeMessage;
+    pts: int;
+    ptsCount: int;
+  }
+
+    export class UpdateMessageID extends VirtualClass<{
+    id: int;
+    randomId: long;
+  }> {
+    id: int;
+    randomId: long;
+  }
+
+    export class UpdateDeleteMessages extends VirtualClass<{
+    messages: int[];
+    pts: int;
+    ptsCount: int;
+  }> {
+    messages: int[];
+    pts: int;
+    ptsCount: int;
+  }
+
+    export class UpdateUserTyping extends VirtualClass<{
+    userId: long;
+    action: Api.TypeSendMessageAction;
+  }> {
+    userId: long;
+    action: Api.TypeSendMessageAction;
+  }
+
+    export class UpdateChatUserTyping extends VirtualClass<{
+    chatId: long;
+    fromId: Api.TypePeer;
+    action: Api.TypeSendMessageAction;
+  }> {
+    chatId: long;
+    fromId: Api.TypePeer;
+    action: Api.TypeSendMessageAction;
+  }
+
+    export class UpdateChatParticipants extends VirtualClass<{
+    participants: Api.TypeChatParticipants;
+  }> {
+    participants: Api.TypeChatParticipants;
+  }
+
+    export class UpdateUserStatus extends VirtualClass<{
+    userId: long;
+    status: Api.TypeUserStatus;
+  }> {
+    userId: long;
+    status: Api.TypeUserStatus;
+  }
+
+    export class UpdateUserName extends VirtualClass<{
+    userId: long;
+    firstName: string;
+    lastName: string;
+    usernames: Api.TypeUsername[];
+  }> {
+    userId: long;
+    firstName: string;
+    lastName: string;
+    usernames: Api.TypeUsername[];
+  }
+
+    export class UpdateNewEncryptedMessage extends VirtualClass<{
+    message: Api.TypeEncryptedMessage;
+    qts: int;
+  }> {
+    message: Api.TypeEncryptedMessage;
+    qts: int;
+  }
+
+    export class UpdateEncryptedChatTyping extends VirtualClass<{
+    chatId: int;
+  }> {
+    chatId: int;
+  }
+
+    export class UpdateEncryption extends VirtualClass<{
+    chat: Api.TypeEncryptedChat;
+    date: int;
+  }> {
+    chat: Api.TypeEncryptedChat;
+    date: int;
+  }
+
+    export class UpdateEncryptedMessagesRead extends VirtualClass<{
+    chatId: int;
+    maxDate: int;
+    date: int;
+  }> {
+    chatId: int;
+    maxDate: int;
+    date: int;
+  }
+
+    export class UpdateChatParticipantAdd extends VirtualClass<{
+    chatId: long;
+    userId: long;
+    inviterId: long;
+    date: int;
+    version: int;
+  }> {
+    chatId: long;
+    userId: long;
+    inviterId: long;
+    date: int;
+    version: int;
+  }
+
+    export class UpdateChatParticipantDelete extends VirtualClass<{
+    chatId: long;
+    userId: long;
+    version: int;
+  }> {
+    chatId: long;
+    userId: long;
+    version: int;
+  }
+
+    export class UpdateDcOptions extends VirtualClass<{
+    dcOptions: Api.TypeDcOption[];
+  }> {
+    dcOptions: Api.TypeDcOption[];
+  }
+
+    export class UpdateNotifySettings extends VirtualClass<{
+    peer: Api.TypeNotifyPeer;
+    notifySettings: Api.TypePeerNotifySettings;
+  }> {
+    peer: Api.TypeNotifyPeer;
+    notifySettings: Api.TypePeerNotifySettings;
+  }
+
+    export class UpdateServiceNotification extends VirtualClass<{
+    // flags: undefined;
+    popup?: true;
+    inboxDate?: int;
+    type: string;
+    message: string;
+    media: Api.TypeMessageMedia;
+    entities: Api.TypeMessageEntity[];
+  }> {
+    // flags: undefined;
+    popup?: true;
+    inboxDate?: int;
+    type: string;
+    message: string;
+    media: Api.TypeMessageMedia;
+    entities: Api.TypeMessageEntity[];
+  }
+
+    export class UpdatePrivacy extends VirtualClass<{
+    key: Api.TypePrivacyKey;
+    rules: Api.TypePrivacyRule[];
+  }> {
+    key: Api.TypePrivacyKey;
+    rules: Api.TypePrivacyRule[];
+  }
+
+    export class UpdateUserPhone extends VirtualClass<{
+    userId: long;
+    phone: string;
+  }> {
+    userId: long;
+    phone: string;
+  }
+
+    export class UpdateReadHistoryInbox extends VirtualClass<{
+    // flags: undefined;
+    folderId?: int;
+    peer: Api.TypePeer;
+    maxId: int;
+    stillUnreadCount: int;
+    pts: int;
+    ptsCount: int;
+  }> {
+    // flags: undefined;
+    folderId?: int;
+    peer: Api.TypePeer;
+    maxId: int;
+    stillUnreadCount: int;
+    pts: int;
+    ptsCount: int;
+  }
+
+    export class UpdateReadHistoryOutbox extends VirtualClass<{
+    peer: Api.TypePeer;
+    maxId: int;
+    pts: int;
+    ptsCount: int;
+  }> {
+    peer: Api.TypePeer;
+    maxId: int;
+    pts: int;
+    ptsCount: int;
+  }
+
+    export class UpdateWebPage extends VirtualClass<{
+    webpage: Api.TypeWebPage;
+    pts: int;
+    ptsCount: int;
+  }> {
+    webpage: Api.TypeWebPage;
+    pts: int;
+    ptsCount: int;
+  }
+
+    export class UpdateReadMessagesContents extends VirtualClass<{
+    messages: int[];
+    pts: int;
+    ptsCount: int;
+  }> {
+    messages: int[];
+    pts: int;
+    ptsCount: int;
+  }
+
+    export class UpdateChannelTooLong extends VirtualClass<{
+    // flags: undefined;
+    channelId: long;
+    pts?: int;
+  }> {
+    // flags: undefined;
+    channelId: long;
+    pts?: int;
+  }
+
+    export class UpdateChannel extends VirtualClass<{
+    channelId: long;
+  }> {
+    channelId: long;
+  }
+
+    export class UpdateNewChannelMessage extends VirtualClass<{
+    message: Api.TypeMessage;
+    pts: int;
+    ptsCount: int;
+  }> {
+    message: Api.TypeMessage;
+    pts: int;
+    ptsCount: int;
+  }
+
+    export class UpdateReadChannelInbox extends VirtualClass<{
+    // flags: undefined;
+    folderId?: int;
+    channelId: long;
+    maxId: int;
+    stillUnreadCount: int;
+    pts: int;
+  }> {
+    // flags: undefined;
+    folderId?: int;
+    channelId: long;
+    maxId: int;
+    stillUnreadCount: int;
+    pts: int;
+  }
+
+    export class UpdateDeleteChannelMessages extends VirtualClass<{
+    channelId: long;
+    messages: int[];
+    pts: int;
+    ptsCount: int;
+  }> {
+    channelId: long;
+    messages: int[];
+    pts: int;
+    ptsCount: int;
+  }
+
+    export class UpdateChannelMessageViews extends VirtualClass<{
+    channelId: long;
+    id: int;
+    views: int;
+  }> {
+    channelId: long;
+    id: int;
+    views: int;
+  }
+
+    export class UpdateChatParticipantAdmin extends VirtualClass<{
+    chatId: long;
+    userId: long;
+    isAdmin: Bool;
+    version: int;
+  }> {
+    chatId: long;
+    userId: long;
+    isAdmin: Bool;
+    version: int;
+  }
+
+    export class UpdateNewStickerSet extends VirtualClass<{
+    stickerset: messages.TypeStickerSet;
+  }> {
+    stickerset: messages.TypeStickerSet;
+  }
+
+    export class UpdateStickerSetsOrder extends VirtualClass<{
+    // flags: undefined;
+    masks?: true;
+    emojis?: true;
+    order: long[];
+  }> {
+    // flags: undefined;
+    masks?: true;
+    emojis?: true;
+    order: long[];
+  }
+
+    export class UpdateStickerSets extends VirtualClass<{
+    // flags: undefined;
+    masks?: true;
+    emojis?: true;
+  } | void> {
+    // flags: undefined;
+    masks?: true;
+    emojis?: true;
+  }
+
+    export class UpdateSavedGifs extends VirtualClass<void> {
+    }
+
+    export class UpdateBotInlineQuery extends VirtualClass<{
+    // flags: undefined;
+    queryId: long;
+    userId: long;
+    query: string;
+    geo?: Api.TypeGeoPoint;
+    peerType?: Api.TypeInlineQueryPeerType;
+    offset: string;
+  }> {
+    // flags: undefined;
+    queryId: long;
+    userId: long;
+    query: string;
+    geo?: Api.TypeGeoPoint;
+    peerType?: Api.TypeInlineQueryPeerType;
+    offset: string;
+  }
+
+    export class UpdateBotInlineSend extends VirtualClass<{
+    // flags: undefined;
+    userId: long;
+    query: string;
+    geo?: Api.TypeGeoPoint;
+    id: string;
+    msgId?: Api.TypeInputBotInlineMessageID;
+  }> {
+    // flags: undefined;
+    userId: long;
+    query: string;
+    geo?: Api.TypeGeoPoint;
+    id: string;
+    msgId?: Api.TypeInputBotInlineMessageID;
+  }
+
+    export class UpdateEditChannelMessage extends VirtualClass<{
+    message: Api.TypeMessage;
+    pts: int;
+    ptsCount: int;
+  }> {
+    message: Api.TypeMessage;
+    pts: int;
+    ptsCount: int;
+  }
+
+    export class UpdateBotCallbackQuery extends VirtualClass<{
+    // flags: undefined;
+    queryId: long;
+    userId: long;
+    peer: Api.TypePeer;
+    msgId: int;
+    chatInstance: long;
+    data?: bytes;
+    gameShortName?: string;
+  }> {
+    // flags: undefined;
+    queryId: long;
+    userId: long;
+    peer: Api.TypePeer;
+    msgId: int;
+    chatInstance: long;
+    data?: bytes;
+    gameShortName?: string;
+  }
+
+    export class UpdateEditMessage extends VirtualClass<{
+    message: Api.TypeMessage;
+    pts: int;
+    ptsCount: int;
+  }> {
+    message: Api.TypeMessage;
+    pts: int;
+    ptsCount: int;
+  }
+
+    export class UpdateInlineBotCallbackQuery extends VirtualClass<{
+    // flags: undefined;
+    queryId: long;
+    userId: long;
+    msgId: Api.TypeInputBotInlineMessageID;
+    chatInstance: long;
+    data?: bytes;
+    gameShortName?: string;
+  }> {
+    // flags: undefined;
+    queryId: long;
+    userId: long;
+    msgId: Api.TypeInputBotInlineMessageID;
+    chatInstance: long;
+    data?: bytes;
+    gameShortName?: string;
+  }
+
+    export class UpdateReadChannelOutbox extends VirtualClass<{
+    channelId: long;
+    maxId: int;
+  }> {
+    channelId: long;
+    maxId: int;
+  }
+
+    export class UpdateDraftMessage extends VirtualClass<{
+    // flags: undefined;
+    peer: Api.TypePeer;
+    topMsgId?: int;
+    draft: Api.TypeDraftMessage;
+  }> {
+    // flags: undefined;
+    peer: Api.TypePeer;
+    topMsgId?: int;
+    draft: Api.TypeDraftMessage;
+  }
+
+    export class UpdateReadFeaturedStickers extends VirtualClass<void> {
+    }
+
+    export class UpdateRecentStickers extends VirtualClass<void> {
+    }
+
+    export class UpdateConfig extends VirtualClass<void> {
+    }
+
+    export class UpdatePtsChanged extends VirtualClass<void> {
+    }
+
+    export class UpdateChannelWebPage extends VirtualClass<{
+    channelId: long;
+    webpage: Api.TypeWebPage;
+    pts: int;
+    ptsCount: int;
+  }> {
+    channelId: long;
+    webpage: Api.TypeWebPage;
+    pts: int;
+    ptsCount: int;
+  }
+
+    export class UpdateDialogPinned extends VirtualClass<{
+    // flags: undefined;
+    pinned?: true;
+    folderId?: int;
+    peer: Api.TypeDialogPeer;
+  }> {
+    // flags: undefined;
+    pinned?: true;
+    folderId?: int;
+    peer: Api.TypeDialogPeer;
+  }
+
+    export class UpdatePinnedDialogs extends VirtualClass<{
+    // flags: undefined;
+    folderId?: int;
+    order?: Api.TypeDialogPeer[];
+  } | void> {
+    // flags: undefined;
+    folderId?: int;
+    order?: Api.TypeDialogPeer[];
+  }
+
+    export class UpdateBotWebhookJSON extends VirtualClass<{
+    data: Api.TypeDataJSON;
+  }> {
+    data: Api.TypeDataJSON;
+  }
+
+    export class UpdateBotWebhookJSONQuery extends VirtualClass<{
+    queryId: long;
+    data: Api.TypeDataJSON;
+    timeout: int;
+  }> {
+    queryId: long;
+    data: Api.TypeDataJSON;
+    timeout: int;
+  }
+
+    export class UpdateBotShippingQuery extends VirtualClass<{
+    queryId: long;
+    userId: long;
+    payload: bytes;
+    shippingAddress: Api.TypePostAddress;
+  }> {
+    queryId: long;
+    userId: long;
+    payload: bytes;
+    shippingAddress: Api.TypePostAddress;
+  }
+
+    export class UpdateBotPrecheckoutQuery extends VirtualClass<{
+    // flags: undefined;
+    queryId: long;
+    userId: long;
+    payload: bytes;
+    info?: Api.TypePaymentRequestedInfo;
+    shippingOptionId?: string;
+    currency: string;
+    totalAmount: long;
+  }> {
+    // flags: undefined;
+    queryId: long;
+    userId: long;
+    payload: bytes;
+    info?: Api.TypePaymentRequestedInfo;
+    shippingOptionId?: string;
+    currency: string;
+    totalAmount: long;
+  }
+
+    export class UpdatePhoneCall extends VirtualClass<{
+    phoneCall: Api.TypePhoneCall;
+  }> {
+    phoneCall: Api.TypePhoneCall;
+  }
+
+    export class UpdateLangPackTooLong extends VirtualClass<{
+    langCode: string;
+  }> {
+    langCode: string;
+  }
+
+    export class UpdateLangPack extends VirtualClass<{
+    difference: Api.TypeLangPackDifference;
+  }> {
+    difference: Api.TypeLangPackDifference;
+  }
+
+    export class UpdateFavedStickers extends VirtualClass<void> {
+    }
+
+    export class UpdateChannelReadMessagesContents extends VirtualClass<{
+    // flags: undefined;
+    channelId: long;
+    topMsgId?: int;
+    messages: int[];
+  }> {
+    // flags: undefined;
+    channelId: long;
+    topMsgId?: int;
+    messages: int[];
+  }
+
+    export class UpdateContactsReset extends VirtualClass<void> {
+    }
+
+    export class UpdateChannelAvailableMessages extends VirtualClass<{
+    channelId: long;
+    availableMinId: int;
+  }> {
+    channelId: long;
+    availableMinId: int;
+  }
+
+    export class UpdateDialogUnreadMark extends VirtualClass<{
+    // flags: undefined;
+    unread?: true;
+    peer: Api.TypeDialogPeer;
+  }> {
+    // flags: undefined;
+    unread?: true;
+    peer: Api.TypeDialogPeer;
+  }
+
+    export class UpdateMessagePoll extends VirtualClass<{
+    // flags: undefined;
+    pollId: long;
+    poll?: Api.TypePoll;
+    results: Api.TypePollResults;
+  }> {
+    // flags: undefined;
+    pollId: long;
+    poll?: Api.TypePoll;
+    results: Api.TypePollResults;
+  }
+
+    export class UpdateChatDefaultBannedRights extends VirtualClass<{
+    peer: Api.TypePeer;
+    defaultBannedRights: Api.TypeChatBannedRights;
+    version: int;
+  }> {
+    peer: Api.TypePeer;
+    defaultBannedRights: Api.TypeChatBannedRights;
+    version: int;
+  }
+
+    export class UpdateFolderPeers extends VirtualClass<{
+    folderPeers: Api.TypeFolderPeer[];
+    pts: int;
+    ptsCount: int;
+  }> {
+    folderPeers: Api.TypeFolderPeer[];
+    pts: int;
+    ptsCount: int;
+  }
+
+    export class UpdatePeerSettings extends VirtualClass<{
+    peer: Api.TypePeer;
+    settings: Api.TypePeerSettings;
+  }> {
+    peer: Api.TypePeer;
+    settings: Api.TypePeerSettings;
+  }
+
+    export class UpdatePeerLocated extends VirtualClass<{
+    peers: Api.TypePeerLocated[];
+  }> {
+    peers: Api.TypePeerLocated[];
+  }
+
+    export class UpdateNewScheduledMessage extends VirtualClass<{
+    message: Api.TypeMessage;
+  }> {
+    message: Api.TypeMessage;
+  }
+
+    export class UpdateDeleteScheduledMessages extends VirtualClass<{
+    peer: Api.TypePeer;
+    messages: int[];
+  }> {
+    peer: Api.TypePeer;
+    messages: int[];
+  }
+
+    export class UpdateTheme extends VirtualClass<{
+    theme: Api.TypeTheme;
+  }> {
+    theme: Api.TypeTheme;
+  }
+
+    export class UpdateGeoLiveViewed extends VirtualClass<{
+    peer: Api.TypePeer;
+    msgId: int;
+  }> {
+    peer: Api.TypePeer;
+    msgId: int;
+  }
+
+    export class UpdateLoginToken extends VirtualClass<void> {
+    }
+
+    export class UpdateMessagePollVote extends VirtualClass<{
+    pollId: long;
+    userId: long;
+    options: bytes[];
+    qts: int;
+  }> {
+    pollId: long;
+    userId: long;
+    options: bytes[];
+    qts: int;
+  }
+
+    export class UpdateDialogFilter extends VirtualClass<{
+    // flags: undefined;
+    id: int;
+    filter?: Api.TypeDialogFilter;
+  }> {
+    // flags: undefined;
+    id: int;
+    filter?: Api.TypeDialogFilter;
+  }
+
+    export class UpdateDialogFilterOrder extends VirtualClass<{
+    order: int[];
+  }> {
+    order: int[];
+  }
+
+    export class UpdateDialogFilters extends VirtualClass<void> {
+    }
+
+    export class UpdatePhoneCallSignalingData extends VirtualClass<{
+    phoneCallId: long;
+    data: bytes;
+  }> {
+    phoneCallId: long;
+    data: bytes;
+  }
+
+    export class UpdateChannelMessageForwards extends VirtualClass<{
+    channelId: long;
+    id: int;
+    forwards: int;
+  }> {
+    channelId: long;
+    id: int;
+    forwards: int;
+  }
+
+    export class UpdateReadChannelDiscussionInbox extends VirtualClass<{
+    // flags: undefined;
+    channelId: long;
+    topMsgId: int;
+    readMaxId: int;
+    broadcastId?: long;
+    broadcastPost?: int;
+  }> {
+    // flags: undefined;
+    channelId: long;
+    topMsgId: int;
+    readMaxId: int;
+    broadcastId?: long;
+    broadcastPost?: int;
+  }
+
+    export class UpdateReadChannelDiscussionOutbox extends VirtualClass<{
+    channelId: long;
+    topMsgId: int;
+    readMaxId: int;
+  }> {
+    channelId: long;
+    topMsgId: int;
+    readMaxId: int;
+  }
+
+    export class UpdatePeerBlocked extends VirtualClass<{
+    peerId: Api.TypePeer;
+    blocked: Bool;
+  }> {
+    peerId: Api.TypePeer;
+    blocked: Bool;
+  }
+
+    export class UpdateChannelUserTyping extends VirtualClass<{
+    // flags: undefined;
+    channelId: long;
+    topMsgId?: int;
+    fromId: Api.TypePeer;
+    action: Api.TypeSendMessageAction;
+  }> {
+    // flags: undefined;
+    channelId: long;
+    topMsgId?: int;
+    fromId: Api.TypePeer;
+    action: Api.TypeSendMessageAction;
+  }
+
+    export class UpdatePinnedMessages extends VirtualClass<{
+    // flags: undefined;
+    pinned?: true;
+    peer: Api.TypePeer;
+    messages: int[];
+    pts: int;
+    ptsCount: int;
+  }> {
+    // flags: undefined;
+    pinned?: true;
+    peer: Api.TypePeer;
+    messages: int[];
+    pts: int;
+    ptsCount: int;
+  }
+
+    export class UpdatePinnedChannelMessages extends VirtualClass<{
+    // flags: undefined;
+    pinned?: true;
+    channelId: long;
+    messages: int[];
+    pts: int;
+    ptsCount: int;
+  }> {
+    // flags: undefined;
+    pinned?: true;
+    channelId: long;
+    messages: int[];
+    pts: int;
+    ptsCount: int;
+  }
+
+    export class UpdateChat extends VirtualClass<{
+    chatId: long;
+  }> {
+    chatId: long;
+  }
+
+    export class UpdateGroupCallParticipants extends VirtualClass<{
+    call: Api.TypeInputGroupCall;
+    participants: Api.TypeGroupCallParticipant[];
+    version: int;
+  }> {
+    call: Api.TypeInputGroupCall;
+    participants: Api.TypeGroupCallParticipant[];
+    version: int;
+  }
+
+    export class UpdateGroupCall extends VirtualClass<{
+    chatId: long;
+    call: Api.TypeGroupCall;
+  }> {
+    chatId: long;
+    call: Api.TypeGroupCall;
+  }
+
+    export class UpdatePeerHistoryTTL extends VirtualClass<{
+    // flags: undefined;
+    peer: Api.TypePeer;
+    ttlPeriod?: int;
+  }> {
+    // flags: undefined;
+    peer: Api.TypePeer;
+    ttlPeriod?: int;
+  }
+
+    export class UpdateChatParticipant extends VirtualClass<{
+    // flags: undefined;
+    chatId: long;
+    date: int;
+    actorId: long;
+    userId: long;
+    prevParticipant?: Api.TypeChatParticipant;
+    newParticipant?: Api.TypeChatParticipant;
+    invite?: Api.TypeExportedChatInvite;
+    qts: int;
+  }> {
+    // flags: undefined;
+    chatId: long;
+    date: int;
+    actorId: long;
+    userId: long;
+    prevParticipant?: Api.TypeChatParticipant;
+    newParticipant?: Api.TypeChatParticipant;
+    invite?: Api.TypeExportedChatInvite;
+    qts: int;
+  }
+
+    export class UpdateChannelParticipant extends VirtualClass<{
+    // flags: undefined;
+    channelId: long;
+    date: int;
+    actorId: long;
+    userId: long;
+    prevParticipant?: Api.TypeChannelParticipant;
+    newParticipant?: Api.TypeChannelParticipant;
+    invite?: Api.TypeExportedChatInvite;
+    qts: int;
+  }> {
+    // flags: undefined;
+    channelId: long;
+    date: int;
+    actorId: long;
+    userId: long;
+    prevParticipant?: Api.TypeChannelParticipant;
+    newParticipant?: Api.TypeChannelParticipant;
+    invite?: Api.TypeExportedChatInvite;
+    qts: int;
+  }
+
+    export class UpdateBotStopped extends VirtualClass<{
+    userId: long;
+    date: int;
+    stopped: Bool;
+    qts: int;
+  }> {
+    userId: long;
+    date: int;
+    stopped: Bool;
+    qts: int;
+  }
+
+    export class UpdateGroupCallConnection extends VirtualClass<{
+    // flags: undefined;
+    presentation?: true;
+    params: Api.TypeDataJSON;
+  }> {
+    // flags: undefined;
+    presentation?: true;
+    params: Api.TypeDataJSON;
+  }
+
+    export class UpdateBotCommands extends VirtualClass<{
+    peer: Api.TypePeer;
+    botId: long;
+    commands: Api.TypeBotCommand[];
+  }> {
+    peer: Api.TypePeer;
+    botId: long;
+    commands: Api.TypeBotCommand[];
+  }
+
+    export class UpdatePendingJoinRequests extends VirtualClass<{
+    peer: Api.TypePeer;
+    requestsPending: int;
+    recentRequesters: long[];
+  }> {
+    peer: Api.TypePeer;
+    requestsPending: int;
+    recentRequesters: long[];
+  }
+
+    export class UpdateBotChatInviteRequester extends VirtualClass<{
+    peer: Api.TypePeer;
+    date: int;
+    userId: long;
+    about: string;
+    invite: Api.TypeExportedChatInvite;
+    qts: int;
+  }> {
+    peer: Api.TypePeer;
+    date: int;
+    userId: long;
+    about: string;
+    invite: Api.TypeExportedChatInvite;
+    qts: int;
+  }
+
+    export class UpdateMessageReactions extends VirtualClass<{
+    // flags: undefined;
+    peer: Api.TypePeer;
+    msgId: int;
+    topMsgId?: int;
+    reactions: Api.TypeMessageReactions;
+  }> {
+    // flags: undefined;
+    peer: Api.TypePeer;
+    msgId: int;
+    topMsgId?: int;
+    reactions: Api.TypeMessageReactions;
+  }
+
+    export class UpdateAttachMenuBots extends VirtualClass<void> {
+    }
+
+    export class UpdateWebViewResultSent extends VirtualClass<{
+    queryId: long;
+  }> {
+    queryId: long;
+  }
+
+    export class UpdateBotMenuButton extends VirtualClass<{
+    botId: long;
+    button: Api.TypeBotMenuButton;
+  }> {
+    botId: long;
+    button: Api.TypeBotMenuButton;
+  }
+
+    export class UpdateSavedRingtones extends VirtualClass<void> {
+    }
+
+    export class UpdateTranscribedAudio extends VirtualClass<{
+    // flags: undefined;
+    pending?: true;
+    peer: Api.TypePeer;
+    msgId: int;
+    transcriptionId: long;
+    text: string;
+  }> {
+    // flags: undefined;
+    pending?: true;
+    peer: Api.TypePeer;
+    msgId: int;
+    transcriptionId: long;
+    text: string;
+  }
+
+    export class UpdateReadFeaturedEmojiStickers extends VirtualClass<void> {
+    }
+
+    export class UpdateUserEmojiStatus extends VirtualClass<{
+    userId: long;
+    emojiStatus: Api.TypeEmojiStatus;
+  }> {
+    userId: long;
+    emojiStatus: Api.TypeEmojiStatus;
+  }
+
+    export class UpdateRecentEmojiStatuses extends VirtualClass<void> {
+    }
+
+    export class UpdateRecentReactions extends VirtualClass<void> {
+    }
+
+    export class UpdateMoveStickerSetToTop extends VirtualClass<{
+    // flags: undefined;
+    masks?: true;
+    emojis?: true;
+    stickerset: long;
+  }> {
+    // flags: undefined;
+    masks?: true;
+    emojis?: true;
+    stickerset: long;
+  }
+
+    export class UpdateMessageExtendedMedia extends VirtualClass<{
+    peer: Api.TypePeer;
+    msgId: int;
+    extendedMedia: Api.TypeMessageExtendedMedia;
+  }> {
+    peer: Api.TypePeer;
+    msgId: int;
+    extendedMedia: Api.TypeMessageExtendedMedia;
+  }
+
+    export class UpdateChannelPinnedTopic extends VirtualClass<{
+    // flags: undefined;
+    pinned?: true;
+    channelId: long;
+    topicId: int;
+  }> {
+    // flags: undefined;
+    pinned?: true;
+    channelId: long;
+    topicId: int;
+  }
+
+    export class UpdateChannelPinnedTopics extends VirtualClass<{
+    // flags: undefined;
+    channelId: long;
+    order?: int[];
+  }> {
+    // flags: undefined;
+    channelId: long;
+    order?: int[];
+  }
+
+    export class UpdateUser extends VirtualClass<{
+    userId: long;
+  }> {
+    userId: long;
+  }
+
+    export class UpdateAutoSaveSettings extends VirtualClass<void> {
+    }
+
+    export class UpdatesTooLong extends VirtualClass<void> {
+    }
+
+    export class UpdateShortMessage extends VirtualClass<{
+    // flags: undefined;
+    out?: true;
+    mentioned?: true;
+    mediaUnread?: true;
+    silent?: true;
+    id: int;
+    userId: long;
+    message: string;
+    pts: int;
+    ptsCount: int;
+    date: int;
+    fwdFrom?: Api.TypeMessageFwdHeader;
+    viaBotId?: long;
+    replyTo?: Api.TypeMessageReplyHeader;
+    entities?: Api.TypeMessageEntity[];
+    ttlPeriod?: int;
+  }> {
+    // flags: undefined;
+    out?: true;
+    mentioned?: true;
+    mediaUnread?: true;
+    silent?: true;
+    id: int;
+    userId: long;
+    message: string;
+    pts: int;
+    ptsCount: int;
+    date: int;
+    fwdFrom?: Api.TypeMessageFwdHeader;
+    viaBotId?: long;
+    replyTo?: Api.TypeMessageReplyHeader;
+    entities?: Api.TypeMessageEntity[];
+    ttlPeriod?: int;
+  }
+
+    export class UpdateShortChatMessage extends VirtualClass<{
+    // flags: undefined;
+    out?: true;
+    mentioned?: true;
+    mediaUnread?: true;
+    silent?: true;
+    id: int;
+    fromId: long;
+    chatId: long;
+    message: string;
+    pts: int;
+    ptsCount: int;
+    date: int;
+    fwdFrom?: Api.TypeMessageFwdHeader;
+    viaBotId?: long;
+    replyTo?: Api.TypeMessageReplyHeader;
+    entities?: Api.TypeMessageEntity[];
+    ttlPeriod?: int;
+  }> {
+    // flags: undefined;
+    out?: true;
+    mentioned?: true;
+    mediaUnread?: true;
+    silent?: true;
+    id: int;
+    fromId: long;
+    chatId: long;
+    message: string;
+    pts: int;
+    ptsCount: int;
+    date: int;
+    fwdFrom?: Api.TypeMessageFwdHeader;
+    viaBotId?: long;
+    replyTo?: Api.TypeMessageReplyHeader;
+    entities?: Api.TypeMessageEntity[];
+    ttlPeriod?: int;
+  }
+
+    export class UpdateShort extends VirtualClass<{
+    update: Api.TypeUpdate;
+    date: int;
+  }> {
+    update: Api.TypeUpdate;
+    date: int;
+  }
+
+    export class UpdatesCombined extends VirtualClass<{
+    updates: Api.TypeUpdate[];
+    users: Api.TypeUser[];
+    chats: Api.TypeChat[];
+    date: int;
+    seqStart: int;
+    seq: int;
+  }> {
+    updates: Api.TypeUpdate[];
+    users: Api.TypeUser[];
+    chats: Api.TypeChat[];
+    date: int;
+    seqStart: int;
+    seq: int;
+  }
+
+    export class Updates extends VirtualClass<{
+    updates: Api.TypeUpdate[];
+    users: Api.TypeUser[];
+    chats: Api.TypeChat[];
+    date: int;
+    seq: int;
+  }> {
+    updates: Api.TypeUpdate[];
+    users: Api.TypeUser[];
+    chats: Api.TypeChat[];
+    date: int;
+    seq: int;
+  }
+
+    export class UpdateShortSentMessage extends VirtualClass<{
+    // flags: undefined;
+    out?: true;
+    id: int;
+    pts: int;
+    ptsCount: int;
+    date: int;
+    media?: Api.TypeMessageMedia;
+    entities?: Api.TypeMessageEntity[];
+    ttlPeriod?: int;
+  }> {
+    // flags: undefined;
+    out?: true;
+    id: int;
+    pts: int;
+    ptsCount: int;
+    date: int;
+    media?: Api.TypeMessageMedia;
+    entities?: Api.TypeMessageEntity[];
+    ttlPeriod?: int;
+  }
+
+    export class DcOption extends VirtualClass<{
+    // flags: undefined;
+    ipv6?: true;
+    mediaOnly?: true;
+    tcpoOnly?: true;
+    cdn?: true;
+    static?: true;
+    thisPortOnly?: true;
+    id: int;
+    ipAddress: string;
+    port: int;
+    secret?: bytes;
+  }> {
+    // flags: undefined;
+    ipv6?: true;
+    mediaOnly?: true;
+    tcpoOnly?: true;
+    cdn?: true;
+    static?: true;
+    thisPortOnly?: true;
+    id: int;
+    ipAddress: string;
+    port: int;
+    secret?: bytes;
+  }
+
+    export class Config extends VirtualClass<{
+    // flags: undefined;
+    phonecallsEnabled?: true;
+    defaultP2pContacts?: true;
+    preloadFeaturedStickers?: true;
+    ignorePhoneEntities?: true;
+    revokePmInbox?: true;
+    blockedMode?: true;
+    pfsEnabled?: true;
+    forceTryIpv6?: true;
+    date: int;
+    expires: int;
+    testMode: Bool;
+    thisDc: int;
+    dcOptions: Api.TypeDcOption[];
+    dcTxtDomainName: string;
+    chatSizeMax: int;
+    megagroupSizeMax: int;
+    forwardedCountMax: int;
+    onlineUpdatePeriodMs: int;
+    offlineBlurTimeoutMs: int;
+    offlineIdleTimeoutMs: int;
+    onlineCloudTimeoutMs: int;
+    notifyCloudDelayMs: int;
+    notifyDefaultDelayMs: int;
+    pushChatPeriodMs: int;
+    pushChatLimit: int;
+    savedGifsLimit: int;
+    editTimeLimit: int;
+    revokeTimeLimit: int;
+    revokePmTimeLimit: int;
+    ratingEDecay: int;
+    stickersRecentLimit: int;
+    stickersFavedLimit: int;
+    channelsReadMediaPeriod: int;
+    tmpSessions?: int;
+    pinnedDialogsCountMax: int;
+    pinnedInfolderCountMax: int;
+    callReceiveTimeoutMs: int;
+    callRingTimeoutMs: int;
+    callConnectTimeoutMs: int;
+    callPacketTimeoutMs: int;
+    meUrlPrefix: string;
+    autoupdateUrlPrefix?: string;
+    gifSearchUsername?: string;
+    venueSearchUsername?: string;
+    imgSearchUsername?: string;
+    staticMapsProvider?: string;
+    captionLengthMax: int;
+    messageLengthMax: int;
+    webfileDcId: int;
+    suggestedLangCode?: string;
+    langPackVersion?: int;
+    baseLangPackVersion?: int;
+    reactionsDefault?: Api.TypeReaction;
+  }> {
+    // flags: undefined;
+    phonecallsEnabled?: true;
+    defaultP2pContacts?: true;
+    preloadFeaturedStickers?: true;
+    ignorePhoneEntities?: true;
+    revokePmInbox?: true;
+    blockedMode?: true;
+    pfsEnabled?: true;
+    forceTryIpv6?: true;
+    date: int;
+    expires: int;
+    testMode: Bool;
+    thisDc: int;
+    dcOptions: Api.TypeDcOption[];
+    dcTxtDomainName: string;
+    chatSizeMax: int;
+    megagroupSizeMax: int;
+    forwardedCountMax: int;
+    onlineUpdatePeriodMs: int;
+    offlineBlurTimeoutMs: int;
+    offlineIdleTimeoutMs: int;
+    onlineCloudTimeoutMs: int;
+    notifyCloudDelayMs: int;
+    notifyDefaultDelayMs: int;
+    pushChatPeriodMs: int;
+    pushChatLimit: int;
+    savedGifsLimit: int;
+    editTimeLimit: int;
+    revokeTimeLimit: int;
+    revokePmTimeLimit: int;
+    ratingEDecay: int;
+    stickersRecentLimit: int;
+    stickersFavedLimit: int;
+    channelsReadMediaPeriod: int;
+    tmpSessions?: int;
+    pinnedDialogsCountMax: int;
+    pinnedInfolderCountMax: int;
+    callReceiveTimeoutMs: int;
+    callRingTimeoutMs: int;
+    callConnectTimeoutMs: int;
+    callPacketTimeoutMs: int;
+    meUrlPrefix: string;
+    autoupdateUrlPrefix?: string;
+    gifSearchUsername?: string;
+    venueSearchUsername?: string;
+    imgSearchUsername?: string;
+    staticMapsProvider?: string;
+    captionLengthMax: int;
+    messageLengthMax: int;
+    webfileDcId: int;
+    suggestedLangCode?: string;
+    langPackVersion?: int;
+    baseLangPackVersion?: int;
+    reactionsDefault?: Api.TypeReaction;
+  }
+
+    export class NearestDc extends VirtualClass<{
+    country: string;
+    thisDc: int;
+    nearestDc: int;
+  }> {
+    country: string;
+    thisDc: int;
+    nearestDc: int;
+  }
+
+    export class EncryptedChatEmpty extends VirtualClass<{
+    id: int;
+  }> {
+    id: int;
+  }
+
+    export class EncryptedChatWaiting extends VirtualClass<{
+    id: int;
+    accessHash: long;
+    date: int;
+    adminId: long;
+    participantId: long;
+  }> {
+    id: int;
+    accessHash: long;
+    date: int;
+    adminId: long;
+    participantId: long;
+  }
+
+    export class EncryptedChatRequested extends VirtualClass<{
+    // flags: undefined;
+    folderId?: int;
+    id: int;
+    accessHash: long;
+    date: int;
+    adminId: long;
+    participantId: long;
+    gA: bytes;
+  }> {
+    // flags: undefined;
+    folderId?: int;
+    id: int;
+    accessHash: long;
+    date: int;
+    adminId: long;
+    participantId: long;
+    gA: bytes;
+  }
+
+    export class EncryptedChat extends VirtualClass<{
+    id: int;
+    accessHash: long;
+    date: int;
+    adminId: long;
+    participantId: long;
+    gAOrB: bytes;
+    keyFingerprint: long;
+  }> {
+    id: int;
+    accessHash: long;
+    date: int;
+    adminId: long;
+    participantId: long;
+    gAOrB: bytes;
+    keyFingerprint: long;
+  }
+
+    export class EncryptedChatDiscarded extends VirtualClass<{
+    // flags: undefined;
+    historyDeleted?: true;
+    id: int;
+  }> {
+    // flags: undefined;
+    historyDeleted?: true;
+    id: int;
+  }
+
+    export class InputEncryptedChat extends VirtualClass<{
+    chatId: int;
+    accessHash: long;
+  }> {
+    chatId: int;
+    accessHash: long;
+  }
+
+    export class EncryptedFileEmpty extends VirtualClass<void> {
+    }
+
+    export class EncryptedFile extends VirtualClass<{
+    id: long;
+    accessHash: long;
+    size: long;
+    dcId: int;
+    keyFingerprint: int;
+  }> {
+    id: long;
+    accessHash: long;
+    size: long;
+    dcId: int;
+    keyFingerprint: int;
+  }
+
+    export class InputEncryptedFileEmpty extends VirtualClass<void> {
+    }
+
+    export class InputEncryptedFileUploaded extends VirtualClass<{
+    id: long;
+    parts: int;
+    md5Checksum: string;
+    keyFingerprint: int;
+  }> {
+    id: long;
+    parts: int;
+    md5Checksum: string;
+    keyFingerprint: int;
+  }
+
+    export class InputEncryptedFile extends VirtualClass<{
+    id: long;
+    accessHash: long;
+  }> {
+    id: long;
+    accessHash: long;
+  }
+
+    export class InputEncryptedFileBigUploaded extends VirtualClass<{
+    id: long;
+    parts: int;
+    keyFingerprint: int;
+  }> {
+    id: long;
+    parts: int;
+    keyFingerprint: int;
+  }
+
+    export class EncryptedMessage extends VirtualClass<{
+    randomId: long;
+    chatId: int;
+    date: int;
+    bytes: bytes;
+    file: Api.TypeEncryptedFile;
+  }> {
+    randomId: long;
+    chatId: int;
+    date: int;
+    bytes: bytes;
+    file: Api.TypeEncryptedFile;
+  }
+
+    export class EncryptedMessageService extends VirtualClass<{
+    randomId: long;
+    chatId: int;
+    date: int;
+    bytes: bytes;
+  }> {
+    randomId: long;
+    chatId: int;
+    date: int;
+    bytes: bytes;
+  }
+
+    export class InputDocumentEmpty extends VirtualClass<void> {
+    }
+
+    export class InputDocument extends VirtualClass<{
+    id: long;
+    accessHash: long;
+    fileReference: bytes;
+  }> {
+    id: long;
+    accessHash: long;
+    fileReference: bytes;
+  }
+
+    export class DocumentEmpty extends VirtualClass<{
+    id: long;
+  }> {
+    id: long;
+  }
+
+    export class Document extends VirtualClass<{
+    // flags: undefined;
+    id: long;
+    accessHash: long;
+    fileReference: bytes;
+    date: int;
+    mimeType: string;
+    size: long;
+    thumbs?: Api.TypePhotoSize[];
+    videoThumbs?: Api.TypeVideoSize[];
+    dcId: int;
+    attributes: Api.TypeDocumentAttribute[];
+  }> {
+    // flags: undefined;
+    id: long;
+    accessHash: long;
+    fileReference: bytes;
+    date: int;
+    mimeType: string;
+    size: long;
+    thumbs?: Api.TypePhotoSize[];
+    videoThumbs?: Api.TypeVideoSize[];
+    dcId: int;
+    attributes: Api.TypeDocumentAttribute[];
+  }
+
+    export class NotifyPeer extends VirtualClass<{
+    peer: Api.TypePeer;
+  }> {
+    peer: Api.TypePeer;
+  }
+
+    export class NotifyUsers extends VirtualClass<void> {
+    }
+
+    export class NotifyChats extends VirtualClass<void> {
+    }
+
+    export class NotifyBroadcasts extends VirtualClass<void> {
+    }
+
+    export class NotifyForumTopic extends VirtualClass<{
+    peer: Api.TypePeer;
+    topMsgId: int;
+  }> {
+    peer: Api.TypePeer;
+    topMsgId: int;
+  }
+
+    export class SendMessageTypingAction extends VirtualClass<void> {
+    }
+
+    export class SendMessageCancelAction extends VirtualClass<void> {
+    }
+
+    export class SendMessageRecordVideoAction extends VirtualClass<void> {
+    }
+
+    export class SendMessageUploadVideoAction extends VirtualClass<{
+    progress: int;
+  }> {
+    progress: int;
+  }
+
+    export class SendMessageRecordAudioAction extends VirtualClass<void> {
+    }
+
+    export class SendMessageUploadAudioAction extends VirtualClass<{
+    progress: int;
+  }> {
+    progress: int;
+  }
+
+    export class SendMessageUploadPhotoAction extends VirtualClass<{
+    progress: int;
+  }> {
+    progress: int;
+  }
+
+    export class SendMessageUploadDocumentAction extends VirtualClass<{
+    progress: int;
+  }> {
+    progress: int;
+  }
+
+    export class SendMessageGeoLocationAction extends VirtualClass<void> {
+    }
+
+    export class SendMessageChooseContactAction extends VirtualClass<void> {
+    }
+
+    export class SendMessageGamePlayAction extends VirtualClass<void> {
+    }
+
+    export class SendMessageRecordRoundAction extends VirtualClass<void> {
+    }
+
+    export class SendMessageUploadRoundAction extends VirtualClass<{
+    progress: int;
+  }> {
+    progress: int;
+  }
+
+    export class SpeakingInGroupCallAction extends VirtualClass<void> {
+    }
+
+    export class SendMessageHistoryImportAction extends VirtualClass<{
+    progress: int;
+  }> {
+    progress: int;
+  }
+
+    export class SendMessageChooseStickerAction extends VirtualClass<void> {
+    }
+
+    export class SendMessageEmojiInteraction extends VirtualClass<{
+    emoticon: string;
+    msgId: int;
+    interaction: Api.TypeDataJSON;
+  }> {
+    emoticon: string;
+    msgId: int;
+    interaction: Api.TypeDataJSON;
+  }
+
+    export class SendMessageEmojiInteractionSeen extends VirtualClass<{
+    emoticon: string;
+  }> {
+    emoticon: string;
+  }
+
+    export class InputPrivacyKeyStatusTimestamp extends VirtualClass<void> {
+    }
+
+    export class InputPrivacyKeyChatInvite extends VirtualClass<void> {
+    }
+
+    export class InputPrivacyKeyPhoneCall extends VirtualClass<void> {
+    }
+
+    export class InputPrivacyKeyPhoneP2P extends VirtualClass<void> {
+    }
+
+    export class InputPrivacyKeyForwards extends VirtualClass<void> {
+    }
+
+    export class InputPrivacyKeyProfilePhoto extends VirtualClass<void> {
+    }
+
+    export class InputPrivacyKeyPhoneNumber extends VirtualClass<void> {
+    }
+
+    export class InputPrivacyKeyAddedByPhone extends VirtualClass<void> {
+    }
+
+    export class InputPrivacyKeyVoiceMessages extends VirtualClass<void> {
+    }
+
+    export class PrivacyKeyStatusTimestamp extends VirtualClass<void> {
+    }
+
+    export class PrivacyKeyChatInvite extends VirtualClass<void> {
+    }
+
+    export class PrivacyKeyPhoneCall extends VirtualClass<void> {
+    }
+
+    export class PrivacyKeyPhoneP2P extends VirtualClass<void> {
+    }
+
+    export class PrivacyKeyForwards extends VirtualClass<void> {
+    }
+
+    export class PrivacyKeyProfilePhoto extends VirtualClass<void> {
+    }
+
+    export class PrivacyKeyPhoneNumber extends VirtualClass<void> {
+    }
+
+    export class PrivacyKeyAddedByPhone extends VirtualClass<void> {
+    }
+
+    export class PrivacyKeyVoiceMessages extends VirtualClass<void> {
+    }
+
+    export class InputPrivacyValueAllowContacts extends VirtualClass<void> {
+    }
+
+    export class InputPrivacyValueAllowAll extends VirtualClass<void> {
+    }
+
+    export class InputPrivacyValueAllowUsers extends VirtualClass<{
+    users: Api.TypeInputUser[];
+  }> {
+    users: Api.TypeInputUser[];
+  }
+
+    export class InputPrivacyValueDisallowContacts extends VirtualClass<void> {
+    }
+
+    export class InputPrivacyValueDisallowAll extends VirtualClass<void> {
+    }
+
+    export class InputPrivacyValueDisallowUsers extends VirtualClass<{
+    users: Api.TypeInputUser[];
+  }> {
+    users: Api.TypeInputUser[];
+  }
+
+    export class InputPrivacyValueAllowChatParticipants extends VirtualClass<{
+    chats: long[];
+  }> {
+    chats: long[];
+  }
+
+    export class InputPrivacyValueDisallowChatParticipants extends VirtualClass<{
+    chats: long[];
+  }> {
+    chats: long[];
+  }
+
+    export class PrivacyValueAllowContacts extends VirtualClass<void> {
+    }
+
+    export class PrivacyValueAllowAll extends VirtualClass<void> {
+    }
+
+    export class PrivacyValueAllowUsers extends VirtualClass<{
+    users: long[];
+  }> {
+    users: long[];
+  }
+
+    export class PrivacyValueDisallowContacts extends VirtualClass<void> {
+    }
+
+    export class PrivacyValueDisallowAll extends VirtualClass<void> {
+    }
+
+    export class PrivacyValueDisallowUsers extends VirtualClass<{
+    users: long[];
+  }> {
+    users: long[];
+  }
+
+    export class PrivacyValueAllowChatParticipants extends VirtualClass<{
+    chats: long[];
+  }> {
+    chats: long[];
+  }
+
+    export class PrivacyValueDisallowChatParticipants extends VirtualClass<{
+    chats: long[];
+  }> {
+    chats: long[];
+  }
+
+    export class AccountDaysTTL extends VirtualClass<{
+    days: int;
+  }> {
+    days: int;
+  }
+
+    export class DocumentAttributeImageSize extends VirtualClass<{
+    w: int;
+    h: int;
+  }> {
+    w: int;
+    h: int;
+  }
+
+    export class DocumentAttributeAnimated extends VirtualClass<void> {
+    }
+
+    export class DocumentAttributeSticker extends VirtualClass<{
+    // flags: undefined;
+    mask?: true;
+    alt: string;
+    stickerset: Api.TypeInputStickerSet;
+    maskCoords?: Api.TypeMaskCoords;
+  }> {
+    // flags: undefined;
+    mask?: true;
+    alt: string;
+    stickerset: Api.TypeInputStickerSet;
+    maskCoords?: Api.TypeMaskCoords;
+  }
+
+    export class DocumentAttributeVideo extends VirtualClass<{
+    // flags: undefined;
+    roundMessage?: true;
+    supportsStreaming?: true;
+    duration: int;
+    w: int;
+    h: int;
+  }> {
+    // flags: undefined;
+    roundMessage?: true;
+    supportsStreaming?: true;
+    duration: int;
+    w: int;
+    h: int;
+  }
+
+    export class DocumentAttributeAudio extends VirtualClass<{
+    // flags: undefined;
+    voice?: true;
+    duration: int;
+    title?: string;
+    performer?: string;
+    waveform?: bytes;
+  }> {
+    // flags: undefined;
+    voice?: true;
+    duration: int;
+    title?: string;
+    performer?: string;
+    waveform?: bytes;
+  }
+
+    export class DocumentAttributeFilename extends VirtualClass<{
+    fileName: string;
+  }> {
+    fileName: string;
+  }
+
+    export class DocumentAttributeHasStickers extends VirtualClass<void> {
+    }
+
+    export class DocumentAttributeCustomEmoji extends VirtualClass<{
+    // flags: undefined;
+    free?: true;
+    textColor?: true;
+    alt: string;
+    stickerset: Api.TypeInputStickerSet;
+  }> {
+    // flags: undefined;
+    free?: true;
+    textColor?: true;
+    alt: string;
+    stickerset: Api.TypeInputStickerSet;
+  }
+
+    export class StickerPack extends VirtualClass<{
+    emoticon: string;
+    documents: long[];
+  }> {
+    emoticon: string;
+    documents: long[];
+  }
+
+    export class WebPageEmpty extends VirtualClass<{
+    id: long;
+  }> {
+    id: long;
+  }
+
+    export class WebPagePending extends VirtualClass<{
+    id: long;
+    date: int;
+  }> {
+    id: long;
+    date: int;
+  }
+
+    export class WebPage extends VirtualClass<{
+    // flags: undefined;
+    id: long;
+    url: string;
+    displayUrl: string;
+    hash: int;
+    type?: string;
+    siteName?: string;
+    title?: string;
+    description?: string;
+    photo?: Api.TypePhoto;
+    embedUrl?: string;
+    embedType?: string;
+    embedWidth?: int;
+    embedHeight?: int;
+    duration?: int;
+    author?: string;
+    document?: Api.TypeDocument;
+    cachedPage?: Api.TypePage;
+    attributes?: Api.TypeWebPageAttribute[];
+  }> {
+    // flags: undefined;
+    id: long;
+    url: string;
+    displayUrl: string;
+    hash: int;
+    type?: string;
+    siteName?: string;
+    title?: string;
+    description?: string;
+    photo?: Api.TypePhoto;
+    embedUrl?: string;
+    embedType?: string;
+    embedWidth?: int;
+    embedHeight?: int;
+    duration?: int;
+    author?: string;
+    document?: Api.TypeDocument;
+    cachedPage?: Api.TypePage;
+    attributes?: Api.TypeWebPageAttribute[];
+  }
+
+    export class WebPageNotModified extends VirtualClass<{
+    // flags: undefined;
+    cachedPageViews?: int;
+  } | void> {
+    // flags: undefined;
+    cachedPageViews?: int;
+  }
+
+    export class Authorization extends VirtualClass<{
+    // flags: undefined;
+    current?: true;
+    officialApp?: true;
+    passwordPending?: true;
+    encryptedRequestsDisabled?: true;
+    callRequestsDisabled?: true;
+    hash: long;
+    deviceModel: string;
+    platform: string;
+    systemVersion: string;
+    apiId: int;
+    appName: string;
+    appVersion: string;
+    dateCreated: int;
+    dateActive: int;
+    ip: string;
+    country: string;
+    region: string;
+  }> {
+    // flags: undefined;
+    current?: true;
+    officialApp?: true;
+    passwordPending?: true;
+    encryptedRequestsDisabled?: true;
+    callRequestsDisabled?: true;
+    hash: long;
+    deviceModel: string;
+    platform: string;
+    systemVersion: string;
+    apiId: int;
+    appName: string;
+    appVersion: string;
+    dateCreated: int;
+    dateActive: int;
+    ip: string;
+    country: string;
+    region: string;
+  }
+
+    export class ReceivedNotifyMessage extends VirtualClass<{
+    id: int;
+    // flags: int;
+  }> {
+    id: int;
+    // flags: int;
+  }
+
+    export class ChatInviteExported extends VirtualClass<{
+    // flags: undefined;
+    revoked?: true;
+    permanent?: true;
+    requestNeeded?: true;
+    link: string;
+    adminId: long;
+    date: int;
+    startDate?: int;
+    expireDate?: int;
+    usageLimit?: int;
+    usage?: int;
+    requested?: int;
+    title?: string;
+  }> {
+    // flags: undefined;
+    revoked?: true;
+    permanent?: true;
+    requestNeeded?: true;
+    link: string;
+    adminId: long;
+    date: int;
+    startDate?: int;
+    expireDate?: int;
+    usageLimit?: int;
+    usage?: int;
+    requested?: int;
+    title?: string;
+  }
+
+    export class ChatInvitePublicJoinRequests extends VirtualClass<void> {
+    }
+
+    export class ChatInviteAlready extends VirtualClass<{
+    chat: Api.TypeChat;
+  }> {
+    chat: Api.TypeChat;
+  }
+
+    export class ChatInvite extends VirtualClass<{
+    // flags: undefined;
+    channel?: true;
+    broadcast?: true;
+    public?: true;
+    megagroup?: true;
+    requestNeeded?: true;
+    title: string;
+    about?: string;
+    photo: Api.TypePhoto;
+    participantsCount: int;
+    participants?: Api.TypeUser[];
+  }> {
+    // flags: undefined;
+    channel?: true;
+    broadcast?: true;
+    public?: true;
+    megagroup?: true;
+    requestNeeded?: true;
+    title: string;
+    about?: string;
+    photo: Api.TypePhoto;
+    participantsCount: int;
+    participants?: Api.TypeUser[];
+  }
+
+    export class ChatInvitePeek extends VirtualClass<{
+    chat: Api.TypeChat;
+    expires: int;
+  }> {
+    chat: Api.TypeChat;
+    expires: int;
+  }
+
+    export class InputStickerSetEmpty extends VirtualClass<void> {
+    }
+
+    export class InputStickerSetID extends VirtualClass<{
+    id: long;
+    accessHash: long;
+  }> {
+    id: long;
+    accessHash: long;
+  }
+
+    export class InputStickerSetShortName extends VirtualClass<{
+    shortName: string;
+  }> {
+    shortName: string;
+  }
+
+    export class InputStickerSetAnimatedEmoji extends VirtualClass<void> {
+    }
+
+    export class InputStickerSetDice extends VirtualClass<{
+    emoticon: string;
+  }> {
+    emoticon: string;
+  }
+
+    export class InputStickerSetAnimatedEmojiAnimations extends VirtualClass<void> {
+    }
+
+    export class InputStickerSetPremiumGifts extends VirtualClass<void> {
+    }
+
+    export class InputStickerSetEmojiGenericAnimations extends VirtualClass<void> {
+    }
+
+    export class InputStickerSetEmojiDefaultStatuses extends VirtualClass<void> {
+    }
+
+    export class InputStickerSetEmojiDefaultTopicIcons extends VirtualClass<void> {
+    }
+
+    export class StickerSet extends VirtualClass<{
+    // flags: undefined;
+    archived?: true;
+    official?: true;
+    masks?: true;
+    animated?: true;
+    videos?: true;
+    emojis?: true;
+    installedDate?: int;
+    id: long;
+    accessHash: long;
+    title: string;
+    shortName: string;
+    thumbs?: Api.TypePhotoSize[];
+    thumbDcId?: int;
+    thumbVersion?: int;
+    thumbDocumentId?: long;
+    count: int;
+    hash: int;
+  }> {
+    // flags: undefined;
+    archived?: true;
+    official?: true;
+    masks?: true;
+    animated?: true;
+    videos?: true;
+    emojis?: true;
+    installedDate?: int;
+    id: long;
+    accessHash: long;
+    title: string;
+    shortName: string;
+    thumbs?: Api.TypePhotoSize[];
+    thumbDcId?: int;
+    thumbVersion?: int;
+    thumbDocumentId?: long;
+    count: int;
+    hash: int;
+  }
+
+    export class BotCommand extends VirtualClass<{
+    command: string;
+    description: string;
+  }> {
+    command: string;
+    description: string;
+  }
+
+    export class BotInfo extends VirtualClass<{
+    // flags: undefined;
+    userId?: long;
+    description?: string;
+    descriptionPhoto?: Api.TypePhoto;
+    descriptionDocument?: Api.TypeDocument;
+    commands?: Api.TypeBotCommand[];
+    menuButton?: Api.TypeBotMenuButton;
+  } | void> {
+    // flags: undefined;
+    userId?: long;
+    description?: string;
+    descriptionPhoto?: Api.TypePhoto;
+    descriptionDocument?: Api.TypeDocument;
+    commands?: Api.TypeBotCommand[];
+    menuButton?: Api.TypeBotMenuButton;
+  }
+
+    export class KeyboardButton extends VirtualClass<{
+    text: string;
+  }> {
+    text: string;
+  }
+
+    export class KeyboardButtonUrl extends VirtualClass<{
+    text: string;
+    url: string;
+  }> {
+    text: string;
+    url: string;
+  }
+
+    export class KeyboardButtonCallback extends VirtualClass<{
+    // flags: undefined;
+    requiresPassword?: true;
+    text: string;
+    data: bytes;
+  }> {
+    // flags: undefined;
+    requiresPassword?: true;
+    text: string;
+    data: bytes;
+  }
+
+    export class KeyboardButtonRequestPhone extends VirtualClass<{
+    text: string;
+  }> {
+    text: string;
+  }
+
+    export class KeyboardButtonRequestGeoLocation extends VirtualClass<{
+    text: string;
+  }> {
+    text: string;
+  }
+
+    export class KeyboardButtonSwitchInline extends VirtualClass<{
+    // flags: undefined;
+    samePeer?: true;
+    text: string;
+    query: string;
+  }> {
+    // flags: undefined;
+    samePeer?: true;
+    text: string;
+    query: string;
+  }
+
+    export class KeyboardButtonGame extends VirtualClass<{
+    text: string;
+  }> {
+    text: string;
+  }
+
+    export class KeyboardButtonBuy extends VirtualClass<{
+    text: string;
+  }> {
+    text: string;
+  }
+
+    export class KeyboardButtonUrlAuth extends VirtualClass<{
+    // flags: undefined;
+    text: string;
+    fwdText?: string;
+    url: string;
+    buttonId: int;
+  }> {
+    // flags: undefined;
+    text: string;
+    fwdText?: string;
+    url: string;
+    buttonId: int;
+  }
+
+    export class InputKeyboardButtonUrlAuth extends VirtualClass<{
+    // flags: undefined;
+    requestWriteAccess?: true;
+    text: string;
+    fwdText?: string;
+    url: string;
+    bot: Api.TypeInputUser;
+  }> {
+    // flags: undefined;
+    requestWriteAccess?: true;
+    text: string;
+    fwdText?: string;
+    url: string;
+    bot: Api.TypeInputUser;
+  }
+
+    export class KeyboardButtonRequestPoll extends VirtualClass<{
+    // flags: undefined;
+    quiz?: Bool;
+    text: string;
+  }> {
+    // flags: undefined;
+    quiz?: Bool;
+    text: string;
+  }
+
+    export class InputKeyboardButtonUserProfile extends VirtualClass<{
+    text: string;
+    userId: Api.TypeInputUser;
+  }> {
+    text: string;
+    userId: Api.TypeInputUser;
+  }
+
+    export class KeyboardButtonUserProfile extends VirtualClass<{
+    text: string;
+    userId: long;
+  }> {
+    text: string;
+    userId: long;
+  }
+
+    export class KeyboardButtonWebView extends VirtualClass<{
+    text: string;
+    url: string;
+  }> {
+    text: string;
+    url: string;
+  }
+
+    export class KeyboardButtonSimpleWebView extends VirtualClass<{
+    text: string;
+    url: string;
+  }> {
+    text: string;
+    url: string;
+  }
+
+    export class KeyboardButtonRequestPeer extends VirtualClass<{
+    text: string;
+    buttonId: int;
+    peerType: Api.TypeRequestPeerType;
+  }> {
+    text: string;
+    buttonId: int;
+    peerType: Api.TypeRequestPeerType;
+  }
+
+    export class KeyboardButtonRow extends VirtualClass<{
+    buttons: Api.TypeKeyboardButton[];
+  }> {
+    buttons: Api.TypeKeyboardButton[];
+  }
+
+    export class ReplyKeyboardHide extends VirtualClass<{
+    // flags: undefined;
+    selective?: true;
+  } | void> {
+    // flags: undefined;
+    selective?: true;
+  }
+
+    export class ReplyKeyboardForceReply extends VirtualClass<{
+    // flags: undefined;
+    singleUse?: true;
+    selective?: true;
+    placeholder?: string;
+  } | void> {
+    // flags: undefined;
+    singleUse?: true;
+    selective?: true;
+    placeholder?: string;
+  }
+
+    export class ReplyKeyboardMarkup extends VirtualClass<{
+    // flags: undefined;
+    resize?: true;
+    singleUse?: true;
+    selective?: true;
+    persistent?: true;
+    rows: Api.TypeKeyboardButtonRow[];
+    placeholder?: string;
+  }> {
+    // flags: undefined;
+    resize?: true;
+    singleUse?: true;
+    selective?: true;
+    persistent?: true;
+    rows: Api.TypeKeyboardButtonRow[];
+    placeholder?: string;
+  }
+
+    export class ReplyInlineMarkup extends VirtualClass<{
+    rows: Api.TypeKeyboardButtonRow[];
+  }> {
+    rows: Api.TypeKeyboardButtonRow[];
+  }
+
+    export class MessageEntityUnknown extends VirtualClass<{
+    offset: int;
+    length: int;
+  }> {
+    offset: int;
+    length: int;
+  }
+
+    export class MessageEntityMention extends VirtualClass<{
+    offset: int;
+    length: int;
+  }> {
+    offset: int;
+    length: int;
+  }
+
+    export class MessageEntityHashtag extends VirtualClass<{
+    offset: int;
+    length: int;
+  }> {
+    offset: int;
+    length: int;
+  }
+
+    export class MessageEntityBotCommand extends VirtualClass<{
+    offset: int;
+    length: int;
+  }> {
+    offset: int;
+    length: int;
+  }
+
+    export class MessageEntityUrl extends VirtualClass<{
+    offset: int;
+    length: int;
+  }> {
+    offset: int;
+    length: int;
+  }
+
+    export class MessageEntityEmail extends VirtualClass<{
+    offset: int;
+    length: int;
+  }> {
+    offset: int;
+    length: int;
+  }
+
+    export class MessageEntityBold extends VirtualClass<{
+    offset: int;
+    length: int;
+  }> {
+    offset: int;
+    length: int;
+  }
+
+    export class MessageEntityItalic extends VirtualClass<{
+    offset: int;
+    length: int;
+  }> {
+    offset: int;
+    length: int;
+  }
+
+    export class MessageEntityCode extends VirtualClass<{
+    offset: int;
+    length: int;
+  }> {
+    offset: int;
+    length: int;
+  }
+
+    export class MessageEntityPre extends VirtualClass<{
+    offset: int;
+    length: int;
+    language: string;
+  }> {
+    offset: int;
+    length: int;
+    language: string;
+  }
+
+    export class MessageEntityTextUrl extends VirtualClass<{
+    offset: int;
+    length: int;
+    url: string;
+  }> {
+    offset: int;
+    length: int;
+    url: string;
+  }
+
+    export class MessageEntityMentionName extends VirtualClass<{
+    offset: int;
+    length: int;
+    userId: long;
+  }> {
+    offset: int;
+    length: int;
+    userId: long;
+  }
+
+    export class InputMessageEntityMentionName extends VirtualClass<{
+    offset: int;
+    length: int;
+    userId: Api.TypeInputUser;
+  }> {
+    offset: int;
+    length: int;
+    userId: Api.TypeInputUser;
+  }
+
+    export class MessageEntityPhone extends VirtualClass<{
+    offset: int;
+    length: int;
+  }> {
+    offset: int;
+    length: int;
+  }
+
+    export class MessageEntityCashtag extends VirtualClass<{
+    offset: int;
+    length: int;
+  }> {
+    offset: int;
+    length: int;
+  }
+
+    export class MessageEntityUnderline extends VirtualClass<{
+    offset: int;
+    length: int;
+  }> {
+    offset: int;
+    length: int;
+  }
+
+    export class MessageEntityStrike extends VirtualClass<{
+    offset: int;
+    length: int;
+  }> {
+    offset: int;
+    length: int;
+  }
+
+    export class MessageEntityBlockquote extends VirtualClass<{
+    offset: int;
+    length: int;
+  }> {
+    offset: int;
+    length: int;
+  }
+
+    export class MessageEntityBankCard extends VirtualClass<{
+    offset: int;
+    length: int;
+  }> {
+    offset: int;
+    length: int;
+  }
+
+    export class MessageEntitySpoiler extends VirtualClass<{
+    offset: int;
+    length: int;
+  }> {
+    offset: int;
+    length: int;
+  }
+
+    export class MessageEntityCustomEmoji extends VirtualClass<{
+    offset: int;
+    length: int;
+    documentId: long;
+  }> {
+    offset: int;
+    length: int;
+    documentId: long;
+  }
+
+    export class InputChannelEmpty extends VirtualClass<void> {
+    }
+
+    export class InputChannel extends VirtualClass<{
+    channelId: long;
+    accessHash: long;
+  }> {
+    channelId: long;
+    accessHash: long;
+  }
+
+    export class InputChannelFromMessage extends VirtualClass<{
+    peer: Api.TypeInputPeer;
+    msgId: int;
+    channelId: long;
+  }> {
+    peer: Api.TypeInputPeer;
+    msgId: int;
+    channelId: long;
+  }
+
+    export class MessageRange extends VirtualClass<{
+    minId: int;
+    maxId: int;
+  }> {
+    minId: int;
+    maxId: int;
+  }
+
+    export class ChannelMessagesFilterEmpty extends VirtualClass<void> {
+    }
+
+    export class ChannelMessagesFilter extends VirtualClass<{
+    // flags: undefined;
+    excludeNewMessages?: true;
+    ranges: Api.TypeMessageRange[];
+  }> {
+    // flags: undefined;
+    excludeNewMessages?: true;
+    ranges: Api.TypeMessageRange[];
+  }
+
+    export class ChannelParticipant extends VirtualClass<{
+    userId: long;
+    date: int;
+  }> {
+    userId: long;
+    date: int;
+  }
+
+    export class ChannelParticipantSelf extends VirtualClass<{
+    // flags: undefined;
+    viaRequest?: true;
+    userId: long;
+    inviterId: long;
+    date: int;
+  }> {
+    // flags: undefined;
+    viaRequest?: true;
+    userId: long;
+    inviterId: long;
+    date: int;
+  }
+
+    export class ChannelParticipantCreator extends VirtualClass<{
+    // flags: undefined;
+    userId: long;
+    adminRights: Api.TypeChatAdminRights;
+    rank?: string;
+  }> {
+    // flags: undefined;
+    userId: long;
+    adminRights: Api.TypeChatAdminRights;
+    rank?: string;
+  }
+
+    export class ChannelParticipantAdmin extends VirtualClass<{
+    // flags: undefined;
+    canEdit?: true;
+    self?: true;
+    userId: long;
+    inviterId?: long;
+    promotedBy: long;
+    date: int;
+    adminRights: Api.TypeChatAdminRights;
+    rank?: string;
+  }> {
+    // flags: undefined;
+    canEdit?: true;
+    self?: true;
+    userId: long;
+    inviterId?: long;
+    promotedBy: long;
+    date: int;
+    adminRights: Api.TypeChatAdminRights;
+    rank?: string;
+  }
+
+    export class ChannelParticipantBanned extends VirtualClass<{
+    // flags: undefined;
+    left?: true;
+    peer: Api.TypePeer;
+    kickedBy: long;
+    date: int;
+    bannedRights: Api.TypeChatBannedRights;
+  }> {
+    // flags: undefined;
+    left?: true;
+    peer: Api.TypePeer;
+    kickedBy: long;
+    date: int;
+    bannedRights: Api.TypeChatBannedRights;
+  }
+
+    export class ChannelParticipantLeft extends VirtualClass<{
+    peer: Api.TypePeer;
+  }> {
+    peer: Api.TypePeer;
+  }
+
+    export class ChannelParticipantsRecent extends VirtualClass<void> {
+    }
+
+    export class ChannelParticipantsAdmins extends VirtualClass<void> {
+    }
+
+    export class ChannelParticipantsKicked extends VirtualClass<{
+    q: string;
+  }> {
+    q: string;
+  }
+
+    export class ChannelParticipantsBots extends VirtualClass<void> {
+    }
+
+    export class ChannelParticipantsBanned extends VirtualClass<{
+    q: string;
+  }> {
+    q: string;
+  }
+
+    export class ChannelParticipantsSearch extends VirtualClass<{
+    q: string;
+  }> {
+    q: string;
+  }
+
+    export class ChannelParticipantsContacts extends VirtualClass<{
+    q: string;
+  }> {
+    q: string;
+  }
+
+    export class ChannelParticipantsMentions extends VirtualClass<{
+    // flags: undefined;
+    q?: string;
+    topMsgId?: int;
+  } | void> {
+    // flags: undefined;
+    q?: string;
+    topMsgId?: int;
+  }
+
+    export class InputBotInlineMessageMediaAuto extends VirtualClass<{
+    // flags: undefined;
+    message: string;
+    entities?: Api.TypeMessageEntity[];
+    replyMarkup?: Api.TypeReplyMarkup;
+  }> {
+    // flags: undefined;
+    message: string;
+    entities?: Api.TypeMessageEntity[];
+    replyMarkup?: Api.TypeReplyMarkup;
+  }
+
+    export class InputBotInlineMessageText extends VirtualClass<{
+    // flags: undefined;
+    noWebpage?: true;
+    message: string;
+    entities?: Api.TypeMessageEntity[];
+    replyMarkup?: Api.TypeReplyMarkup;
+  }> {
+    // flags: undefined;
+    noWebpage?: true;
+    message: string;
+    entities?: Api.TypeMessageEntity[];
+    replyMarkup?: Api.TypeReplyMarkup;
+  }
+
+    export class InputBotInlineMessageMediaGeo extends VirtualClass<{
+    // flags: undefined;
+    geoPoint: Api.TypeInputGeoPoint;
+    heading?: int;
+    period?: int;
+    proximityNotificationRadius?: int;
+    replyMarkup?: Api.TypeReplyMarkup;
+  }> {
+    // flags: undefined;
+    geoPoint: Api.TypeInputGeoPoint;
+    heading?: int;
+    period?: int;
+    proximityNotificationRadius?: int;
+    replyMarkup?: Api.TypeReplyMarkup;
+  }
+
+    export class InputBotInlineMessageMediaVenue extends VirtualClass<{
+    // flags: undefined;
+    geoPoint: Api.TypeInputGeoPoint;
+    title: string;
+    address: string;
+    provider: string;
+    venueId: string;
+    venueType: string;
+    replyMarkup?: Api.TypeReplyMarkup;
+  }> {
+    // flags: undefined;
+    geoPoint: Api.TypeInputGeoPoint;
+    title: string;
+    address: string;
+    provider: string;
+    venueId: string;
+    venueType: string;
+    replyMarkup?: Api.TypeReplyMarkup;
+  }
+
+    export class InputBotInlineMessageMediaContact extends VirtualClass<{
+    // flags: undefined;
+    phoneNumber: string;
+    firstName: string;
+    lastName: string;
+    vcard: string;
+    replyMarkup?: Api.TypeReplyMarkup;
+  }> {
+    // flags: undefined;
+    phoneNumber: string;
+    firstName: string;
+    lastName: string;
+    vcard: string;
+    replyMarkup?: Api.TypeReplyMarkup;
+  }
+
+    export class InputBotInlineMessageGame extends VirtualClass<{
+    // flags: undefined;
+    replyMarkup?: Api.TypeReplyMarkup;
+  } | void> {
+    // flags: undefined;
+    replyMarkup?: Api.TypeReplyMarkup;
+  }
+
+    export class InputBotInlineMessageMediaInvoice extends VirtualClass<{
+    // flags: undefined;
+    title: string;
+    description: string;
+    photo?: Api.TypeInputWebDocument;
+    invoice: Api.TypeInvoice;
+    payload: bytes;
+    provider: string;
+    providerData: Api.TypeDataJSON;
+    replyMarkup?: Api.TypeReplyMarkup;
+  }> {
+    // flags: undefined;
+    title: string;
+    description: string;
+    photo?: Api.TypeInputWebDocument;
+    invoice: Api.TypeInvoice;
+    payload: bytes;
+    provider: string;
+    providerData: Api.TypeDataJSON;
+    replyMarkup?: Api.TypeReplyMarkup;
+  }
+
+    export class InputBotInlineResult extends VirtualClass<{
+    // flags: undefined;
+    id: string;
+    type: string;
+    title?: string;
+    description?: string;
+    url?: string;
+    thumb?: Api.TypeInputWebDocument;
+    content?: Api.TypeInputWebDocument;
+    sendMessage: Api.TypeInputBotInlineMessage;
+  }> {
+    // flags: undefined;
+    id: string;
+    type: string;
+    title?: string;
+    description?: string;
+    url?: string;
+    thumb?: Api.TypeInputWebDocument;
+    content?: Api.TypeInputWebDocument;
+    sendMessage: Api.TypeInputBotInlineMessage;
+  }
+
+    export class InputBotInlineResultPhoto extends VirtualClass<{
+    id: string;
+    type: string;
+    photo: Api.TypeInputPhoto;
+    sendMessage: Api.TypeInputBotInlineMessage;
+  }> {
+    id: string;
+    type: string;
+    photo: Api.TypeInputPhoto;
+    sendMessage: Api.TypeInputBotInlineMessage;
+  }
+
+    export class InputBotInlineResultDocument extends VirtualClass<{
+    // flags: undefined;
+    id: string;
+    type: string;
+    title?: string;
+    description?: string;
+    document: Api.TypeInputDocument;
+    sendMessage: Api.TypeInputBotInlineMessage;
+  }> {
+    // flags: undefined;
+    id: string;
+    type: string;
+    title?: string;
+    description?: string;
+    document: Api.TypeInputDocument;
+    sendMessage: Api.TypeInputBotInlineMessage;
+  }
+
+    export class InputBotInlineResultGame extends VirtualClass<{
+    id: string;
+    shortName: string;
+    sendMessage: Api.TypeInputBotInlineMessage;
+  }> {
+    id: string;
+    shortName: string;
+    sendMessage: Api.TypeInputBotInlineMessage;
+  }
+
+    export class BotInlineMessageMediaAuto extends VirtualClass<{
+    // flags: undefined;
+    message: string;
+    entities?: Api.TypeMessageEntity[];
+    replyMarkup?: Api.TypeReplyMarkup;
+  }> {
+    // flags: undefined;
+    message: string;
+    entities?: Api.TypeMessageEntity[];
+    replyMarkup?: Api.TypeReplyMarkup;
+  }
+
+    export class BotInlineMessageText extends VirtualClass<{
+    // flags: undefined;
+    noWebpage?: true;
+    message: string;
+    entities?: Api.TypeMessageEntity[];
+    replyMarkup?: Api.TypeReplyMarkup;
+  }> {
+    // flags: undefined;
+    noWebpage?: true;
+    message: string;
+    entities?: Api.TypeMessageEntity[];
+    replyMarkup?: Api.TypeReplyMarkup;
+  }
+
+    export class BotInlineMessageMediaGeo extends VirtualClass<{
+    // flags: undefined;
+    geo: Api.TypeGeoPoint;
+    heading?: int;
+    period?: int;
+    proximityNotificationRadius?: int;
+    replyMarkup?: Api.TypeReplyMarkup;
+  }> {
+    // flags: undefined;
+    geo: Api.TypeGeoPoint;
+    heading?: int;
+    period?: int;
+    proximityNotificationRadius?: int;
+    replyMarkup?: Api.TypeReplyMarkup;
+  }
+
+    export class BotInlineMessageMediaVenue extends VirtualClass<{
+    // flags: undefined;
+    geo: Api.TypeGeoPoint;
+    title: string;
+    address: string;
+    provider: string;
+    venueId: string;
+    venueType: string;
+    replyMarkup?: Api.TypeReplyMarkup;
+  }> {
+    // flags: undefined;
+    geo: Api.TypeGeoPoint;
+    title: string;
+    address: string;
+    provider: string;
+    venueId: string;
+    venueType: string;
+    replyMarkup?: Api.TypeReplyMarkup;
+  }
+
+    export class BotInlineMessageMediaContact extends VirtualClass<{
+    // flags: undefined;
+    phoneNumber: string;
+    firstName: string;
+    lastName: string;
+    vcard: string;
+    replyMarkup?: Api.TypeReplyMarkup;
+  }> {
+    // flags: undefined;
+    phoneNumber: string;
+    firstName: string;
+    lastName: string;
+    vcard: string;
+    replyMarkup?: Api.TypeReplyMarkup;
+  }
+
+    export class BotInlineMessageMediaInvoice extends VirtualClass<{
+    // flags: undefined;
+    shippingAddressRequested?: true;
+    test?: true;
+    title: string;
+    description: string;
+    photo?: Api.TypeWebDocument;
+    currency: string;
+    totalAmount: long;
+    replyMarkup?: Api.TypeReplyMarkup;
+  }> {
+    // flags: undefined;
+    shippingAddressRequested?: true;
+    test?: true;
+    title: string;
+    description: string;
+    photo?: Api.TypeWebDocument;
+    currency: string;
+    totalAmount: long;
+    replyMarkup?: Api.TypeReplyMarkup;
+  }
+
+    export class BotInlineResult extends VirtualClass<{
+    // flags: undefined;
+    id: string;
+    type: string;
+    title?: string;
+    description?: string;
+    url?: string;
+    thumb?: Api.TypeWebDocument;
+    content?: Api.TypeWebDocument;
+    sendMessage: Api.TypeBotInlineMessage;
+  }> {
+    // flags: undefined;
+    id: string;
+    type: string;
+    title?: string;
+    description?: string;
+    url?: string;
+    thumb?: Api.TypeWebDocument;
+    content?: Api.TypeWebDocument;
+    sendMessage: Api.TypeBotInlineMessage;
+  }
+
+    export class BotInlineMediaResult extends VirtualClass<{
+    // flags: undefined;
+    id: string;
+    type: string;
+    photo?: Api.TypePhoto;
+    document?: Api.TypeDocument;
+    title?: string;
+    description?: string;
+    sendMessage: Api.TypeBotInlineMessage;
+  }> {
+    // flags: undefined;
+    id: string;
+    type: string;
+    photo?: Api.TypePhoto;
+    document?: Api.TypeDocument;
+    title?: string;
+    description?: string;
+    sendMessage: Api.TypeBotInlineMessage;
+  }
+
+    export class ExportedMessageLink extends VirtualClass<{
+    link: string;
+    html: string;
+  }> {
+    link: string;
+    html: string;
+  }
+
+    export class MessageFwdHeader extends VirtualClass<{
+    // flags: undefined;
+    imported?: true;
+    fromId?: Api.TypePeer;
+    fromName?: string;
+    date: int;
+    channelPost?: int;
+    postAuthor?: string;
+    savedFromPeer?: Api.TypePeer;
+    savedFromMsgId?: int;
+    psaType?: string;
+  }> {
+    // flags: undefined;
+    imported?: true;
+    fromId?: Api.TypePeer;
+    fromName?: string;
+    date: int;
+    channelPost?: int;
+    postAuthor?: string;
+    savedFromPeer?: Api.TypePeer;
+    savedFromMsgId?: int;
+    psaType?: string;
+  }
+
+    export class InputBotInlineMessageID extends VirtualClass<{
+    dcId: int;
+    id: long;
+    accessHash: long;
+  }> {
+    dcId: int;
+    id: long;
+    accessHash: long;
+  }
+
+    export class InputBotInlineMessageID64 extends VirtualClass<{
+    dcId: int;
+    ownerId: long;
+    id: int;
+    accessHash: long;
+  }> {
+    dcId: int;
+    ownerId: long;
+    id: int;
+    accessHash: long;
+  }
+
+    export class InlineBotSwitchPM extends VirtualClass<{
+    text: string;
+    startParam: string;
+  }> {
+    text: string;
+    startParam: string;
+  }
+
+    export class TopPeer extends VirtualClass<{
+    peer: Api.TypePeer;
+    rating: double;
+  }> {
+    peer: Api.TypePeer;
+    rating: double;
+  }
+
+    export class TopPeerCategoryBotsPM extends VirtualClass<void> {
+    }
+
+    export class TopPeerCategoryBotsInline extends VirtualClass<void> {
+    }
+
+    export class TopPeerCategoryCorrespondents extends VirtualClass<void> {
+    }
+
+    export class TopPeerCategoryGroups extends VirtualClass<void> {
+    }
+
+    export class TopPeerCategoryChannels extends VirtualClass<void> {
+    }
+
+    export class TopPeerCategoryPhoneCalls extends VirtualClass<void> {
+    }
+
+    export class TopPeerCategoryForwardUsers extends VirtualClass<void> {
+    }
+
+    export class TopPeerCategoryForwardChats extends VirtualClass<void> {
+    }
+
+    export class TopPeerCategoryPeers extends VirtualClass<{
+    category: Api.TypeTopPeerCategory;
+    count: int;
+    peers: Api.TypeTopPeer[];
+  }> {
+    category: Api.TypeTopPeerCategory;
+    count: int;
+    peers: Api.TypeTopPeer[];
+  }
+
+    export class DraftMessageEmpty extends VirtualClass<{
+    // flags: undefined;
+    date?: int;
+  } | void> {
+    // flags: undefined;
+    date?: int;
+  }
+
+    export class DraftMessage extends VirtualClass<{
+    // flags: undefined;
+    noWebpage?: true;
+    replyToMsgId?: int;
+    message: string;
+    entities?: Api.TypeMessageEntity[];
+    date: int;
+  }> {
+    // flags: undefined;
+    noWebpage?: true;
+    replyToMsgId?: int;
+    message: string;
+    entities?: Api.TypeMessageEntity[];
+    date: int;
+  }
+
+    export class StickerSetCovered extends VirtualClass<{
+    set: Api.TypeStickerSet;
+    cover: Api.TypeDocument;
+  }> {
+    set: Api.TypeStickerSet;
+    cover: Api.TypeDocument;
+  }
+
+    export class StickerSetMultiCovered extends VirtualClass<{
+    set: Api.TypeStickerSet;
+    covers: Api.TypeDocument[];
+  }> {
+    set: Api.TypeStickerSet;
+    covers: Api.TypeDocument[];
+  }
+
+    export class StickerSetFullCovered extends VirtualClass<{
+    set: Api.TypeStickerSet;
+    packs: Api.TypeStickerPack[];
+    keywords: Api.TypeStickerKeyword[];
+    documents: Api.TypeDocument[];
+  }> {
+    set: Api.TypeStickerSet;
+    packs: Api.TypeStickerPack[];
+    keywords: Api.TypeStickerKeyword[];
+    documents: Api.TypeDocument[];
+  }
+
+    export class StickerSetNoCovered extends VirtualClass<{
+    set: Api.TypeStickerSet;
+  }> {
+    set: Api.TypeStickerSet;
+  }
+
+    export class MaskCoords extends VirtualClass<{
+    n: int;
+    x: double;
+    y: double;
+    zoom: double;
+  }> {
+    n: int;
+    x: double;
+    y: double;
+    zoom: double;
+  }
+
+    export class InputStickeredMediaPhoto extends VirtualClass<{
+    id: Api.TypeInputPhoto;
+  }> {
+    id: Api.TypeInputPhoto;
+  }
+
+    export class InputStickeredMediaDocument extends VirtualClass<{
+    id: Api.TypeInputDocument;
+  }> {
+    id: Api.TypeInputDocument;
+  }
+
+    export class Game extends VirtualClass<{
+    // flags: undefined;
+    id: long;
+    accessHash: long;
+    shortName: string;
+    title: string;
+    description: string;
+    photo: Api.TypePhoto;
+    document?: Api.TypeDocument;
+  }> {
+    // flags: undefined;
+    id: long;
+    accessHash: long;
+    shortName: string;
+    title: string;
+    description: string;
+    photo: Api.TypePhoto;
+    document?: Api.TypeDocument;
+  }
+
+    export class InputGameID extends VirtualClass<{
+    id: long;
+    accessHash: long;
+  }> {
+    id: long;
+    accessHash: long;
+  }
+
+    export class InputGameShortName extends VirtualClass<{
+    botId: Api.TypeInputUser;
+    shortName: string;
+  }> {
+    botId: Api.TypeInputUser;
+    shortName: string;
+  }
+
+    export class HighScore extends VirtualClass<{
+    pos: int;
+    userId: long;
+    score: int;
+  }> {
+    pos: int;
+    userId: long;
+    score: int;
+  }
+
+    export class TextEmpty extends VirtualClass<void> {
+    }
+
+    export class TextPlain extends VirtualClass<{
+    text: string;
+  }> {
+    text: string;
+  }
+
+    export class TextBold extends VirtualClass<{
+    text: Api.TypeRichText;
+  }> {
+    text: Api.TypeRichText;
+  }
+
+    export class TextItalic extends VirtualClass<{
+    text: Api.TypeRichText;
+  }> {
+    text: Api.TypeRichText;
+  }
+
+    export class TextUnderline extends VirtualClass<{
+    text: Api.TypeRichText;
+  }> {
+    text: Api.TypeRichText;
+  }
+
+    export class TextStrike extends VirtualClass<{
+    text: Api.TypeRichText;
+  }> {
+    text: Api.TypeRichText;
+  }
+
+    export class TextFixed extends VirtualClass<{
+    text: Api.TypeRichText;
+  }> {
+    text: Api.TypeRichText;
+  }
+
+    export class TextUrl extends VirtualClass<{
+    text: Api.TypeRichText;
+    url: string;
+    webpageId: long;
+  }> {
+    text: Api.TypeRichText;
+    url: string;
+    webpageId: long;
+  }
+
+    export class TextEmail extends VirtualClass<{
+    text: Api.TypeRichText;
+    email: string;
+  }> {
+    text: Api.TypeRichText;
+    email: string;
+  }
+
+    export class TextConcat extends VirtualClass<{
+    texts: Api.TypeRichText[];
+  }> {
+    texts: Api.TypeRichText[];
+  }
+
+    export class TextSubscript extends VirtualClass<{
+    text: Api.TypeRichText;
+  }> {
+    text: Api.TypeRichText;
+  }
+
+    export class TextSuperscript extends VirtualClass<{
+    text: Api.TypeRichText;
+  }> {
+    text: Api.TypeRichText;
+  }
+
+    export class TextMarked extends VirtualClass<{
+    text: Api.TypeRichText;
+  }> {
+    text: Api.TypeRichText;
+  }
+
+    export class TextPhone extends VirtualClass<{
+    text: Api.TypeRichText;
+    phone: string;
+  }> {
+    text: Api.TypeRichText;
+    phone: string;
+  }
+
+    export class TextImage extends VirtualClass<{
+    documentId: long;
+    w: int;
+    h: int;
+  }> {
+    documentId: long;
+    w: int;
+    h: int;
+  }
+
+    export class TextAnchor extends VirtualClass<{
+    text: Api.TypeRichText;
+    name: string;
+  }> {
+    text: Api.TypeRichText;
+    name: string;
+  }
+
+    export class PageBlockUnsupported extends VirtualClass<void> {
+    }
+
+    export class PageBlockTitle extends VirtualClass<{
+    text: Api.TypeRichText;
+  }> {
+    text: Api.TypeRichText;
+  }
+
+    export class PageBlockSubtitle extends VirtualClass<{
+    text: Api.TypeRichText;
+  }> {
+    text: Api.TypeRichText;
+  }
+
+    export class PageBlockAuthorDate extends VirtualClass<{
+    author: Api.TypeRichText;
+    publishedDate: int;
+  }> {
+    author: Api.TypeRichText;
+    publishedDate: int;
+  }
+
+    export class PageBlockHeader extends VirtualClass<{
+    text: Api.TypeRichText;
+  }> {
+    text: Api.TypeRichText;
+  }
+
+    export class PageBlockSubheader extends VirtualClass<{
+    text: Api.TypeRichText;
+  }> {
+    text: Api.TypeRichText;
+  }
+
+    export class PageBlockParagraph extends VirtualClass<{
+    text: Api.TypeRichText;
+  }> {
+    text: Api.TypeRichText;
+  }
+
+    export class PageBlockPreformatted extends VirtualClass<{
+    text: Api.TypeRichText;
+    language: string;
+  }> {
+    text: Api.TypeRichText;
+    language: string;
+  }
+
+    export class PageBlockFooter extends VirtualClass<{
+    text: Api.TypeRichText;
+  }> {
+    text: Api.TypeRichText;
+  }
+
+    export class PageBlockDivider extends VirtualClass<void> {
+    }
+
+    export class PageBlockAnchor extends VirtualClass<{
+    name: string;
+  }> {
+    name: string;
+  }
+
+    export class PageBlockList extends VirtualClass<{
+    items: Api.TypePageListItem[];
+  }> {
+    items: Api.TypePageListItem[];
+  }
+
+    export class PageBlockBlockquote extends VirtualClass<{
+    text: Api.TypeRichText;
+    caption: Api.TypeRichText;
+  }> {
+    text: Api.TypeRichText;
+    caption: Api.TypeRichText;
+  }
+
+    export class PageBlockPullquote extends VirtualClass<{
+    text: Api.TypeRichText;
+    caption: Api.TypeRichText;
+  }> {
+    text: Api.TypeRichText;
+    caption: Api.TypeRichText;
+  }
+
+    export class PageBlockPhoto extends VirtualClass<{
+    // flags: undefined;
+    photoId: long;
+    caption: Api.TypePageCaption;
+    url?: string;
+    webpageId?: long;
+  }> {
+    // flags: undefined;
+    photoId: long;
+    caption: Api.TypePageCaption;
+    url?: string;
+    webpageId?: long;
+  }
+
+    export class PageBlockVideo extends VirtualClass<{
+    // flags: undefined;
+    autoplay?: true;
+    loop?: true;
+    videoId: long;
+    caption: Api.TypePageCaption;
+  }> {
+    // flags: undefined;
+    autoplay?: true;
+    loop?: true;
+    videoId: long;
+    caption: Api.TypePageCaption;
+  }
+
+    export class PageBlockCover extends VirtualClass<{
+    cover: Api.TypePageBlock;
+  }> {
+    cover: Api.TypePageBlock;
+  }
+
+    export class PageBlockEmbed extends VirtualClass<{
+    // flags: undefined;
+    fullWidth?: true;
+    allowScrolling?: true;
+    url?: string;
+    html?: string;
+    posterPhotoId?: long;
+    w?: int;
+    h?: int;
+    caption: Api.TypePageCaption;
+  }> {
+    // flags: undefined;
+    fullWidth?: true;
+    allowScrolling?: true;
+    url?: string;
+    html?: string;
+    posterPhotoId?: long;
+    w?: int;
+    h?: int;
+    caption: Api.TypePageCaption;
+  }
+
+    export class PageBlockEmbedPost extends VirtualClass<{
+    url: string;
+    webpageId: long;
+    authorPhotoId: long;
+    author: string;
+    date: int;
+    blocks: Api.TypePageBlock[];
+    caption: Api.TypePageCaption;
+  }> {
+    url: string;
+    webpageId: long;
+    authorPhotoId: long;
+    author: string;
+    date: int;
+    blocks: Api.TypePageBlock[];
+    caption: Api.TypePageCaption;
+  }
+
+    export class PageBlockCollage extends VirtualClass<{
+    items: Api.TypePageBlock[];
+    caption: Api.TypePageCaption;
+  }> {
+    items: Api.TypePageBlock[];
+    caption: Api.TypePageCaption;
+  }
+
+    export class PageBlockSlideshow extends VirtualClass<{
+    items: Api.TypePageBlock[];
+    caption: Api.TypePageCaption;
+  }> {
+    items: Api.TypePageBlock[];
+    caption: Api.TypePageCaption;
+  }
+
+    export class PageBlockChannel extends VirtualClass<{
+    channel: Api.TypeChat;
+  }> {
+    channel: Api.TypeChat;
+  }
+
+    export class PageBlockAudio extends VirtualClass<{
+    audioId: long;
+    caption: Api.TypePageCaption;
+  }> {
+    audioId: long;
+    caption: Api.TypePageCaption;
+  }
+
+    export class PageBlockKicker extends VirtualClass<{
+    text: Api.TypeRichText;
+  }> {
+    text: Api.TypeRichText;
+  }
+
+    export class PageBlockTable extends VirtualClass<{
+    // flags: undefined;
+    bordered?: true;
+    striped?: true;
+    title: Api.TypeRichText;
+    rows: Api.TypePageTableRow[];
+  }> {
+    // flags: undefined;
+    bordered?: true;
+    striped?: true;
+    title: Api.TypeRichText;
+    rows: Api.TypePageTableRow[];
+  }
+
+    export class PageBlockOrderedList extends VirtualClass<{
+    items: Api.TypePageListOrderedItem[];
+  }> {
+    items: Api.TypePageListOrderedItem[];
+  }
+
+    export class PageBlockDetails extends VirtualClass<{
+    // flags: undefined;
+    open?: true;
+    blocks: Api.TypePageBlock[];
+    title: Api.TypeRichText;
+  }> {
+    // flags: undefined;
+    open?: true;
+    blocks: Api.TypePageBlock[];
+    title: Api.TypeRichText;
+  }
+
+    export class PageBlockRelatedArticles extends VirtualClass<{
+    title: Api.TypeRichText;
+    articles: Api.TypePageRelatedArticle[];
+  }> {
+    title: Api.TypeRichText;
+    articles: Api.TypePageRelatedArticle[];
+  }
+
+    export class PageBlockMap extends VirtualClass<{
+    geo: Api.TypeGeoPoint;
+    zoom: int;
+    w: int;
+    h: int;
+    caption: Api.TypePageCaption;
+  }> {
+    geo: Api.TypeGeoPoint;
+    zoom: int;
+    w: int;
+    h: int;
+    caption: Api.TypePageCaption;
+  }
+
+    export class PhoneCallDiscardReasonMissed extends VirtualClass<void> {
+    }
+
+    export class PhoneCallDiscardReasonDisconnect extends VirtualClass<void> {
+    }
+
+    export class PhoneCallDiscardReasonHangup extends VirtualClass<void> {
+    }
+
+    export class PhoneCallDiscardReasonBusy extends VirtualClass<void> {
+    }
+
+    export class DataJSON extends VirtualClass<{
+    data: string;
+  }> {
+    data: string;
+  }
+
+    export class LabeledPrice extends VirtualClass<{
+    label: string;
+    amount: long;
+  }> {
+    label: string;
+    amount: long;
+  }
+
+    export class Invoice extends VirtualClass<{
+    // flags: undefined;
+    test?: true;
+    nameRequested?: true;
+    phoneRequested?: true;
+    emailRequested?: true;
+    shippingAddressRequested?: true;
+    flexible?: true;
+    phoneToProvider?: true;
+    emailToProvider?: true;
+    recurring?: true;
+    currency: string;
+    prices: Api.TypeLabeledPrice[];
+    maxTipAmount?: long;
+    suggestedTipAmounts?: long[];
+    recurringTermsUrl?: string;
+  }> {
+    // flags: undefined;
+    test?: true;
+    nameRequested?: true;
+    phoneRequested?: true;
+    emailRequested?: true;
+    shippingAddressRequested?: true;
+    flexible?: true;
+    phoneToProvider?: true;
+    emailToProvider?: true;
+    recurring?: true;
+    currency: string;
+    prices: Api.TypeLabeledPrice[];
+    maxTipAmount?: long;
+    suggestedTipAmounts?: long[];
+    recurringTermsUrl?: string;
+  }
+
+    export class PaymentCharge extends VirtualClass<{
+    id: string;
+    providerChargeId: string;
+  }> {
+    id: string;
+    providerChargeId: string;
+  }
+
+    export class PostAddress extends VirtualClass<{
+    streetLine1: string;
+    streetLine2: string;
+    city: string;
+    state: string;
+    countryIso2: string;
+    postCode: string;
+  }> {
+    streetLine1: string;
+    streetLine2: string;
+    city: string;
+    state: string;
+    countryIso2: string;
+    postCode: string;
+  }
+
+    export class PaymentRequestedInfo extends VirtualClass<{
+    // flags: undefined;
+    name?: string;
+    phone?: string;
+    email?: string;
+    shippingAddress?: Api.TypePostAddress;
+  } | void> {
+    // flags: undefined;
+    name?: string;
+    phone?: string;
+    email?: string;
+    shippingAddress?: Api.TypePostAddress;
+  }
+
+    export class PaymentSavedCredentialsCard extends VirtualClass<{
+    id: string;
+    title: string;
+  }> {
+    id: string;
+    title: string;
+  }
+
+    export class WebDocument extends VirtualClass<{
+    url: string;
+    accessHash: long;
+    size: int;
+    mimeType: string;
+    attributes: Api.TypeDocumentAttribute[];
+  }> {
+    url: string;
+    accessHash: long;
+    size: int;
+    mimeType: string;
+    attributes: Api.TypeDocumentAttribute[];
+  }
+
+    export class WebDocumentNoProxy extends VirtualClass<{
+    url: string;
+    size: int;
+    mimeType: string;
+    attributes: Api.TypeDocumentAttribute[];
+  }> {
+    url: string;
+    size: int;
+    mimeType: string;
+    attributes: Api.TypeDocumentAttribute[];
+  }
+
+    export class InputWebDocument extends VirtualClass<{
+    url: string;
+    size: int;
+    mimeType: string;
+    attributes: Api.TypeDocumentAttribute[];
+  }> {
+    url: string;
+    size: int;
+    mimeType: string;
+    attributes: Api.TypeDocumentAttribute[];
+  }
+
+    export class InputWebFileLocation extends VirtualClass<{
+    url: string;
+    accessHash: long;
+  }> {
+    url: string;
+    accessHash: long;
+  }
+
+    export class InputWebFileGeoPointLocation extends VirtualClass<{
+    geoPoint: Api.TypeInputGeoPoint;
+    accessHash: long;
+    w: int;
+    h: int;
+    zoom: int;
+    scale: int;
+  }> {
+    geoPoint: Api.TypeInputGeoPoint;
+    accessHash: long;
+    w: int;
+    h: int;
+    zoom: int;
+    scale: int;
+  }
+
+    export class InputWebFileAudioAlbumThumbLocation extends VirtualClass<{
+    // flags: undefined;
+    small?: true;
+    document?: Api.TypeInputDocument;
+    title?: string;
+    performer?: string;
+  } | void> {
+    // flags: undefined;
+    small?: true;
+    document?: Api.TypeInputDocument;
+    title?: string;
+    performer?: string;
+  }
+
+    export class InputPaymentCredentialsSaved extends VirtualClass<{
+    id: string;
+    tmpPassword: bytes;
+  }> {
+    id: string;
+    tmpPassword: bytes;
+  }
+
+    export class InputPaymentCredentials extends VirtualClass<{
+    // flags: undefined;
+    save?: true;
+    data: Api.TypeDataJSON;
+  }> {
+    // flags: undefined;
+    save?: true;
+    data: Api.TypeDataJSON;
+  }
+
+    export class InputPaymentCredentialsApplePay extends VirtualClass<{
+    paymentData: Api.TypeDataJSON;
+  }> {
+    paymentData: Api.TypeDataJSON;
+  }
+
+    export class InputPaymentCredentialsGooglePay extends VirtualClass<{
+    paymentToken: Api.TypeDataJSON;
+  }> {
+    paymentToken: Api.TypeDataJSON;
+  }
+
+    export class ShippingOption extends VirtualClass<{
+    id: string;
+    title: string;
+    prices: Api.TypeLabeledPrice[];
+  }> {
+    id: string;
+    title: string;
+    prices: Api.TypeLabeledPrice[];
+  }
+
+    export class InputStickerSetItem extends VirtualClass<{
+    // flags: undefined;
+    document: Api.TypeInputDocument;
+    emoji: string;
+    maskCoords?: Api.TypeMaskCoords;
+  }> {
+    // flags: undefined;
+    document: Api.TypeInputDocument;
+    emoji: string;
+    maskCoords?: Api.TypeMaskCoords;
+  }
+
+    export class InputPhoneCall extends VirtualClass<{
+    id: long;
+    accessHash: long;
+  }> {
+    id: long;
+    accessHash: long;
+  }
+
+    export class PhoneCallEmpty extends VirtualClass<{
+    id: long;
+  }> {
+    id: long;
+  }
+
+    export class PhoneCallWaiting extends VirtualClass<{
+    // flags: undefined;
+    video?: true;
+    id: long;
+    accessHash: long;
+    date: int;
+    adminId: long;
+    participantId: long;
+    protocol: Api.TypePhoneCallProtocol;
+    receiveDate?: int;
+  }> {
+    // flags: undefined;
+    video?: true;
+    id: long;
+    accessHash: long;
+    date: int;
+    adminId: long;
+    participantId: long;
+    protocol: Api.TypePhoneCallProtocol;
+    receiveDate?: int;
+  }
+
+    export class PhoneCallRequested extends VirtualClass<{
+    // flags: undefined;
+    video?: true;
+    id: long;
+    accessHash: long;
+    date: int;
+    adminId: long;
+    participantId: long;
+    gAHash: bytes;
+    protocol: Api.TypePhoneCallProtocol;
+  }> {
+    // flags: undefined;
+    video?: true;
+    id: long;
+    accessHash: long;
+    date: int;
+    adminId: long;
+    participantId: long;
+    gAHash: bytes;
+    protocol: Api.TypePhoneCallProtocol;
+  }
+
+    export class PhoneCallAccepted extends VirtualClass<{
+    // flags: undefined;
+    video?: true;
+    id: long;
+    accessHash: long;
+    date: int;
+    adminId: long;
+    participantId: long;
+    gB: bytes;
+    protocol: Api.TypePhoneCallProtocol;
+  }> {
+    // flags: undefined;
+    video?: true;
+    id: long;
+    accessHash: long;
+    date: int;
+    adminId: long;
+    participantId: long;
+    gB: bytes;
+    protocol: Api.TypePhoneCallProtocol;
+  }
+
+    export class PhoneCall extends VirtualClass<{
+    // flags: undefined;
+    p2pAllowed?: true;
+    video?: true;
+    id: long;
+    accessHash: long;
+    date: int;
+    adminId: long;
+    participantId: long;
+    gAOrB: bytes;
+    keyFingerprint: long;
+    protocol: Api.TypePhoneCallProtocol;
+    connections: Api.TypePhoneConnection[];
+    startDate: int;
+  }> {
+    // flags: undefined;
+    p2pAllowed?: true;
+    video?: true;
+    id: long;
+    accessHash: long;
+    date: int;
+    adminId: long;
+    participantId: long;
+    gAOrB: bytes;
+    keyFingerprint: long;
+    protocol: Api.TypePhoneCallProtocol;
+    connections: Api.TypePhoneConnection[];
+    startDate: int;
+  }
+
+    export class PhoneCallDiscarded extends VirtualClass<{
+    // flags: undefined;
+    needRating?: true;
+    needDebug?: true;
+    video?: true;
+    id: long;
+    reason?: Api.TypePhoneCallDiscardReason;
+    duration?: int;
+  }> {
+    // flags: undefined;
+    needRating?: true;
+    needDebug?: true;
+    video?: true;
+    id: long;
+    reason?: Api.TypePhoneCallDiscardReason;
+    duration?: int;
+  }
+
+    export class PhoneConnection extends VirtualClass<{
+    // flags: undefined;
+    tcp?: true;
+    id: long;
+    ip: string;
+    ipv6: string;
+    port: int;
+    peerTag: bytes;
+  }> {
+    // flags: undefined;
+    tcp?: true;
+    id: long;
+    ip: string;
+    ipv6: string;
+    port: int;
+    peerTag: bytes;
+  }
+
+    export class PhoneConnectionWebrtc extends VirtualClass<{
+    // flags: undefined;
+    turn?: true;
+    stun?: true;
+    id: long;
+    ip: string;
+    ipv6: string;
+    port: int;
+    username: string;
+    password: string;
+  }> {
+    // flags: undefined;
+    turn?: true;
+    stun?: true;
+    id: long;
+    ip: string;
+    ipv6: string;
+    port: int;
+    username: string;
+    password: string;
+  }
+
+    export class PhoneCallProtocol extends VirtualClass<{
+    // flags: undefined;
+    udpP2p?: true;
+    udpReflector?: true;
+    minLayer: int;
+    maxLayer: int;
+    libraryVersions: string[];
+  }> {
+    // flags: undefined;
+    udpP2p?: true;
+    udpReflector?: true;
+    minLayer: int;
+    maxLayer: int;
+    libraryVersions: string[];
+  }
+
+    export class CdnPublicKey extends VirtualClass<{
+    dcId: int;
+    publicKey: string;
+  }> {
+    dcId: int;
+    publicKey: string;
+  }
+
+    export class CdnConfig extends VirtualClass<{
+    publicKeys: Api.TypeCdnPublicKey[];
+  }> {
+    publicKeys: Api.TypeCdnPublicKey[];
+  }
+
+    export class LangPackString extends VirtualClass<{
+    key: string;
+    value: string;
+  }> {
+    key: string;
+    value: string;
+  }
+
+    export class LangPackStringPluralized extends VirtualClass<{
+    // flags: undefined;
+    key: string;
+    zeroValue?: string;
+    oneValue?: string;
+    twoValue?: string;
+    fewValue?: string;
+    manyValue?: string;
+    otherValue: string;
+  }> {
+    // flags: undefined;
+    key: string;
+    zeroValue?: string;
+    oneValue?: string;
+    twoValue?: string;
+    fewValue?: string;
+    manyValue?: string;
+    otherValue: string;
+  }
+
+    export class LangPackStringDeleted extends VirtualClass<{
+    key: string;
+  }> {
+    key: string;
+  }
+
+    export class LangPackDifference extends VirtualClass<{
+    langCode: string;
+    fromVersion: int;
+    version: int;
+    strings: Api.TypeLangPackString[];
+  }> {
+    langCode: string;
+    fromVersion: int;
+    version: int;
+    strings: Api.TypeLangPackString[];
+  }
+
+    export class LangPackLanguage extends VirtualClass<{
+    // flags: undefined;
+    official?: true;
+    rtl?: true;
+    beta?: true;
+    name: string;
+    nativeName: string;
+    langCode: string;
+    baseLangCode?: string;
+    pluralCode: string;
+    stringsCount: int;
+    translatedCount: int;
+    translationsUrl: string;
+  }> {
+    // flags: undefined;
+    official?: true;
+    rtl?: true;
+    beta?: true;
+    name: string;
+    nativeName: string;
+    langCode: string;
+    baseLangCode?: string;
+    pluralCode: string;
+    stringsCount: int;
+    translatedCount: int;
+    translationsUrl: string;
+  }
+
+    export class ChannelAdminLogEventActionChangeTitle extends VirtualClass<{
+    prevValue: string;
+    newValue: string;
+  }> {
+    prevValue: string;
+    newValue: string;
+  }
+
+    export class ChannelAdminLogEventActionChangeAbout extends VirtualClass<{
+    prevValue: string;
+    newValue: string;
+  }> {
+    prevValue: string;
+    newValue: string;
+  }
+
+    export class ChannelAdminLogEventActionChangeUsername extends VirtualClass<{
+    prevValue: string;
+    newValue: string;
+  }> {
+    prevValue: string;
+    newValue: string;
+  }
+
+    export class ChannelAdminLogEventActionChangePhoto extends VirtualClass<{
+    prevPhoto: Api.TypePhoto;
+    newPhoto: Api.TypePhoto;
+  }> {
+    prevPhoto: Api.TypePhoto;
+    newPhoto: Api.TypePhoto;
+  }
+
+    export class ChannelAdminLogEventActionToggleInvites extends VirtualClass<{
+    newValue: Bool;
+  }> {
+    newValue: Bool;
+  }
+
+    export class ChannelAdminLogEventActionToggleSignatures extends VirtualClass<{
+    newValue: Bool;
+  }> {
+    newValue: Bool;
+  }
+
+    export class ChannelAdminLogEventActionUpdatePinned extends VirtualClass<{
+    message: Api.TypeMessage;
+  }> {
+    message: Api.TypeMessage;
+  }
+
+    export class ChannelAdminLogEventActionEditMessage extends VirtualClass<{
+    prevMessage: Api.TypeMessage;
+    newMessage: Api.TypeMessage;
+  }> {
+    prevMessage: Api.TypeMessage;
+    newMessage: Api.TypeMessage;
+  }
+
+    export class ChannelAdminLogEventActionDeleteMessage extends VirtualClass<{
+    message: Api.TypeMessage;
+  }> {
+    message: Api.TypeMessage;
+  }
+
+    export class ChannelAdminLogEventActionParticipantJoin extends VirtualClass<void> {
+    }
+
+    export class ChannelAdminLogEventActionParticipantLeave extends VirtualClass<void> {
+    }
+
+    export class ChannelAdminLogEventActionParticipantInvite extends VirtualClass<{
+    participant: Api.TypeChannelParticipant;
+  }> {
+    participant: Api.TypeChannelParticipant;
+  }
+
+    export class ChannelAdminLogEventActionParticipantToggleBan extends VirtualClass<{
+    prevParticipant: Api.TypeChannelParticipant;
+    newParticipant: Api.TypeChannelParticipant;
+  }> {
+    prevParticipant: Api.TypeChannelParticipant;
+    newParticipant: Api.TypeChannelParticipant;
+  }
+
+    export class ChannelAdminLogEventActionParticipantToggleAdmin extends VirtualClass<{
+    prevParticipant: Api.TypeChannelParticipant;
+    newParticipant: Api.TypeChannelParticipant;
+  }> {
+    prevParticipant: Api.TypeChannelParticipant;
+    newParticipant: Api.TypeChannelParticipant;
+  }
+
+    export class ChannelAdminLogEventActionChangeStickerSet extends VirtualClass<{
+    prevStickerset: Api.TypeInputStickerSet;
+    newStickerset: Api.TypeInputStickerSet;
+  }> {
+    prevStickerset: Api.TypeInputStickerSet;
+    newStickerset: Api.TypeInputStickerSet;
+  }
+
+    export class ChannelAdminLogEventActionTogglePreHistoryHidden extends VirtualClass<{
+    newValue: Bool;
+  }> {
+    newValue: Bool;
+  }
+
+    export class ChannelAdminLogEventActionDefaultBannedRights extends VirtualClass<{
+    prevBannedRights: Api.TypeChatBannedRights;
+    newBannedRights: Api.TypeChatBannedRights;
+  }> {
+    prevBannedRights: Api.TypeChatBannedRights;
+    newBannedRights: Api.TypeChatBannedRights;
+  }
+
+    export class ChannelAdminLogEventActionStopPoll extends VirtualClass<{
+    message: Api.TypeMessage;
+  }> {
+    message: Api.TypeMessage;
+  }
+
+    export class ChannelAdminLogEventActionChangeLinkedChat extends VirtualClass<{
+    prevValue: long;
+    newValue: long;
+  }> {
+    prevValue: long;
+    newValue: long;
+  }
+
+    export class ChannelAdminLogEventActionChangeLocation extends VirtualClass<{
+    prevValue: Api.TypeChannelLocation;
+    newValue: Api.TypeChannelLocation;
+  }> {
+    prevValue: Api.TypeChannelLocation;
+    newValue: Api.TypeChannelLocation;
+  }
+
+    export class ChannelAdminLogEventActionToggleSlowMode extends VirtualClass<{
+    prevValue: int;
+    newValue: int;
+  }> {
+    prevValue: int;
+    newValue: int;
+  }
+
+    export class ChannelAdminLogEventActionStartGroupCall extends VirtualClass<{
+    call: Api.TypeInputGroupCall;
+  }> {
+    call: Api.TypeInputGroupCall;
+  }
+
+    export class ChannelAdminLogEventActionDiscardGroupCall extends VirtualClass<{
+    call: Api.TypeInputGroupCall;
+  }> {
+    call: Api.TypeInputGroupCall;
+  }
+
+    export class ChannelAdminLogEventActionParticipantMute extends VirtualClass<{
+    participant: Api.TypeGroupCallParticipant;
+  }> {
+    participant: Api.TypeGroupCallParticipant;
+  }
+
+    export class ChannelAdminLogEventActionParticipantUnmute extends VirtualClass<{
+    participant: Api.TypeGroupCallParticipant;
+  }> {
+    participant: Api.TypeGroupCallParticipant;
+  }
+
+    export class ChannelAdminLogEventActionToggleGroupCallSetting extends VirtualClass<{
+    joinMuted: Bool;
+  }> {
+    joinMuted: Bool;
+  }
+
+    export class ChannelAdminLogEventActionParticipantJoinByInvite extends VirtualClass<{
+    invite: Api.TypeExportedChatInvite;
+  }> {
+    invite: Api.TypeExportedChatInvite;
+  }
+
+    export class ChannelAdminLogEventActionExportedInviteDelete extends VirtualClass<{
+    invite: Api.TypeExportedChatInvite;
+  }> {
+    invite: Api.TypeExportedChatInvite;
+  }
+
+    export class ChannelAdminLogEventActionExportedInviteRevoke extends VirtualClass<{
+    invite: Api.TypeExportedChatInvite;
+  }> {
+    invite: Api.TypeExportedChatInvite;
+  }
+
+    export class ChannelAdminLogEventActionExportedInviteEdit extends VirtualClass<{
+    prevInvite: Api.TypeExportedChatInvite;
+    newInvite: Api.TypeExportedChatInvite;
+  }> {
+    prevInvite: Api.TypeExportedChatInvite;
+    newInvite: Api.TypeExportedChatInvite;
+  }
+
+    export class ChannelAdminLogEventActionParticipantVolume extends VirtualClass<{
+    participant: Api.TypeGroupCallParticipant;
+  }> {
+    participant: Api.TypeGroupCallParticipant;
+  }
+
+    export class ChannelAdminLogEventActionChangeHistoryTTL extends VirtualClass<{
+    prevValue: int;
+    newValue: int;
+  }> {
+    prevValue: int;
+    newValue: int;
+  }
+
+    export class ChannelAdminLogEventActionParticipantJoinByRequest extends VirtualClass<{
+    invite: Api.TypeExportedChatInvite;
+    approvedBy: long;
+  }> {
+    invite: Api.TypeExportedChatInvite;
+    approvedBy: long;
+  }
+
+    export class ChannelAdminLogEventActionToggleNoForwards extends VirtualClass<{
+    newValue: Bool;
+  }> {
+    newValue: Bool;
+  }
+
+    export class ChannelAdminLogEventActionSendMessage extends VirtualClass<{
+    message: Api.TypeMessage;
+  }> {
+    message: Api.TypeMessage;
+  }
+
+    export class ChannelAdminLogEventActionChangeAvailableReactions extends VirtualClass<{
+    prevValue: Api.TypeChatReactions;
+    newValue: Api.TypeChatReactions;
+  }> {
+    prevValue: Api.TypeChatReactions;
+    newValue: Api.TypeChatReactions;
+  }
+
+    export class ChannelAdminLogEventActionChangeUsernames extends VirtualClass<{
+    prevValue: string[];
+    newValue: string[];
+  }> {
+    prevValue: string[];
+    newValue: string[];
+  }
+
+    export class ChannelAdminLogEventActionToggleForum extends VirtualClass<{
+    newValue: Bool;
+  }> {
+    newValue: Bool;
+  }
+
+    export class ChannelAdminLogEventActionCreateTopic extends VirtualClass<{
+    topic: Api.TypeForumTopic;
+  }> {
+    topic: Api.TypeForumTopic;
+  }
+
+    export class ChannelAdminLogEventActionEditTopic extends VirtualClass<{
+    prevTopic: Api.TypeForumTopic;
+    newTopic: Api.TypeForumTopic;
+  }> {
+    prevTopic: Api.TypeForumTopic;
+    newTopic: Api.TypeForumTopic;
+  }
+
+    export class ChannelAdminLogEventActionDeleteTopic extends VirtualClass<{
+    topic: Api.TypeForumTopic;
+  }> {
+    topic: Api.TypeForumTopic;
+  }
+
+    export class ChannelAdminLogEventActionPinTopic extends VirtualClass<{
+    // flags: undefined;
+    prevTopic?: Api.TypeForumTopic;
+    newTopic?: Api.TypeForumTopic;
+  } | void> {
+    // flags: undefined;
+    prevTopic?: Api.TypeForumTopic;
+    newTopic?: Api.TypeForumTopic;
+  }
+
+    export class ChannelAdminLogEventActionToggleAntiSpam extends VirtualClass<{
+    newValue: Bool;
+  }> {
+    newValue: Bool;
+  }
+
+    export class ChannelAdminLogEvent extends VirtualClass<{
+    id: long;
+    date: int;
+    userId: long;
+    action: Api.TypeChannelAdminLogEventAction;
+  }> {
+    id: long;
+    date: int;
+    userId: long;
+    action: Api.TypeChannelAdminLogEventAction;
+  }
+
+    export class ChannelAdminLogEventsFilter extends VirtualClass<{
+    // flags: undefined;
+    join?: true;
+    leave?: true;
+    invite?: true;
+    ban?: true;
+    unban?: true;
+    kick?: true;
+    unkick?: true;
+    promote?: true;
+    demote?: true;
+    info?: true;
+    settings?: true;
+    pinned?: true;
+    edit?: true;
+    delete?: true;
+    groupCall?: true;
+    invites?: true;
+    send?: true;
+    forums?: true;
+  } | void> {
+    // flags: undefined;
+    join?: true;
+    leave?: true;
+    invite?: true;
+    ban?: true;
+    unban?: true;
+    kick?: true;
+    unkick?: true;
+    promote?: true;
+    demote?: true;
+    info?: true;
+    settings?: true;
+    pinned?: true;
+    edit?: true;
+    delete?: true;
+    groupCall?: true;
+    invites?: true;
+    send?: true;
+    forums?: true;
+  }
+
+    export class PopularContact extends VirtualClass<{
+    clientId: long;
+    importers: int;
+  }> {
+    clientId: long;
+    importers: int;
+  }
+
+    export class RecentMeUrlUnknown extends VirtualClass<{
+    url: string;
+  }> {
+    url: string;
+  }
+
+    export class RecentMeUrlUser extends VirtualClass<{
+    url: string;
+    userId: long;
+  }> {
+    url: string;
+    userId: long;
+  }
+
+    export class RecentMeUrlChat extends VirtualClass<{
+    url: string;
+    chatId: long;
+  }> {
+    url: string;
+    chatId: long;
+  }
+
+    export class RecentMeUrlChatInvite extends VirtualClass<{
+    url: string;
+    chatInvite: Api.TypeChatInvite;
+  }> {
+    url: string;
+    chatInvite: Api.TypeChatInvite;
+  }
+
+    export class RecentMeUrlStickerSet extends VirtualClass<{
+    url: string;
+    set: Api.TypeStickerSetCovered;
+  }> {
+    url: string;
+    set: Api.TypeStickerSetCovered;
+  }
+
+    export class InputSingleMedia extends VirtualClass<{
+    // flags: undefined;
+    media: Api.TypeInputMedia;
+    randomId: long;
+    message: string;
+    entities?: Api.TypeMessageEntity[];
+  }> {
+    // flags: undefined;
+    media: Api.TypeInputMedia;
+    randomId: long;
+    message: string;
+    entities?: Api.TypeMessageEntity[];
+  }
+
+    export class WebAuthorization extends VirtualClass<{
+    hash: long;
+    botId: long;
+    domain: string;
+    browser: string;
+    platform: string;
+    dateCreated: int;
+    dateActive: int;
+    ip: string;
+    region: string;
+  }> {
+    hash: long;
+    botId: long;
+    domain: string;
+    browser: string;
+    platform: string;
+    dateCreated: int;
+    dateActive: int;
+    ip: string;
+    region: string;
+  }
+
+    export class InputMessageID extends VirtualClass<{
+    id: int;
+  }> {
+    id: int;
+  }
+
+    export class InputMessageReplyTo extends VirtualClass<{
+    id: int;
+  }> {
+    id: int;
+  }
+
+    export class InputMessagePinned extends VirtualClass<void> {
+    }
+
+    export class InputMessageCallbackQuery extends VirtualClass<{
+    id: int;
+    queryId: long;
+  }> {
+    id: int;
+    queryId: long;
+  }
+
+    export class InputDialogPeer extends VirtualClass<{
+    peer: Api.TypeInputPeer;
+  }> {
+    peer: Api.TypeInputPeer;
+  }
+
+    export class InputDialogPeerFolder extends VirtualClass<{
+    folderId: int;
+  }> {
+    folderId: int;
+  }
+
+    export class DialogPeer extends VirtualClass<{
+    peer: Api.TypePeer;
+  }> {
+    peer: Api.TypePeer;
+  }
+
+    export class DialogPeerFolder extends VirtualClass<{
+    folderId: int;
+  }> {
+    folderId: int;
+  }
+
+    export class FileHash extends VirtualClass<{
+    offset: long;
+    limit: int;
+    hash: bytes;
+  }> {
+    offset: long;
+    limit: int;
+    hash: bytes;
+  }
+
+    export class InputClientProxy extends VirtualClass<{
+    address: string;
+    port: int;
+  }> {
+    address: string;
+    port: int;
+  }
+
+    export class InputSecureFileUploaded extends VirtualClass<{
+    id: long;
+    parts: int;
+    md5Checksum: string;
+    fileHash: bytes;
+    secret: bytes;
+  }> {
+    id: long;
+    parts: int;
+    md5Checksum: string;
+    fileHash: bytes;
+    secret: bytes;
+  }
+
+    export class InputSecureFile extends VirtualClass<{
+    id: long;
+    accessHash: long;
+  }> {
+    id: long;
+    accessHash: long;
+  }
+
+    export class SecureFileEmpty extends VirtualClass<void> {
+    }
+
+    export class SecureFile extends VirtualClass<{
+    id: long;
+    accessHash: long;
+    size: long;
+    dcId: int;
+    date: int;
+    fileHash: bytes;
+    secret: bytes;
+  }> {
+    id: long;
+    accessHash: long;
+    size: long;
+    dcId: int;
+    date: int;
+    fileHash: bytes;
+    secret: bytes;
+  }
+
+    export class SecureData extends VirtualClass<{
+    data: bytes;
+    dataHash: bytes;
+    secret: bytes;
+  }> {
+    data: bytes;
+    dataHash: bytes;
+    secret: bytes;
+  }
+
+    export class SecurePlainPhone extends VirtualClass<{
+    phone: string;
+  }> {
+    phone: string;
+  }
+
+    export class SecurePlainEmail extends VirtualClass<{
+    email: string;
+  }> {
+    email: string;
+  }
+
+    export class SecureValueTypePersonalDetails extends VirtualClass<void> {
+    }
+
+    export class SecureValueTypePassport extends VirtualClass<void> {
+    }
+
+    export class SecureValueTypeDriverLicense extends VirtualClass<void> {
+    }
+
+    export class SecureValueTypeIdentityCard extends VirtualClass<void> {
+    }
+
+    export class SecureValueTypeInternalPassport extends VirtualClass<void> {
+    }
+
+    export class SecureValueTypeAddress extends VirtualClass<void> {
+    }
+
+    export class SecureValueTypeUtilityBill extends VirtualClass<void> {
+    }
+
+    export class SecureValueTypeBankStatement extends VirtualClass<void> {
+    }
+
+    export class SecureValueTypeRentalAgreement extends VirtualClass<void> {
+    }
+
+    export class SecureValueTypePassportRegistration extends VirtualClass<void> {
+    }
+
+    export class SecureValueTypeTemporaryRegistration extends VirtualClass<void> {
+    }
+
+    export class SecureValueTypePhone extends VirtualClass<void> {
+    }
+
+    export class SecureValueTypeEmail extends VirtualClass<void> {
+    }
+
+    export class SecureValue extends VirtualClass<{
+    // flags: undefined;
+    type: Api.TypeSecureValueType;
+    data?: Api.TypeSecureData;
+    frontSide?: Api.TypeSecureFile;
+    reverseSide?: Api.TypeSecureFile;
+    selfie?: Api.TypeSecureFile;
+    translation?: Api.TypeSecureFile[];
+    files?: Api.TypeSecureFile[];
+    plainData?: Api.TypeSecurePlainData;
+    hash: bytes;
+  }> {
+    // flags: undefined;
+    type: Api.TypeSecureValueType;
+    data?: Api.TypeSecureData;
+    frontSide?: Api.TypeSecureFile;
+    reverseSide?: Api.TypeSecureFile;
+    selfie?: Api.TypeSecureFile;
+    translation?: Api.TypeSecureFile[];
+    files?: Api.TypeSecureFile[];
+    plainData?: Api.TypeSecurePlainData;
+    hash: bytes;
+  }
+
+    export class InputSecureValue extends VirtualClass<{
+    // flags: undefined;
+    type: Api.TypeSecureValueType;
+    data?: Api.TypeSecureData;
+    frontSide?: Api.TypeInputSecureFile;
+    reverseSide?: Api.TypeInputSecureFile;
+    selfie?: Api.TypeInputSecureFile;
+    translation?: Api.TypeInputSecureFile[];
+    files?: Api.TypeInputSecureFile[];
+    plainData?: Api.TypeSecurePlainData;
+  }> {
+    // flags: undefined;
+    type: Api.TypeSecureValueType;
+    data?: Api.TypeSecureData;
+    frontSide?: Api.TypeInputSecureFile;
+    reverseSide?: Api.TypeInputSecureFile;
+    selfie?: Api.TypeInputSecureFile;
+    translation?: Api.TypeInputSecureFile[];
+    files?: Api.TypeInputSecureFile[];
+    plainData?: Api.TypeSecurePlainData;
+  }
+
+    export class SecureValueHash extends VirtualClass<{
+    type: Api.TypeSecureValueType;
+    hash: bytes;
+  }> {
+    type: Api.TypeSecureValueType;
+    hash: bytes;
+  }
+
+    export class SecureValueErrorData extends VirtualClass<{
+    type: Api.TypeSecureValueType;
+    dataHash: bytes;
+    field: string;
+    text: string;
+  }> {
+    type: Api.TypeSecureValueType;
+    dataHash: bytes;
+    field: string;
+    text: string;
+  }
+
+    export class SecureValueErrorFrontSide extends VirtualClass<{
+    type: Api.TypeSecureValueType;
+    fileHash: bytes;
+    text: string;
+  }> {
+    type: Api.TypeSecureValueType;
+    fileHash: bytes;
+    text: string;
+  }
+
+    export class SecureValueErrorReverseSide extends VirtualClass<{
+    type: Api.TypeSecureValueType;
+    fileHash: bytes;
+    text: string;
+  }> {
+    type: Api.TypeSecureValueType;
+    fileHash: bytes;
+    text: string;
+  }
+
+    export class SecureValueErrorSelfie extends VirtualClass<{
+    type: Api.TypeSecureValueType;
+    fileHash: bytes;
+    text: string;
+  }> {
+    type: Api.TypeSecureValueType;
+    fileHash: bytes;
+    text: string;
+  }
+
+    export class SecureValueErrorFile extends VirtualClass<{
+    type: Api.TypeSecureValueType;
+    fileHash: bytes;
+    text: string;
+  }> {
+    type: Api.TypeSecureValueType;
+    fileHash: bytes;
+    text: string;
+  }
+
+    export class SecureValueErrorFiles extends VirtualClass<{
+    type: Api.TypeSecureValueType;
+    fileHash: bytes[];
+    text: string;
+  }> {
+    type: Api.TypeSecureValueType;
+    fileHash: bytes[];
+    text: string;
+  }
+
+    export class SecureValueError extends VirtualClass<{
+    type: Api.TypeSecureValueType;
+    hash: bytes;
+    text: string;
+  }> {
+    type: Api.TypeSecureValueType;
+    hash: bytes;
+    text: string;
+  }
+
+    export class SecureValueErrorTranslationFile extends VirtualClass<{
+    type: Api.TypeSecureValueType;
+    fileHash: bytes;
+    text: string;
+  }> {
+    type: Api.TypeSecureValueType;
+    fileHash: bytes;
+    text: string;
+  }
+
+    export class SecureValueErrorTranslationFiles extends VirtualClass<{
+    type: Api.TypeSecureValueType;
+    fileHash: bytes[];
+    text: string;
+  }> {
+    type: Api.TypeSecureValueType;
+    fileHash: bytes[];
+    text: string;
+  }
+
+    export class SecureCredentialsEncrypted extends VirtualClass<{
+    data: bytes;
+    hash: bytes;
+    secret: bytes;
+  }> {
+    data: bytes;
+    hash: bytes;
+    secret: bytes;
+  }
+
+    export class SavedPhoneContact extends VirtualClass<{
+    phone: string;
+    firstName: string;
+    lastName: string;
+    date: int;
+  }> {
+    phone: string;
+    firstName: string;
+    lastName: string;
+    date: int;
+  }
+
+    export class PasswordKdfAlgoUnknown extends VirtualClass<void> {
+    }
+
+    export class PasswordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow extends VirtualClass<{
+    salt1: bytes;
+    salt2: bytes;
+    g: int;
+    p: bytes;
+  }> {
+    salt1: bytes;
+    salt2: bytes;
+    g: int;
+    p: bytes;
+  }
+
+    export class SecurePasswordKdfAlgoUnknown extends VirtualClass<void> {
+    }
+
+    export class SecurePasswordKdfAlgoPBKDF2HMACSHA512iter100000 extends VirtualClass<{
+    salt: bytes;
+  }> {
+    salt: bytes;
+  }
+
+    export class SecurePasswordKdfAlgoSHA512 extends VirtualClass<{
+    salt: bytes;
+  }> {
+    salt: bytes;
+  }
+
+    export class SecureSecretSettings extends VirtualClass<{
+    secureAlgo: Api.TypeSecurePasswordKdfAlgo;
+    secureSecret: bytes;
+    secureSecretId: long;
+  }> {
+    secureAlgo: Api.TypeSecurePasswordKdfAlgo;
+    secureSecret: bytes;
+    secureSecretId: long;
+  }
+
+    export class InputCheckPasswordEmpty extends VirtualClass<void> {
+    }
+
+    export class InputCheckPasswordSRP extends VirtualClass<{
+    srpId: long;
+    A: bytes;
+    M1: bytes;
+  }> {
+    srpId: long;
+    A: bytes;
+    M1: bytes;
+  }
+
+    export class SecureRequiredType extends VirtualClass<{
+    // flags: undefined;
+    nativeNames?: true;
+    selfieRequired?: true;
+    translationRequired?: true;
+    type: Api.TypeSecureValueType;
+  }> {
+    // flags: undefined;
+    nativeNames?: true;
+    selfieRequired?: true;
+    translationRequired?: true;
+    type: Api.TypeSecureValueType;
+  }
+
+    export class SecureRequiredTypeOneOf extends VirtualClass<{
+    types: Api.TypeSecureRequiredType[];
+  }> {
+    types: Api.TypeSecureRequiredType[];
+  }
+
+    export class InputAppEvent extends VirtualClass<{
+    time: double;
+    type: string;
+    peer: long;
+    data: Api.TypeJSONValue;
+  }> {
+    time: double;
+    type: string;
+    peer: long;
+    data: Api.TypeJSONValue;
+  }
+
+    export class JsonObjectValue extends VirtualClass<{
+    key: string;
+    value: Api.TypeJSONValue;
+  }> {
+    key: string;
+    value: Api.TypeJSONValue;
+  }
+
+    export class JsonNull extends VirtualClass<void> {
+    }
+
+    export class JsonBool extends VirtualClass<{
+    value: Bool;
+  }> {
+    value: Bool;
+  }
+
+    export class JsonNumber extends VirtualClass<{
+    value: double;
+  }> {
+    value: double;
+  }
+
+    export class JsonString extends VirtualClass<{
+    value: string;
+  }> {
+    value: string;
+  }
+
+    export class JsonArray extends VirtualClass<{
+    value: Api.TypeJSONValue[];
+  }> {
+    value: Api.TypeJSONValue[];
+  }
+
+    export class JsonObject extends VirtualClass<{
+    value: Api.TypeJSONObjectValue[];
+  }> {
+    value: Api.TypeJSONObjectValue[];
+  }
+
+    export class PageTableCell extends VirtualClass<{
+    // flags: undefined;
+    header?: true;
+    alignCenter?: true;
+    alignRight?: true;
+    valignMiddle?: true;
+    valignBottom?: true;
+    text?: Api.TypeRichText;
+    colspan?: int;
+    rowspan?: int;
+  } | void> {
+    // flags: undefined;
+    header?: true;
+    alignCenter?: true;
+    alignRight?: true;
+    valignMiddle?: true;
+    valignBottom?: true;
+    text?: Api.TypeRichText;
+    colspan?: int;
+    rowspan?: int;
+  }
+
+    export class PageTableRow extends VirtualClass<{
+    cells: Api.TypePageTableCell[];
+  }> {
+    cells: Api.TypePageTableCell[];
+  }
+
+    export class PageCaption extends VirtualClass<{
+    text: Api.TypeRichText;
+    credit: Api.TypeRichText;
+  }> {
+    text: Api.TypeRichText;
+    credit: Api.TypeRichText;
+  }
+
+    export class PageListItemText extends VirtualClass<{
+    text: Api.TypeRichText;
+  }> {
+    text: Api.TypeRichText;
+  }
+
+    export class PageListItemBlocks extends VirtualClass<{
+    blocks: Api.TypePageBlock[];
+  }> {
+    blocks: Api.TypePageBlock[];
+  }
+
+    export class PageListOrderedItemText extends VirtualClass<{
+    num: string;
+    text: Api.TypeRichText;
+  }> {
+    num: string;
+    text: Api.TypeRichText;
+  }
+
+    export class PageListOrderedItemBlocks extends VirtualClass<{
+    num: string;
+    blocks: Api.TypePageBlock[];
+  }> {
+    num: string;
+    blocks: Api.TypePageBlock[];
+  }
+
+    export class PageRelatedArticle extends VirtualClass<{
+    // flags: undefined;
+    url: string;
+    webpageId: long;
+    title?: string;
+    description?: string;
+    photoId?: long;
+    author?: string;
+    publishedDate?: int;
+  }> {
+    // flags: undefined;
+    url: string;
+    webpageId: long;
+    title?: string;
+    description?: string;
+    photoId?: long;
+    author?: string;
+    publishedDate?: int;
+  }
+
+    export class Page extends VirtualClass<{
+    // flags: undefined;
+    part?: true;
+    rtl?: true;
+    v2?: true;
+    url: string;
+    blocks: Api.TypePageBlock[];
+    photos: Api.TypePhoto[];
+    documents: Api.TypeDocument[];
+    views?: int;
+  }> {
+    // flags: undefined;
+    part?: true;
+    rtl?: true;
+    v2?: true;
+    url: string;
+    blocks: Api.TypePageBlock[];
+    photos: Api.TypePhoto[];
+    documents: Api.TypeDocument[];
+    views?: int;
+  }
+
+    export class PollAnswer extends VirtualClass<{
+    text: string;
+    option: bytes;
+  }> {
+    text: string;
+    option: bytes;
+  }
+
+    export class Poll extends VirtualClass<{
+    id: long;
+    // flags: undefined;
+    closed?: true;
+    publicVoters?: true;
+    multipleChoice?: true;
+    quiz?: true;
+    question: string;
+    answers: Api.TypePollAnswer[];
+    closePeriod?: int;
+    closeDate?: int;
+  }> {
+    id: long;
+    // flags: undefined;
+    closed?: true;
+    publicVoters?: true;
+    multipleChoice?: true;
+    quiz?: true;
+    question: string;
+    answers: Api.TypePollAnswer[];
+    closePeriod?: int;
+    closeDate?: int;
+  }
+
+    export class PollAnswerVoters extends VirtualClass<{
+    // flags: undefined;
+    chosen?: true;
+    correct?: true;
+    option: bytes;
+    voters: int;
+  }> {
+    // flags: undefined;
+    chosen?: true;
+    correct?: true;
+    option: bytes;
+    voters: int;
+  }
+
+    export class PollResults extends VirtualClass<{
+    // flags: undefined;
+    min?: true;
+    results?: Api.TypePollAnswerVoters[];
+    totalVoters?: int;
+    recentVoters?: long[];
+    solution?: string;
+    solutionEntities?: Api.TypeMessageEntity[];
+  } | void> {
+    // flags: undefined;
+    min?: true;
+    results?: Api.TypePollAnswerVoters[];
+    totalVoters?: int;
+    recentVoters?: long[];
+    solution?: string;
+    solutionEntities?: Api.TypeMessageEntity[];
+  }
+
+    export class ChatOnlines extends VirtualClass<{
+    onlines: int;
+  }> {
+    onlines: int;
+  }
+
+    export class StatsURL extends VirtualClass<{
+    url: string;
+  }> {
+    url: string;
+  }
+
+    export class ChatAdminRights extends VirtualClass<{
+    // flags: undefined;
+    changeInfo?: true;
+    postMessages?: true;
+    editMessages?: true;
+    deleteMessages?: true;
+    banUsers?: true;
+    inviteUsers?: true;
+    pinMessages?: true;
+    addAdmins?: true;
+    anonymous?: true;
+    manageCall?: true;
+    other?: true;
+    manageTopics?: true;
+  } | void> {
+    // flags: undefined;
+    changeInfo?: true;
+    postMessages?: true;
+    editMessages?: true;
+    deleteMessages?: true;
+    banUsers?: true;
+    inviteUsers?: true;
+    pinMessages?: true;
+    addAdmins?: true;
+    anonymous?: true;
+    manageCall?: true;
+    other?: true;
+    manageTopics?: true;
+  }
+
+    export class ChatBannedRights extends VirtualClass<{
+    // flags: undefined;
+    viewMessages?: true;
+    sendMessages?: true;
+    sendMedia?: true;
+    sendStickers?: true;
+    sendGifs?: true;
+    sendGames?: true;
+    sendInline?: true;
+    embedLinks?: true;
+    sendPolls?: true;
+    changeInfo?: true;
+    inviteUsers?: true;
+    pinMessages?: true;
+    manageTopics?: true;
+    sendPhotos?: true;
+    sendVideos?: true;
+    sendRoundvideos?: true;
+    sendAudios?: true;
+    sendVoices?: true;
+    sendDocs?: true;
+    sendPlain?: true;
+    untilDate: int;
+  }> {
+    // flags: undefined;
+    viewMessages?: true;
+    sendMessages?: true;
+    sendMedia?: true;
+    sendStickers?: true;
+    sendGifs?: true;
+    sendGames?: true;
+    sendInline?: true;
+    embedLinks?: true;
+    sendPolls?: true;
+    changeInfo?: true;
+    inviteUsers?: true;
+    pinMessages?: true;
+    manageTopics?: true;
+    sendPhotos?: true;
+    sendVideos?: true;
+    sendRoundvideos?: true;
+    sendAudios?: true;
+    sendVoices?: true;
+    sendDocs?: true;
+    sendPlain?: true;
+    untilDate: int;
+  }
+
+    export class InputWallPaper extends VirtualClass<{
+    id: long;
+    accessHash: long;
+  }> {
+    id: long;
+    accessHash: long;
+  }
+
+    export class InputWallPaperSlug extends VirtualClass<{
+    slug: string;
+  }> {
+    slug: string;
+  }
+
+    export class InputWallPaperNoFile extends VirtualClass<{
+    id: long;
+  }> {
+    id: long;
+  }
+
+    export class CodeSettings extends VirtualClass<{
+    // flags: undefined;
+    allowFlashcall?: true;
+    currentNumber?: true;
+    allowAppHash?: true;
+    allowMissedCall?: true;
+    allowFirebase?: true;
+    logoutTokens?: bytes[];
+    token?: string;
+    appSandbox?: Bool;
+  } | void> {
+    // flags: undefined;
+    allowFlashcall?: true;
+    currentNumber?: true;
+    allowAppHash?: true;
+    allowMissedCall?: true;
+    allowFirebase?: true;
+    logoutTokens?: bytes[];
+    token?: string;
+    appSandbox?: Bool;
+  }
+
+    export class WallPaperSettings extends VirtualClass<{
+    // flags: undefined;
+    blur?: true;
+    motion?: true;
+    backgroundColor?: int;
+    secondBackgroundColor?: int;
+    thirdBackgroundColor?: int;
+    fourthBackgroundColor?: int;
+    intensity?: int;
+    rotation?: int;
+  } | void> {
+    // flags: undefined;
+    blur?: true;
+    motion?: true;
+    backgroundColor?: int;
+    secondBackgroundColor?: int;
+    thirdBackgroundColor?: int;
+    fourthBackgroundColor?: int;
+    intensity?: int;
+    rotation?: int;
+  }
+
+    export class AutoDownloadSettings extends VirtualClass<{
+    // flags: undefined;
+    disabled?: true;
+    videoPreloadLarge?: true;
+    audioPreloadNext?: true;
+    phonecallsLessData?: true;
+    photoSizeMax: int;
+    videoSizeMax: long;
+    fileSizeMax: long;
+    videoUploadMaxbitrate: int;
+  }> {
+    // flags: undefined;
+    disabled?: true;
+    videoPreloadLarge?: true;
+    audioPreloadNext?: true;
+    phonecallsLessData?: true;
+    photoSizeMax: int;
+    videoSizeMax: long;
+    fileSizeMax: long;
+    videoUploadMaxbitrate: int;
+  }
+
+    export class EmojiKeyword extends VirtualClass<{
+    keyword: string;
+    emoticons: string[];
+  }> {
+    keyword: string;
+    emoticons: string[];
+  }
+
+    export class EmojiKeywordDeleted extends VirtualClass<{
+    keyword: string;
+    emoticons: string[];
+  }> {
+    keyword: string;
+    emoticons: string[];
+  }
+
+    export class EmojiKeywordsDifference extends VirtualClass<{
+    langCode: string;
+    fromVersion: int;
+    version: int;
+    keywords: Api.TypeEmojiKeyword[];
+  }> {
+    langCode: string;
+    fromVersion: int;
+    version: int;
+    keywords: Api.TypeEmojiKeyword[];
+  }
+
+    export class EmojiURL extends VirtualClass<{
+    url: string;
+  }> {
+    url: string;
+  }
+
+    export class EmojiLanguage extends VirtualClass<{
+    langCode: string;
+  }> {
+    langCode: string;
+  }
+
+    export class Folder extends VirtualClass<{
+    // flags: undefined;
+    autofillNewBroadcasts?: true;
+    autofillPublicGroups?: true;
+    autofillNewCorrespondents?: true;
+    id: int;
+    title: string;
+    photo?: Api.TypeChatPhoto;
+  }> {
+    // flags: undefined;
+    autofillNewBroadcasts?: true;
+    autofillPublicGroups?: true;
+    autofillNewCorrespondents?: true;
+    id: int;
+    title: string;
+    photo?: Api.TypeChatPhoto;
+  }
+
+    export class InputFolderPeer extends VirtualClass<{
+    peer: Api.TypeInputPeer;
+    folderId: int;
+  }> {
+    peer: Api.TypeInputPeer;
+    folderId: int;
+  }
+
+    export class FolderPeer extends VirtualClass<{
+    peer: Api.TypePeer;
+    folderId: int;
+  }> {
+    peer: Api.TypePeer;
+    folderId: int;
+  }
+
+    export class UrlAuthResultRequest extends VirtualClass<{
+    // flags: undefined;
+    requestWriteAccess?: true;
+    bot: Api.TypeUser;
+    domain: string;
+  }> {
+    // flags: undefined;
+    requestWriteAccess?: true;
+    bot: Api.TypeUser;
+    domain: string;
+  }
+
+    export class UrlAuthResultAccepted extends VirtualClass<{
+    url: string;
+  }> {
+    url: string;
+  }
+
+    export class UrlAuthResultDefault extends VirtualClass<void> {
+    }
+
+    export class ChannelLocationEmpty extends VirtualClass<void> {
+    }
+
+    export class ChannelLocation extends VirtualClass<{
+    geoPoint: Api.TypeGeoPoint;
+    address: string;
+  }> {
+    geoPoint: Api.TypeGeoPoint;
+    address: string;
+  }
+
+    export class PeerLocated extends VirtualClass<{
+    peer: Api.TypePeer;
+    expires: int;
+    distance: int;
+  }> {
+    peer: Api.TypePeer;
+    expires: int;
+    distance: int;
+  }
+
+    export class PeerSelfLocated extends VirtualClass<{
+    expires: int;
+  }> {
+    expires: int;
+  }
+
+    export class RestrictionReason extends VirtualClass<{
+    platform: string;
+    reason: string;
+    text: string;
+  }> {
+    platform: string;
+    reason: string;
+    text: string;
+  }
+
+    export class InputTheme extends VirtualClass<{
+    id: long;
+    accessHash: long;
+  }> {
+    id: long;
+    accessHash: long;
+  }
+
+    export class InputThemeSlug extends VirtualClass<{
+    slug: string;
+  }> {
+    slug: string;
+  }
+
+    export class Theme extends VirtualClass<{
+    // flags: undefined;
+    creator?: true;
+    default?: true;
+    forChat?: true;
+    id: long;
+    accessHash: long;
+    slug: string;
+    title: string;
+    document?: Api.TypeDocument;
+    settings?: Api.TypeThemeSettings[];
+    emoticon?: string;
+    installsCount?: int;
+  }> {
+    // flags: undefined;
+    creator?: true;
+    default?: true;
+    forChat?: true;
+    id: long;
+    accessHash: long;
+    slug: string;
+    title: string;
+    document?: Api.TypeDocument;
+    settings?: Api.TypeThemeSettings[];
+    emoticon?: string;
+    installsCount?: int;
+  }
+
+    export class BaseThemeClassic extends VirtualClass<void> {
+    }
+
+    export class BaseThemeDay extends VirtualClass<void> {
+    }
+
+    export class BaseThemeNight extends VirtualClass<void> {
+    }
+
+    export class BaseThemeTinted extends VirtualClass<void> {
+    }
+
+    export class BaseThemeArctic extends VirtualClass<void> {
+    }
+
+    export class InputThemeSettings extends VirtualClass<{
+    // flags: undefined;
+    messageColorsAnimated?: true;
+    baseTheme: Api.TypeBaseTheme;
+    accentColor: int;
+    outboxAccentColor?: int;
+    messageColors?: int[];
+    wallpaper?: Api.TypeInputWallPaper;
+    wallpaperSettings?: Api.TypeWallPaperSettings;
+  }> {
+    // flags: undefined;
+    messageColorsAnimated?: true;
+    baseTheme: Api.TypeBaseTheme;
+    accentColor: int;
+    outboxAccentColor?: int;
+    messageColors?: int[];
+    wallpaper?: Api.TypeInputWallPaper;
+    wallpaperSettings?: Api.TypeWallPaperSettings;
+  }
+
+    export class ThemeSettings extends VirtualClass<{
+    // flags: undefined;
+    messageColorsAnimated?: true;
+    baseTheme: Api.TypeBaseTheme;
+    accentColor: int;
+    outboxAccentColor?: int;
+    messageColors?: int[];
+    wallpaper?: Api.TypeWallPaper;
+  }> {
+    // flags: undefined;
+    messageColorsAnimated?: true;
+    baseTheme: Api.TypeBaseTheme;
+    accentColor: int;
+    outboxAccentColor?: int;
+    messageColors?: int[];
+    wallpaper?: Api.TypeWallPaper;
+  }
+
+    export class WebPageAttributeTheme extends VirtualClass<{
+    // flags: undefined;
+    documents?: Api.TypeDocument[];
+    settings?: Api.TypeThemeSettings;
+  } | void> {
+    // flags: undefined;
+    documents?: Api.TypeDocument[];
+    settings?: Api.TypeThemeSettings;
+  }
+
+    export class MessageUserVote extends VirtualClass<{
+    userId: long;
+    option: bytes;
+    date: int;
+  }> {
+    userId: long;
+    option: bytes;
+    date: int;
+  }
+
+    export class MessageUserVoteInputOption extends VirtualClass<{
+    userId: long;
+    date: int;
+  }> {
+    userId: long;
+    date: int;
+  }
+
+    export class MessageUserVoteMultiple extends VirtualClass<{
+    userId: long;
+    options: bytes[];
+    date: int;
+  }> {
+    userId: long;
+    options: bytes[];
+    date: int;
+  }
+
+    export class BankCardOpenUrl extends VirtualClass<{
+    url: string;
+    name: string;
+  }> {
+    url: string;
+    name: string;
+  }
+
+    export class DialogFilter extends VirtualClass<{
+    // flags: undefined;
+    contacts?: true;
+    nonContacts?: true;
+    groups?: true;
+    broadcasts?: true;
+    bots?: true;
+    excludeMuted?: true;
+    excludeRead?: true;
+    excludeArchived?: true;
+    id: int;
+    title: string;
+    emoticon?: string;
+    pinnedPeers: Api.TypeInputPeer[];
+    includePeers: Api.TypeInputPeer[];
+    excludePeers: Api.TypeInputPeer[];
+  }> {
+    // flags: undefined;
+    contacts?: true;
+    nonContacts?: true;
+    groups?: true;
+    broadcasts?: true;
+    bots?: true;
+    excludeMuted?: true;
+    excludeRead?: true;
+    excludeArchived?: true;
+    id: int;
+    title: string;
+    emoticon?: string;
+    pinnedPeers: Api.TypeInputPeer[];
+    includePeers: Api.TypeInputPeer[];
+    excludePeers: Api.TypeInputPeer[];
+  }
+
+    export class DialogFilterDefault extends VirtualClass<void> {
+    }
+
+    export class DialogFilterSuggested extends VirtualClass<{
+    filter: Api.TypeDialogFilter;
+    description: string;
+  }> {
+    filter: Api.TypeDialogFilter;
+    description: string;
+  }
+
+    export class StatsDateRangeDays extends VirtualClass<{
+    minDate: int;
+    maxDate: int;
+  }> {
+    minDate: int;
+    maxDate: int;
+  }
+
+    export class StatsAbsValueAndPrev extends VirtualClass<{
+    current: double;
+    previous: double;
+  }> {
+    current: double;
+    previous: double;
+  }
+
+    export class StatsPercentValue extends VirtualClass<{
+    part: double;
+    total: double;
+  }> {
+    part: double;
+    total: double;
+  }
+
+    export class StatsGraphAsync extends VirtualClass<{
+    token: string;
+  }> {
+    token: string;
+  }
+
+    export class StatsGraphError extends VirtualClass<{
+    error: string;
+  }> {
+    error: string;
+  }
+
+    export class StatsGraph extends VirtualClass<{
+    // flags: undefined;
+    json: Api.TypeDataJSON;
+    zoomToken?: string;
+  }> {
+    // flags: undefined;
+    json: Api.TypeDataJSON;
+    zoomToken?: string;
+  }
+
+    export class MessageInteractionCounters extends VirtualClass<{
+    msgId: int;
+    views: int;
+    forwards: int;
+  }> {
+    msgId: int;
+    views: int;
+    forwards: int;
+  }
+
+    export class VideoSize extends VirtualClass<{
+    // flags: undefined;
+    type: string;
+    w: int;
+    h: int;
+    size: int;
+    videoStartTs?: double;
+  }> {
+    // flags: undefined;
+    type: string;
+    w: int;
+    h: int;
+    size: int;
+    videoStartTs?: double;
+  }
+
+    export class VideoSizeEmojiMarkup extends VirtualClass<{
+    emojiId: long;
+    backgroundColors: int[];
+  }> {
+    emojiId: long;
+    backgroundColors: int[];
+  }
+
+    export class VideoSizeStickerMarkup extends VirtualClass<{
+    stickerset: Api.TypeInputStickerSet;
+    stickerId: long;
+    backgroundColors: int[];
+  }> {
+    stickerset: Api.TypeInputStickerSet;
+    stickerId: long;
+    backgroundColors: int[];
+  }
+
+    export class StatsGroupTopPoster extends VirtualClass<{
+    userId: long;
+    messages: int;
+    avgChars: int;
+  }> {
+    userId: long;
+    messages: int;
+    avgChars: int;
+  }
+
+    export class StatsGroupTopAdmin extends VirtualClass<{
+    userId: long;
+    deleted: int;
+    kicked: int;
+    banned: int;
+  }> {
+    userId: long;
+    deleted: int;
+    kicked: int;
+    banned: int;
+  }
+
+    export class StatsGroupTopInviter extends VirtualClass<{
+    userId: long;
+    invitations: int;
+  }> {
+    userId: long;
+    invitations: int;
+  }
+
+    export class GlobalPrivacySettings extends VirtualClass<{
+    // flags: undefined;
+    archiveAndMuteNewNoncontactPeers?: Bool;
+  } | void> {
+    // flags: undefined;
+    archiveAndMuteNewNoncontactPeers?: Bool;
+  }
+
+    export class MessageViews extends VirtualClass<{
+    // flags: undefined;
+    views?: int;
+    forwards?: int;
+    replies?: Api.TypeMessageReplies;
+  } | void> {
+    // flags: undefined;
+    views?: int;
+    forwards?: int;
+    replies?: Api.TypeMessageReplies;
+  }
+
+    export class MessageReplyHeader extends VirtualClass<{
+    // flags: undefined;
+    replyToScheduled?: true;
+    forumTopic?: true;
+    replyToMsgId: int;
+    replyToPeerId?: Api.TypePeer;
+    replyToTopId?: int;
+  }> {
+    // flags: undefined;
+    replyToScheduled?: true;
+    forumTopic?: true;
+    replyToMsgId: int;
+    replyToPeerId?: Api.TypePeer;
+    replyToTopId?: int;
+  }
+
+    export class MessageReplies extends VirtualClass<{
+    // flags: undefined;
+    comments?: true;
+    replies: int;
+    repliesPts: int;
+    recentRepliers?: Api.TypePeer[];
+    channelId?: long;
+    maxId?: int;
+    readMaxId?: int;
+  }> {
+    // flags: undefined;
+    comments?: true;
+    replies: int;
+    repliesPts: int;
+    recentRepliers?: Api.TypePeer[];
+    channelId?: long;
+    maxId?: int;
+    readMaxId?: int;
+  }
+
+    export class PeerBlocked extends VirtualClass<{
+    peerId: Api.TypePeer;
+    date: int;
+  }> {
+    peerId: Api.TypePeer;
+    date: int;
+  }
+
+    export class GroupCallDiscarded extends VirtualClass<{
+    id: long;
+    accessHash: long;
+    duration: int;
+  }> {
+    id: long;
+    accessHash: long;
+    duration: int;
+  }
+
+    export class GroupCall extends VirtualClass<{
+    // flags: undefined;
+    joinMuted?: true;
+    canChangeJoinMuted?: true;
+    joinDateAsc?: true;
+    scheduleStartSubscribed?: true;
+    canStartVideo?: true;
+    recordVideoActive?: true;
+    rtmpStream?: true;
+    listenersHidden?: true;
+    id: long;
+    accessHash: long;
+    participantsCount: int;
+    title?: string;
+    streamDcId?: int;
+    recordStartDate?: int;
+    scheduleDate?: int;
+    unmutedVideoCount?: int;
+    unmutedVideoLimit: int;
+    version: int;
+  }> {
+    // flags: undefined;
+    joinMuted?: true;
+    canChangeJoinMuted?: true;
+    joinDateAsc?: true;
+    scheduleStartSubscribed?: true;
+    canStartVideo?: true;
+    recordVideoActive?: true;
+    rtmpStream?: true;
+    listenersHidden?: true;
+    id: long;
+    accessHash: long;
+    participantsCount: int;
+    title?: string;
+    streamDcId?: int;
+    recordStartDate?: int;
+    scheduleDate?: int;
+    unmutedVideoCount?: int;
+    unmutedVideoLimit: int;
+    version: int;
+  }
+
+    export class InputGroupCall extends VirtualClass<{
+    id: long;
+    accessHash: long;
+  }> {
+    id: long;
+    accessHash: long;
+  }
+
+    export class GroupCallParticipant extends VirtualClass<{
+    // flags: undefined;
+    muted?: true;
+    left?: true;
+    canSelfUnmute?: true;
+    justJoined?: true;
+    versioned?: true;
+    min?: true;
+    mutedByYou?: true;
+    volumeByAdmin?: true;
+    self?: true;
+    videoJoined?: true;
+    peer: Api.TypePeer;
+    date: int;
+    activeDate?: int;
+    source: int;
+    volume?: int;
+    about?: string;
+    raiseHandRating?: long;
+    video?: Api.TypeGroupCallParticipantVideo;
+    presentation?: Api.TypeGroupCallParticipantVideo;
+  }> {
+    // flags: undefined;
+    muted?: true;
+    left?: true;
+    canSelfUnmute?: true;
+    justJoined?: true;
+    versioned?: true;
+    min?: true;
+    mutedByYou?: true;
+    volumeByAdmin?: true;
+    self?: true;
+    videoJoined?: true;
+    peer: Api.TypePeer;
+    date: int;
+    activeDate?: int;
+    source: int;
+    volume?: int;
+    about?: string;
+    raiseHandRating?: long;
+    video?: Api.TypeGroupCallParticipantVideo;
+    presentation?: Api.TypeGroupCallParticipantVideo;
+  }
+
+    export class InlineQueryPeerTypeSameBotPM extends VirtualClass<void> {
+    }
+
+    export class InlineQueryPeerTypePM extends VirtualClass<void> {
+    }
+
+    export class InlineQueryPeerTypeChat extends VirtualClass<void> {
+    }
+
+    export class InlineQueryPeerTypeMegagroup extends VirtualClass<void> {
+    }
+
+    export class InlineQueryPeerTypeBroadcast extends VirtualClass<void> {
+    }
+
+    export class ChatInviteImporter extends VirtualClass<{
+    // flags: undefined;
+    requested?: true;
+    userId: long;
+    date: int;
+    about?: string;
+    approvedBy?: long;
+  }> {
+    // flags: undefined;
+    requested?: true;
+    userId: long;
+    date: int;
+    about?: string;
+    approvedBy?: long;
+  }
+
+    export class ChatAdminWithInvites extends VirtualClass<{
+    adminId: long;
+    invitesCount: int;
+    revokedInvitesCount: int;
+  }> {
+    adminId: long;
+    invitesCount: int;
+    revokedInvitesCount: int;
+  }
+
+    export class GroupCallParticipantVideoSourceGroup extends VirtualClass<{
+    semantics: string;
+    sources: int[];
+  }> {
+    semantics: string;
+    sources: int[];
+  }
+
+    export class GroupCallParticipantVideo extends VirtualClass<{
+    // flags: undefined;
+    paused?: true;
+    endpoint: string;
+    sourceGroups: Api.TypeGroupCallParticipantVideoSourceGroup[];
+    audioSource?: int;
+  }> {
+    // flags: undefined;
+    paused?: true;
+    endpoint: string;
+    sourceGroups: Api.TypeGroupCallParticipantVideoSourceGroup[];
+    audioSource?: int;
+  }
+
+    export class BotCommandScopeDefault extends VirtualClass<void> {
+    }
+
+    export class BotCommandScopeUsers extends VirtualClass<void> {
+    }
+
+    export class BotCommandScopeChats extends VirtualClass<void> {
+    }
+
+    export class BotCommandScopeChatAdmins extends VirtualClass<void> {
+    }
+
+    export class BotCommandScopePeer extends VirtualClass<{
+    peer: Api.TypeInputPeer;
+  }> {
+    peer: Api.TypeInputPeer;
+  }
+
+    export class BotCommandScopePeerAdmins extends VirtualClass<{
+    peer: Api.TypeInputPeer;
+  }> {
+    peer: Api.TypeInputPeer;
+  }
+
+    export class BotCommandScopePeerUser extends VirtualClass<{
+    peer: Api.TypeInputPeer;
+    userId: Api.TypeInputUser;
+  }> {
+    peer: Api.TypeInputPeer;
+    userId: Api.TypeInputUser;
+  }
+
+    export class SponsoredMessage extends VirtualClass<{
+    // flags: undefined;
+    recommended?: true;
+    showPeerPhoto?: true;
+    randomId: bytes;
+    fromId?: Api.TypePeer;
+    chatInvite?: Api.TypeChatInvite;
+    chatInviteHash?: string;
+    channelPost?: int;
+    startParam?: string;
+    message: string;
+    entities?: Api.TypeMessageEntity[];
+  }> {
+    // flags: undefined;
+    recommended?: true;
+    showPeerPhoto?: true;
+    randomId: bytes;
+    fromId?: Api.TypePeer;
+    chatInvite?: Api.TypeChatInvite;
+    chatInviteHash?: string;
+    channelPost?: int;
+    startParam?: string;
+    message: string;
+    entities?: Api.TypeMessageEntity[];
+  }
+
+    export class SearchResultsCalendarPeriod extends VirtualClass<{
+    date: int;
+    minMsgId: int;
+    maxMsgId: int;
+    count: int;
+  }> {
+    date: int;
+    minMsgId: int;
+    maxMsgId: int;
+    count: int;
+  }
+
+    export class SearchResultPosition extends VirtualClass<{
+    msgId: int;
+    date: int;
+    offset: int;
+  }> {
+    msgId: int;
+    date: int;
+    offset: int;
+  }
+
+    export class ReactionCount extends VirtualClass<{
+    // flags: undefined;
+    chosenOrder?: int;
+    reaction: Api.TypeReaction;
+    count: int;
+  }> {
+    // flags: undefined;
+    chosenOrder?: int;
+    reaction: Api.TypeReaction;
+    count: int;
+  }
+
+    export class MessageReactions extends VirtualClass<{
+    // flags: undefined;
+    min?: true;
+    canSeeList?: true;
+    results: Api.TypeReactionCount[];
+    recentReactions?: Api.TypeMessagePeerReaction[];
+  }> {
+    // flags: undefined;
+    min?: true;
+    canSeeList?: true;
+    results: Api.TypeReactionCount[];
+    recentReactions?: Api.TypeMessagePeerReaction[];
+  }
+
+    export class AvailableReaction extends VirtualClass<{
+    // flags: undefined;
+    inactive?: true;
+    premium?: true;
+    reaction: string;
+    title: string;
+    staticIcon: Api.TypeDocument;
+    appearAnimation: Api.TypeDocument;
+    selectAnimation: Api.TypeDocument;
+    activateAnimation: Api.TypeDocument;
+    effectAnimation: Api.TypeDocument;
+    aroundAnimation?: Api.TypeDocument;
+    centerIcon?: Api.TypeDocument;
+  }> {
+    // flags: undefined;
+    inactive?: true;
+    premium?: true;
+    reaction: string;
+    title: string;
+    staticIcon: Api.TypeDocument;
+    appearAnimation: Api.TypeDocument;
+    selectAnimation: Api.TypeDocument;
+    activateAnimation: Api.TypeDocument;
+    effectAnimation: Api.TypeDocument;
+    aroundAnimation?: Api.TypeDocument;
+    centerIcon?: Api.TypeDocument;
+  }
+
+    export class MessagePeerReaction extends VirtualClass<{
+    // flags: undefined;
+    big?: true;
+    unread?: true;
+    peerId: Api.TypePeer;
+    reaction: Api.TypeReaction;
+  }> {
+    // flags: undefined;
+    big?: true;
+    unread?: true;
+    peerId: Api.TypePeer;
+    reaction: Api.TypeReaction;
+  }
+
+    export class GroupCallStreamChannel extends VirtualClass<{
+    channel: int;
+    scale: int;
+    lastTimestampMs: long;
+  }> {
+    channel: int;
+    scale: int;
+    lastTimestampMs: long;
+  }
+
+    export class AttachMenuBotIconColor extends VirtualClass<{
+    name: string;
+    color: int;
+  }> {
+    name: string;
+    color: int;
+  }
+
+    export class AttachMenuBotIcon extends VirtualClass<{
+    // flags: undefined;
+    name: string;
+    icon: Api.TypeDocument;
+    colors?: Api.TypeAttachMenuBotIconColor[];
+  }> {
+    // flags: undefined;
+    name: string;
+    icon: Api.TypeDocument;
+    colors?: Api.TypeAttachMenuBotIconColor[];
+  }
+
+    export class AttachMenuBot extends VirtualClass<{
+    // flags: undefined;
+    inactive?: true;
+    hasSettings?: true;
+    requestWriteAccess?: true;
+    botId: long;
+    shortName: string;
+    peerTypes: Api.TypeAttachMenuPeerType[];
+    icons: Api.TypeAttachMenuBotIcon[];
+  }> {
+    // flags: undefined;
+    inactive?: true;
+    hasSettings?: true;
+    requestWriteAccess?: true;
+    botId: long;
+    shortName: string;
+    peerTypes: Api.TypeAttachMenuPeerType[];
+    icons: Api.TypeAttachMenuBotIcon[];
+  }
+
+    export class AttachMenuBotsNotModified extends VirtualClass<void> {
+    }
+
+    export class AttachMenuBots extends VirtualClass<{
+    hash: long;
+    bots: Api.TypeAttachMenuBot[];
+    users: Api.TypeUser[];
+  }> {
+    hash: long;
+    bots: Api.TypeAttachMenuBot[];
+    users: Api.TypeUser[];
+  }
+
+    export class AttachMenuBotsBot extends VirtualClass<{
+    bot: Api.TypeAttachMenuBot;
+    users: Api.TypeUser[];
+  }> {
+    bot: Api.TypeAttachMenuBot;
+    users: Api.TypeUser[];
+  }
+
+    export class WebViewResultUrl extends VirtualClass<{
+    queryId: long;
+    url: string;
+  }> {
+    queryId: long;
+    url: string;
+  }
+
+    export class SimpleWebViewResultUrl extends VirtualClass<{
+    url: string;
+  }> {
+    url: string;
+  }
+
+    export class WebViewMessageSent extends VirtualClass<{
+    // flags: undefined;
+    msgId?: Api.TypeInputBotInlineMessageID;
+  } | void> {
+    // flags: undefined;
+    msgId?: Api.TypeInputBotInlineMessageID;
+  }
+
+    export class BotMenuButtonDefault extends VirtualClass<void> {
+    }
+
+    export class BotMenuButtonCommands extends VirtualClass<void> {
+    }
+
+    export class BotMenuButton extends VirtualClass<{
+    text: string;
+    url: string;
+  }> {
+    text: string;
+    url: string;
+  }
+
+    export class NotificationSoundDefault extends VirtualClass<void> {
+    }
+
+    export class NotificationSoundNone extends VirtualClass<void> {
+    }
+
+    export class NotificationSoundLocal extends VirtualClass<{
+    title: string;
+    data: string;
+  }> {
+    title: string;
+    data: string;
+  }
+
+    export class NotificationSoundRingtone extends VirtualClass<{
+    id: long;
+  }> {
+    id: long;
+  }
+
+    export class AttachMenuPeerTypeSameBotPM extends VirtualClass<void> {
+    }
+
+    export class AttachMenuPeerTypeBotPM extends VirtualClass<void> {
+    }
+
+    export class AttachMenuPeerTypePM extends VirtualClass<void> {
+    }
+
+    export class AttachMenuPeerTypeChat extends VirtualClass<void> {
+    }
+
+    export class AttachMenuPeerTypeBroadcast extends VirtualClass<void> {
+    }
+
+    export class InputInvoiceMessage extends VirtualClass<{
+    peer: Api.TypeInputPeer;
+    msgId: int;
+  }> {
+    peer: Api.TypeInputPeer;
+    msgId: int;
+  }
+
+    export class InputInvoiceSlug extends VirtualClass<{
+    slug: string;
+  }> {
+    slug: string;
+  }
+
+    export class InputStorePaymentPremiumSubscription extends VirtualClass<{
+    // flags: undefined;
+    restore?: true;
+    upgrade?: true;
+  } | void> {
+    // flags: undefined;
+    restore?: true;
+    upgrade?: true;
+  }
+
+    export class InputStorePaymentGiftPremium extends VirtualClass<{
+    userId: Api.TypeInputUser;
+    currency: string;
+    amount: long;
+  }> {
+    userId: Api.TypeInputUser;
+    currency: string;
+    amount: long;
+  }
+
+    export class PremiumGiftOption extends VirtualClass<{
+    // flags: undefined;
+    months: int;
+    currency: string;
+    amount: long;
+    botUrl: string;
+    storeProduct?: string;
+  }> {
+    // flags: undefined;
+    months: int;
+    currency: string;
+    amount: long;
+    botUrl: string;
+    storeProduct?: string;
+  }
+
+    export class PaymentFormMethod extends VirtualClass<{
+    url: string;
+    title: string;
+  }> {
+    url: string;
+    title: string;
+  }
+
+    export class EmojiStatusEmpty extends VirtualClass<void> {
+    }
+
+    export class EmojiStatus extends VirtualClass<{
+    documentId: long;
+  }> {
+    documentId: long;
+  }
+
+    export class EmojiStatusUntil extends VirtualClass<{
+    documentId: long;
+    until: int;
+  }> {
+    documentId: long;
+    until: int;
+  }
+
+    export class ReactionEmpty extends VirtualClass<void> {
+    }
+
+    export class ReactionEmoji extends VirtualClass<{
+    emoticon: string;
+  }> {
+    emoticon: string;
+  }
+
+    export class ReactionCustomEmoji extends VirtualClass<{
+    documentId: long;
+  }> {
+    documentId: long;
+  }
+
+    export class ChatReactionsNone extends VirtualClass<void> {
+    }
+
+    export class ChatReactionsAll extends VirtualClass<{
+    // flags: undefined;
+    allowCustom?: true;
+  } | void> {
+    // flags: undefined;
+    allowCustom?: true;
+  }
+
+    export class ChatReactionsSome extends VirtualClass<{
+    reactions: Api.TypeReaction[];
+  }> {
+    reactions: Api.TypeReaction[];
+  }
+
+    export class EmailVerifyPurposeLoginSetup extends VirtualClass<{
+    phoneNumber: string;
+    phoneCodeHash: string;
+  }> {
+    phoneNumber: string;
+    phoneCodeHash: string;
+  }
+
+    export class EmailVerifyPurposeLoginChange extends VirtualClass<void> {
+    }
+
+    export class EmailVerifyPurposePassport extends VirtualClass<void> {
+    }
+
+    export class EmailVerificationCode extends VirtualClass<{
+    code: string;
+  }> {
+    code: string;
+  }
+
+    export class EmailVerificationGoogle extends VirtualClass<{
+    token: string;
+  }> {
+    token: string;
+  }
+
+    export class EmailVerificationApple extends VirtualClass<{
+    token: string;
+  }> {
+    token: string;
+  }
+
+    export class PremiumSubscriptionOption extends VirtualClass<{
+    // flags: undefined;
+    current?: true;
+    canPurchaseUpgrade?: true;
+    transaction?: string;
+    months: int;
+    currency: string;
+    amount: long;
+    botUrl: string;
+    storeProduct?: string;
+  }> {
+    // flags: undefined;
+    current?: true;
+    canPurchaseUpgrade?: true;
+    transaction?: string;
+    months: int;
+    currency: string;
+    amount: long;
+    botUrl: string;
+    storeProduct?: string;
+  }
+
+    export class SendAsPeer extends VirtualClass<{
+    // flags: undefined;
+    premiumRequired?: true;
+    peer: Api.TypePeer;
+  }> {
+    // flags: undefined;
+    premiumRequired?: true;
+    peer: Api.TypePeer;
+  }
+
+    export class MessageExtendedMediaPreview extends VirtualClass<{
+    // flags: undefined;
+    w?: int;
+    h?: int;
+    thumb?: Api.TypePhotoSize;
+    videoDuration?: int;
+  } | void> {
+    // flags: undefined;
+    w?: int;
+    h?: int;
+    thumb?: Api.TypePhotoSize;
+    videoDuration?: int;
+  }
+
+    export class MessageExtendedMedia extends VirtualClass<{
+    media: Api.TypeMessageMedia;
+  }> {
+    media: Api.TypeMessageMedia;
+  }
+
+    export class StickerKeyword extends VirtualClass<{
+    documentId: long;
+    keyword: string[];
+  }> {
+    documentId: long;
+    keyword: string[];
+  }
+
+    export class Username extends VirtualClass<{
+    // flags: undefined;
+    editable?: true;
+    active?: true;
+    username: string;
+  }> {
+    // flags: undefined;
+    editable?: true;
+    active?: true;
+    username: string;
+  }
+
+    export class ForumTopicDeleted extends VirtualClass<{
+    id: int;
+  }> {
+    id: int;
+  }
+
+    export class ForumTopic extends VirtualClass<{
+    // flags: undefined;
+    my?: true;
+    closed?: true;
+    pinned?: true;
+    short?: true;
+    hidden?: true;
+    id: int;
+    date: int;
+    title: string;
+    iconColor: int;
+    iconEmojiId?: long;
+    topMessage: int;
+    readInboxMaxId: int;
+    readOutboxMaxId: int;
+    unreadCount: int;
+    unreadMentionsCount: int;
+    unreadReactionsCount: int;
+    fromId: Api.TypePeer;
+    notifySettings: Api.TypePeerNotifySettings;
+    draft?: Api.TypeDraftMessage;
+  }> {
+    // flags: undefined;
+    my?: true;
+    closed?: true;
+    pinned?: true;
+    short?: true;
+    hidden?: true;
+    id: int;
+    date: int;
+    title: string;
+    iconColor: int;
+    iconEmojiId?: long;
+    topMessage: int;
+    readInboxMaxId: int;
+    readOutboxMaxId: int;
+    unreadCount: int;
+    unreadMentionsCount: int;
+    unreadReactionsCount: int;
+    fromId: Api.TypePeer;
+    notifySettings: Api.TypePeerNotifySettings;
+    draft?: Api.TypeDraftMessage;
+  }
+
+    export class DefaultHistoryTTL extends VirtualClass<{
+    period: int;
+  }> {
+    period: int;
+  }
+
+    export class ExportedContactToken extends VirtualClass<{
+    url: string;
+    expires: int;
+  }> {
+    url: string;
+    expires: int;
+  }
+
+    export class RequestPeerTypeUser extends VirtualClass<{
+    // flags: undefined;
+    bot?: Bool;
+    premium?: Bool;
+  } | void> {
+    // flags: undefined;
+    bot?: Bool;
+    premium?: Bool;
+  }
+
+    export class RequestPeerTypeChat extends VirtualClass<{
+    // flags: undefined;
+    creator?: true;
+    botParticipant?: true;
+    hasUsername?: Bool;
+    forum?: Bool;
+    userAdminRights?: Api.TypeChatAdminRights;
+    botAdminRights?: Api.TypeChatAdminRights;
+  } | void> {
+    // flags: undefined;
+    creator?: true;
+    botParticipant?: true;
+    hasUsername?: Bool;
+    forum?: Bool;
+    userAdminRights?: Api.TypeChatAdminRights;
+    botAdminRights?: Api.TypeChatAdminRights;
+  }
+
+    export class RequestPeerTypeBroadcast extends VirtualClass<{
+    // flags: undefined;
+    creator?: true;
+    hasUsername?: Bool;
+    userAdminRights?: Api.TypeChatAdminRights;
+    botAdminRights?: Api.TypeChatAdminRights;
+  } | void> {
+    // flags: undefined;
+    creator?: true;
+    hasUsername?: Bool;
+    userAdminRights?: Api.TypeChatAdminRights;
+    botAdminRights?: Api.TypeChatAdminRights;
+  }
+
+    export class EmojiListNotModified extends VirtualClass<void> {
+    }
+
+    export class EmojiList extends VirtualClass<{
+    hash: long;
+    documentId: long[];
+  }> {
+    hash: long;
+    documentId: long[];
+  }
+
+    export class EmojiGroup extends VirtualClass<{
+    title: string;
+    iconEmojiId: long;
+    emoticons: string[];
+  }> {
+    title: string;
+    iconEmojiId: long;
+    emoticons: string[];
+  }
+
+    export class TextWithEntities extends VirtualClass<{
+    text: string;
+    entities: Api.TypeMessageEntity[];
+  }> {
+    text: string;
+    entities: Api.TypeMessageEntity[];
+  }
+
+    export class AutoSaveSettings extends VirtualClass<{
+    // flags: undefined;
+    photos?: true;
+    videos?: true;
+    videoMaxSize?: long;
+  } | void> {
+    // flags: undefined;
+    photos?: true;
+    videos?: true;
+    videoMaxSize?: long;
+  }
+
+    export class AutoSaveException extends VirtualClass<{
+    peer: Api.TypePeer;
+    settings: Api.TypeAutoSaveSettings;
+  }> {
+    peer: Api.TypePeer;
+    settings: Api.TypeAutoSaveSettings;
+  }
+
+    export class ResPQ extends VirtualClass<{
+    nonce: int128;
+    serverNonce: int128;
+    pq: bytes;
+    serverPublicKeyFingerprints: long[];
+  }> {
+    nonce: int128;
+    serverNonce: int128;
+    pq: bytes;
+    serverPublicKeyFingerprints: long[];
+  }
+
+    export class PQInnerData extends VirtualClass<{
+    pq: bytes;
+    p: bytes;
+    q: bytes;
+    nonce: int128;
+    serverNonce: int128;
+    newNonce: int256;
+  }> {
+    pq: bytes;
+    p: bytes;
+    q: bytes;
+    nonce: int128;
+    serverNonce: int128;
+    newNonce: int256;
+  }
+
+    export class PQInnerDataDc extends VirtualClass<{
+    pq: bytes;
+    p: bytes;
+    q: bytes;
+    nonce: int128;
+    serverNonce: int128;
+    newNonce: int256;
+    dc: int;
+  }> {
+    pq: bytes;
+    p: bytes;
+    q: bytes;
+    nonce: int128;
+    serverNonce: int128;
+    newNonce: int256;
+    dc: int;
+  }
+
+    export class PQInnerDataTemp extends VirtualClass<{
+    pq: bytes;
+    p: bytes;
+    q: bytes;
+    nonce: int128;
+    serverNonce: int128;
+    newNonce: int256;
+    expiresIn: int;
+  }> {
+    pq: bytes;
+    p: bytes;
+    q: bytes;
+    nonce: int128;
+    serverNonce: int128;
+    newNonce: int256;
+    expiresIn: int;
+  }
+
+    export class PQInnerDataTempDc extends VirtualClass<{
+    pq: bytes;
+    p: bytes;
+    q: bytes;
+    nonce: int128;
+    serverNonce: int128;
+    newNonce: int256;
+    dc: int;
+    expiresIn: int;
+  }> {
+    pq: bytes;
+    p: bytes;
+    q: bytes;
+    nonce: int128;
+    serverNonce: int128;
+    newNonce: int256;
+    dc: int;
+    expiresIn: int;
+  }
+
+    export class ServerDHParamsFail extends VirtualClass<{
+    nonce: int128;
+    serverNonce: int128;
+    newNonceHash: int128;
+  }> {
+    nonce: int128;
+    serverNonce: int128;
+    newNonceHash: int128;
+  }
+
+    export class ServerDHParamsOk extends VirtualClass<{
+    nonce: int128;
+    serverNonce: int128;
+    encryptedAnswer: bytes;
+  }> {
+    nonce: int128;
+    serverNonce: int128;
+    encryptedAnswer: bytes;
+  }
+
+    export class ServerDHInnerData extends VirtualClass<{
+    nonce: int128;
+    serverNonce: int128;
+    g: int;
+    dhPrime: bytes;
+    gA: bytes;
+    serverTime: int;
+  }> {
+    nonce: int128;
+    serverNonce: int128;
+    g: int;
+    dhPrime: bytes;
+    gA: bytes;
+    serverTime: int;
+  }
+
+    export class ClientDHInnerData extends VirtualClass<{
+    nonce: int128;
+    serverNonce: int128;
+    retryId: long;
+    gB: bytes;
+  }> {
+    nonce: int128;
+    serverNonce: int128;
+    retryId: long;
+    gB: bytes;
+  }
+
+    export class DhGenOk extends VirtualClass<{
+    nonce: int128;
+    serverNonce: int128;
+    newNonceHash1: int128;
+  }> {
+    nonce: int128;
+    serverNonce: int128;
+    newNonceHash1: int128;
+  }
+
+    export class DhGenRetry extends VirtualClass<{
+    nonce: int128;
+    serverNonce: int128;
+    newNonceHash2: int128;
+  }> {
+    nonce: int128;
+    serverNonce: int128;
+    newNonceHash2: int128;
+  }
+
+    export class DhGenFail extends VirtualClass<{
+    nonce: int128;
+    serverNonce: int128;
+    newNonceHash3: int128;
+  }> {
+    nonce: int128;
+    serverNonce: int128;
+    newNonceHash3: int128;
+  }
+
+    export class DestroyAuthKeyOk extends VirtualClass<void> {
+    }
+
+    export class DestroyAuthKeyNone extends VirtualClass<void> {
+    }
+
+    export class DestroyAuthKeyFail extends VirtualClass<void> {
+    }
+
+    export class MsgsAck extends VirtualClass<{
+    msgIds: long[];
+  }> {
+    msgIds: long[];
+  }
+
+    export class BadMsgNotification extends VirtualClass<{
+    badMsgId: long;
+    badMsgSeqno: int;
+    errorCode: int;
+  }> {
+    badMsgId: long;
+    badMsgSeqno: int;
+    errorCode: int;
+  }
+
+    export class BadServerSalt extends VirtualClass<{
+    badMsgId: long;
+    badMsgSeqno: int;
+    errorCode: int;
+    newServerSalt: long;
+  }> {
+    badMsgId: long;
+    badMsgSeqno: int;
+    errorCode: int;
+    newServerSalt: long;
+  }
+
+    export class MsgsStateReq extends VirtualClass<{
+    msgIds: long[];
+  }> {
+    msgIds: long[];
+  }
+
+    export class MsgsStateInfo extends VirtualClass<{
+    reqMsgId: long;
+    info: string;
+  }> {
+    reqMsgId: long;
+    info: string;
+  }
+
+    export class MsgsAllInfo extends VirtualClass<{
+    msgIds: long[];
+    info: string;
+  }> {
+    msgIds: long[];
+    info: string;
+  }
+
+    export class MsgDetailedInfo extends VirtualClass<{
+    msgId: long;
+    answerMsgId: long;
+    bytes: int;
+    status: int;
+  }> {
+    msgId: long;
+    answerMsgId: long;
+    bytes: int;
+    status: int;
+  }
+
+    export class MsgNewDetailedInfo extends VirtualClass<{
+    answerMsgId: long;
+    bytes: int;
+    status: int;
+  }> {
+    answerMsgId: long;
+    bytes: int;
+    status: int;
+  }
+
+    export class MsgResendReq extends VirtualClass<{
+    msgIds: long[];
+  }> {
+    msgIds: long[];
+  }
+
+    export class RpcError extends VirtualClass<{
+    errorCode: int;
+    errorMessage: string;
+  }> {
+    errorCode: int;
+    errorMessage: string;
+  }
+
+    export class RpcAnswerUnknown extends VirtualClass<void> {
+    }
+
+    export class RpcAnswerDroppedRunning extends VirtualClass<void> {
+    }
+
+    export class RpcAnswerDropped extends VirtualClass<{
+    msgId: long;
+    seqNo: int;
+    bytes: int;
+  }> {
+    msgId: long;
+    seqNo: int;
+    bytes: int;
+  }
+
+    export class FutureSalt extends VirtualClass<{
+    validSince: int;
+    validUntil: int;
+    salt: long;
+  }> {
+    validSince: int;
+    validUntil: int;
+    salt: long;
+  }
+
+    export class FutureSalts extends VirtualClass<{
+    reqMsgId: long;
+    now: int;
+    salts: future_salt[];
+  }> {
+    reqMsgId: long;
+    now: int;
+    salts: future_salt[];
+  }
+
+    export class Pong extends VirtualClass<{
+    msgId: long;
+    pingId: long;
+  }> {
+    msgId: long;
+    pingId: long;
+  }
+
+    export class DestroySessionOk extends VirtualClass<{
+    sessionId: long;
+  }> {
+    sessionId: long;
+  }
+
+    export class DestroySessionNone extends VirtualClass<{
+    sessionId: long;
+  }> {
+    sessionId: long;
+  }
+
+    export class NewSessionCreated extends VirtualClass<{
+    firstMsgId: long;
+    uniqueId: long;
+    serverSalt: long;
+  }> {
+    firstMsgId: long;
+    uniqueId: long;
+    serverSalt: long;
+  }
+
+    export class HttpWait extends VirtualClass<{
+    maxDelay: int;
+    waitAfter: int;
+    maxWait: int;
+  }> {
+    maxDelay: int;
+    waitAfter: int;
+    maxWait: int;
+  }
+
+    export class IpPort extends VirtualClass<{
+    ipv4: int;
+    port: int;
+  }> {
+    ipv4: int;
+    port: int;
+  }
+
+    export class IpPortSecret extends VirtualClass<{
+    ipv4: int;
+    port: int;
+    secret: bytes;
+  }> {
+    ipv4: int;
+    port: int;
+    secret: bytes;
+  }
+
+    export class AccessPointRule extends VirtualClass<{
+    phonePrefixRules: string;
+    dcId: int;
+    ips: Api.TypeIpPort[];
+  }> {
+    phonePrefixRules: string;
+    dcId: int;
+    ips: Api.TypeIpPort[];
+  }
+
+    export class TlsClientHello extends VirtualClass<{
+    blocks: Api.TypeTlsBlock[];
+  }> {
+    blocks: Api.TypeTlsBlock[];
+  }
+
+    export class TlsBlockString extends VirtualClass<{
+    data: string;
+  }> {
+    data: string;
+  }
+
+    export class TlsBlockRandom extends VirtualClass<{
+    length: int;
+  }> {
+    length: int;
+  }
+
+    export class TlsBlockZero extends VirtualClass<{
+    length: int;
+  }> {
+    length: int;
+  }
+
+    export class TlsBlockDomain extends VirtualClass<void> {
+    }
+
+    export class TlsBlockGrease extends VirtualClass<{
+    seed: int;
+  }> {
+    seed: int;
+  }
+
+    export class TlsBlockScope extends VirtualClass<{
+    entries: Api.TypeTlsBlock[];
+  }> {
+    entries: Api.TypeTlsBlock[];
+  }
+
+    export namespace storage {
+      export class FileUnknown extends VirtualClass<void> {
+      }
+
+      export class FilePartial extends VirtualClass<void> {
+      }
+
+      export class FileJpeg extends VirtualClass<void> {
+      }
+
+      export class FileGif extends VirtualClass<void> {
+      }
+
+      export class FilePng extends VirtualClass<void> {
+      }
+
+      export class FilePdf extends VirtualClass<void> {
+      }
+
+      export class FileMp3 extends VirtualClass<void> {
+      }
+
+      export class FileMov extends VirtualClass<void> {
+      }
+
+      export class FileMp4 extends VirtualClass<void> {
+      }
+
+      export class FileWebp extends VirtualClass<void> {
+      }
   }
 
   export namespace auth {
@@ -8381,13 +9529,15 @@ namespace Api {
       phoneCodeHash: string;
       nextType?: auth.TypeCodeType;
       timeout?: int;
-    };
-    export class SentCodeSuccess extends VirtualClass<{
+    }
+
+      export class SentCodeSuccess extends VirtualClass<{
       authorization: auth.TypeAuthorization;
     }> {
       authorization: auth.TypeAuthorization;
-    };
-    export class Authorization extends VirtualClass<{
+    }
+
+      export class Authorization extends VirtualClass<{
       // flags: undefined;
       setupPasswordRequired?: true;
       otherwiseReloginDays?: int;
@@ -8401,59 +9551,78 @@ namespace Api {
       tmpSessions?: int;
       futureAuthToken?: bytes;
       user: Api.TypeUser;
-    };
-    export class AuthorizationSignUpRequired extends VirtualClass<{
+    }
+
+      export class AuthorizationSignUpRequired extends VirtualClass<{
       // flags: undefined;
       termsOfService?: help.TypeTermsOfService;
     } | void> {
       // flags: undefined;
       termsOfService?: help.TypeTermsOfService;
-    };
-    export class ExportedAuthorization extends VirtualClass<{
+    }
+
+      export class ExportedAuthorization extends VirtualClass<{
       id: long;
       bytes: bytes;
     }> {
       id: long;
       bytes: bytes;
-    };
-    export class PasswordRecovery extends VirtualClass<{
+    }
+
+      export class PasswordRecovery extends VirtualClass<{
       emailPattern: string;
     }> {
       emailPattern: string;
-    };
-    export class CodeTypeSms extends VirtualClass<void> {};
-    export class CodeTypeCall extends VirtualClass<void> {};
-    export class CodeTypeFlashCall extends VirtualClass<void> {};
-    export class CodeTypeMissedCall extends VirtualClass<void> {};
-    export class CodeTypeFragmentSms extends VirtualClass<void> {};
-    export class SentCodeTypeApp extends VirtualClass<{
+    }
+
+      export class CodeTypeSms extends VirtualClass<void> {
+      }
+
+      export class CodeTypeCall extends VirtualClass<void> {
+      }
+
+      export class CodeTypeFlashCall extends VirtualClass<void> {
+      }
+
+      export class CodeTypeMissedCall extends VirtualClass<void> {
+      }
+
+      export class CodeTypeFragmentSms extends VirtualClass<void> {
+      }
+
+      export class SentCodeTypeApp extends VirtualClass<{
       length: int;
     }> {
       length: int;
-    };
-    export class SentCodeTypeSms extends VirtualClass<{
+    }
+
+      export class SentCodeTypeSms extends VirtualClass<{
       length: int;
     }> {
       length: int;
-    };
-    export class SentCodeTypeCall extends VirtualClass<{
+    }
+
+      export class SentCodeTypeCall extends VirtualClass<{
       length: int;
     }> {
       length: int;
-    };
-    export class SentCodeTypeFlashCall extends VirtualClass<{
+    }
+
+      export class SentCodeTypeFlashCall extends VirtualClass<{
       pattern: string;
     }> {
       pattern: string;
-    };
-    export class SentCodeTypeMissedCall extends VirtualClass<{
+    }
+
+      export class SentCodeTypeMissedCall extends VirtualClass<{
       prefix: string;
       length: int;
     }> {
       prefix: string;
       length: int;
-    };
-    export class SentCodeTypeEmailCode extends VirtualClass<{
+    }
+
+      export class SentCodeTypeEmailCode extends VirtualClass<{
       // flags: undefined;
       appleSigninAllowed?: true;
       googleSigninAllowed?: true;
@@ -8467,8 +9636,9 @@ namespace Api {
       emailPattern: string;
       length: int;
       nextPhoneLoginDate?: int;
-    };
-    export class SentCodeTypeSetUpEmailRequired extends VirtualClass<{
+    }
+
+      export class SentCodeTypeSetUpEmailRequired extends VirtualClass<{
       // flags: undefined;
       appleSigninAllowed?: true;
       googleSigninAllowed?: true;
@@ -8476,15 +9646,17 @@ namespace Api {
       // flags: undefined;
       appleSigninAllowed?: true;
       googleSigninAllowed?: true;
-    };
-    export class SentCodeTypeFragmentSms extends VirtualClass<{
+    }
+
+      export class SentCodeTypeFragmentSms extends VirtualClass<{
       url: string;
       length: int;
     }> {
       url: string;
       length: int;
-    };
-    export class SentCodeTypeFirebaseSms extends VirtualClass<{
+    }
+
+      export class SentCodeTypeFirebaseSms extends VirtualClass<{
       // flags: undefined;
       nonce?: bytes;
       receipt?: string;
@@ -8496,38 +9668,44 @@ namespace Api {
       receipt?: string;
       pushTimeout?: int;
       length: int;
-    };
-    export class LoginToken extends VirtualClass<{
+    }
+
+      export class LoginToken extends VirtualClass<{
       expires: int;
       token: bytes;
     }> {
       expires: int;
       token: bytes;
-    };
-    export class LoginTokenMigrateTo extends VirtualClass<{
+    }
+
+      export class LoginTokenMigrateTo extends VirtualClass<{
       dcId: int;
       token: bytes;
     }> {
       dcId: int;
       token: bytes;
-    };
-    export class LoginTokenSuccess extends VirtualClass<{
+    }
+
+      export class LoginTokenSuccess extends VirtualClass<{
       authorization: auth.TypeAuthorization;
     }> {
       authorization: auth.TypeAuthorization;
-    };
-    export class LoggedOut extends VirtualClass<{
+    }
+
+      export class LoggedOut extends VirtualClass<{
       // flags: undefined;
       futureAuthToken?: bytes;
     } | void> {
       // flags: undefined;
       futureAuthToken?: bytes;
-    };
+    }
   }
 
   export namespace contacts {
-    export class ContactsNotModified extends VirtualClass<void> {};
-    export class Contacts extends VirtualClass<{
+      export class ContactsNotModified extends VirtualClass<void> {
+      }
+
+      export class Contacts extends VirtualClass<{
       contacts: Api.TypeContact[];
       savedCount: int;
       users: Api.TypeUser[];
@@ -8535,8 +9713,9 @@ namespace Api {
       contacts: Api.TypeContact[];
       savedCount: int;
       users: Api.TypeUser[];
-    };
-    export class ImportedContacts extends VirtualClass<{
+    }
+
+      export class ImportedContacts extends VirtualClass<{
       imported: Api.TypeImportedContact[];
       popularInvites: Api.TypePopularContact[];
       retryContacts: long[];
@@ -8546,8 +9725,9 @@ namespace Api {
       popularInvites: Api.TypePopularContact[];
       retryContacts: long[];
       users: Api.TypeUser[];
-    };
-    export class Blocked extends VirtualClass<{
+    }
+
+      export class Blocked extends VirtualClass<{
       blocked: Api.TypePeerBlocked[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
@@ -8555,8 +9735,9 @@ namespace Api {
       blocked: Api.TypePeerBlocked[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class BlockedSlice extends VirtualClass<{
+    }
+
+      export class BlockedSlice extends VirtualClass<{
       count: int;
       blocked: Api.TypePeerBlocked[];
       chats: Api.TypeChat[];
@@ -8566,8 +9747,9 @@ namespace Api {
       blocked: Api.TypePeerBlocked[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class Found extends VirtualClass<{
+    }
+
+      export class Found extends VirtualClass<{
       myResults: Api.TypePeer[];
       results: Api.TypePeer[];
       chats: Api.TypeChat[];
@@ -8577,8 +9759,9 @@ namespace Api {
       results: Api.TypePeer[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class ResolvedPeer extends VirtualClass<{
+    }
+
+      export class ResolvedPeer extends VirtualClass<{
       peer: Api.TypePeer;
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
@@ -8586,9 +9769,12 @@ namespace Api {
       peer: Api.TypePeer;
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class TopPeersNotModified extends VirtualClass<void> {};
-    export class TopPeers extends VirtualClass<{
+    }
+
+      export class TopPeersNotModified extends VirtualClass<void> {
+      }
+
+      export class TopPeers extends VirtualClass<{
       categories: Api.TypeTopPeerCategoryPeers[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
@@ -8596,8 +9782,10 @@ namespace Api {
       categories: Api.TypeTopPeerCategoryPeers[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class TopPeersDisabled extends VirtualClass<void> {};
+    }
+
+      export class TopPeersDisabled extends VirtualClass<void> {
+      }
   }
 
   export namespace messages {
@@ -8611,8 +9799,9 @@ namespace Api {
       messages: Api.TypeMessage[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class DialogsSlice extends VirtualClass<{
+    }
+
+      export class DialogsSlice extends VirtualClass<{
       count: int;
       dialogs: Api.TypeDialog[];
       messages: Api.TypeMessage[];
@@ -8624,13 +9813,15 @@ namespace Api {
       messages: Api.TypeMessage[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class DialogsNotModified extends VirtualClass<{
+    }
+
+      export class DialogsNotModified extends VirtualClass<{
       count: int;
     }> {
       count: int;
-    };
-    export class Messages extends VirtualClass<{
+    }
+
+      export class Messages extends VirtualClass<{
       messages: Api.TypeMessage[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
@@ -8638,8 +9829,9 @@ namespace Api {
       messages: Api.TypeMessage[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class MessagesSlice extends VirtualClass<{
+    }
+
+      export class MessagesSlice extends VirtualClass<{
       // flags: undefined;
       inexact?: true;
       count: int;
@@ -8657,8 +9849,9 @@ namespace Api {
       messages: Api.TypeMessage[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class ChannelMessages extends VirtualClass<{
+    }
+
+      export class ChannelMessages extends VirtualClass<{
       // flags: undefined;
       inexact?: true;
       pts: int;
@@ -8678,25 +9871,29 @@ namespace Api {
       topics: Api.TypeForumTopic[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class MessagesNotModified extends VirtualClass<{
+    }
+
+      export class MessagesNotModified extends VirtualClass<{
       count: int;
     }> {
       count: int;
-    };
-    export class Chats extends VirtualClass<{
+    }
+
+      export class Chats extends VirtualClass<{
       chats: Api.TypeChat[];
     }> {
       chats: Api.TypeChat[];
-    };
-    export class ChatsSlice extends VirtualClass<{
+    }
+
+      export class ChatsSlice extends VirtualClass<{
       count: int;
       chats: Api.TypeChat[];
     }> {
       count: int;
       chats: Api.TypeChat[];
-    };
-    export class ChatFull extends VirtualClass<{
+    }
+
+      export class ChatFull extends VirtualClass<{
       fullChat: Api.TypeChatFull;
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
@@ -8704,8 +9901,9 @@ namespace Api {
       fullChat: Api.TypeChatFull;
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class AffectedHistory extends VirtualClass<{
+    }
+
+      export class AffectedHistory extends VirtualClass<{
       pts: int;
       ptsCount: int;
       offset: int;
@@ -8713,13 +9911,15 @@ namespace Api {
       pts: int;
       ptsCount: int;
       offset: int;
-    };
-    export class DhConfigNotModified extends VirtualClass<{
+    }
+
+      export class DhConfigNotModified extends VirtualClass<{
       random: bytes;
     }> {
       random: bytes;
-    };
-    export class DhConfig extends VirtualClass<{
+    }
+
+      export class DhConfig extends VirtualClass<{
       g: int;
       p: bytes;
       version: int;
@@ -8729,43 +9929,53 @@ namespace Api {
       p: bytes;
       version: int;
       random: bytes;
-    };
-    export class SentEncryptedMessage extends VirtualClass<{
+    }
+
+      export class SentEncryptedMessage extends VirtualClass<{
       date: int;
     }> {
       date: int;
-    };
-    export class SentEncryptedFile extends VirtualClass<{
+    }
+
+      export class SentEncryptedFile extends VirtualClass<{
       date: int;
       file: Api.TypeEncryptedFile;
     }> {
       date: int;
       file: Api.TypeEncryptedFile;
-    };
-    export class StickersNotModified extends VirtualClass<void> {};
-    export class Stickers extends VirtualClass<{
+    }
+
+      export class StickersNotModified extends VirtualClass<void> {
+      }
+
+      export class Stickers extends VirtualClass<{
       hash: long;
       stickers: Api.TypeDocument[];
     }> {
       hash: long;
       stickers: Api.TypeDocument[];
-    };
-    export class AllStickersNotModified extends VirtualClass<void> {};
-    export class AllStickers extends VirtualClass<{
+    }
+
+      export class AllStickersNotModified extends VirtualClass<void> {
+      }
+
+      export class AllStickers extends VirtualClass<{
       hash: long;
       sets: Api.TypeStickerSet[];
     }> {
       hash: long;
       sets: Api.TypeStickerSet[];
-    };
-    export class AffectedMessages extends VirtualClass<{
+    }
+
+      export class AffectedMessages extends VirtualClass<{
       pts: int;
       ptsCount: int;
     }> {
       pts: int;
       ptsCount: int;
-    };
-    export class StickerSet extends VirtualClass<{
+    }
+
+      export class StickerSet extends VirtualClass<{
       set: Api.TypeStickerSet;
       packs: Api.TypeStickerPack[];
       keywords: Api.TypeStickerKeyword[];
@@ -8775,17 +9985,23 @@ namespace Api {
       packs: Api.TypeStickerPack[];
       keywords: Api.TypeStickerKeyword[];
       documents: Api.TypeDocument[];
-    };
-    export class StickerSetNotModified extends VirtualClass<void> {};
-    export class SavedGifsNotModified extends VirtualClass<void> {};
-    export class SavedGifs extends VirtualClass<{
+    }
+
+      export class StickerSetNotModified extends VirtualClass<void> {
+      }
+
+      export class SavedGifsNotModified extends VirtualClass<void> {
+      }
+
+      export class SavedGifs extends VirtualClass<{
       hash: long;
       gifs: Api.TypeDocument[];
     }> {
       hash: long;
       gifs: Api.TypeDocument[];
-    };
-    export class BotResults extends VirtualClass<{
+    }
+
+      export class BotResults extends VirtualClass<{
       // flags: undefined;
       gallery?: true;
       queryId: long;
@@ -8803,8 +10019,9 @@ namespace Api {
       results: Api.TypeBotInlineResult[];
       cacheTime: int;
       users: Api.TypeUser[];
-    };
-    export class BotCallbackAnswer extends VirtualClass<{
+    }
+
+      export class BotCallbackAnswer extends VirtualClass<{
       // flags: undefined;
       alert?: true;
       hasUrl?: true;
@@ -8820,15 +10037,17 @@ namespace Api {
       message?: string;
       url?: string;
       cacheTime: int;
-    };
-    export class MessageEditData extends VirtualClass<{
+    }
+
+      export class MessageEditData extends VirtualClass<{
       // flags: undefined;
       caption?: true;
     } | void> {
       // flags: undefined;
       caption?: true;
-    };
-    export class PeerDialogs extends VirtualClass<{
+    }
+
+      export class PeerDialogs extends VirtualClass<{
       dialogs: Api.TypeDialog[];
       messages: Api.TypeMessage[];
       chats: Api.TypeChat[];
@@ -8840,13 +10059,15 @@ namespace Api {
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
       state: updates.TypeState;
-    };
-    export class FeaturedStickersNotModified extends VirtualClass<{
+    }
+
+      export class FeaturedStickersNotModified extends VirtualClass<{
       count: int;
     }> {
       count: int;
-    };
-    export class FeaturedStickers extends VirtualClass<{
+    }
+
+      export class FeaturedStickers extends VirtualClass<{
       // flags: undefined;
       premium?: true;
       hash: long;
@@ -8860,9 +10081,12 @@ namespace Api {
       count: int;
       sets: Api.TypeStickerSetCovered[];
       unread: long[];
-    };
-    export class RecentStickersNotModified extends VirtualClass<void> {};
-    export class RecentStickers extends VirtualClass<{
+    }
+
+      export class RecentStickersNotModified extends VirtualClass<void> {
+      }
+
+      export class RecentStickers extends VirtualClass<{
       hash: long;
       packs: Api.TypeStickerPack[];
       stickers: Api.TypeDocument[];
@@ -8872,29 +10096,37 @@ namespace Api {
       packs: Api.TypeStickerPack[];
       stickers: Api.TypeDocument[];
       dates: int[];
-    };
-    export class ArchivedStickers extends VirtualClass<{
+    }
+
+      export class ArchivedStickers extends VirtualClass<{
       count: int;
       sets: Api.TypeStickerSetCovered[];
     }> {
       count: int;
       sets: Api.TypeStickerSetCovered[];
-    };
-    export class StickerSetInstallResultSuccess extends VirtualClass<void> {};
-    export class StickerSetInstallResultArchive extends VirtualClass<{
+    }
+
+      export class StickerSetInstallResultSuccess extends VirtualClass<void> {
+      }
+
+      export class StickerSetInstallResultArchive extends VirtualClass<{
       sets: Api.TypeStickerSetCovered[];
     }> {
       sets: Api.TypeStickerSetCovered[];
-    };
-    export class HighScores extends VirtualClass<{
+    }
+
+      export class HighScores extends VirtualClass<{
       scores: Api.TypeHighScore[];
       users: Api.TypeUser[];
     }> {
       scores: Api.TypeHighScore[];
       users: Api.TypeUser[];
-    };
-    export class FavedStickersNotModified extends VirtualClass<void> {};
-    export class FavedStickers extends VirtualClass<{
+    }
+
+      export class FavedStickersNotModified extends VirtualClass<void> {
+      }
+
+      export class FavedStickers extends VirtualClass<{
       hash: long;
       packs: Api.TypeStickerPack[];
       stickers: Api.TypeDocument[];
@@ -8902,16 +10134,20 @@ namespace Api {
       hash: long;
       packs: Api.TypeStickerPack[];
       stickers: Api.TypeDocument[];
-    };
-    export class FoundStickerSetsNotModified extends VirtualClass<void> {};
-    export class FoundStickerSets extends VirtualClass<{
+    }
+
+      export class FoundStickerSetsNotModified extends VirtualClass<void> {
+      }
+
+      export class FoundStickerSets extends VirtualClass<{
       hash: long;
       sets: Api.TypeStickerSetCovered[];
     }> {
       hash: long;
       sets: Api.TypeStickerSetCovered[];
-    };
-    export class SearchCounter extends VirtualClass<{
+    }
+
+      export class SearchCounter extends VirtualClass<{
       // flags: undefined;
       inexact?: true;
       filter: Api.TypeMessagesFilter;
@@ -8921,8 +10157,9 @@ namespace Api {
       inexact?: true;
       filter: Api.TypeMessagesFilter;
       count: int;
-    };
-    export class InactiveChats extends VirtualClass<{
+    }
+
+      export class InactiveChats extends VirtualClass<{
       dates: int[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
@@ -8930,8 +10167,9 @@ namespace Api {
       dates: int[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class VotesList extends VirtualClass<{
+    }
+
+      export class VotesList extends VirtualClass<{
       // flags: undefined;
       count: int;
       votes: Api.TypeMessageUserVote[];
@@ -8943,8 +10181,9 @@ namespace Api {
       votes: Api.TypeMessageUserVote[];
       users: Api.TypeUser[];
       nextOffset?: string;
-    };
-    export class MessageViews extends VirtualClass<{
+    }
+
+      export class MessageViews extends VirtualClass<{
       views: Api.TypeMessageViews[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
@@ -8952,8 +10191,9 @@ namespace Api {
       views: Api.TypeMessageViews[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class DiscussionMessage extends VirtualClass<{
+    }
+
+      export class DiscussionMessage extends VirtualClass<{
       // flags: undefined;
       messages: Api.TypeMessage[];
       maxId?: int;
@@ -8971,13 +10211,15 @@ namespace Api {
       unreadCount: int;
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class HistoryImport extends VirtualClass<{
+    }
+
+      export class HistoryImport extends VirtualClass<{
       id: long;
     }> {
       id: long;
-    };
-    export class HistoryImportParsed extends VirtualClass<{
+    }
+
+      export class HistoryImportParsed extends VirtualClass<{
       // flags: undefined;
       pm?: true;
       group?: true;
@@ -8987,8 +10229,9 @@ namespace Api {
       pm?: true;
       group?: true;
       title?: string;
-    };
-    export class AffectedFoundMessages extends VirtualClass<{
+    }
+
+      export class AffectedFoundMessages extends VirtualClass<{
       pts: int;
       ptsCount: int;
       offset: int;
@@ -8998,8 +10241,9 @@ namespace Api {
       ptsCount: int;
       offset: int;
       messages: int[];
-    };
-    export class ExportedChatInvites extends VirtualClass<{
+    }
+
+      export class ExportedChatInvites extends VirtualClass<{
       count: int;
       invites: Api.TypeExportedChatInvite[];
       users: Api.TypeUser[];
@@ -9007,15 +10251,17 @@ namespace Api {
       count: int;
       invites: Api.TypeExportedChatInvite[];
       users: Api.TypeUser[];
-    };
-    export class ExportedChatInvite extends VirtualClass<{
+    }
+
+      export class ExportedChatInvite extends VirtualClass<{
       invite: Api.TypeExportedChatInvite;
       users: Api.TypeUser[];
     }> {
       invite: Api.TypeExportedChatInvite;
       users: Api.TypeUser[];
-    };
-    export class ExportedChatInviteReplaced extends VirtualClass<{
+    }
+
+      export class ExportedChatInviteReplaced extends VirtualClass<{
       invite: Api.TypeExportedChatInvite;
       newInvite: Api.TypeExportedChatInvite;
       users: Api.TypeUser[];
@@ -9023,8 +10269,9 @@ namespace Api {
       invite: Api.TypeExportedChatInvite;
       newInvite: Api.TypeExportedChatInvite;
       users: Api.TypeUser[];
-    };
-    export class ChatInviteImporters extends VirtualClass<{
+    }
+
+      export class ChatInviteImporters extends VirtualClass<{
       count: int;
       importers: Api.TypeChatInviteImporter[];
       users: Api.TypeUser[];
@@ -9032,20 +10279,23 @@ namespace Api {
       count: int;
       importers: Api.TypeChatInviteImporter[];
       users: Api.TypeUser[];
-    };
-    export class ChatAdminsWithInvites extends VirtualClass<{
+    }
+
+      export class ChatAdminsWithInvites extends VirtualClass<{
       admins: Api.TypeChatAdminWithInvites[];
       users: Api.TypeUser[];
     }> {
       admins: Api.TypeChatAdminWithInvites[];
       users: Api.TypeUser[];
-    };
-    export class CheckedHistoryImportPeer extends VirtualClass<{
+    }
+
+      export class CheckedHistoryImportPeer extends VirtualClass<{
       confirmText: string;
     }> {
       confirmText: string;
-    };
-    export class SponsoredMessages extends VirtualClass<{
+    }
+
+      export class SponsoredMessages extends VirtualClass<{
       // flags: undefined;
       postsBetween?: int;
       messages: Api.TypeSponsoredMessage[];
@@ -9057,9 +10307,12 @@ namespace Api {
       messages: Api.TypeSponsoredMessage[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class SponsoredMessagesEmpty extends VirtualClass<void> {};
-    export class SearchResultsCalendar extends VirtualClass<{
+    }
+
+      export class SponsoredMessagesEmpty extends VirtualClass<void> {
+      }
+
+      export class SearchResultsCalendar extends VirtualClass<{
       // flags: undefined;
       inexact?: true;
       count: int;
@@ -9081,15 +10334,17 @@ namespace Api {
       messages: Api.TypeMessage[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class SearchResultsPositions extends VirtualClass<{
+    }
+
+      export class SearchResultsPositions extends VirtualClass<{
       count: int;
       positions: Api.TypeSearchResultsPosition[];
     }> {
       count: int;
       positions: Api.TypeSearchResultsPosition[];
-    };
-    export class PeerSettings extends VirtualClass<{
+    }
+
+      export class PeerSettings extends VirtualClass<{
       settings: Api.TypePeerSettings;
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
@@ -9097,8 +10352,9 @@ namespace Api {
       settings: Api.TypePeerSettings;
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class MessageReactionsList extends VirtualClass<{
+    }
+
+      export class MessageReactionsList extends VirtualClass<{
       // flags: undefined;
       count: int;
       reactions: Api.TypeMessagePeerReaction[];
@@ -9112,16 +10368,20 @@ namespace Api {
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
       nextOffset?: string;
-    };
-    export class AvailableReactionsNotModified extends VirtualClass<void> {};
-    export class AvailableReactions extends VirtualClass<{
+    }
+
+      export class AvailableReactionsNotModified extends VirtualClass<void> {
+      }
+
+      export class AvailableReactions extends VirtualClass<{
       hash: int;
       reactions: Api.TypeAvailableReaction[];
     }> {
       hash: int;
       reactions: Api.TypeAvailableReaction[];
-    };
-    export class TranscribedAudio extends VirtualClass<{
+    }
+
+      export class TranscribedAudio extends VirtualClass<{
       // flags: undefined;
       pending?: true;
       transcriptionId: long;
@@ -9131,16 +10391,20 @@ namespace Api {
       pending?: true;
       transcriptionId: long;
       text: string;
-    };
-    export class ReactionsNotModified extends VirtualClass<void> {};
-    export class Reactions extends VirtualClass<{
+    }
+
+      export class ReactionsNotModified extends VirtualClass<void> {
+      }
+
+      export class Reactions extends VirtualClass<{
       hash: long;
       reactions: Api.TypeReaction[];
     }> {
       hash: long;
       reactions: Api.TypeReaction[];
-    };
-    export class ForumTopics extends VirtualClass<{
+    }
+
+      export class ForumTopics extends VirtualClass<{
       // flags: undefined;
       orderByCreateDate?: true;
       count: int;
@@ -9158,20 +10422,24 @@ namespace Api {
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
       pts: int;
-    };
-    export class EmojiGroupsNotModified extends VirtualClass<void> {};
-    export class EmojiGroups extends VirtualClass<{
+    }
+
+      export class EmojiGroupsNotModified extends VirtualClass<void> {
+      }
+
+      export class EmojiGroups extends VirtualClass<{
       hash: int;
       groups: Api.TypeEmojiGroup[];
     }> {
       hash: int;
       groups: Api.TypeEmojiGroup[];
-    };
-    export class TranslateResult extends VirtualClass<{
+    }
+
+      export class TranslateResult extends VirtualClass<{
       result: Api.TypeTextWithEntities[];
     }> {
       result: Api.TypeTextWithEntities[];
-    };
+    }
   }
 
   export namespace updates {
@@ -9187,15 +10455,17 @@ namespace Api {
       date: int;
       seq: int;
       unreadCount: int;
-    };
-    export class DifferenceEmpty extends VirtualClass<{
+    }
+
+      export class DifferenceEmpty extends VirtualClass<{
       date: int;
       seq: int;
     }> {
       date: int;
       seq: int;
-    };
-    export class Difference extends VirtualClass<{
+    }
+
+      export class Difference extends VirtualClass<{
       newMessages: Api.TypeMessage[];
       newEncryptedMessages: Api.TypeEncryptedMessage[];
       otherUpdates: Api.TypeUpdate[];
@@ -9209,8 +10479,9 @@ namespace Api {
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
       state: updates.TypeState;
-    };
-    export class DifferenceSlice extends VirtualClass<{
+    }
+
+      export class DifferenceSlice extends VirtualClass<{
       newMessages: Api.TypeMessage[];
       newEncryptedMessages: Api.TypeEncryptedMessage[];
       otherUpdates: Api.TypeUpdate[];
@@ -9224,13 +10495,15 @@ namespace Api {
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
       intermediateState: updates.TypeState;
-    };
-    export class DifferenceTooLong extends VirtualClass<{
+    }
+
+      export class DifferenceTooLong extends VirtualClass<{
       pts: int;
     }> {
       pts: int;
-    };
-    export class ChannelDifferenceEmpty extends VirtualClass<{
+    }
+
+      export class ChannelDifferenceEmpty extends VirtualClass<{
       // flags: undefined;
       final?: true;
       pts: int;
@@ -9240,8 +10513,9 @@ namespace Api {
       final?: true;
       pts: int;
       timeout?: int;
-    };
-    export class ChannelDifferenceTooLong extends VirtualClass<{
+    }
+
+      export class ChannelDifferenceTooLong extends VirtualClass<{
       // flags: undefined;
       final?: true;
       timeout?: int;
@@ -9257,8 +10531,9 @@ namespace Api {
       messages: Api.TypeMessage[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class ChannelDifference extends VirtualClass<{
+    }
+
+      export class ChannelDifference extends VirtualClass<{
       // flags: undefined;
       final?: true;
       pts: int;
@@ -9276,7 +10551,7 @@ namespace Api {
       otherUpdates: Api.TypeUpdate[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
+    }
   }
 
   export namespace photos {
@@ -9286,8 +10561,9 @@ namespace Api {
     }> {
       photos: Api.TypePhoto[];
       users: Api.TypeUser[];
-    };
-    export class PhotosSlice extends VirtualClass<{
+    }
+
+      export class PhotosSlice extends VirtualClass<{
       count: int;
       photos: Api.TypePhoto[];
       users: Api.TypeUser[];
@@ -9295,14 +10571,15 @@ namespace Api {
       count: int;
       photos: Api.TypePhoto[];
       users: Api.TypeUser[];
-    };
-    export class Photo extends VirtualClass<{
+    }
+
+      export class Photo extends VirtualClass<{
       photo: Api.TypePhoto;
       users: Api.TypeUser[];
     }> {
       photo: Api.TypePhoto;
       users: Api.TypeUser[];
-    };
+    }
   }
 
   export namespace upload {
@@ -9314,8 +10591,9 @@ namespace Api {
       type: storage.TypeFileType;
       mtime: int;
       bytes: bytes;
-    };
-    export class FileCdnRedirect extends VirtualClass<{
+    }
+
+      export class FileCdnRedirect extends VirtualClass<{
       dcId: int;
       fileToken: bytes;
       encryptionKey: bytes;
@@ -9327,8 +10605,9 @@ namespace Api {
       encryptionKey: bytes;
       encryptionIv: bytes;
       fileHashes: Api.TypeFileHash[];
-    };
-    export class WebFile extends VirtualClass<{
+    }
+
+      export class WebFile extends VirtualClass<{
       size: int;
       mimeType: string;
       fileType: storage.TypeFileType;
@@ -9340,17 +10619,19 @@ namespace Api {
       fileType: storage.TypeFileType;
       mtime: int;
       bytes: bytes;
-    };
-    export class CdnFileReuploadNeeded extends VirtualClass<{
+    }
+
+      export class CdnFileReuploadNeeded extends VirtualClass<{
       requestToken: bytes;
     }> {
       requestToken: bytes;
-    };
-    export class CdnFile extends VirtualClass<{
+    }
+
+      export class CdnFile extends VirtualClass<{
       bytes: bytes;
     }> {
       bytes: bytes;
-    };
+    }
   }
 
   export namespace help {
@@ -9374,21 +10655,26 @@ namespace Api {
       document?: Api.TypeDocument;
       url?: string;
       sticker?: Api.TypeDocument;
-    };
-    export class NoAppUpdate extends VirtualClass<void> {};
-    export class InviteText extends VirtualClass<{
+    }
+
+      export class NoAppUpdate extends VirtualClass<void> {
+      }
+
+      export class InviteText extends VirtualClass<{
       message: string;
     }> {
       message: string;
-    };
-    export class Support extends VirtualClass<{
+    }
+
+      export class Support extends VirtualClass<{
       phoneNumber: string;
       user: Api.TypeUser;
     }> {
       phoneNumber: string;
       user: Api.TypeUser;
-    };
-    export class TermsOfService extends VirtualClass<{
+    }
+
+      export class TermsOfService extends VirtualClass<{
       // flags: undefined;
       popup?: true;
       id: Api.TypeDataJSON;
@@ -9402,8 +10688,9 @@ namespace Api {
       text: string;
       entities: Api.TypeMessageEntity[];
       minAgeConfirm?: int;
-    };
-    export class RecentMeUrls extends VirtualClass<{
+    }
+
+      export class RecentMeUrls extends VirtualClass<{
       urls: Api.TypeRecentMeUrl[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
@@ -9411,21 +10698,26 @@ namespace Api {
       urls: Api.TypeRecentMeUrl[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class TermsOfServiceUpdateEmpty extends VirtualClass<{
+    }
+
+      export class TermsOfServiceUpdateEmpty extends VirtualClass<{
       expires: int;
     }> {
       expires: int;
-    };
-    export class TermsOfServiceUpdate extends VirtualClass<{
+    }
+
+      export class TermsOfServiceUpdate extends VirtualClass<{
       expires: int;
       termsOfService: help.TypeTermsOfService;
     }> {
       expires: int;
       termsOfService: help.TypeTermsOfService;
-    };
-    export class DeepLinkInfoEmpty extends VirtualClass<void> {};
-    export class DeepLinkInfo extends VirtualClass<{
+    }
+
+      export class DeepLinkInfoEmpty extends VirtualClass<void> {
+      }
+
+      export class DeepLinkInfo extends VirtualClass<{
       // flags: undefined;
       updateApp?: true;
       message: string;
@@ -9435,22 +10727,29 @@ namespace Api {
       updateApp?: true;
       message: string;
       entities?: Api.TypeMessageEntity[];
-    };
-    export class PassportConfigNotModified extends VirtualClass<void> {};
-    export class PassportConfig extends VirtualClass<{
+    }
+
+      export class PassportConfigNotModified extends VirtualClass<void> {
+      }
+
+      export class PassportConfig extends VirtualClass<{
       hash: int;
       countriesLangs: Api.TypeDataJSON;
     }> {
       hash: int;
       countriesLangs: Api.TypeDataJSON;
-    };
-    export class SupportName extends VirtualClass<{
+    }
+
+      export class SupportName extends VirtualClass<{
       name: string;
     }> {
       name: string;
-    };
-    export class UserInfoEmpty extends VirtualClass<void> {};
-    export class UserInfo extends VirtualClass<{
+    }
+
+      export class UserInfoEmpty extends VirtualClass<void> {
+      }
+
+      export class UserInfo extends VirtualClass<{
       message: string;
       entities: Api.TypeMessageEntity[];
       author: string;
@@ -9460,13 +10759,15 @@ namespace Api {
       entities: Api.TypeMessageEntity[];
       author: string;
       date: int;
-    };
-    export class PromoDataEmpty extends VirtualClass<{
+    }
+
+      export class PromoDataEmpty extends VirtualClass<{
       expires: int;
     }> {
       expires: int;
-    };
-    export class PromoData extends VirtualClass<{
+    }
+
+      export class PromoData extends VirtualClass<{
       // flags: undefined;
       proxy?: true;
       expires: int;
@@ -9484,8 +10785,9 @@ namespace Api {
       users: Api.TypeUser[];
       psaType?: string;
       psaMessage?: string;
-    };
-    export class CountryCode extends VirtualClass<{
+    }
+
+      export class CountryCode extends VirtualClass<{
       // flags: undefined;
       countryCode: string;
       prefixes?: string[];
@@ -9495,8 +10797,9 @@ namespace Api {
       countryCode: string;
       prefixes?: string[];
       patterns?: string[];
-    };
-    export class Country extends VirtualClass<{
+    }
+
+      export class Country extends VirtualClass<{
       // flags: undefined;
       hidden?: true;
       iso2: string;
@@ -9510,16 +10813,20 @@ namespace Api {
       defaultName: string;
       name?: string;
       countryCodes: help.TypeCountryCode[];
-    };
-    export class CountriesListNotModified extends VirtualClass<void> {};
-    export class CountriesList extends VirtualClass<{
+    }
+
+      export class CountriesListNotModified extends VirtualClass<void> {
+      }
+
+      export class CountriesList extends VirtualClass<{
       countries: help.TypeCountry[];
       hash: int;
     }> {
       countries: help.TypeCountry[];
       hash: int;
-    };
-    export class PremiumPromo extends VirtualClass<{
+    }
+
+      export class PremiumPromo extends VirtualClass<{
       statusText: string;
       statusEntities: Api.TypeMessageEntity[];
       videoSections: string[];
@@ -9533,8 +10840,9 @@ namespace Api {
       videos: Api.TypeDocument[];
       periodOptions: Api.TypePremiumSubscriptionOption[];
       users: Api.TypeUser[];
-    };
-    export class ConfigSimple extends VirtualClass<{
+    }
+
+      export class ConfigSimple extends VirtualClass<{
       date: int;
       expires: int;
       rules: Api.TypeAccessPointRule[];
@@ -9542,7 +10850,7 @@ namespace Api {
       date: int;
       expires: int;
       rules: Api.TypeAccessPointRule[];
-    };
+    }
   }
 
   export namespace account {
@@ -9554,15 +10862,17 @@ namespace Api {
       rules: Api.TypePrivacyRule[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class Authorizations extends VirtualClass<{
+    }
+
+      export class Authorizations extends VirtualClass<{
       authorizationTtlDays: int;
       authorizations: Api.TypeAuthorization[];
     }> {
       authorizationTtlDays: int;
       authorizations: Api.TypeAuthorization[];
-    };
-    export class Password extends VirtualClass<{
+    }
+
+      export class Password extends VirtualClass<{
       // flags: undefined;
       hasRecovery?: true;
       hasSecureValues?: true;
@@ -9592,8 +10902,9 @@ namespace Api {
       secureRandom: bytes;
       pendingResetDate?: int;
       loginEmailPattern?: string;
-    };
-    export class PasswordSettings extends VirtualClass<{
+    }
+
+      export class PasswordSettings extends VirtualClass<{
       // flags: undefined;
       email?: string;
       secureSettings?: Api.TypeSecureSecretSettings;
@@ -9601,8 +10912,9 @@ namespace Api {
       // flags: undefined;
       email?: string;
       secureSettings?: Api.TypeSecureSecretSettings;
-    };
-    export class PasswordInputSettings extends VirtualClass<{
+    }
+
+      export class PasswordInputSettings extends VirtualClass<{
       // flags: undefined;
       newAlgo?: Api.TypePasswordKdfAlgo;
       newPasswordHash?: bytes;
@@ -9616,22 +10928,25 @@ namespace Api {
       hint?: string;
       email?: string;
       newSecureSettings?: Api.TypeSecureSecretSettings;
-    };
-    export class TmpPassword extends VirtualClass<{
+    }
+
+      export class TmpPassword extends VirtualClass<{
       tmpPassword: bytes;
       validUntil: int;
     }> {
       tmpPassword: bytes;
       validUntil: int;
-    };
-    export class WebAuthorizations extends VirtualClass<{
+    }
+
+      export class WebAuthorizations extends VirtualClass<{
       authorizations: Api.TypeWebAuthorization[];
       users: Api.TypeUser[];
     }> {
       authorizations: Api.TypeWebAuthorization[];
       users: Api.TypeUser[];
-    };
-    export class AuthorizationForm extends VirtualClass<{
+    }
+
+      export class AuthorizationForm extends VirtualClass<{
       // flags: undefined;
       requiredTypes: Api.TypeSecureRequiredType[];
       values: Api.TypeSecureValue[];
@@ -9645,28 +10960,34 @@ namespace Api {
       errors: Api.TypeSecureValueError[];
       users: Api.TypeUser[];
       privacyPolicyUrl?: string;
-    };
-    export class SentEmailCode extends VirtualClass<{
+    }
+
+      export class SentEmailCode extends VirtualClass<{
       emailPattern: string;
       length: int;
     }> {
       emailPattern: string;
       length: int;
-    };
-    export class Takeout extends VirtualClass<{
+    }
+
+      export class Takeout extends VirtualClass<{
       id: long;
     }> {
       id: long;
-    };
-    export class WallPapersNotModified extends VirtualClass<void> {};
-    export class WallPapers extends VirtualClass<{
+    }
+
+      export class WallPapersNotModified extends VirtualClass<void> {
+      }
+
+      export class WallPapers extends VirtualClass<{
       hash: long;
       wallpapers: Api.TypeWallPaper[];
     }> {
       hash: long;
       wallpapers: Api.TypeWallPaper[];
-    };
-    export class AutoDownloadSettings extends VirtualClass<{
+    }
+
+      export class AutoDownloadSettings extends VirtualClass<{
       low: Api.TypeAutoDownloadSettings;
       medium: Api.TypeAutoDownloadSettings;
       high: Api.TypeAutoDownloadSettings;
@@ -9674,16 +10995,20 @@ namespace Api {
       low: Api.TypeAutoDownloadSettings;
       medium: Api.TypeAutoDownloadSettings;
       high: Api.TypeAutoDownloadSettings;
-    };
-    export class ThemesNotModified extends VirtualClass<void> {};
-    export class Themes extends VirtualClass<{
+    }
+
+      export class ThemesNotModified extends VirtualClass<void> {
+      }
+
+      export class Themes extends VirtualClass<{
       hash: long;
       themes: Api.TypeTheme[];
     }> {
       hash: long;
       themes: Api.TypeTheme[];
-    };
-    export class ContentSettings extends VirtualClass<{
+    }
+
+      export class ContentSettings extends VirtualClass<{
       // flags: undefined;
       sensitiveEnabled?: true;
       sensitiveCanChange?: true;
@@ -9691,53 +11016,69 @@ namespace Api {
       // flags: undefined;
       sensitiveEnabled?: true;
       sensitiveCanChange?: true;
-    };
-    export class ResetPasswordFailedWait extends VirtualClass<{
+    }
+
+      export class ResetPasswordFailedWait extends VirtualClass<{
       retryDate: int;
     }> {
       retryDate: int;
-    };
-    export class ResetPasswordRequestedWait extends VirtualClass<{
+    }
+
+      export class ResetPasswordRequestedWait extends VirtualClass<{
       untilDate: int;
     }> {
       untilDate: int;
-    };
-    export class ResetPasswordOk extends VirtualClass<void> {};
-    export class SavedRingtonesNotModified extends VirtualClass<void> {};
-    export class SavedRingtones extends VirtualClass<{
+    }
+
+      export class ResetPasswordOk extends VirtualClass<void> {
+      }
+
+      export class SavedRingtonesNotModified extends VirtualClass<void> {
+      }
+
+      export class SavedRingtones extends VirtualClass<{
       hash: long;
       ringtones: Api.TypeDocument[];
     }> {
       hash: long;
       ringtones: Api.TypeDocument[];
-    };
-    export class SavedRingtone extends VirtualClass<void> {};
-    export class SavedRingtoneConverted extends VirtualClass<{
+    }
+
+      export class SavedRingtone extends VirtualClass<void> {
+      }
+
+      export class SavedRingtoneConverted extends VirtualClass<{
       document: Api.TypeDocument;
     }> {
       document: Api.TypeDocument;
-    };
-    export class EmojiStatusesNotModified extends VirtualClass<void> {};
-    export class EmojiStatuses extends VirtualClass<{
+    }
+
+      export class EmojiStatusesNotModified extends VirtualClass<void> {
+      }
+
+      export class EmojiStatuses extends VirtualClass<{
       hash: long;
       statuses: Api.TypeEmojiStatus[];
     }> {
       hash: long;
       statuses: Api.TypeEmojiStatus[];
-    };
-    export class EmailVerified extends VirtualClass<{
+    }
+
+      export class EmailVerified extends VirtualClass<{
       email: string;
     }> {
       email: string;
-    };
-    export class EmailVerifiedLogin extends VirtualClass<{
+    }
+
+      export class EmailVerifiedLogin extends VirtualClass<{
       email: string;
       sentCode: auth.TypeSentCode;
     }> {
       email: string;
       sentCode: auth.TypeSentCode;
-    };
-    export class AutoSaveSettings extends VirtualClass<{
+    }
+
+      export class AutoSaveSettings extends VirtualClass<{
       usersSettings: Api.TypeAutoSaveSettings;
       chatsSettings: Api.TypeAutoSaveSettings;
       broadcastsSettings: Api.TypeAutoSaveSettings;
@@ -9751,7 +11092,7 @@ namespace Api {
       exceptions: Api.TypeAutoSaveException[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
+    }
   }
 
   export namespace channels {
@@ -9765,9 +11106,12 @@ namespace Api {
       participants: Api.TypeChannelParticipant[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class ChannelParticipantsNotModified extends VirtualClass<void> {};
-    export class ChannelParticipant extends VirtualClass<{
+    }
+
+      export class ChannelParticipantsNotModified extends VirtualClass<void> {
+      }
+
+      export class ChannelParticipant extends VirtualClass<{
       participant: Api.TypeChannelParticipant;
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
@@ -9775,8 +11119,9 @@ namespace Api {
       participant: Api.TypeChannelParticipant;
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class AdminLogResults extends VirtualClass<{
+    }
+
+      export class AdminLogResults extends VirtualClass<{
       events: Api.TypeChannelAdminLogEvent[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
@@ -9784,8 +11129,9 @@ namespace Api {
       events: Api.TypeChannelAdminLogEvent[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class SendAsPeers extends VirtualClass<{
+    }
+
+      export class SendAsPeers extends VirtualClass<{
       peers: Api.TypeSendAsPeer[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
@@ -9793,7 +11139,7 @@ namespace Api {
       peers: Api.TypeSendAsPeer[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
+    }
   }
 
   export namespace payments {
@@ -9833,8 +11179,9 @@ namespace Api {
       savedInfo?: Api.TypePaymentRequestedInfo;
       savedCredentials?: Api.TypePaymentSavedCredentials[];
       users: Api.TypeUser[];
-    };
-    export class ValidatedRequestedInfo extends VirtualClass<{
+    }
+
+      export class ValidatedRequestedInfo extends VirtualClass<{
       // flags: undefined;
       id?: string;
       shippingOptions?: Api.TypeShippingOption[];
@@ -9842,18 +11189,21 @@ namespace Api {
       // flags: undefined;
       id?: string;
       shippingOptions?: Api.TypeShippingOption[];
-    };
-    export class PaymentResult extends VirtualClass<{
+    }
+
+      export class PaymentResult extends VirtualClass<{
       updates: Api.TypeUpdates;
     }> {
       updates: Api.TypeUpdates;
-    };
-    export class PaymentVerificationNeeded extends VirtualClass<{
+    }
+
+      export class PaymentVerificationNeeded extends VirtualClass<{
       url: string;
     }> {
       url: string;
-    };
-    export class PaymentReceipt extends VirtualClass<{
+    }
+
+      export class PaymentReceipt extends VirtualClass<{
       // flags: undefined;
       date: int;
       botId: long;
@@ -9885,8 +11235,9 @@ namespace Api {
       totalAmount: long;
       credentialsTitle: string;
       users: Api.TypeUser[];
-    };
-    export class SavedInfo extends VirtualClass<{
+    }
+
+      export class SavedInfo extends VirtualClass<{
       // flags: undefined;
       hasSavedCredentials?: true;
       savedInfo?: Api.TypePaymentRequestedInfo;
@@ -9894,19 +11245,21 @@ namespace Api {
       // flags: undefined;
       hasSavedCredentials?: true;
       savedInfo?: Api.TypePaymentRequestedInfo;
-    };
-    export class BankCardData extends VirtualClass<{
+    }
+
+      export class BankCardData extends VirtualClass<{
       title: string;
       openUrls: Api.TypeBankCardOpenUrl[];
     }> {
       title: string;
       openUrls: Api.TypeBankCardOpenUrl[];
-    };
-    export class ExportedInvoice extends VirtualClass<{
+    }
+
+      export class ExportedInvoice extends VirtualClass<{
       url: string;
     }> {
       url: string;
-    };
+    }
   }
 
   export namespace phone {
@@ -9916,8 +11269,9 @@ namespace Api {
     }> {
       phoneCall: Api.TypePhoneCall;
       users: Api.TypeUser[];
-    };
-    export class GroupCall extends VirtualClass<{
+    }
+
+      export class GroupCall extends VirtualClass<{
       call: Api.TypeGroupCall;
       participants: Api.TypeGroupCallParticipant[];
       participantsNextOffset: string;
@@ -9929,8 +11283,9 @@ namespace Api {
       participantsNextOffset: string;
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class GroupParticipants extends VirtualClass<{
+    }
+
+      export class GroupParticipants extends VirtualClass<{
       count: int;
       participants: Api.TypeGroupCallParticipant[];
       nextOffset: string;
@@ -9944,8 +11299,9 @@ namespace Api {
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
       version: int;
-    };
-    export class JoinAsPeers extends VirtualClass<{
+    }
+
+      export class JoinAsPeers extends VirtualClass<{
       peers: Api.TypePeer[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
@@ -9953,24 +11309,27 @@ namespace Api {
       peers: Api.TypePeer[];
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
-    export class ExportedGroupCallInvite extends VirtualClass<{
+    }
+
+      export class ExportedGroupCallInvite extends VirtualClass<{
       link: string;
     }> {
       link: string;
-    };
-    export class GroupCallStreamChannels extends VirtualClass<{
+    }
+
+      export class GroupCallStreamChannels extends VirtualClass<{
       channels: Api.TypeGroupCallStreamChannel[];
     }> {
       channels: Api.TypeGroupCallStreamChannel[];
-    };
-    export class GroupCallStreamRtmpUrl extends VirtualClass<{
+    }
+
+      export class GroupCallStreamRtmpUrl extends VirtualClass<{
       url: string;
       key: string;
     }> {
       url: string;
       key: string;
-    };
+    }
   }
 
   export namespace stats {
@@ -10006,8 +11365,9 @@ namespace Api {
       newFollowersBySourceGraph: Api.TypeStatsGraph;
       languagesGraph: Api.TypeStatsGraph;
       recentMessageInteractions: Api.TypeMessageInteractionCounters[];
-    };
-    export class MegagroupStats extends VirtualClass<{
+    }
+
+      export class MegagroupStats extends VirtualClass<{
       period: Api.TypeStatsDateRangeDays;
       members: Api.TypeStatsAbsValueAndPrev;
       messages: Api.TypeStatsAbsValueAndPrev;
@@ -10043,12 +11403,13 @@ namespace Api {
       topAdmins: Api.TypeStatsGroupTopAdmin[];
       topInviters: Api.TypeStatsGroupTopInviter[];
       users: Api.TypeUser[];
-    };
-    export class MessageStats extends VirtualClass<{
+    }
+
+      export class MessageStats extends VirtualClass<{
       viewsGraph: Api.TypeStatsGraph;
     }> {
       viewsGraph: Api.TypeStatsGraph;
-    };
+    }
   }
 
   export namespace stickers {
@@ -10056,7 +11417,7 @@ namespace Api {
       shortName: string;
     }> {
       shortName: string;
-    };
+    }
   }
 
   export namespace users {
@@ -10068,7 +11429,7 @@ namespace Api {
       fullUser: Api.TypeUserFull;
       chats: Api.TypeChat[];
       users: Api.TypeUser[];
-    };
+    }
   }
 
   export class InvokeAfterMsg extends Request<Partial<{
@@ -10077,15 +11438,17 @@ namespace Api {
   }>, X> {
     msgId: long;
     query: X;
-  };
-  export class InvokeAfterMsgs extends Request<Partial<{
+  }
+
+    export class InvokeAfterMsgs extends Request<Partial<{
     msgIds: long[];
     query: X;
   }>, X> {
     msgIds: long[];
     query: X;
-  };
-  export class InitConnection extends Request<Partial<{
+  }
+
+    export class InitConnection extends Request<Partial<{
     // flags: undefined;
     apiId: int;
     deviceModel: string;
@@ -10109,49 +11472,57 @@ namespace Api {
     proxy?: Api.TypeInputClientProxy;
     params?: Api.TypeJSONValue;
     query: X;
-  };
-  export class InvokeWithLayer extends Request<Partial<{
+  }
+
+    export class InvokeWithLayer extends Request<Partial<{
     layer: int;
     query: X;
   }>, X> {
     layer: int;
     query: X;
-  };
-  export class InvokeWithoutUpdates extends Request<Partial<{
+  }
+
+    export class InvokeWithoutUpdates extends Request<Partial<{
     query: X;
   }>, X> {
     query: X;
-  };
-  export class InvokeWithMessagesRange extends Request<Partial<{
+  }
+
+    export class InvokeWithMessagesRange extends Request<Partial<{
     range: Api.TypeMessageRange;
     query: X;
   }>, X> {
     range: Api.TypeMessageRange;
     query: X;
-  };
-  export class InvokeWithTakeout extends Request<Partial<{
+  }
+
+    export class InvokeWithTakeout extends Request<Partial<{
     takeoutId: long;
     query: X;
   }>, X> {
     takeoutId: long;
     query: X;
-  };
-  export class ReqPq extends Request<Partial<{
+  }
+
+    export class ReqPq extends Request<Partial<{
     nonce: int128;
   }>, Api.TypeResPQ> {
     nonce: int128;
-  };
-  export class ReqPqMulti extends Request<Partial<{
+  }
+
+    export class ReqPqMulti extends Request<Partial<{
     nonce: int128;
   }>, Api.TypeResPQ> {
     nonce: int128;
-  };
-  export class ReqPqMultiNew extends Request<Partial<{
+  }
+
+    export class ReqPqMultiNew extends Request<Partial<{
     nonce: int128;
   }>, Api.TypeResPQ> {
     nonce: int128;
-  };
-  export class ReqDHParams extends Request<Partial<{
+  }
+
+    export class ReqDHParams extends Request<Partial<{
     nonce: int128;
     serverNonce: int128;
     p: bytes;
@@ -10165,8 +11536,9 @@ namespace Api {
     q: bytes;
     publicKeyFingerprint: long;
     encryptedData: bytes;
-  };
-  export class SetClientDHParams extends Request<Partial<{
+  }
+
+    export class SetClientDHParams extends Request<Partial<{
     nonce: int128;
     serverNonce: int128;
     encryptedData: bytes;
@@ -10174,38 +11546,44 @@ namespace Api {
     nonce: int128;
     serverNonce: int128;
     encryptedData: bytes;
-  };
-  export class DestroyAuthKey extends Request<void, Api.TypeDestroyAuthKeyRes> {};
-  export class RpcDropAnswer extends Request<Partial<{
+  }
+
+    export class DestroyAuthKey extends Request<void, Api.TypeDestroyAuthKeyRes> {
+    }
+
+    export class RpcDropAnswer extends Request<Partial<{
     reqMsgId: long;
   }>, Api.TypeRpcDropAnswer> {
     reqMsgId: long;
-  };
-  export class GetFutureSalts extends Request<Partial<{
+  }
+
+    export class GetFutureSalts extends Request<Partial<{
     num: int;
   }>, Api.TypeFutureSalts> {
     num: int;
-  };
-  export class Ping extends Request<Partial<{
+  }
+
+    export class Ping extends Request<Partial<{
     pingId: long;
   }>, Api.TypePong> {
     pingId: long;
-  };
-  export class PingDelayDisconnect extends Request<Partial<{
+  }
+
+    export class PingDelayDisconnect extends Request<Partial<{
     pingId: long;
     disconnectDelay: int;
   }>, Api.TypePong> {
     pingId: long;
     disconnectDelay: int;
-  };
-  export class DestroySession extends Request<Partial<{
+  }
+
+    export class DestroySession extends Request<Partial<{
     sessionId: long;
   }>, Api.TypeDestroySessionRes> {
     sessionId: long;
-  };
-  
+  }
 
-  export namespace auth {
+    export namespace auth {
     export class SendCode extends Request<Partial<{
       phoneNumber: string;
       apiId: int;
@@ -10216,8 +11594,9 @@ namespace Api {
       apiId: int;
       apiHash: string;
       settings: Api.TypeCodeSettings;
-    };
-    export class SignUp extends Request<Partial<{
+    }
+
+      export class SignUp extends Request<Partial<{
       phoneNumber: string;
       phoneCodeHash: string;
       firstName: string;
@@ -10227,8 +11606,9 @@ namespace Api {
       phoneCodeHash: string;
       firstName: string;
       lastName: string;
-    };
-    export class SignIn extends Request<Partial<{
+    }
+
+      export class SignIn extends Request<Partial<{
       // flags: undefined;
       phoneNumber: string;
       phoneCodeHash: string;
@@ -10240,22 +11620,29 @@ namespace Api {
       phoneCodeHash: string;
       phoneCode?: string;
       emailVerification?: Api.TypeEmailVerification;
-    };
-    export class LogOut extends Request<void, auth.TypeLoggedOut> {};
-    export class ResetAuthorizations extends Request<void, Bool> {};
-    export class ExportAuthorization extends Request<Partial<{
+    }
+
+      export class LogOut extends Request<void, auth.TypeLoggedOut> {
+      }
+
+      export class ResetAuthorizations extends Request<void, Bool> {
+      }
+
+      export class ExportAuthorization extends Request<Partial<{
       dcId: int;
     }>, auth.TypeExportedAuthorization> {
       dcId: int;
-    };
-    export class ImportAuthorization extends Request<Partial<{
+    }
+
+      export class ImportAuthorization extends Request<Partial<{
       id: long;
       bytes: bytes;
     }>, auth.TypeAuthorization> {
       id: long;
       bytes: bytes;
-    };
-    export class BindTempAuthKey extends Request<Partial<{
+    }
+
+      export class BindTempAuthKey extends Request<Partial<{
       permAuthKeyId: long;
       nonce: long;
       expiresAt: int;
@@ -10265,8 +11652,9 @@ namespace Api {
       nonce: long;
       expiresAt: int;
       encryptedMessage: bytes;
-    };
-    export class ImportBotAuthorization extends Request<Partial<{
+    }
+
+      export class ImportBotAuthorization extends Request<Partial<{
       // flags: int;
       apiId: int;
       apiHash: string;
@@ -10276,14 +11664,18 @@ namespace Api {
       apiId: int;
       apiHash: string;
       botAuthToken: string;
-    };
-    export class CheckPassword extends Request<Partial<{
+    }
+
+      export class CheckPassword extends Request<Partial<{
       password: Api.TypeInputCheckPasswordSRP;
     }>, auth.TypeAuthorization> {
       password: Api.TypeInputCheckPasswordSRP;
-    };
-    export class RequestPasswordRecovery extends Request<void, auth.TypePasswordRecovery> {};
-    export class RecoverPassword extends Request<Partial<{
+    }
+
+      export class RequestPasswordRecovery extends Request<void, auth.TypePasswordRecovery> {
+      }
+
+      export class RecoverPassword extends Request<Partial<{
       // flags: undefined;
       code: string;
       newSettings?: account.TypePasswordInputSettings;
@@ -10291,27 +11683,31 @@ namespace Api {
       // flags: undefined;
       code: string;
       newSettings?: account.TypePasswordInputSettings;
-    };
-    export class ResendCode extends Request<Partial<{
+    }
+
+      export class ResendCode extends Request<Partial<{
       phoneNumber: string;
       phoneCodeHash: string;
     }>, auth.TypeSentCode> {
       phoneNumber: string;
       phoneCodeHash: string;
-    };
-    export class CancelCode extends Request<Partial<{
+    }
+
+      export class CancelCode extends Request<Partial<{
       phoneNumber: string;
       phoneCodeHash: string;
     }>, Bool> {
       phoneNumber: string;
       phoneCodeHash: string;
-    };
-    export class DropTempAuthKeys extends Request<Partial<{
+    }
+
+      export class DropTempAuthKeys extends Request<Partial<{
       exceptAuthKeys: long[];
     }>, Bool> {
       exceptAuthKeys: long[];
-    };
-    export class ExportLoginToken extends Request<Partial<{
+    }
+
+      export class ExportLoginToken extends Request<Partial<{
       apiId: int;
       apiHash: string;
       exceptIds: long[];
@@ -10319,23 +11715,27 @@ namespace Api {
       apiId: int;
       apiHash: string;
       exceptIds: long[];
-    };
-    export class ImportLoginToken extends Request<Partial<{
+    }
+
+      export class ImportLoginToken extends Request<Partial<{
       token: bytes;
     }>, auth.TypeLoginToken> {
       token: bytes;
-    };
-    export class AcceptLoginToken extends Request<Partial<{
+    }
+
+      export class AcceptLoginToken extends Request<Partial<{
       token: bytes;
     }>, Api.TypeAuthorization> {
       token: bytes;
-    };
-    export class CheckRecoveryPassword extends Request<Partial<{
+    }
+
+      export class CheckRecoveryPassword extends Request<Partial<{
       code: string;
     }>, Bool> {
       code: string;
-    };
-    export class ImportWebTokenAuthorization extends Request<Partial<{
+    }
+
+      export class ImportWebTokenAuthorization extends Request<Partial<{
       apiId: int;
       apiHash: string;
       webAuthToken: string;
@@ -10343,8 +11743,9 @@ namespace Api {
       apiId: int;
       apiHash: string;
       webAuthToken: string;
-    };
-    export class RequestFirebaseSms extends Request<Partial<{
+    }
+
+      export class RequestFirebaseSms extends Request<Partial<{
       // flags: undefined;
       phoneNumber: string;
       phoneCodeHash: string;
@@ -10356,7 +11757,7 @@ namespace Api {
       phoneCodeHash: string;
       safetyNetToken?: string;
       iosPushSecret?: string;
-    };
+    }
   }
 
   export namespace account {
@@ -10376,8 +11777,9 @@ namespace Api {
       appSandbox: Bool;
       secret: bytes;
       otherUids: long[];
-    };
-    export class UnregisterDevice extends Request<Partial<{
+    }
+
+      export class UnregisterDevice extends Request<Partial<{
       tokenType: int;
       token: string;
       otherUids: long[];
@@ -10385,21 +11787,26 @@ namespace Api {
       tokenType: int;
       token: string;
       otherUids: long[];
-    };
-    export class UpdateNotifySettings extends Request<Partial<{
+    }
+
+      export class UpdateNotifySettings extends Request<Partial<{
       peer: Api.TypeInputNotifyPeer;
       settings: Api.TypeInputPeerNotifySettings;
     }>, Bool> {
       peer: Api.TypeInputNotifyPeer;
       settings: Api.TypeInputPeerNotifySettings;
-    };
-    export class GetNotifySettings extends Request<Partial<{
+    }
+
+      export class GetNotifySettings extends Request<Partial<{
       peer: Api.TypeInputNotifyPeer;
     }>, Api.TypePeerNotifySettings> {
       peer: Api.TypeInputNotifyPeer;
-    };
-    export class ResetNotifySettings extends Request<void, Bool> {};
-    export class UpdateProfile extends Request<Partial<{
+    }
+
+      export class ResetNotifySettings extends Request<void, Bool> {
+      }
+
+      export class UpdateProfile extends Request<Partial<{
       // flags: undefined;
       firstName?: string;
       lastName?: string;
@@ -10409,18 +11816,21 @@ namespace Api {
       firstName?: string;
       lastName?: string;
       about?: string;
-    };
-    export class UpdateStatus extends Request<Partial<{
+    }
+
+      export class UpdateStatus extends Request<Partial<{
       offline: Bool;
     }>, Bool> {
       offline: Bool;
-    };
-    export class GetWallPapers extends Request<Partial<{
+    }
+
+      export class GetWallPapers extends Request<Partial<{
       hash: long;
     }>, account.TypeWallPapers> {
       hash: long;
-    };
-    export class ReportPeer extends Request<Partial<{
+    }
+
+      export class ReportPeer extends Request<Partial<{
       peer: Api.TypeInputPeer;
       reason: Api.TypeReportReason;
       message: string;
@@ -10428,30 +11838,35 @@ namespace Api {
       peer: Api.TypeInputPeer;
       reason: Api.TypeReportReason;
       message: string;
-    };
-    export class CheckUsername extends Request<Partial<{
+    }
+
+      export class CheckUsername extends Request<Partial<{
       username: string;
     }>, Bool> {
       username: string;
-    };
-    export class UpdateUsername extends Request<Partial<{
+    }
+
+      export class UpdateUsername extends Request<Partial<{
       username: string;
     }>, Api.TypeUser> {
       username: string;
-    };
-    export class GetPrivacy extends Request<Partial<{
+    }
+
+      export class GetPrivacy extends Request<Partial<{
       key: Api.TypeInputPrivacyKey;
     }>, account.TypePrivacyRules> {
       key: Api.TypeInputPrivacyKey;
-    };
-    export class SetPrivacy extends Request<Partial<{
+    }
+
+      export class SetPrivacy extends Request<Partial<{
       key: Api.TypeInputPrivacyKey;
       rules: Api.TypeInputPrivacyRule[];
     }>, account.TypePrivacyRules> {
       key: Api.TypeInputPrivacyKey;
       rules: Api.TypeInputPrivacyRule[];
-    };
-    export class DeleteAccount extends Request<Partial<{
+    }
+
+      export class DeleteAccount extends Request<Partial<{
       // flags: undefined;
       reason: string;
       password?: Api.TypeInputCheckPasswordSRP;
@@ -10459,21 +11874,26 @@ namespace Api {
       // flags: undefined;
       reason: string;
       password?: Api.TypeInputCheckPasswordSRP;
-    };
-    export class GetAccountTTL extends Request<void, Api.TypeAccountDaysTTL> {};
-    export class SetAccountTTL extends Request<Partial<{
+    }
+
+      export class GetAccountTTL extends Request<void, Api.TypeAccountDaysTTL> {
+      }
+
+      export class SetAccountTTL extends Request<Partial<{
       ttl: Api.TypeAccountDaysTTL;
     }>, Bool> {
       ttl: Api.TypeAccountDaysTTL;
-    };
-    export class SendChangePhoneCode extends Request<Partial<{
+    }
+
+      export class SendChangePhoneCode extends Request<Partial<{
       phoneNumber: string;
       settings: Api.TypeCodeSettings;
     }>, auth.TypeSentCode> {
       phoneNumber: string;
       settings: Api.TypeCodeSettings;
-    };
-    export class ChangePhone extends Request<Partial<{
+    }
+
+      export class ChangePhone extends Request<Partial<{
       phoneNumber: string;
       phoneCodeHash: string;
       phoneCode: string;
@@ -10481,78 +11901,100 @@ namespace Api {
       phoneNumber: string;
       phoneCodeHash: string;
       phoneCode: string;
-    };
-    export class UpdateDeviceLocked extends Request<Partial<{
+    }
+
+      export class UpdateDeviceLocked extends Request<Partial<{
       period: int;
     }>, Bool> {
       period: int;
-    };
-    export class GetAuthorizations extends Request<void, account.TypeAuthorizations> {};
-    export class ResetAuthorization extends Request<Partial<{
+    }
+
+      export class GetAuthorizations extends Request<void, account.TypeAuthorizations> {
+      }
+
+      export class ResetAuthorization extends Request<Partial<{
       hash: long;
     }>, Bool> {
       hash: long;
-    };
-    export class GetPassword extends Request<void, account.TypePassword> {};
-    export class GetPasswordSettings extends Request<Partial<{
+    }
+
+      export class GetPassword extends Request<void, account.TypePassword> {
+      }
+
+      export class GetPasswordSettings extends Request<Partial<{
       password: Api.TypeInputCheckPasswordSRP;
     }>, account.TypePasswordSettings> {
       password: Api.TypeInputCheckPasswordSRP;
-    };
-    export class UpdatePasswordSettings extends Request<Partial<{
+    }
+
+      export class UpdatePasswordSettings extends Request<Partial<{
       password: Api.TypeInputCheckPasswordSRP;
       newSettings: account.TypePasswordInputSettings;
     }>, Bool> {
       password: Api.TypeInputCheckPasswordSRP;
       newSettings: account.TypePasswordInputSettings;
-    };
-    export class SendConfirmPhoneCode extends Request<Partial<{
+    }
+
+      export class SendConfirmPhoneCode extends Request<Partial<{
       hash: string;
       settings: Api.TypeCodeSettings;
     }>, auth.TypeSentCode> {
       hash: string;
       settings: Api.TypeCodeSettings;
-    };
-    export class ConfirmPhone extends Request<Partial<{
+    }
+
+      export class ConfirmPhone extends Request<Partial<{
       phoneCodeHash: string;
       phoneCode: string;
     }>, Bool> {
       phoneCodeHash: string;
       phoneCode: string;
-    };
-    export class GetTmpPassword extends Request<Partial<{
+    }
+
+      export class GetTmpPassword extends Request<Partial<{
       password: Api.TypeInputCheckPasswordSRP;
       period: int;
     }>, account.TypeTmpPassword> {
       password: Api.TypeInputCheckPasswordSRP;
       period: int;
-    };
-    export class GetWebAuthorizations extends Request<void, account.TypeWebAuthorizations> {};
-    export class ResetWebAuthorization extends Request<Partial<{
+    }
+
+      export class GetWebAuthorizations extends Request<void, account.TypeWebAuthorizations> {
+      }
+
+      export class ResetWebAuthorization extends Request<Partial<{
       hash: long;
     }>, Bool> {
       hash: long;
-    };
-    export class ResetWebAuthorizations extends Request<void, Bool> {};
-    export class GetAllSecureValues extends Request<void, Api.TypeSecureValue[]> {};
-    export class GetSecureValue extends Request<Partial<{
+    }
+
+      export class ResetWebAuthorizations extends Request<void, Bool> {
+      }
+
+      export class GetAllSecureValues extends Request<void, Api.TypeSecureValue[]> {
+      }
+
+      export class GetSecureValue extends Request<Partial<{
       types: Api.TypeSecureValueType[];
     }>, Api.TypeSecureValue[]> {
       types: Api.TypeSecureValueType[];
-    };
-    export class SaveSecureValue extends Request<Partial<{
+    }
+
+      export class SaveSecureValue extends Request<Partial<{
       value: Api.TypeInputSecureValue;
       secureSecretId: long;
     }>, Api.TypeSecureValue> {
       value: Api.TypeInputSecureValue;
       secureSecretId: long;
-    };
-    export class DeleteSecureValue extends Request<Partial<{
+    }
+
+      export class DeleteSecureValue extends Request<Partial<{
       types: Api.TypeSecureValueType[];
     }>, Bool> {
       types: Api.TypeSecureValueType[];
-    };
-    export class GetAuthorizationForm extends Request<Partial<{
+    }
+
+      export class GetAuthorizationForm extends Request<Partial<{
       botId: long;
       scope: string;
       publicKey: string;
@@ -10560,8 +12002,9 @@ namespace Api {
       botId: long;
       scope: string;
       publicKey: string;
-    };
-    export class AcceptAuthorization extends Request<Partial<{
+    }
+
+      export class AcceptAuthorization extends Request<Partial<{
       botId: long;
       scope: string;
       publicKey: string;
@@ -10573,15 +12016,17 @@ namespace Api {
       publicKey: string;
       valueHashes: Api.TypeSecureValueHash[];
       credentials: Api.TypeSecureCredentialsEncrypted;
-    };
-    export class SendVerifyPhoneCode extends Request<Partial<{
+    }
+
+      export class SendVerifyPhoneCode extends Request<Partial<{
       phoneNumber: string;
       settings: Api.TypeCodeSettings;
     }>, auth.TypeSentCode> {
       phoneNumber: string;
       settings: Api.TypeCodeSettings;
-    };
-    export class VerifyPhone extends Request<Partial<{
+    }
+
+      export class VerifyPhone extends Request<Partial<{
       phoneNumber: string;
       phoneCodeHash: string;
       phoneCode: string;
@@ -10589,22 +12034,25 @@ namespace Api {
       phoneNumber: string;
       phoneCodeHash: string;
       phoneCode: string;
-    };
-    export class SendVerifyEmailCode extends Request<Partial<{
+    }
+
+      export class SendVerifyEmailCode extends Request<Partial<{
       purpose: Api.TypeEmailVerifyPurpose;
       email: string;
     }>, account.TypeSentEmailCode> {
       purpose: Api.TypeEmailVerifyPurpose;
       email: string;
-    };
-    export class VerifyEmail extends Request<Partial<{
+    }
+
+      export class VerifyEmail extends Request<Partial<{
       purpose: Api.TypeEmailVerifyPurpose;
       verification: Api.TypeEmailVerification;
     }>, account.TypeEmailVerified> {
       purpose: Api.TypeEmailVerifyPurpose;
       verification: Api.TypeEmailVerification;
-    };
-    export class InitTakeoutSession extends Request<Partial<{
+    }
+
+      export class InitTakeoutSession extends Request<Partial<{
       // flags: undefined;
       contacts?: true;
       messageUsers?: true;
@@ -10622,28 +12070,38 @@ namespace Api {
       messageChannels?: true;
       files?: true;
       fileMaxSize?: long;
-    };
-    export class FinishTakeoutSession extends Request<Partial<{
+    }
+
+      export class FinishTakeoutSession extends Request<Partial<{
       // flags: undefined;
       success?: true;
     } | void>, Bool> {
       // flags: undefined;
       success?: true;
-    };
-    export class ConfirmPasswordEmail extends Request<Partial<{
+    }
+
+      export class ConfirmPasswordEmail extends Request<Partial<{
       code: string;
     }>, Bool> {
       code: string;
-    };
-    export class ResendPasswordEmail extends Request<void, Bool> {};
-    export class CancelPasswordEmail extends Request<void, Bool> {};
-    export class GetContactSignUpNotification extends Request<void, Bool> {};
-    export class SetContactSignUpNotification extends Request<Partial<{
+    }
+
+      export class ResendPasswordEmail extends Request<void, Bool> {
+      }
+
+      export class CancelPasswordEmail extends Request<void, Bool> {
+      }
+
+      export class GetContactSignUpNotification extends Request<void, Bool> {
+      }
+
+      export class SetContactSignUpNotification extends Request<Partial<{
       silent: Bool;
     }>, Bool> {
       silent: Bool;
-    };
-    export class GetNotifyExceptions extends Request<Partial<{
+    }
+
+      export class GetNotifyExceptions extends Request<Partial<{
       // flags: undefined;
       compareSound?: true;
       peer?: Api.TypeInputNotifyPeer;
@@ -10651,13 +12109,15 @@ namespace Api {
       // flags: undefined;
       compareSound?: true;
       peer?: Api.TypeInputNotifyPeer;
-    };
-    export class GetWallPaper extends Request<Partial<{
+    }
+
+      export class GetWallPaper extends Request<Partial<{
       wallpaper: Api.TypeInputWallPaper;
     }>, Api.TypeWallPaper> {
       wallpaper: Api.TypeInputWallPaper;
-    };
-    export class UploadWallPaper extends Request<Partial<{
+    }
+
+      export class UploadWallPaper extends Request<Partial<{
       file: Api.TypeInputFile;
       mimeType: string;
       settings: Api.TypeWallPaperSettings;
@@ -10665,8 +12125,9 @@ namespace Api {
       file: Api.TypeInputFile;
       mimeType: string;
       settings: Api.TypeWallPaperSettings;
-    };
-    export class SaveWallPaper extends Request<Partial<{
+    }
+
+      export class SaveWallPaper extends Request<Partial<{
       wallpaper: Api.TypeInputWallPaper;
       unsave: Bool;
       settings: Api.TypeWallPaperSettings;
@@ -10674,17 +12135,23 @@ namespace Api {
       wallpaper: Api.TypeInputWallPaper;
       unsave: Bool;
       settings: Api.TypeWallPaperSettings;
-    };
-    export class InstallWallPaper extends Request<Partial<{
+    }
+
+      export class InstallWallPaper extends Request<Partial<{
       wallpaper: Api.TypeInputWallPaper;
       settings: Api.TypeWallPaperSettings;
     }>, Bool> {
       wallpaper: Api.TypeInputWallPaper;
       settings: Api.TypeWallPaperSettings;
-    };
-    export class ResetWallPapers extends Request<void, Bool> {};
-    export class GetAutoDownloadSettings extends Request<void, account.TypeAutoDownloadSettings> {};
-    export class SaveAutoDownloadSettings extends Request<Partial<{
+    }
+
+      export class ResetWallPapers extends Request<void, Bool> {
+      }
+
+      export class GetAutoDownloadSettings extends Request<void, account.TypeAutoDownloadSettings> {
+      }
+
+      export class SaveAutoDownloadSettings extends Request<Partial<{
       // flags: undefined;
       low?: true;
       high?: true;
@@ -10694,8 +12161,9 @@ namespace Api {
       low?: true;
       high?: true;
       settings: Api.TypeAutoDownloadSettings;
-    };
-    export class UploadTheme extends Request<Partial<{
+    }
+
+      export class UploadTheme extends Request<Partial<{
       // flags: undefined;
       file: Api.TypeInputFile;
       thumb?: Api.TypeInputFile;
@@ -10707,8 +12175,9 @@ namespace Api {
       thumb?: Api.TypeInputFile;
       fileName: string;
       mimeType: string;
-    };
-    export class CreateTheme extends Request<Partial<{
+    }
+
+      export class CreateTheme extends Request<Partial<{
       // flags: undefined;
       slug: string;
       title: string;
@@ -10720,8 +12189,9 @@ namespace Api {
       title: string;
       document?: Api.TypeInputDocument;
       settings?: Api.TypeInputThemeSettings[];
-    };
-    export class UpdateTheme extends Request<Partial<{
+    }
+
+      export class UpdateTheme extends Request<Partial<{
       // flags: undefined;
       format: string;
       theme: Api.TypeInputTheme;
@@ -10737,15 +12207,17 @@ namespace Api {
       title?: string;
       document?: Api.TypeInputDocument;
       settings?: Api.TypeInputThemeSettings[];
-    };
-    export class SaveTheme extends Request<Partial<{
+    }
+
+      export class SaveTheme extends Request<Partial<{
       theme: Api.TypeInputTheme;
       unsave: Bool;
     }>, Bool> {
       theme: Api.TypeInputTheme;
       unsave: Bool;
-    };
-    export class InstallTheme extends Request<Partial<{
+    }
+
+      export class InstallTheme extends Request<Partial<{
       // flags: undefined;
       dark?: true;
       theme?: Api.TypeInputTheme;
@@ -10757,41 +12229,51 @@ namespace Api {
       theme?: Api.TypeInputTheme;
       format?: string;
       baseTheme?: Api.TypeBaseTheme;
-    };
-    export class GetTheme extends Request<Partial<{
+    }
+
+      export class GetTheme extends Request<Partial<{
       format: string;
       theme: Api.TypeInputTheme;
     }>, Api.TypeTheme> {
       format: string;
       theme: Api.TypeInputTheme;
-    };
-    export class GetThemes extends Request<Partial<{
+    }
+
+      export class GetThemes extends Request<Partial<{
       format: string;
       hash: long;
     }>, account.TypeThemes> {
       format: string;
       hash: long;
-    };
-    export class SetContentSettings extends Request<Partial<{
+    }
+
+      export class SetContentSettings extends Request<Partial<{
       // flags: undefined;
       sensitiveEnabled?: true;
     } | void>, Bool> {
       // flags: undefined;
       sensitiveEnabled?: true;
-    };
-    export class GetContentSettings extends Request<void, account.TypeContentSettings> {};
-    export class GetMultiWallPapers extends Request<Partial<{
+    }
+
+      export class GetContentSettings extends Request<void, account.TypeContentSettings> {
+      }
+
+      export class GetMultiWallPapers extends Request<Partial<{
       wallpapers: Api.TypeInputWallPaper[];
     }>, Api.TypeWallPaper[]> {
       wallpapers: Api.TypeInputWallPaper[];
-    };
-    export class GetGlobalPrivacySettings extends Request<void, Api.TypeGlobalPrivacySettings> {};
-    export class SetGlobalPrivacySettings extends Request<Partial<{
+    }
+
+      export class GetGlobalPrivacySettings extends Request<void, Api.TypeGlobalPrivacySettings> {
+      }
+
+      export class SetGlobalPrivacySettings extends Request<Partial<{
       settings: Api.TypeGlobalPrivacySettings;
     }>, Api.TypeGlobalPrivacySettings> {
       settings: Api.TypeGlobalPrivacySettings;
-    };
-    export class ReportProfilePhoto extends Request<Partial<{
+    }
+
+      export class ReportProfilePhoto extends Request<Partial<{
       peer: Api.TypeInputPeer;
       photoId: Api.TypeInputPhoto;
       reason: Api.TypeReportReason;
@@ -10801,20 +12283,27 @@ namespace Api {
       photoId: Api.TypeInputPhoto;
       reason: Api.TypeReportReason;
       message: string;
-    };
-    export class ResetPassword extends Request<void, account.TypeResetPasswordResult> {};
-    export class DeclinePasswordReset extends Request<void, Bool> {};
-    export class GetChatThemes extends Request<Partial<{
+    }
+
+      export class ResetPassword extends Request<void, account.TypeResetPasswordResult> {
+      }
+
+      export class DeclinePasswordReset extends Request<void, Bool> {
+      }
+
+      export class GetChatThemes extends Request<Partial<{
       hash: long;
     }>, account.TypeThemes> {
       hash: long;
-    };
-    export class SetAuthorizationTTL extends Request<Partial<{
+    }
+
+      export class SetAuthorizationTTL extends Request<Partial<{
       authorizationTtlDays: int;
     }>, Bool> {
       authorizationTtlDays: int;
-    };
-    export class ChangeAuthorizationSettings extends Request<Partial<{
+    }
+
+      export class ChangeAuthorizationSettings extends Request<Partial<{
       // flags: undefined;
       hash: long;
       encryptedRequestsDisabled?: Bool;
@@ -10824,20 +12313,23 @@ namespace Api {
       hash: long;
       encryptedRequestsDisabled?: Bool;
       callRequestsDisabled?: Bool;
-    };
-    export class GetSavedRingtones extends Request<Partial<{
+    }
+
+      export class GetSavedRingtones extends Request<Partial<{
       hash: long;
     }>, account.TypeSavedRingtones> {
       hash: long;
-    };
-    export class SaveRingtone extends Request<Partial<{
+    }
+
+      export class SaveRingtone extends Request<Partial<{
       id: Api.TypeInputDocument;
       unsave: Bool;
     }>, account.TypeSavedRingtone> {
       id: Api.TypeInputDocument;
       unsave: Bool;
-    };
-    export class UploadRingtone extends Request<Partial<{
+    }
+
+      export class UploadRingtone extends Request<Partial<{
       file: Api.TypeInputFile;
       fileName: string;
       mimeType: string;
@@ -10845,47 +12337,59 @@ namespace Api {
       file: Api.TypeInputFile;
       fileName: string;
       mimeType: string;
-    };
-    export class UpdateEmojiStatus extends Request<Partial<{
+    }
+
+      export class UpdateEmojiStatus extends Request<Partial<{
       emojiStatus: Api.TypeEmojiStatus;
     }>, Bool> {
       emojiStatus: Api.TypeEmojiStatus;
-    };
-    export class GetDefaultEmojiStatuses extends Request<Partial<{
+    }
+
+      export class GetDefaultEmojiStatuses extends Request<Partial<{
       hash: long;
     }>, account.TypeEmojiStatuses> {
       hash: long;
-    };
-    export class GetRecentEmojiStatuses extends Request<Partial<{
+    }
+
+      export class GetRecentEmojiStatuses extends Request<Partial<{
       hash: long;
     }>, account.TypeEmojiStatuses> {
       hash: long;
-    };
-    export class ClearRecentEmojiStatuses extends Request<void, Bool> {};
-    export class ReorderUsernames extends Request<Partial<{
+    }
+
+      export class ClearRecentEmojiStatuses extends Request<void, Bool> {
+      }
+
+      export class ReorderUsernames extends Request<Partial<{
       order: string[];
     }>, Bool> {
       order: string[];
-    };
-    export class ToggleUsername extends Request<Partial<{
+    }
+
+      export class ToggleUsername extends Request<Partial<{
       username: string;
       active: Bool;
     }>, Bool> {
       username: string;
       active: Bool;
-    };
-    export class GetDefaultProfilePhotoEmojis extends Request<Partial<{
+    }
+
+      export class GetDefaultProfilePhotoEmojis extends Request<Partial<{
       hash: long;
     }>, Api.TypeEmojiList> {
       hash: long;
-    };
-    export class GetDefaultGroupPhotoEmojis extends Request<Partial<{
+    }
+
+      export class GetDefaultGroupPhotoEmojis extends Request<Partial<{
       hash: long;
     }>, Api.TypeEmojiList> {
       hash: long;
-    };
-    export class GetAutoSaveSettings extends Request<void, account.TypeAutoSaveSettings> {};
-    export class SaveAutoSaveSettings extends Request<Partial<{
+    }
+
+      export class GetAutoSaveSettings extends Request<void, account.TypeAutoSaveSettings> {
+      }
+
+      export class SaveAutoSaveSettings extends Request<Partial<{
       // flags: undefined;
       users?: true;
       chats?: true;
@@ -10899,8 +12403,10 @@ namespace Api {
       broadcasts?: true;
       peer?: Api.TypeInputPeer;
       settings: Api.TypeAutoSaveSettings;
-    };
-    export class DeleteAutoSaveExceptions extends Request<void, Bool> {};
+    }
+
+      export class DeleteAutoSaveExceptions extends Request<void, Bool> {
+      }
   }
 
   export namespace users {
@@ -10908,19 +12414,21 @@ namespace Api {
       id: Api.TypeInputUser[];
     }>, Api.TypeUser[]> {
       id: Api.TypeInputUser[];
-    };
-    export class GetFullUser extends Request<Partial<{
+    }
+
+      export class GetFullUser extends Request<Partial<{
       id: Api.TypeInputUser;
     }>, users.TypeUserFull> {
       id: Api.TypeInputUser;
-    };
-    export class SetSecureValueErrors extends Request<Partial<{
+    }
+
+      export class SetSecureValueErrors extends Request<Partial<{
       id: Api.TypeInputUser;
       errors: Api.TypeSecureValueError[];
     }>, Bool> {
       id: Api.TypeInputUser;
       errors: Api.TypeSecureValueError[];
-    };
+    }
   }
 
   export namespace contacts {
@@ -10928,58 +12436,70 @@ namespace Api {
       hash: long;
     }>, int[]> {
       hash: long;
-    };
-    export class GetStatuses extends Request<void, Api.TypeContactStatus[]> {};
-    export class GetContacts extends Request<Partial<{
+    }
+
+      export class GetStatuses extends Request<void, Api.TypeContactStatus[]> {
+      }
+
+      export class GetContacts extends Request<Partial<{
       hash: long;
     }>, contacts.TypeContacts> {
       hash: long;
-    };
-    export class ImportContacts extends Request<Partial<{
+    }
+
+      export class ImportContacts extends Request<Partial<{
       contacts: Api.TypeInputContact[];
     }>, contacts.TypeImportedContacts> {
       contacts: Api.TypeInputContact[];
-    };
-    export class DeleteContacts extends Request<Partial<{
+    }
+
+      export class DeleteContacts extends Request<Partial<{
       id: Api.TypeInputUser[];
     }>, Api.TypeUpdates> {
       id: Api.TypeInputUser[];
-    };
-    export class DeleteByPhones extends Request<Partial<{
+    }
+
+      export class DeleteByPhones extends Request<Partial<{
       phones: string[];
     }>, Bool> {
       phones: string[];
-    };
-    export class Block extends Request<Partial<{
+    }
+
+      export class Block extends Request<Partial<{
       id: Api.TypeInputPeer;
     }>, Bool> {
       id: Api.TypeInputPeer;
-    };
-    export class Unblock extends Request<Partial<{
+    }
+
+      export class Unblock extends Request<Partial<{
       id: Api.TypeInputPeer;
     }>, Bool> {
       id: Api.TypeInputPeer;
-    };
-    export class GetBlocked extends Request<Partial<{
+    }
+
+      export class GetBlocked extends Request<Partial<{
       offset: int;
       limit: int;
     }>, contacts.TypeBlocked> {
       offset: int;
       limit: int;
-    };
-    export class Search extends Request<Partial<{
+    }
+
+      export class Search extends Request<Partial<{
       q: string;
       limit: int;
     }>, contacts.TypeFound> {
       q: string;
       limit: int;
-    };
-    export class ResolveUsername extends Request<Partial<{
+    }
+
+      export class ResolveUsername extends Request<Partial<{
       username: string;
     }>, contacts.TypeResolvedPeer> {
       username: string;
-    };
-    export class GetTopPeers extends Request<Partial<{
+    }
+
+      export class GetTopPeers extends Request<Partial<{
       // flags: undefined;
       correspondents?: true;
       botsPm?: true;
@@ -11005,22 +12525,29 @@ namespace Api {
       offset: int;
       limit: int;
       hash: long;
-    };
-    export class ResetTopPeerRating extends Request<Partial<{
+    }
+
+      export class ResetTopPeerRating extends Request<Partial<{
       category: Api.TypeTopPeerCategory;
       peer: Api.TypeInputPeer;
     }>, Bool> {
       category: Api.TypeTopPeerCategory;
       peer: Api.TypeInputPeer;
-    };
-    export class ResetSaved extends Request<void, Bool> {};
-    export class GetSaved extends Request<void, Api.TypeSavedContact[]> {};
-    export class ToggleTopPeers extends Request<Partial<{
+    }
+
+      export class ResetSaved extends Request<void, Bool> {
+      }
+
+      export class GetSaved extends Request<void, Api.TypeSavedContact[]> {
+      }
+
+      export class ToggleTopPeers extends Request<Partial<{
       enabled: Bool;
     }>, Bool> {
       enabled: Bool;
-    };
-    export class AddContact extends Request<Partial<{
+    }
+
+      export class AddContact extends Request<Partial<{
       // flags: undefined;
       addPhonePrivacyException?: true;
       id: Api.TypeInputUser;
@@ -11034,13 +12561,15 @@ namespace Api {
       firstName: string;
       lastName: string;
       phone: string;
-    };
-    export class AcceptContact extends Request<Partial<{
+    }
+
+      export class AcceptContact extends Request<Partial<{
       id: Api.TypeInputUser;
     }>, Api.TypeUpdates> {
       id: Api.TypeInputUser;
-    };
-    export class GetLocated extends Request<Partial<{
+    }
+
+      export class GetLocated extends Request<Partial<{
       // flags: undefined;
       background?: true;
       geoPoint: Api.TypeInputGeoPoint;
@@ -11050,8 +12579,9 @@ namespace Api {
       background?: true;
       geoPoint: Api.TypeInputGeoPoint;
       selfExpires?: int;
-    };
-    export class BlockFromReplies extends Request<Partial<{
+    }
+
+      export class BlockFromReplies extends Request<Partial<{
       // flags: undefined;
       deleteMessage?: true;
       deleteHistory?: true;
@@ -11063,18 +12593,22 @@ namespace Api {
       deleteHistory?: true;
       reportSpam?: true;
       msgId: int;
-    };
-    export class ResolvePhone extends Request<Partial<{
+    }
+
+      export class ResolvePhone extends Request<Partial<{
       phone: string;
     }>, contacts.TypeResolvedPeer> {
       phone: string;
-    };
-    export class ExportContactToken extends Request<void, Api.TypeExportedContactToken> {};
-    export class ImportContactToken extends Request<Partial<{
+    }
+
+      export class ExportContactToken extends Request<void, Api.TypeExportedContactToken> {
+      }
+
+      export class ImportContactToken extends Request<Partial<{
       token: string;
     }>, Api.TypeUser> {
       token: string;
-    };
+    }
   }
 
   export namespace messages {
@@ -11082,8 +12616,9 @@ namespace Api {
       id: Api.TypeInputMessage[];
     }>, messages.TypeMessages> {
       id: Api.TypeInputMessage[];
-    };
-    export class GetDialogs extends Request<Partial<{
+    }
+
+      export class GetDialogs extends Request<Partial<{
       // flags: undefined;
       excludePinned?: true;
       folderId?: int;
@@ -11101,8 +12636,9 @@ namespace Api {
       offsetPeer: Api.TypeInputPeer;
       limit: int;
       hash: long;
-    };
-    export class GetHistory extends Request<Partial<{
+    }
+
+      export class GetHistory extends Request<Partial<{
       peer: Api.TypeInputPeer;
       offsetId: int;
       offsetDate: int;
@@ -11120,8 +12656,9 @@ namespace Api {
       maxId: int;
       minId: int;
       hash: long;
-    };
-    export class Search extends Request<Partial<{
+    }
+
+      export class Search extends Request<Partial<{
       // flags: undefined;
       peer: Api.TypeInputPeer;
       q: string;
@@ -11151,15 +12688,17 @@ namespace Api {
       maxId: int;
       minId: int;
       hash: long;
-    };
-    export class ReadHistory extends Request<Partial<{
+    }
+
+      export class ReadHistory extends Request<Partial<{
       peer: Api.TypeInputPeer;
       maxId: int;
     }>, messages.TypeAffectedMessages> {
       peer: Api.TypeInputPeer;
       maxId: int;
-    };
-    export class DeleteHistory extends Request<Partial<{
+    }
+
+      export class DeleteHistory extends Request<Partial<{
       // flags: undefined;
       justClear?: true;
       revoke?: true;
@@ -11175,8 +12714,9 @@ namespace Api {
       maxId: int;
       minDate?: int;
       maxDate?: int;
-    };
-    export class DeleteMessages extends Request<Partial<{
+    }
+
+      export class DeleteMessages extends Request<Partial<{
       // flags: undefined;
       revoke?: true;
       id: int[];
@@ -11184,13 +12724,15 @@ namespace Api {
       // flags: undefined;
       revoke?: true;
       id: int[];
-    };
-    export class ReceivedMessages extends Request<Partial<{
+    }
+
+      export class ReceivedMessages extends Request<Partial<{
       maxId: int;
     }>, Api.TypeReceivedNotifyMessage[]> {
       maxId: int;
-    };
-    export class SetTyping extends Request<Partial<{
+    }
+
+      export class SetTyping extends Request<Partial<{
       // flags: undefined;
       peer: Api.TypeInputPeer;
       topMsgId?: int;
@@ -11200,8 +12742,9 @@ namespace Api {
       peer: Api.TypeInputPeer;
       topMsgId?: int;
       action: Api.TypeSendMessageAction;
-    };
-    export class SendMessage extends Request<Partial<{
+    }
+
+      export class SendMessage extends Request<Partial<{
       // flags: undefined;
       noWebpage?: true;
       silent?: true;
@@ -11235,8 +12778,9 @@ namespace Api {
       entities?: Api.TypeMessageEntity[];
       scheduleDate?: int;
       sendAs?: Api.TypeInputPeer;
-    };
-    export class SendMedia extends Request<Partial<{
+    }
+
+      export class SendMedia extends Request<Partial<{
       // flags: undefined;
       silent?: true;
       background?: true;
@@ -11270,8 +12814,9 @@ namespace Api {
       entities?: Api.TypeMessageEntity[];
       scheduleDate?: int;
       sendAs?: Api.TypeInputPeer;
-    };
-    export class ForwardMessages extends Request<Partial<{
+    }
+
+      export class ForwardMessages extends Request<Partial<{
       // flags: undefined;
       silent?: true;
       background?: true;
@@ -11301,18 +12846,21 @@ namespace Api {
       topMsgId?: int;
       scheduleDate?: int;
       sendAs?: Api.TypeInputPeer;
-    };
-    export class ReportSpam extends Request<Partial<{
+    }
+
+      export class ReportSpam extends Request<Partial<{
       peer: Api.TypeInputPeer;
     }>, Bool> {
       peer: Api.TypeInputPeer;
-    };
-    export class GetPeerSettings extends Request<Partial<{
+    }
+
+      export class GetPeerSettings extends Request<Partial<{
       peer: Api.TypeInputPeer;
     }>, messages.TypePeerSettings> {
       peer: Api.TypeInputPeer;
-    };
-    export class Report extends Request<Partial<{
+    }
+
+      export class Report extends Request<Partial<{
       peer: Api.TypeInputPeer;
       id: int[];
       reason: Api.TypeReportReason;
@@ -11322,32 +12870,37 @@ namespace Api {
       id: int[];
       reason: Api.TypeReportReason;
       message: string;
-    };
-    export class GetChats extends Request<Partial<{
+    }
+
+      export class GetChats extends Request<Partial<{
       id: long[];
     }>, messages.TypeChats> {
       id: long[];
-    };
-    export class GetFullChat extends Request<Partial<{
+    }
+
+      export class GetFullChat extends Request<Partial<{
       chatId: long;
     }>, messages.TypeChatFull> {
       chatId: long;
-    };
-    export class EditChatTitle extends Request<Partial<{
+    }
+
+      export class EditChatTitle extends Request<Partial<{
       chatId: long;
       title: string;
     }>, Api.TypeUpdates> {
       chatId: long;
       title: string;
-    };
-    export class EditChatPhoto extends Request<Partial<{
+    }
+
+      export class EditChatPhoto extends Request<Partial<{
       chatId: long;
       photo: Api.TypeInputChatPhoto;
     }>, Api.TypeUpdates> {
       chatId: long;
       photo: Api.TypeInputChatPhoto;
-    };
-    export class AddChatUser extends Request<Partial<{
+    }
+
+      export class AddChatUser extends Request<Partial<{
       chatId: long;
       userId: Api.TypeInputUser;
       fwdLimit: int;
@@ -11355,8 +12908,9 @@ namespace Api {
       chatId: long;
       userId: Api.TypeInputUser;
       fwdLimit: int;
-    };
-    export class DeleteChatUser extends Request<Partial<{
+    }
+
+      export class DeleteChatUser extends Request<Partial<{
       // flags: undefined;
       revokeHistory?: true;
       chatId: long;
@@ -11366,8 +12920,9 @@ namespace Api {
       revokeHistory?: true;
       chatId: long;
       userId: Api.TypeInputUser;
-    };
-    export class CreateChat extends Request<Partial<{
+    }
+
+      export class CreateChat extends Request<Partial<{
       // flags: undefined;
       users: Api.TypeInputUser[];
       title: string;
@@ -11377,15 +12932,17 @@ namespace Api {
       users: Api.TypeInputUser[];
       title: string;
       ttlPeriod?: int;
-    };
-    export class GetDhConfig extends Request<Partial<{
+    }
+
+      export class GetDhConfig extends Request<Partial<{
       version: int;
       randomLength: int;
     }>, messages.TypeDhConfig> {
       version: int;
       randomLength: int;
-    };
-    export class RequestEncryption extends Request<Partial<{
+    }
+
+      export class RequestEncryption extends Request<Partial<{
       userId: Api.TypeInputUser;
       randomId: int;
       gA: bytes;
@@ -11393,8 +12950,9 @@ namespace Api {
       userId: Api.TypeInputUser;
       randomId: int;
       gA: bytes;
-    };
-    export class AcceptEncryption extends Request<Partial<{
+    }
+
+      export class AcceptEncryption extends Request<Partial<{
       peer: Api.TypeInputEncryptedChat;
       gB: bytes;
       keyFingerprint: long;
@@ -11402,8 +12960,9 @@ namespace Api {
       peer: Api.TypeInputEncryptedChat;
       gB: bytes;
       keyFingerprint: long;
-    };
-    export class DiscardEncryption extends Request<Partial<{
+    }
+
+      export class DiscardEncryption extends Request<Partial<{
       // flags: undefined;
       deleteHistory?: true;
       chatId: int;
@@ -11411,22 +12970,25 @@ namespace Api {
       // flags: undefined;
       deleteHistory?: true;
       chatId: int;
-    };
-    export class SetEncryptedTyping extends Request<Partial<{
+    }
+
+      export class SetEncryptedTyping extends Request<Partial<{
       peer: Api.TypeInputEncryptedChat;
       typing: Bool;
     }>, Bool> {
       peer: Api.TypeInputEncryptedChat;
       typing: Bool;
-    };
-    export class ReadEncryptedHistory extends Request<Partial<{
+    }
+
+      export class ReadEncryptedHistory extends Request<Partial<{
       peer: Api.TypeInputEncryptedChat;
       maxDate: int;
     }>, Bool> {
       peer: Api.TypeInputEncryptedChat;
       maxDate: int;
-    };
-    export class SendEncrypted extends Request<Partial<{
+    }
+
+      export class SendEncrypted extends Request<Partial<{
       // flags: undefined;
       silent?: true;
       peer: Api.TypeInputEncryptedChat;
@@ -11438,8 +13000,9 @@ namespace Api {
       peer: Api.TypeInputEncryptedChat;
       randomId: long;
       data: bytes;
-    };
-    export class SendEncryptedFile extends Request<Partial<{
+    }
+
+      export class SendEncryptedFile extends Request<Partial<{
       // flags: undefined;
       silent?: true;
       peer: Api.TypeInputEncryptedChat;
@@ -11453,8 +13016,9 @@ namespace Api {
       randomId: long;
       data: bytes;
       file: Api.TypeInputEncryptedFile;
-    };
-    export class SendEncryptedService extends Request<Partial<{
+    }
+
+      export class SendEncryptedService extends Request<Partial<{
       peer: Api.TypeInputEncryptedChat;
       randomId: long;
       data: bytes;
@@ -11462,35 +13026,41 @@ namespace Api {
       peer: Api.TypeInputEncryptedChat;
       randomId: long;
       data: bytes;
-    };
-    export class ReceivedQueue extends Request<Partial<{
+    }
+
+      export class ReceivedQueue extends Request<Partial<{
       maxQts: int;
     }>, long[]> {
       maxQts: int;
-    };
-    export class ReportEncryptedSpam extends Request<Partial<{
+    }
+
+      export class ReportEncryptedSpam extends Request<Partial<{
       peer: Api.TypeInputEncryptedChat;
     }>, Bool> {
       peer: Api.TypeInputEncryptedChat;
-    };
-    export class ReadMessageContents extends Request<Partial<{
+    }
+
+      export class ReadMessageContents extends Request<Partial<{
       id: int[];
     }>, messages.TypeAffectedMessages> {
       id: int[];
-    };
-    export class GetStickers extends Request<Partial<{
+    }
+
+      export class GetStickers extends Request<Partial<{
       emoticon: string;
       hash: long;
     }>, messages.TypeStickers> {
       emoticon: string;
       hash: long;
-    };
-    export class GetAllStickers extends Request<Partial<{
+    }
+
+      export class GetAllStickers extends Request<Partial<{
       hash: long;
     }>, messages.TypeAllStickers> {
       hash: long;
-    };
-    export class GetWebPagePreview extends Request<Partial<{
+    }
+
+      export class GetWebPagePreview extends Request<Partial<{
       // flags: undefined;
       message: string;
       entities?: Api.TypeMessageEntity[];
@@ -11498,8 +13068,9 @@ namespace Api {
       // flags: undefined;
       message: string;
       entities?: Api.TypeMessageEntity[];
-    };
-    export class ExportChatInvite extends Request<Partial<{
+    }
+
+      export class ExportChatInvite extends Request<Partial<{
       // flags: undefined;
       legacyRevokePermanent?: true;
       requestNeeded?: true;
@@ -11515,37 +13086,43 @@ namespace Api {
       expireDate?: int;
       usageLimit?: int;
       title?: string;
-    };
-    export class CheckChatInvite extends Request<Partial<{
+    }
+
+      export class CheckChatInvite extends Request<Partial<{
       hash: string;
     }>, Api.TypeChatInvite> {
       hash: string;
-    };
-    export class ImportChatInvite extends Request<Partial<{
+    }
+
+      export class ImportChatInvite extends Request<Partial<{
       hash: string;
     }>, Api.TypeUpdates> {
       hash: string;
-    };
-    export class GetStickerSet extends Request<Partial<{
+    }
+
+      export class GetStickerSet extends Request<Partial<{
       stickerset: Api.TypeInputStickerSet;
       hash: int;
     }>, messages.TypeStickerSet> {
       stickerset: Api.TypeInputStickerSet;
       hash: int;
-    };
-    export class InstallStickerSet extends Request<Partial<{
+    }
+
+      export class InstallStickerSet extends Request<Partial<{
       stickerset: Api.TypeInputStickerSet;
       archived: Bool;
     }>, messages.TypeStickerSetInstallResult> {
       stickerset: Api.TypeInputStickerSet;
       archived: Bool;
-    };
-    export class UninstallStickerSet extends Request<Partial<{
+    }
+
+      export class UninstallStickerSet extends Request<Partial<{
       stickerset: Api.TypeInputStickerSet;
     }>, Bool> {
       stickerset: Api.TypeInputStickerSet;
-    };
-    export class StartBot extends Request<Partial<{
+    }
+
+      export class StartBot extends Request<Partial<{
       bot: Api.TypeInputUser;
       peer: Api.TypeInputPeer;
       randomId: long;
@@ -11555,8 +13132,9 @@ namespace Api {
       peer: Api.TypeInputPeer;
       randomId: long;
       startParam: string;
-    };
-    export class GetMessagesViews extends Request<Partial<{
+    }
+
+      export class GetMessagesViews extends Request<Partial<{
       peer: Api.TypeInputPeer;
       id: int[];
       increment: Bool;
@@ -11564,8 +13142,9 @@ namespace Api {
       peer: Api.TypeInputPeer;
       id: int[];
       increment: Bool;
-    };
-    export class EditChatAdmin extends Request<Partial<{
+    }
+
+      export class EditChatAdmin extends Request<Partial<{
       chatId: long;
       userId: Api.TypeInputUser;
       isAdmin: Bool;
@@ -11573,13 +13152,15 @@ namespace Api {
       chatId: long;
       userId: Api.TypeInputUser;
       isAdmin: Bool;
-    };
-    export class MigrateChat extends Request<Partial<{
+    }
+
+      export class MigrateChat extends Request<Partial<{
       chatId: long;
     }>, Api.TypeUpdates> {
       chatId: long;
-    };
-    export class SearchGlobal extends Request<Partial<{
+    }
+
+      export class SearchGlobal extends Request<Partial<{
       // flags: undefined;
       folderId?: int;
       q: string;
@@ -11601,8 +13182,9 @@ namespace Api {
       offsetPeer: Api.TypeInputPeer;
       offsetId: int;
       limit: int;
-    };
-    export class ReorderStickerSets extends Request<Partial<{
+    }
+
+      export class ReorderStickerSets extends Request<Partial<{
       // flags: undefined;
       masks?: true;
       emojis?: true;
@@ -11612,8 +13194,9 @@ namespace Api {
       masks?: true;
       emojis?: true;
       order: long[];
-    };
-    export class GetDocumentByHash extends Request<Partial<{
+    }
+
+      export class GetDocumentByHash extends Request<Partial<{
       sha256: bytes;
       size: long;
       mimeType: string;
@@ -11621,20 +13204,23 @@ namespace Api {
       sha256: bytes;
       size: long;
       mimeType: string;
-    };
-    export class GetSavedGifs extends Request<Partial<{
+    }
+
+      export class GetSavedGifs extends Request<Partial<{
       hash: long;
     }>, messages.TypeSavedGifs> {
       hash: long;
-    };
-    export class SaveGif extends Request<Partial<{
+    }
+
+      export class SaveGif extends Request<Partial<{
       id: Api.TypeInputDocument;
       unsave: Bool;
     }>, Bool> {
       id: Api.TypeInputDocument;
       unsave: Bool;
-    };
-    export class GetInlineBotResults extends Request<Partial<{
+    }
+
+      export class GetInlineBotResults extends Request<Partial<{
       // flags: undefined;
       bot: Api.TypeInputUser;
       peer: Api.TypeInputPeer;
@@ -11648,8 +13234,9 @@ namespace Api {
       geoPoint?: Api.TypeInputGeoPoint;
       query: string;
       offset: string;
-    };
-    export class SetInlineBotResults extends Request<Partial<{
+    }
+
+      export class SetInlineBotResults extends Request<Partial<{
       // flags: undefined;
       gallery?: true;
       private?: true;
@@ -11667,8 +13254,9 @@ namespace Api {
       cacheTime: int;
       nextOffset?: string;
       switchPm?: Api.TypeInlineBotSwitchPM;
-    };
-    export class SendInlineBotResult extends Request<Partial<{
+    }
+
+      export class SendInlineBotResult extends Request<Partial<{
       // flags: undefined;
       silent?: true;
       background?: true;
@@ -11696,15 +13284,17 @@ namespace Api {
       id: string;
       scheduleDate?: int;
       sendAs?: Api.TypeInputPeer;
-    };
-    export class GetMessageEditData extends Request<Partial<{
+    }
+
+      export class GetMessageEditData extends Request<Partial<{
       peer: Api.TypeInputPeer;
       id: int;
     }>, messages.TypeMessageEditData> {
       peer: Api.TypeInputPeer;
       id: int;
-    };
-    export class EditMessage extends Request<Partial<{
+    }
+
+      export class EditMessage extends Request<Partial<{
       // flags: undefined;
       noWebpage?: true;
       peer: Api.TypeInputPeer;
@@ -11724,8 +13314,9 @@ namespace Api {
       replyMarkup?: Api.TypeReplyMarkup;
       entities?: Api.TypeMessageEntity[];
       scheduleDate?: int;
-    };
-    export class EditInlineBotMessage extends Request<Partial<{
+    }
+
+      export class EditInlineBotMessage extends Request<Partial<{
       // flags: undefined;
       noWebpage?: true;
       id: Api.TypeInputBotInlineMessageID;
@@ -11741,8 +13332,9 @@ namespace Api {
       media?: Api.TypeInputMedia;
       replyMarkup?: Api.TypeReplyMarkup;
       entities?: Api.TypeMessageEntity[];
-    };
-    export class GetBotCallbackAnswer extends Request<Partial<{
+    }
+
+      export class GetBotCallbackAnswer extends Request<Partial<{
       // flags: undefined;
       game?: true;
       peer: Api.TypeInputPeer;
@@ -11756,8 +13348,9 @@ namespace Api {
       msgId: int;
       data?: bytes;
       password?: Api.TypeInputCheckPasswordSRP;
-    };
-    export class SetBotCallbackAnswer extends Request<Partial<{
+    }
+
+      export class SetBotCallbackAnswer extends Request<Partial<{
       // flags: undefined;
       alert?: true;
       queryId: long;
@@ -11771,13 +13364,15 @@ namespace Api {
       message?: string;
       url?: string;
       cacheTime: int;
-    };
-    export class GetPeerDialogs extends Request<Partial<{
+    }
+
+      export class GetPeerDialogs extends Request<Partial<{
       peers: Api.TypeInputDialogPeer[];
     }>, messages.TypePeerDialogs> {
       peers: Api.TypeInputDialogPeer[];
-    };
-    export class SaveDraft extends Request<Partial<{
+    }
+
+      export class SaveDraft extends Request<Partial<{
       // flags: undefined;
       noWebpage?: true;
       replyToMsgId?: int;
@@ -11793,19 +13388,24 @@ namespace Api {
       peer: Api.TypeInputPeer;
       message: string;
       entities?: Api.TypeMessageEntity[];
-    };
-    export class GetAllDrafts extends Request<void, Api.TypeUpdates> {};
-    export class GetFeaturedStickers extends Request<Partial<{
+    }
+
+      export class GetAllDrafts extends Request<void, Api.TypeUpdates> {
+      }
+
+      export class GetFeaturedStickers extends Request<Partial<{
       hash: long;
     }>, messages.TypeFeaturedStickers> {
       hash: long;
-    };
-    export class ReadFeaturedStickers extends Request<Partial<{
+    }
+
+      export class ReadFeaturedStickers extends Request<Partial<{
       id: long[];
     }>, Bool> {
       id: long[];
-    };
-    export class GetRecentStickers extends Request<Partial<{
+    }
+
+      export class GetRecentStickers extends Request<Partial<{
       // flags: undefined;
       attached?: true;
       hash: long;
@@ -11813,8 +13413,9 @@ namespace Api {
       // flags: undefined;
       attached?: true;
       hash: long;
-    };
-    export class SaveRecentSticker extends Request<Partial<{
+    }
+
+      export class SaveRecentSticker extends Request<Partial<{
       // flags: undefined;
       attached?: true;
       id: Api.TypeInputDocument;
@@ -11824,15 +13425,17 @@ namespace Api {
       attached?: true;
       id: Api.TypeInputDocument;
       unsave: Bool;
-    };
-    export class ClearRecentStickers extends Request<Partial<{
+    }
+
+      export class ClearRecentStickers extends Request<Partial<{
       // flags: undefined;
       attached?: true;
     } | void>, Bool> {
       // flags: undefined;
       attached?: true;
-    };
-    export class GetArchivedStickers extends Request<Partial<{
+    }
+
+      export class GetArchivedStickers extends Request<Partial<{
       // flags: undefined;
       masks?: true;
       emojis?: true;
@@ -11844,18 +13447,21 @@ namespace Api {
       emojis?: true;
       offsetId: long;
       limit: int;
-    };
-    export class GetMaskStickers extends Request<Partial<{
+    }
+
+      export class GetMaskStickers extends Request<Partial<{
       hash: long;
     }>, messages.TypeAllStickers> {
       hash: long;
-    };
-    export class GetAttachedStickers extends Request<Partial<{
+    }
+
+      export class GetAttachedStickers extends Request<Partial<{
       media: Api.TypeInputStickeredMedia;
     }>, Api.TypeStickerSetCovered[]> {
       media: Api.TypeInputStickeredMedia;
-    };
-    export class SetGameScore extends Request<Partial<{
+    }
+
+      export class SetGameScore extends Request<Partial<{
       // flags: undefined;
       editMessage?: true;
       force?: true;
@@ -11871,8 +13477,9 @@ namespace Api {
       id: int;
       userId: Api.TypeInputUser;
       score: int;
-    };
-    export class SetInlineGameScore extends Request<Partial<{
+    }
+
+      export class SetInlineGameScore extends Request<Partial<{
       // flags: undefined;
       editMessage?: true;
       force?: true;
@@ -11886,8 +13493,9 @@ namespace Api {
       id: Api.TypeInputBotInlineMessageID;
       userId: Api.TypeInputUser;
       score: int;
-    };
-    export class GetGameHighScores extends Request<Partial<{
+    }
+
+      export class GetGameHighScores extends Request<Partial<{
       peer: Api.TypeInputPeer;
       id: int;
       userId: Api.TypeInputUser;
@@ -11895,15 +13503,17 @@ namespace Api {
       peer: Api.TypeInputPeer;
       id: int;
       userId: Api.TypeInputUser;
-    };
-    export class GetInlineGameHighScores extends Request<Partial<{
+    }
+
+      export class GetInlineGameHighScores extends Request<Partial<{
       id: Api.TypeInputBotInlineMessageID;
       userId: Api.TypeInputUser;
     }>, messages.TypeHighScores> {
       id: Api.TypeInputBotInlineMessageID;
       userId: Api.TypeInputUser;
-    };
-    export class GetCommonChats extends Request<Partial<{
+    }
+
+      export class GetCommonChats extends Request<Partial<{
       userId: Api.TypeInputUser;
       maxId: long;
       limit: int;
@@ -11911,20 +13521,23 @@ namespace Api {
       userId: Api.TypeInputUser;
       maxId: long;
       limit: int;
-    };
-    export class GetAllChats extends Request<Partial<{
+    }
+
+      export class GetAllChats extends Request<Partial<{
       exceptIds: long[];
     }>, messages.TypeChats> {
       exceptIds: long[];
-    };
-    export class GetWebPage extends Request<Partial<{
+    }
+
+      export class GetWebPage extends Request<Partial<{
       url: string;
       hash: int;
     }>, Api.TypeWebPage> {
       url: string;
       hash: int;
-    };
-    export class ToggleDialogPin extends Request<Partial<{
+    }
+
+      export class ToggleDialogPin extends Request<Partial<{
       // flags: undefined;
       pinned?: true;
       peer: Api.TypeInputDialogPeer;
@@ -11932,8 +13545,9 @@ namespace Api {
       // flags: undefined;
       pinned?: true;
       peer: Api.TypeInputDialogPeer;
-    };
-    export class ReorderPinnedDialogs extends Request<Partial<{
+    }
+
+      export class ReorderPinnedDialogs extends Request<Partial<{
       // flags: undefined;
       force?: true;
       folderId: int;
@@ -11943,13 +13557,15 @@ namespace Api {
       force?: true;
       folderId: int;
       order: Api.TypeInputDialogPeer[];
-    };
-    export class GetPinnedDialogs extends Request<Partial<{
+    }
+
+      export class GetPinnedDialogs extends Request<Partial<{
       folderId: int;
     }>, messages.TypePeerDialogs> {
       folderId: int;
-    };
-    export class SetBotShippingResults extends Request<Partial<{
+    }
+
+      export class SetBotShippingResults extends Request<Partial<{
       // flags: undefined;
       queryId: long;
       error?: string;
@@ -11959,8 +13575,9 @@ namespace Api {
       queryId: long;
       error?: string;
       shippingOptions?: Api.TypeShippingOption[];
-    };
-    export class SetBotPrecheckoutResults extends Request<Partial<{
+    }
+
+      export class SetBotPrecheckoutResults extends Request<Partial<{
       // flags: undefined;
       success?: true;
       queryId: long;
@@ -11970,15 +13587,17 @@ namespace Api {
       success?: true;
       queryId: long;
       error?: string;
-    };
-    export class UploadMedia extends Request<Partial<{
+    }
+
+      export class UploadMedia extends Request<Partial<{
       peer: Api.TypeInputPeer;
       media: Api.TypeInputMedia;
     }>, Api.TypeMessageMedia> {
       peer: Api.TypeInputPeer;
       media: Api.TypeInputMedia;
-    };
-    export class SendScreenshotNotification extends Request<Partial<{
+    }
+
+      export class SendScreenshotNotification extends Request<Partial<{
       peer: Api.TypeInputPeer;
       replyToMsgId: int;
       randomId: long;
@@ -11986,20 +13605,23 @@ namespace Api {
       peer: Api.TypeInputPeer;
       replyToMsgId: int;
       randomId: long;
-    };
-    export class GetFavedStickers extends Request<Partial<{
+    }
+
+      export class GetFavedStickers extends Request<Partial<{
       hash: long;
     }>, messages.TypeFavedStickers> {
       hash: long;
-    };
-    export class FaveSticker extends Request<Partial<{
+    }
+
+      export class FaveSticker extends Request<Partial<{
       id: Api.TypeInputDocument;
       unfave: Bool;
     }>, Bool> {
       id: Api.TypeInputDocument;
       unfave: Bool;
-    };
-    export class GetUnreadMentions extends Request<Partial<{
+    }
+
+      export class GetUnreadMentions extends Request<Partial<{
       // flags: undefined;
       peer: Api.TypeInputPeer;
       topMsgId?: int;
@@ -12017,8 +13639,9 @@ namespace Api {
       limit: int;
       maxId: int;
       minId: int;
-    };
-    export class ReadMentions extends Request<Partial<{
+    }
+
+      export class ReadMentions extends Request<Partial<{
       // flags: undefined;
       peer: Api.TypeInputPeer;
       topMsgId?: int;
@@ -12026,8 +13649,9 @@ namespace Api {
       // flags: undefined;
       peer: Api.TypeInputPeer;
       topMsgId?: int;
-    };
-    export class GetRecentLocations extends Request<Partial<{
+    }
+
+      export class GetRecentLocations extends Request<Partial<{
       peer: Api.TypeInputPeer;
       limit: int;
       hash: long;
@@ -12035,8 +13659,9 @@ namespace Api {
       peer: Api.TypeInputPeer;
       limit: int;
       hash: long;
-    };
-    export class SendMultiMedia extends Request<Partial<{
+    }
+
+      export class SendMultiMedia extends Request<Partial<{
       // flags: undefined;
       silent?: true;
       background?: true;
@@ -12062,15 +13687,17 @@ namespace Api {
       multiMedia: Api.TypeInputSingleMedia[];
       scheduleDate?: int;
       sendAs?: Api.TypeInputPeer;
-    };
-    export class UploadEncryptedFile extends Request<Partial<{
+    }
+
+      export class UploadEncryptedFile extends Request<Partial<{
       peer: Api.TypeInputEncryptedChat;
       file: Api.TypeInputEncryptedFile;
     }>, Api.TypeEncryptedFile> {
       peer: Api.TypeInputEncryptedChat;
       file: Api.TypeInputEncryptedFile;
-    };
-    export class SearchStickerSets extends Request<Partial<{
+    }
+
+      export class SearchStickerSets extends Request<Partial<{
       // flags: undefined;
       excludeFeatured?: true;
       q: string;
@@ -12080,9 +13707,12 @@ namespace Api {
       excludeFeatured?: true;
       q: string;
       hash: long;
-    };
-    export class GetSplitRanges extends Request<void, Api.TypeMessageRange[]> {};
-    export class MarkDialogUnread extends Request<Partial<{
+    }
+
+      export class GetSplitRanges extends Request<void, Api.TypeMessageRange[]> {
+      }
+
+      export class MarkDialogUnread extends Request<Partial<{
       // flags: undefined;
       unread?: true;
       peer: Api.TypeInputDialogPeer;
@@ -12090,10 +13720,15 @@ namespace Api {
       // flags: undefined;
       unread?: true;
       peer: Api.TypeInputDialogPeer;
-    };
-    export class GetDialogUnreadMarks extends Request<void, Api.TypeDialogPeer[]> {};
-    export class ClearAllDrafts extends Request<void, Bool> {};
-    export class UpdatePinnedMessage extends Request<Partial<{
+    }
+
+      export class GetDialogUnreadMarks extends Request<void, Api.TypeDialogPeer[]> {
+      }
+
+      export class ClearAllDrafts extends Request<void, Bool> {
+      }
+
+      export class UpdatePinnedMessage extends Request<Partial<{
       // flags: undefined;
       silent?: true;
       unpin?: true;
@@ -12107,8 +13742,9 @@ namespace Api {
       pmOneside?: true;
       peer: Api.TypeInputPeer;
       id: int;
-    };
-    export class SendVote extends Request<Partial<{
+    }
+
+      export class SendVote extends Request<Partial<{
       peer: Api.TypeInputPeer;
       msgId: int;
       options: bytes[];
@@ -12116,56 +13752,65 @@ namespace Api {
       peer: Api.TypeInputPeer;
       msgId: int;
       options: bytes[];
-    };
-    export class GetPollResults extends Request<Partial<{
+    }
+
+      export class GetPollResults extends Request<Partial<{
       peer: Api.TypeInputPeer;
       msgId: int;
     }>, Api.TypeUpdates> {
       peer: Api.TypeInputPeer;
       msgId: int;
-    };
-    export class GetOnlines extends Request<Partial<{
+    }
+
+      export class GetOnlines extends Request<Partial<{
       peer: Api.TypeInputPeer;
     }>, Api.TypeChatOnlines> {
       peer: Api.TypeInputPeer;
-    };
-    export class EditChatAbout extends Request<Partial<{
+    }
+
+      export class EditChatAbout extends Request<Partial<{
       peer: Api.TypeInputPeer;
       about: string;
     }>, Bool> {
       peer: Api.TypeInputPeer;
       about: string;
-    };
-    export class EditChatDefaultBannedRights extends Request<Partial<{
+    }
+
+      export class EditChatDefaultBannedRights extends Request<Partial<{
       peer: Api.TypeInputPeer;
       bannedRights: Api.TypeChatBannedRights;
     }>, Api.TypeUpdates> {
       peer: Api.TypeInputPeer;
       bannedRights: Api.TypeChatBannedRights;
-    };
-    export class GetEmojiKeywords extends Request<Partial<{
+    }
+
+      export class GetEmojiKeywords extends Request<Partial<{
       langCode: string;
     }>, Api.TypeEmojiKeywordsDifference> {
       langCode: string;
-    };
-    export class GetEmojiKeywordsDifference extends Request<Partial<{
+    }
+
+      export class GetEmojiKeywordsDifference extends Request<Partial<{
       langCode: string;
       fromVersion: int;
     }>, Api.TypeEmojiKeywordsDifference> {
       langCode: string;
       fromVersion: int;
-    };
-    export class GetEmojiKeywordsLanguages extends Request<Partial<{
+    }
+
+      export class GetEmojiKeywordsLanguages extends Request<Partial<{
       langCodes: string[];
     }>, Api.TypeEmojiLanguage[]> {
       langCodes: string[];
-    };
-    export class GetEmojiURL extends Request<Partial<{
+    }
+
+      export class GetEmojiURL extends Request<Partial<{
       langCode: string;
     }>, Api.TypeEmojiURL> {
       langCode: string;
-    };
-    export class GetSearchCounters extends Request<Partial<{
+    }
+
+      export class GetSearchCounters extends Request<Partial<{
       // flags: undefined;
       peer: Api.TypeInputPeer;
       topMsgId?: int;
@@ -12175,8 +13820,9 @@ namespace Api {
       peer: Api.TypeInputPeer;
       topMsgId?: int;
       filters: Api.TypeMessagesFilter[];
-    };
-    export class RequestUrlAuth extends Request<Partial<{
+    }
+
+      export class RequestUrlAuth extends Request<Partial<{
       // flags: undefined;
       peer?: Api.TypeInputPeer;
       msgId?: int;
@@ -12188,8 +13834,9 @@ namespace Api {
       msgId?: int;
       buttonId?: int;
       url?: string;
-    };
-    export class AcceptUrlAuth extends Request<Partial<{
+    }
+
+      export class AcceptUrlAuth extends Request<Partial<{
       // flags: undefined;
       writeAllowed?: true;
       peer?: Api.TypeInputPeer;
@@ -12203,41 +13850,47 @@ namespace Api {
       msgId?: int;
       buttonId?: int;
       url?: string;
-    };
-    export class HidePeerSettingsBar extends Request<Partial<{
+    }
+
+      export class HidePeerSettingsBar extends Request<Partial<{
       peer: Api.TypeInputPeer;
     }>, Bool> {
       peer: Api.TypeInputPeer;
-    };
-    export class GetScheduledHistory extends Request<Partial<{
+    }
+
+      export class GetScheduledHistory extends Request<Partial<{
       peer: Api.TypeInputPeer;
       hash: long;
     }>, messages.TypeMessages> {
       peer: Api.TypeInputPeer;
       hash: long;
-    };
-    export class GetScheduledMessages extends Request<Partial<{
+    }
+
+      export class GetScheduledMessages extends Request<Partial<{
       peer: Api.TypeInputPeer;
       id: int[];
     }>, messages.TypeMessages> {
       peer: Api.TypeInputPeer;
       id: int[];
-    };
-    export class SendScheduledMessages extends Request<Partial<{
+    }
+
+      export class SendScheduledMessages extends Request<Partial<{
       peer: Api.TypeInputPeer;
       id: int[];
     }>, Api.TypeUpdates> {
       peer: Api.TypeInputPeer;
       id: int[];
-    };
-    export class DeleteScheduledMessages extends Request<Partial<{
+    }
+
+      export class DeleteScheduledMessages extends Request<Partial<{
       peer: Api.TypeInputPeer;
       id: int[];
     }>, Api.TypeUpdates> {
       peer: Api.TypeInputPeer;
       id: int[];
-    };
-    export class GetPollVotes extends Request<Partial<{
+    }
+
+      export class GetPollVotes extends Request<Partial<{
       // flags: undefined;
       peer: Api.TypeInputPeer;
       id: int;
@@ -12251,8 +13904,9 @@ namespace Api {
       option?: bytes;
       offset?: string;
       limit: int;
-    };
-    export class ToggleStickerSets extends Request<Partial<{
+    }
+
+      export class ToggleStickerSets extends Request<Partial<{
       // flags: undefined;
       uninstall?: true;
       archive?: true;
@@ -12264,10 +13918,15 @@ namespace Api {
       archive?: true;
       unarchive?: true;
       stickersets: Api.TypeInputStickerSet[];
-    };
-    export class GetDialogFilters extends Request<void, Api.TypeDialogFilter[]> {};
-    export class GetSuggestedDialogFilters extends Request<void, Api.TypeDialogFilterSuggested[]> {};
-    export class UpdateDialogFilter extends Request<Partial<{
+    }
+
+      export class GetDialogFilters extends Request<void, Api.TypeDialogFilter[]> {
+      }
+
+      export class GetSuggestedDialogFilters extends Request<void, Api.TypeDialogFilterSuggested[]> {
+      }
+
+      export class UpdateDialogFilter extends Request<Partial<{
       // flags: undefined;
       id: int;
       filter?: Api.TypeDialogFilter;
@@ -12275,13 +13934,15 @@ namespace Api {
       // flags: undefined;
       id: int;
       filter?: Api.TypeDialogFilter;
-    };
-    export class UpdateDialogFiltersOrder extends Request<Partial<{
+    }
+
+      export class UpdateDialogFiltersOrder extends Request<Partial<{
       order: int[];
     }>, Bool> {
       order: int[];
-    };
-    export class GetOldFeaturedStickers extends Request<Partial<{
+    }
+
+      export class GetOldFeaturedStickers extends Request<Partial<{
       offset: int;
       limit: int;
       hash: long;
@@ -12289,8 +13950,9 @@ namespace Api {
       offset: int;
       limit: int;
       hash: long;
-    };
-    export class GetReplies extends Request<Partial<{
+    }
+
+      export class GetReplies extends Request<Partial<{
       peer: Api.TypeInputPeer;
       msgId: int;
       offsetId: int;
@@ -12310,15 +13972,17 @@ namespace Api {
       maxId: int;
       minId: int;
       hash: long;
-    };
-    export class GetDiscussionMessage extends Request<Partial<{
+    }
+
+      export class GetDiscussionMessage extends Request<Partial<{
       peer: Api.TypeInputPeer;
       msgId: int;
     }>, messages.TypeDiscussionMessage> {
       peer: Api.TypeInputPeer;
       msgId: int;
-    };
-    export class ReadDiscussion extends Request<Partial<{
+    }
+
+      export class ReadDiscussion extends Request<Partial<{
       peer: Api.TypeInputPeer;
       msgId: int;
       readMaxId: int;
@@ -12326,8 +13990,9 @@ namespace Api {
       peer: Api.TypeInputPeer;
       msgId: int;
       readMaxId: int;
-    };
-    export class UnpinAllMessages extends Request<Partial<{
+    }
+
+      export class UnpinAllMessages extends Request<Partial<{
       // flags: undefined;
       peer: Api.TypeInputPeer;
       topMsgId?: int;
@@ -12335,25 +14000,29 @@ namespace Api {
       // flags: undefined;
       peer: Api.TypeInputPeer;
       topMsgId?: int;
-    };
-    export class DeleteChat extends Request<Partial<{
+    }
+
+      export class DeleteChat extends Request<Partial<{
       chatId: long;
     }>, Bool> {
       chatId: long;
-    };
-    export class DeletePhoneCallHistory extends Request<Partial<{
+    }
+
+      export class DeletePhoneCallHistory extends Request<Partial<{
       // flags: undefined;
       revoke?: true;
     } | void>, messages.TypeAffectedFoundMessages> {
       // flags: undefined;
       revoke?: true;
-    };
-    export class CheckHistoryImport extends Request<Partial<{
+    }
+
+      export class CheckHistoryImport extends Request<Partial<{
       importHead: string;
     }>, messages.TypeHistoryImportParsed> {
       importHead: string;
-    };
-    export class InitHistoryImport extends Request<Partial<{
+    }
+
+      export class InitHistoryImport extends Request<Partial<{
       peer: Api.TypeInputPeer;
       file: Api.TypeInputFile;
       mediaCount: int;
@@ -12361,8 +14030,9 @@ namespace Api {
       peer: Api.TypeInputPeer;
       file: Api.TypeInputFile;
       mediaCount: int;
-    };
-    export class UploadImportedMedia extends Request<Partial<{
+    }
+
+      export class UploadImportedMedia extends Request<Partial<{
       peer: Api.TypeInputPeer;
       importId: long;
       fileName: string;
@@ -12372,15 +14042,17 @@ namespace Api {
       importId: long;
       fileName: string;
       media: Api.TypeInputMedia;
-    };
-    export class StartHistoryImport extends Request<Partial<{
+    }
+
+      export class StartHistoryImport extends Request<Partial<{
       peer: Api.TypeInputPeer;
       importId: long;
     }>, Bool> {
       peer: Api.TypeInputPeer;
       importId: long;
-    };
-    export class GetExportedChatInvites extends Request<Partial<{
+    }
+
+      export class GetExportedChatInvites extends Request<Partial<{
       // flags: undefined;
       revoked?: true;
       peer: Api.TypeInputPeer;
@@ -12396,15 +14068,17 @@ namespace Api {
       offsetDate?: int;
       offsetLink?: string;
       limit: int;
-    };
-    export class GetExportedChatInvite extends Request<Partial<{
+    }
+
+      export class GetExportedChatInvite extends Request<Partial<{
       peer: Api.TypeInputPeer;
       link: string;
     }>, messages.TypeExportedChatInvite> {
       peer: Api.TypeInputPeer;
       link: string;
-    };
-    export class EditExportedChatInvite extends Request<Partial<{
+    }
+
+      export class EditExportedChatInvite extends Request<Partial<{
       // flags: undefined;
       revoked?: true;
       peer: Api.TypeInputPeer;
@@ -12422,27 +14096,31 @@ namespace Api {
       usageLimit?: int;
       requestNeeded?: Bool;
       title?: string;
-    };
-    export class DeleteRevokedExportedChatInvites extends Request<Partial<{
+    }
+
+      export class DeleteRevokedExportedChatInvites extends Request<Partial<{
       peer: Api.TypeInputPeer;
       adminId: Api.TypeInputUser;
     }>, Bool> {
       peer: Api.TypeInputPeer;
       adminId: Api.TypeInputUser;
-    };
-    export class DeleteExportedChatInvite extends Request<Partial<{
+    }
+
+      export class DeleteExportedChatInvite extends Request<Partial<{
       peer: Api.TypeInputPeer;
       link: string;
     }>, Bool> {
       peer: Api.TypeInputPeer;
       link: string;
-    };
-    export class GetAdminsWithInvites extends Request<Partial<{
+    }
+
+      export class GetAdminsWithInvites extends Request<Partial<{
       peer: Api.TypeInputPeer;
     }>, messages.TypeChatAdminsWithInvites> {
       peer: Api.TypeInputPeer;
-    };
-    export class GetChatInviteImporters extends Request<Partial<{
+    }
+
+      export class GetChatInviteImporters extends Request<Partial<{
       // flags: undefined;
       requested?: true;
       peer: Api.TypeInputPeer;
@@ -12460,34 +14138,39 @@ namespace Api {
       offsetDate: int;
       offsetUser: Api.TypeInputUser;
       limit: int;
-    };
-    export class SetHistoryTTL extends Request<Partial<{
+    }
+
+      export class SetHistoryTTL extends Request<Partial<{
       peer: Api.TypeInputPeer;
       period: int;
     }>, Api.TypeUpdates> {
       peer: Api.TypeInputPeer;
       period: int;
-    };
-    export class CheckHistoryImportPeer extends Request<Partial<{
+    }
+
+      export class CheckHistoryImportPeer extends Request<Partial<{
       peer: Api.TypeInputPeer;
     }>, messages.TypeCheckedHistoryImportPeer> {
       peer: Api.TypeInputPeer;
-    };
-    export class SetChatTheme extends Request<Partial<{
+    }
+
+      export class SetChatTheme extends Request<Partial<{
       peer: Api.TypeInputPeer;
       emoticon: string;
     }>, Api.TypeUpdates> {
       peer: Api.TypeInputPeer;
       emoticon: string;
-    };
-    export class GetMessageReadParticipants extends Request<Partial<{
+    }
+
+      export class GetMessageReadParticipants extends Request<Partial<{
       peer: Api.TypeInputPeer;
       msgId: int;
     }>, long[]> {
       peer: Api.TypeInputPeer;
       msgId: int;
-    };
-    export class GetSearchResultsCalendar extends Request<Partial<{
+    }
+
+      export class GetSearchResultsCalendar extends Request<Partial<{
       peer: Api.TypeInputPeer;
       filter: Api.TypeMessagesFilter;
       offsetId: int;
@@ -12497,8 +14180,9 @@ namespace Api {
       filter: Api.TypeMessagesFilter;
       offsetId: int;
       offsetDate: int;
-    };
-    export class GetSearchResultsPositions extends Request<Partial<{
+    }
+
+      export class GetSearchResultsPositions extends Request<Partial<{
       peer: Api.TypeInputPeer;
       filter: Api.TypeMessagesFilter;
       offsetId: int;
@@ -12508,8 +14192,9 @@ namespace Api {
       filter: Api.TypeMessagesFilter;
       offsetId: int;
       limit: int;
-    };
-    export class HideChatJoinRequest extends Request<Partial<{
+    }
+
+      export class HideChatJoinRequest extends Request<Partial<{
       // flags: undefined;
       approved?: true;
       peer: Api.TypeInputPeer;
@@ -12519,8 +14204,9 @@ namespace Api {
       approved?: true;
       peer: Api.TypeInputPeer;
       userId: Api.TypeInputUser;
-    };
-    export class HideAllChatJoinRequests extends Request<Partial<{
+    }
+
+      export class HideAllChatJoinRequests extends Request<Partial<{
       // flags: undefined;
       approved?: true;
       peer: Api.TypeInputPeer;
@@ -12530,22 +14216,25 @@ namespace Api {
       approved?: true;
       peer: Api.TypeInputPeer;
       link?: string;
-    };
-    export class ToggleNoForwards extends Request<Partial<{
+    }
+
+      export class ToggleNoForwards extends Request<Partial<{
       peer: Api.TypeInputPeer;
       enabled: Bool;
     }>, Api.TypeUpdates> {
       peer: Api.TypeInputPeer;
       enabled: Bool;
-    };
-    export class SaveDefaultSendAs extends Request<Partial<{
+    }
+
+      export class SaveDefaultSendAs extends Request<Partial<{
       peer: Api.TypeInputPeer;
       sendAs: Api.TypeInputPeer;
     }>, Bool> {
       peer: Api.TypeInputPeer;
       sendAs: Api.TypeInputPeer;
-    };
-    export class SendReaction extends Request<Partial<{
+    }
+
+      export class SendReaction extends Request<Partial<{
       // flags: undefined;
       big?: true;
       addToRecent?: true;
@@ -12559,15 +14248,17 @@ namespace Api {
       peer: Api.TypeInputPeer;
       msgId: int;
       reaction?: Api.TypeReaction[];
-    };
-    export class GetMessagesReactions extends Request<Partial<{
+    }
+
+      export class GetMessagesReactions extends Request<Partial<{
       peer: Api.TypeInputPeer;
       id: int[];
     }>, Api.TypeUpdates> {
       peer: Api.TypeInputPeer;
       id: int[];
-    };
-    export class GetMessageReactionsList extends Request<Partial<{
+    }
+
+      export class GetMessageReactionsList extends Request<Partial<{
       // flags: undefined;
       peer: Api.TypeInputPeer;
       id: int;
@@ -12581,25 +14272,29 @@ namespace Api {
       reaction?: Api.TypeReaction;
       offset?: string;
       limit: int;
-    };
-    export class SetChatAvailableReactions extends Request<Partial<{
+    }
+
+      export class SetChatAvailableReactions extends Request<Partial<{
       peer: Api.TypeInputPeer;
       availableReactions: Api.TypeChatReactions;
     }>, Api.TypeUpdates> {
       peer: Api.TypeInputPeer;
       availableReactions: Api.TypeChatReactions;
-    };
-    export class GetAvailableReactions extends Request<Partial<{
+    }
+
+      export class GetAvailableReactions extends Request<Partial<{
       hash: int;
     }>, messages.TypeAvailableReactions> {
       hash: int;
-    };
-    export class SetDefaultReaction extends Request<Partial<{
+    }
+
+      export class SetDefaultReaction extends Request<Partial<{
       reaction: Api.TypeReaction;
     }>, Bool> {
       reaction: Api.TypeReaction;
-    };
-    export class TranslateText extends Request<Partial<{
+    }
+
+      export class TranslateText extends Request<Partial<{
       // flags: undefined;
       peer?: Api.TypeInputPeer;
       id?: int[];
@@ -12611,8 +14306,9 @@ namespace Api {
       id?: int[];
       text?: Api.TypeTextWithEntities[];
       toLang: string;
-    };
-    export class GetUnreadReactions extends Request<Partial<{
+    }
+
+      export class GetUnreadReactions extends Request<Partial<{
       // flags: undefined;
       peer: Api.TypeInputPeer;
       topMsgId?: int;
@@ -12630,8 +14326,9 @@ namespace Api {
       limit: int;
       maxId: int;
       minId: int;
-    };
-    export class ReadReactions extends Request<Partial<{
+    }
+
+      export class ReadReactions extends Request<Partial<{
       // flags: undefined;
       peer: Api.TypeInputPeer;
       topMsgId?: int;
@@ -12639,8 +14336,9 @@ namespace Api {
       // flags: undefined;
       peer: Api.TypeInputPeer;
       topMsgId?: int;
-    };
-    export class SearchSentMedia extends Request<Partial<{
+    }
+
+      export class SearchSentMedia extends Request<Partial<{
       q: string;
       filter: Api.TypeMessagesFilter;
       limit: int;
@@ -12648,18 +14346,21 @@ namespace Api {
       q: string;
       filter: Api.TypeMessagesFilter;
       limit: int;
-    };
-    export class GetAttachMenuBots extends Request<Partial<{
+    }
+
+      export class GetAttachMenuBots extends Request<Partial<{
       hash: long;
     }>, Api.TypeAttachMenuBots> {
       hash: long;
-    };
-    export class GetAttachMenuBot extends Request<Partial<{
+    }
+
+      export class GetAttachMenuBot extends Request<Partial<{
       bot: Api.TypeInputUser;
     }>, Api.TypeAttachMenuBotsBot> {
       bot: Api.TypeInputUser;
-    };
-    export class ToggleBotInAttachMenu extends Request<Partial<{
+    }
+
+      export class ToggleBotInAttachMenu extends Request<Partial<{
       // flags: undefined;
       writeAllowed?: true;
       bot: Api.TypeInputUser;
@@ -12669,8 +14370,9 @@ namespace Api {
       writeAllowed?: true;
       bot: Api.TypeInputUser;
       enabled: Bool;
-    };
-    export class RequestWebView extends Request<Partial<{
+    }
+
+      export class RequestWebView extends Request<Partial<{
       // flags: undefined;
       fromBotMenu?: true;
       silent?: true;
@@ -12696,8 +14398,9 @@ namespace Api {
       replyToMsgId?: int;
       topMsgId?: int;
       sendAs?: Api.TypeInputPeer;
-    };
-    export class ProlongWebView extends Request<Partial<{
+    }
+
+      export class ProlongWebView extends Request<Partial<{
       // flags: undefined;
       silent?: true;
       peer: Api.TypeInputPeer;
@@ -12715,8 +14418,9 @@ namespace Api {
       replyToMsgId?: int;
       topMsgId?: int;
       sendAs?: Api.TypeInputPeer;
-    };
-    export class RequestSimpleWebView extends Request<Partial<{
+    }
+
+      export class RequestSimpleWebView extends Request<Partial<{
       // flags: undefined;
       bot: Api.TypeInputUser;
       url: string;
@@ -12728,15 +14432,17 @@ namespace Api {
       url: string;
       themeParams?: Api.TypeDataJSON;
       platform: string;
-    };
-    export class SendWebViewResultMessage extends Request<Partial<{
+    }
+
+      export class SendWebViewResultMessage extends Request<Partial<{
       botQueryId: string;
       result: Api.TypeInputBotInlineResult;
     }>, Api.TypeWebViewMessageSent> {
       botQueryId: string;
       result: Api.TypeInputBotInlineResult;
-    };
-    export class SendWebViewData extends Request<Partial<{
+    }
+
+      export class SendWebViewData extends Request<Partial<{
       bot: Api.TypeInputUser;
       randomId: long;
       buttonText: string;
@@ -12746,15 +14452,17 @@ namespace Api {
       randomId: long;
       buttonText: string;
       data: string;
-    };
-    export class TranscribeAudio extends Request<Partial<{
+    }
+
+      export class TranscribeAudio extends Request<Partial<{
       peer: Api.TypeInputPeer;
       msgId: int;
     }>, messages.TypeTranscribedAudio> {
       peer: Api.TypeInputPeer;
       msgId: int;
-    };
-    export class RateTranscribedAudio extends Request<Partial<{
+    }
+
+      export class RateTranscribedAudio extends Request<Partial<{
       peer: Api.TypeInputPeer;
       msgId: int;
       transcriptionId: long;
@@ -12764,23 +14472,27 @@ namespace Api {
       msgId: int;
       transcriptionId: long;
       good: Bool;
-    };
-    export class GetCustomEmojiDocuments extends Request<Partial<{
+    }
+
+      export class GetCustomEmojiDocuments extends Request<Partial<{
       documentId: long[];
     }>, Api.TypeDocument[]> {
       documentId: long[];
-    };
-    export class GetEmojiStickers extends Request<Partial<{
+    }
+
+      export class GetEmojiStickers extends Request<Partial<{
       hash: long;
     }>, messages.TypeAllStickers> {
       hash: long;
-    };
-    export class GetFeaturedEmojiStickers extends Request<Partial<{
+    }
+
+      export class GetFeaturedEmojiStickers extends Request<Partial<{
       hash: long;
     }>, messages.TypeFeaturedStickers> {
       hash: long;
-    };
-    export class ReportReaction extends Request<Partial<{
+    }
+
+      export class ReportReaction extends Request<Partial<{
       peer: Api.TypeInputPeer;
       id: int;
       reactionPeer: Api.TypeInputPeer;
@@ -12788,36 +14500,45 @@ namespace Api {
       peer: Api.TypeInputPeer;
       id: int;
       reactionPeer: Api.TypeInputPeer;
-    };
-    export class GetTopReactions extends Request<Partial<{
+    }
+
+      export class GetTopReactions extends Request<Partial<{
       limit: int;
       hash: long;
     }>, messages.TypeReactions> {
       limit: int;
       hash: long;
-    };
-    export class GetRecentReactions extends Request<Partial<{
+    }
+
+      export class GetRecentReactions extends Request<Partial<{
       limit: int;
       hash: long;
     }>, messages.TypeReactions> {
       limit: int;
       hash: long;
-    };
-    export class ClearRecentReactions extends Request<void, Bool> {};
-    export class GetExtendedMedia extends Request<Partial<{
+    }
+
+      export class ClearRecentReactions extends Request<void, Bool> {
+      }
+
+      export class GetExtendedMedia extends Request<Partial<{
       peer: Api.TypeInputPeer;
       id: int[];
     }>, Api.TypeUpdates> {
       peer: Api.TypeInputPeer;
       id: int[];
-    };
-    export class SetDefaultHistoryTTL extends Request<Partial<{
+    }
+
+      export class SetDefaultHistoryTTL extends Request<Partial<{
       period: int;
     }>, Bool> {
       period: int;
-    };
-    export class GetDefaultHistoryTTL extends Request<void, Api.TypeDefaultHistoryTTL> {};
-    export class SendBotRequestedPeer extends Request<Partial<{
+    }
+
+      export class GetDefaultHistoryTTL extends Request<void, Api.TypeDefaultHistoryTTL> {
+      }
+
+      export class SendBotRequestedPeer extends Request<Partial<{
       peer: Api.TypeInputPeer;
       msgId: int;
       buttonId: int;
@@ -12827,30 +14548,35 @@ namespace Api {
       msgId: int;
       buttonId: int;
       requestedPeer: Api.TypeInputPeer;
-    };
-    export class GetEmojiGroups extends Request<Partial<{
+    }
+
+      export class GetEmojiGroups extends Request<Partial<{
       hash: int;
     }>, messages.TypeEmojiGroups> {
       hash: int;
-    };
-    export class GetEmojiStatusGroups extends Request<Partial<{
+    }
+
+      export class GetEmojiStatusGroups extends Request<Partial<{
       hash: int;
     }>, messages.TypeEmojiGroups> {
       hash: int;
-    };
-    export class GetEmojiProfilePhotoGroups extends Request<Partial<{
+    }
+
+      export class GetEmojiProfilePhotoGroups extends Request<Partial<{
       hash: int;
     }>, messages.TypeEmojiGroups> {
       hash: int;
-    };
-    export class SearchCustomEmoji extends Request<Partial<{
+    }
+
+      export class SearchCustomEmoji extends Request<Partial<{
       emoticon: string;
       hash: long;
     }>, Api.TypeEmojiList> {
       emoticon: string;
       hash: long;
-    };
-    export class TogglePeerTranslations extends Request<Partial<{
+    }
+
+      export class TogglePeerTranslations extends Request<Partial<{
       // flags: undefined;
       disabled?: true;
       peer: Api.TypeInputPeer;
@@ -12858,12 +14584,14 @@ namespace Api {
       // flags: undefined;
       disabled?: true;
       peer: Api.TypeInputPeer;
-    };
+    }
   }
 
   export namespace updates {
-    export class GetState extends Request<void, updates.TypeState> {};
-    export class GetDifference extends Request<Partial<{
+      export class GetState extends Request<void, updates.TypeState> {
+      }
+
+      export class GetDifference extends Request<Partial<{
       // flags: undefined;
       pts: int;
       ptsTotalLimit?: int;
@@ -12875,8 +14603,9 @@ namespace Api {
       ptsTotalLimit?: int;
       date: int;
       qts: int;
-    };
-    export class GetChannelDifference extends Request<Partial<{
+    }
+
+      export class GetChannelDifference extends Request<Partial<{
       // flags: undefined;
       force?: true;
       channel: Api.TypeInputChannel;
@@ -12890,7 +14619,7 @@ namespace Api {
       filter: Api.TypeChannelMessagesFilter;
       pts: int;
       limit: int;
-    };
+    }
   }
 
   export namespace photos {
@@ -12902,8 +14631,9 @@ namespace Api {
       // flags: undefined;
       fallback?: true;
       id: Api.TypeInputPhoto;
-    };
-    export class UploadProfilePhoto extends Request<Partial<{
+    }
+
+      export class UploadProfilePhoto extends Request<Partial<{
       // flags: undefined;
       fallback?: true;
       file?: Api.TypeInputFile;
@@ -12917,13 +14647,15 @@ namespace Api {
       video?: Api.TypeInputFile;
       videoStartTs?: double;
       videoEmojiMarkup?: Api.TypeVideoSize;
-    };
-    export class DeletePhotos extends Request<Partial<{
+    }
+
+      export class DeletePhotos extends Request<Partial<{
       id: Api.TypeInputPhoto[];
     }>, long[]> {
       id: Api.TypeInputPhoto[];
-    };
-    export class GetUserPhotos extends Request<Partial<{
+    }
+
+      export class GetUserPhotos extends Request<Partial<{
       userId: Api.TypeInputUser;
       offset: int;
       maxId: long;
@@ -12933,8 +14665,9 @@ namespace Api {
       offset: int;
       maxId: long;
       limit: int;
-    };
-    export class UploadContactProfilePhoto extends Request<Partial<{
+    }
+
+      export class UploadContactProfilePhoto extends Request<Partial<{
       // flags: undefined;
       suggest?: true;
       save?: true;
@@ -12952,7 +14685,7 @@ namespace Api {
       video?: Api.TypeInputFile;
       videoStartTs?: double;
       videoEmojiMarkup?: Api.TypeVideoSize;
-    };
+    }
   }
 
   export namespace upload {
@@ -12964,8 +14697,9 @@ namespace Api {
       fileId: long;
       filePart: int;
       bytes: bytes;
-    };
-    export class GetFile extends Request<Partial<{
+    }
+
+      export class GetFile extends Request<Partial<{
       // flags: undefined;
       precise?: true;
       cdnSupported?: true;
@@ -12979,8 +14713,9 @@ namespace Api {
       location: Api.TypeInputFileLocation;
       offset: long;
       limit: int;
-    };
-    export class SaveBigFilePart extends Request<Partial<{
+    }
+
+      export class SaveBigFilePart extends Request<Partial<{
       fileId: long;
       filePart: int;
       fileTotalParts: int;
@@ -12990,8 +14725,9 @@ namespace Api {
       filePart: int;
       fileTotalParts: int;
       bytes: bytes;
-    };
-    export class GetWebFile extends Request<Partial<{
+    }
+
+      export class GetWebFile extends Request<Partial<{
       location: Api.TypeInputWebFileLocation;
       offset: int;
       limit: int;
@@ -12999,8 +14735,9 @@ namespace Api {
       location: Api.TypeInputWebFileLocation;
       offset: int;
       limit: int;
-    };
-    export class GetCdnFile extends Request<Partial<{
+    }
+
+      export class GetCdnFile extends Request<Partial<{
       fileToken: bytes;
       offset: long;
       limit: int;
@@ -13008,87 +14745,115 @@ namespace Api {
       fileToken: bytes;
       offset: long;
       limit: int;
-    };
-    export class ReuploadCdnFile extends Request<Partial<{
+    }
+
+      export class ReuploadCdnFile extends Request<Partial<{
       fileToken: bytes;
       requestToken: bytes;
     }>, Api.TypeFileHash[]> {
       fileToken: bytes;
       requestToken: bytes;
-    };
-    export class GetCdnFileHashes extends Request<Partial<{
+    }
+
+      export class GetCdnFileHashes extends Request<Partial<{
       fileToken: bytes;
       offset: long;
     }>, Api.TypeFileHash[]> {
       fileToken: bytes;
       offset: long;
-    };
-    export class GetFileHashes extends Request<Partial<{
+    }
+
+      export class GetFileHashes extends Request<Partial<{
       location: Api.TypeInputFileLocation;
       offset: long;
     }>, Api.TypeFileHash[]> {
       location: Api.TypeInputFileLocation;
       offset: long;
-    };
+    }
   }
 
   export namespace help {
-    export class GetConfig extends Request<void, Api.TypeConfig> {};
-    export class GetNearestDc extends Request<void, Api.TypeNearestDc> {};
-    export class GetAppUpdate extends Request<Partial<{
+      export class GetConfig extends Request<void, Api.TypeConfig> {
+      }
+
+      export class GetNearestDc extends Request<void, Api.TypeNearestDc> {
+      }
+
+      export class GetAppUpdate extends Request<Partial<{
       source: string;
     }>, help.TypeAppUpdate> {
       source: string;
-    };
-    export class GetInviteText extends Request<void, help.TypeInviteText> {};
-    export class GetSupport extends Request<void, help.TypeSupport> {};
-    export class GetAppChangelog extends Request<Partial<{
+    }
+
+      export class GetInviteText extends Request<void, help.TypeInviteText> {
+      }
+
+      export class GetSupport extends Request<void, help.TypeSupport> {
+      }
+
+      export class GetAppChangelog extends Request<Partial<{
       prevAppVersion: string;
     }>, Api.TypeUpdates> {
       prevAppVersion: string;
-    };
-    export class SetBotUpdatesStatus extends Request<Partial<{
+    }
+
+      export class SetBotUpdatesStatus extends Request<Partial<{
       pendingUpdatesCount: int;
       message: string;
     }>, Bool> {
       pendingUpdatesCount: int;
       message: string;
-    };
-    export class GetCdnConfig extends Request<void, Api.TypeCdnConfig> {};
-    export class GetRecentMeUrls extends Request<Partial<{
+    }
+
+      export class GetCdnConfig extends Request<void, Api.TypeCdnConfig> {
+      }
+
+      export class GetRecentMeUrls extends Request<Partial<{
       referer: string;
     }>, help.TypeRecentMeUrls> {
       referer: string;
-    };
-    export class GetTermsOfServiceUpdate extends Request<void, help.TypeTermsOfServiceUpdate> {};
-    export class AcceptTermsOfService extends Request<Partial<{
+    }
+
+      export class GetTermsOfServiceUpdate extends Request<void, help.TypeTermsOfServiceUpdate> {
+      }
+
+      export class AcceptTermsOfService extends Request<Partial<{
       id: Api.TypeDataJSON;
     }>, Bool> {
       id: Api.TypeDataJSON;
-    };
-    export class GetDeepLinkInfo extends Request<Partial<{
+    }
+
+      export class GetDeepLinkInfo extends Request<Partial<{
       path: string;
     }>, help.TypeDeepLinkInfo> {
       path: string;
-    };
-    export class GetAppConfig extends Request<void, Api.TypeJSONValue> {};
-    export class SaveAppLog extends Request<Partial<{
+    }
+
+      export class GetAppConfig extends Request<void, Api.TypeJSONValue> {
+      }
+
+      export class SaveAppLog extends Request<Partial<{
       events: Api.TypeInputAppEvent[];
     }>, Bool> {
       events: Api.TypeInputAppEvent[];
-    };
-    export class GetPassportConfig extends Request<Partial<{
+    }
+
+      export class GetPassportConfig extends Request<Partial<{
       hash: int;
     }>, help.TypePassportConfig> {
       hash: int;
-    };
-    export class GetSupportName extends Request<void, help.TypeSupportName> {};
-    export class GetUserInfo extends Request<Partial<{
+    }
+
+      export class GetSupportName extends Request<void, help.TypeSupportName> {
+      }
+
+      export class GetUserInfo extends Request<Partial<{
       userId: Api.TypeInputUser;
     }>, help.TypeUserInfo> {
       userId: Api.TypeInputUser;
-    };
-    export class EditUserInfo extends Request<Partial<{
+    }
+
+      export class EditUserInfo extends Request<Partial<{
       userId: Api.TypeInputUser;
       message: string;
       entities: Api.TypeMessageEntity[];
@@ -13096,28 +14861,35 @@ namespace Api {
       userId: Api.TypeInputUser;
       message: string;
       entities: Api.TypeMessageEntity[];
-    };
-    export class GetPromoData extends Request<void, help.TypePromoData> {};
-    export class HidePromoData extends Request<Partial<{
+    }
+
+      export class GetPromoData extends Request<void, help.TypePromoData> {
+      }
+
+      export class HidePromoData extends Request<Partial<{
       peer: Api.TypeInputPeer;
     }>, Bool> {
       peer: Api.TypeInputPeer;
-    };
-    export class DismissSuggestion extends Request<Partial<{
+    }
+
+      export class DismissSuggestion extends Request<Partial<{
       peer: Api.TypeInputPeer;
       suggestion: string;
     }>, Bool> {
       peer: Api.TypeInputPeer;
       suggestion: string;
-    };
-    export class GetCountriesList extends Request<Partial<{
+    }
+
+      export class GetCountriesList extends Request<Partial<{
       langCode: string;
       hash: int;
     }>, help.TypeCountriesList> {
       langCode: string;
       hash: int;
-    };
-    export class GetPremiumPromo extends Request<void, help.TypePremiumPromo> {};
+    }
+
+      export class GetPremiumPromo extends Request<void, help.TypePremiumPromo> {
+      }
   }
 
   export namespace channels {
@@ -13127,15 +14899,17 @@ namespace Api {
     }>, Bool> {
       channel: Api.TypeInputChannel;
       maxId: int;
-    };
-    export class DeleteMessages extends Request<Partial<{
+    }
+
+      export class DeleteMessages extends Request<Partial<{
       channel: Api.TypeInputChannel;
       id: int[];
     }>, messages.TypeAffectedMessages> {
       channel: Api.TypeInputChannel;
       id: int[];
-    };
-    export class ReportSpam extends Request<Partial<{
+    }
+
+      export class ReportSpam extends Request<Partial<{
       channel: Api.TypeInputChannel;
       participant: Api.TypeInputPeer;
       id: int[];
@@ -13143,15 +14917,17 @@ namespace Api {
       channel: Api.TypeInputChannel;
       participant: Api.TypeInputPeer;
       id: int[];
-    };
-    export class GetMessages extends Request<Partial<{
+    }
+
+      export class GetMessages extends Request<Partial<{
       channel: Api.TypeInputChannel;
       id: Api.TypeInputMessage[];
     }>, messages.TypeMessages> {
       channel: Api.TypeInputChannel;
       id: Api.TypeInputMessage[];
-    };
-    export class GetParticipants extends Request<Partial<{
+    }
+
+      export class GetParticipants extends Request<Partial<{
       channel: Api.TypeInputChannel;
       filter: Api.TypeChannelParticipantsFilter;
       offset: int;
@@ -13163,25 +14939,29 @@ namespace Api {
       offset: int;
       limit: int;
       hash: long;
-    };
-    export class GetParticipant extends Request<Partial<{
+    }
+
+      export class GetParticipant extends Request<Partial<{
       channel: Api.TypeInputChannel;
       participant: Api.TypeInputPeer;
     }>, channels.TypeChannelParticipant> {
       channel: Api.TypeInputChannel;
       participant: Api.TypeInputPeer;
-    };
-    export class GetChannels extends Request<Partial<{
+    }
+
+      export class GetChannels extends Request<Partial<{
       id: Api.TypeInputChannel[];
     }>, messages.TypeChats> {
       id: Api.TypeInputChannel[];
-    };
-    export class GetFullChannel extends Request<Partial<{
+    }
+
+      export class GetFullChannel extends Request<Partial<{
       channel: Api.TypeInputChannel;
     }>, messages.TypeChatFull> {
       channel: Api.TypeInputChannel;
-    };
-    export class CreateChannel extends Request<Partial<{
+    }
+
+      export class CreateChannel extends Request<Partial<{
       // flags: undefined;
       broadcast?: true;
       megagroup?: true;
@@ -13203,8 +14983,9 @@ namespace Api {
       geoPoint?: Api.TypeInputGeoPoint;
       address?: string;
       ttlPeriod?: int;
-    };
-    export class EditAdmin extends Request<Partial<{
+    }
+
+      export class EditAdmin extends Request<Partial<{
       channel: Api.TypeInputChannel;
       userId: Api.TypeInputUser;
       adminRights: Api.TypeChatAdminRights;
@@ -13214,58 +14995,67 @@ namespace Api {
       userId: Api.TypeInputUser;
       adminRights: Api.TypeChatAdminRights;
       rank: string;
-    };
-    export class EditTitle extends Request<Partial<{
+    }
+
+      export class EditTitle extends Request<Partial<{
       channel: Api.TypeInputChannel;
       title: string;
     }>, Api.TypeUpdates> {
       channel: Api.TypeInputChannel;
       title: string;
-    };
-    export class EditPhoto extends Request<Partial<{
+    }
+
+      export class EditPhoto extends Request<Partial<{
       channel: Api.TypeInputChannel;
       photo: Api.TypeInputChatPhoto;
     }>, Api.TypeUpdates> {
       channel: Api.TypeInputChannel;
       photo: Api.TypeInputChatPhoto;
-    };
-    export class CheckUsername extends Request<Partial<{
+    }
+
+      export class CheckUsername extends Request<Partial<{
       channel: Api.TypeInputChannel;
       username: string;
     }>, Bool> {
       channel: Api.TypeInputChannel;
       username: string;
-    };
-    export class UpdateUsername extends Request<Partial<{
+    }
+
+      export class UpdateUsername extends Request<Partial<{
       channel: Api.TypeInputChannel;
       username: string;
     }>, Bool> {
       channel: Api.TypeInputChannel;
       username: string;
-    };
-    export class JoinChannel extends Request<Partial<{
+    }
+
+      export class JoinChannel extends Request<Partial<{
       channel: Api.TypeInputChannel;
     }>, Api.TypeUpdates> {
       channel: Api.TypeInputChannel;
-    };
-    export class LeaveChannel extends Request<Partial<{
+    }
+
+      export class LeaveChannel extends Request<Partial<{
       channel: Api.TypeInputChannel;
     }>, Api.TypeUpdates> {
       channel: Api.TypeInputChannel;
-    };
-    export class InviteToChannel extends Request<Partial<{
+    }
+
+      export class InviteToChannel extends Request<Partial<{
       channel: Api.TypeInputChannel;
       users: Api.TypeInputUser[];
     }>, Api.TypeUpdates> {
       channel: Api.TypeInputChannel;
       users: Api.TypeInputUser[];
-    };
-    export class DeleteChannel extends Request<Partial<{
+    }
+
+      export class DeleteChannel extends Request<Partial<{
       channel: Api.TypeInputChannel;
     }>, Api.TypeUpdates> {
       channel: Api.TypeInputChannel;
-    };
-    export class ExportMessageLink extends Request<Partial<{
+    }
+
+      export class ExportMessageLink extends Request<Partial<{
       // flags: undefined;
       grouped?: true;
       thread?: true;
@@ -13277,15 +15067,17 @@ namespace Api {
       thread?: true;
       channel: Api.TypeInputChannel;
       id: int;
-    };
-    export class ToggleSignatures extends Request<Partial<{
+    }
+
+      export class ToggleSignatures extends Request<Partial<{
       channel: Api.TypeInputChannel;
       enabled: Bool;
     }>, Api.TypeUpdates> {
       channel: Api.TypeInputChannel;
       enabled: Bool;
-    };
-    export class GetAdminedPublicChannels extends Request<Partial<{
+    }
+
+      export class GetAdminedPublicChannels extends Request<Partial<{
       // flags: undefined;
       byLocation?: true;
       checkLimit?: true;
@@ -13293,8 +15085,9 @@ namespace Api {
       // flags: undefined;
       byLocation?: true;
       checkLimit?: true;
-    };
-    export class EditBanned extends Request<Partial<{
+    }
+
+      export class EditBanned extends Request<Partial<{
       channel: Api.TypeInputChannel;
       participant: Api.TypeInputPeer;
       bannedRights: Api.TypeChatBannedRights;
@@ -13302,8 +15095,9 @@ namespace Api {
       channel: Api.TypeInputChannel;
       participant: Api.TypeInputPeer;
       bannedRights: Api.TypeChatBannedRights;
-    };
-    export class GetAdminLog extends Request<Partial<{
+    }
+
+      export class GetAdminLog extends Request<Partial<{
       // flags: undefined;
       channel: Api.TypeInputChannel;
       q: string;
@@ -13321,22 +15115,25 @@ namespace Api {
       maxId: long;
       minId: long;
       limit: int;
-    };
-    export class SetStickers extends Request<Partial<{
+    }
+
+      export class SetStickers extends Request<Partial<{
       channel: Api.TypeInputChannel;
       stickerset: Api.TypeInputStickerSet;
     }>, Bool> {
       channel: Api.TypeInputChannel;
       stickerset: Api.TypeInputStickerSet;
-    };
-    export class ReadMessageContents extends Request<Partial<{
+    }
+
+      export class ReadMessageContents extends Request<Partial<{
       channel: Api.TypeInputChannel;
       id: int[];
     }>, Bool> {
       channel: Api.TypeInputChannel;
       id: int[];
-    };
-    export class DeleteHistory extends Request<Partial<{
+    }
+
+      export class DeleteHistory extends Request<Partial<{
       // flags: undefined;
       forEveryone?: true;
       channel: Api.TypeInputChannel;
@@ -13346,28 +15143,34 @@ namespace Api {
       forEveryone?: true;
       channel: Api.TypeInputChannel;
       maxId: int;
-    };
-    export class TogglePreHistoryHidden extends Request<Partial<{
+    }
+
+      export class TogglePreHistoryHidden extends Request<Partial<{
       channel: Api.TypeInputChannel;
       enabled: Bool;
     }>, Api.TypeUpdates> {
       channel: Api.TypeInputChannel;
       enabled: Bool;
-    };
-    export class GetLeftChannels extends Request<Partial<{
+    }
+
+      export class GetLeftChannels extends Request<Partial<{
       offset: int;
     }>, messages.TypeChats> {
       offset: int;
-    };
-    export class GetGroupsForDiscussion extends Request<void, messages.TypeChats> {};
-    export class SetDiscussionGroup extends Request<Partial<{
+    }
+
+      export class GetGroupsForDiscussion extends Request<void, messages.TypeChats> {
+      }
+
+      export class SetDiscussionGroup extends Request<Partial<{
       broadcast: Api.TypeInputChannel;
       group: Api.TypeInputChannel;
     }>, Bool> {
       broadcast: Api.TypeInputChannel;
       group: Api.TypeInputChannel;
-    };
-    export class EditCreator extends Request<Partial<{
+    }
+
+      export class EditCreator extends Request<Partial<{
       channel: Api.TypeInputChannel;
       userId: Api.TypeInputUser;
       password: Api.TypeInputCheckPasswordSRP;
@@ -13375,8 +15178,9 @@ namespace Api {
       channel: Api.TypeInputChannel;
       userId: Api.TypeInputUser;
       password: Api.TypeInputCheckPasswordSRP;
-    };
-    export class EditLocation extends Request<Partial<{
+    }
+
+      export class EditLocation extends Request<Partial<{
       channel: Api.TypeInputChannel;
       geoPoint: Api.TypeInputGeoPoint;
       address: string;
@@ -13384,66 +15188,78 @@ namespace Api {
       channel: Api.TypeInputChannel;
       geoPoint: Api.TypeInputGeoPoint;
       address: string;
-    };
-    export class ToggleSlowMode extends Request<Partial<{
+    }
+
+      export class ToggleSlowMode extends Request<Partial<{
       channel: Api.TypeInputChannel;
       seconds: int;
     }>, Api.TypeUpdates> {
       channel: Api.TypeInputChannel;
       seconds: int;
-    };
-    export class GetInactiveChannels extends Request<void, messages.TypeInactiveChats> {};
-    export class ConvertToGigagroup extends Request<Partial<{
+    }
+
+      export class GetInactiveChannels extends Request<void, messages.TypeInactiveChats> {
+      }
+
+      export class ConvertToGigagroup extends Request<Partial<{
       channel: Api.TypeInputChannel;
     }>, Api.TypeUpdates> {
       channel: Api.TypeInputChannel;
-    };
-    export class ViewSponsoredMessage extends Request<Partial<{
+    }
+
+      export class ViewSponsoredMessage extends Request<Partial<{
       channel: Api.TypeInputChannel;
       randomId: bytes;
     }>, Bool> {
       channel: Api.TypeInputChannel;
       randomId: bytes;
-    };
-    export class GetSponsoredMessages extends Request<Partial<{
+    }
+
+      export class GetSponsoredMessages extends Request<Partial<{
       channel: Api.TypeInputChannel;
     }>, messages.TypeSponsoredMessages> {
       channel: Api.TypeInputChannel;
-    };
-    export class GetSendAs extends Request<Partial<{
+    }
+
+      export class GetSendAs extends Request<Partial<{
       peer: Api.TypeInputPeer;
     }>, channels.TypeSendAsPeers> {
       peer: Api.TypeInputPeer;
-    };
-    export class DeleteParticipantHistory extends Request<Partial<{
+    }
+
+      export class DeleteParticipantHistory extends Request<Partial<{
       channel: Api.TypeInputChannel;
       participant: Api.TypeInputPeer;
     }>, messages.TypeAffectedHistory> {
       channel: Api.TypeInputChannel;
       participant: Api.TypeInputPeer;
-    };
-    export class ToggleJoinToSend extends Request<Partial<{
+    }
+
+      export class ToggleJoinToSend extends Request<Partial<{
       channel: Api.TypeInputChannel;
       enabled: Bool;
     }>, Api.TypeUpdates> {
       channel: Api.TypeInputChannel;
       enabled: Bool;
-    };
-    export class ToggleJoinRequest extends Request<Partial<{
+    }
+
+      export class ToggleJoinRequest extends Request<Partial<{
       channel: Api.TypeInputChannel;
       enabled: Bool;
     }>, Api.TypeUpdates> {
       channel: Api.TypeInputChannel;
       enabled: Bool;
-    };
-    export class ReorderUsernames extends Request<Partial<{
+    }
+
+      export class ReorderUsernames extends Request<Partial<{
       channel: Api.TypeInputChannel;
       order: string[];
     }>, Bool> {
       channel: Api.TypeInputChannel;
       order: string[];
-    };
-    export class ToggleUsername extends Request<Partial<{
+    }
+
+      export class ToggleUsername extends Request<Partial<{
       channel: Api.TypeInputChannel;
       username: string;
       active: Bool;
@@ -13451,20 +15267,23 @@ namespace Api {
       channel: Api.TypeInputChannel;
       username: string;
       active: Bool;
-    };
-    export class DeactivateAllUsernames extends Request<Partial<{
+    }
+
+      export class DeactivateAllUsernames extends Request<Partial<{
       channel: Api.TypeInputChannel;
     }>, Bool> {
       channel: Api.TypeInputChannel;
-    };
-    export class ToggleForum extends Request<Partial<{
+    }
+
+      export class ToggleForum extends Request<Partial<{
       channel: Api.TypeInputChannel;
       enabled: Bool;
     }>, Api.TypeUpdates> {
       channel: Api.TypeInputChannel;
       enabled: Bool;
-    };
-    export class CreateForumTopic extends Request<Partial<{
+    }
+
+      export class CreateForumTopic extends Request<Partial<{
       // flags: undefined;
       channel: Api.TypeInputChannel;
       title: string;
@@ -13480,8 +15299,9 @@ namespace Api {
       iconEmojiId?: long;
       randomId: long;
       sendAs?: Api.TypeInputPeer;
-    };
-    export class GetForumTopics extends Request<Partial<{
+    }
+
+      export class GetForumTopics extends Request<Partial<{
       // flags: undefined;
       channel: Api.TypeInputChannel;
       q?: string;
@@ -13497,15 +15317,17 @@ namespace Api {
       offsetId: int;
       offsetTopic: int;
       limit: int;
-    };
-    export class GetForumTopicsByID extends Request<Partial<{
+    }
+
+      export class GetForumTopicsByID extends Request<Partial<{
       channel: Api.TypeInputChannel;
       topics: int[];
     }>, messages.TypeForumTopics> {
       channel: Api.TypeInputChannel;
       topics: int[];
-    };
-    export class EditForumTopic extends Request<Partial<{
+    }
+
+      export class EditForumTopic extends Request<Partial<{
       // flags: undefined;
       channel: Api.TypeInputChannel;
       topicId: int;
@@ -13521,8 +15343,9 @@ namespace Api {
       iconEmojiId?: long;
       closed?: Bool;
       hidden?: Bool;
-    };
-    export class UpdatePinnedForumTopic extends Request<Partial<{
+    }
+
+      export class UpdatePinnedForumTopic extends Request<Partial<{
       channel: Api.TypeInputChannel;
       topicId: int;
       pinned: Bool;
@@ -13530,15 +15353,17 @@ namespace Api {
       channel: Api.TypeInputChannel;
       topicId: int;
       pinned: Bool;
-    };
-    export class DeleteTopicHistory extends Request<Partial<{
+    }
+
+      export class DeleteTopicHistory extends Request<Partial<{
       channel: Api.TypeInputChannel;
       topMsgId: int;
     }>, messages.TypeAffectedHistory> {
       channel: Api.TypeInputChannel;
       topMsgId: int;
-    };
-    export class ReorderPinnedForumTopics extends Request<Partial<{
+    }
+
+      export class ReorderPinnedForumTopics extends Request<Partial<{
       // flags: undefined;
       force?: true;
       channel: Api.TypeInputChannel;
@@ -13548,28 +15373,31 @@ namespace Api {
       force?: true;
       channel: Api.TypeInputChannel;
       order: int[];
-    };
-    export class ToggleAntiSpam extends Request<Partial<{
+    }
+
+      export class ToggleAntiSpam extends Request<Partial<{
       channel: Api.TypeInputChannel;
       enabled: Bool;
     }>, Api.TypeUpdates> {
       channel: Api.TypeInputChannel;
       enabled: Bool;
-    };
-    export class ReportAntiSpamFalsePositive extends Request<Partial<{
+    }
+
+      export class ReportAntiSpamFalsePositive extends Request<Partial<{
       channel: Api.TypeInputChannel;
       msgId: int;
     }>, Bool> {
       channel: Api.TypeInputChannel;
       msgId: int;
-    };
-    export class ToggleParticipantsHidden extends Request<Partial<{
+    }
+
+      export class ToggleParticipantsHidden extends Request<Partial<{
       channel: Api.TypeInputChannel;
       enabled: Bool;
     }>, Api.TypeUpdates> {
       channel: Api.TypeInputChannel;
       enabled: Bool;
-    };
+    }
   }
 
   export namespace bots {
@@ -13579,15 +15407,17 @@ namespace Api {
     }>, Api.TypeDataJSON> {
       customMethod: string;
       params: Api.TypeDataJSON;
-    };
-    export class AnswerWebhookJSONQuery extends Request<Partial<{
+    }
+
+      export class AnswerWebhookJSONQuery extends Request<Partial<{
       queryId: long;
       data: Api.TypeDataJSON;
     }>, Bool> {
       queryId: long;
       data: Api.TypeDataJSON;
-    };
-    export class SetBotCommands extends Request<Partial<{
+    }
+
+      export class SetBotCommands extends Request<Partial<{
       scope: Api.TypeBotCommandScope;
       langCode: string;
       commands: Api.TypeBotCommand[];
@@ -13595,43 +15425,49 @@ namespace Api {
       scope: Api.TypeBotCommandScope;
       langCode: string;
       commands: Api.TypeBotCommand[];
-    };
-    export class ResetBotCommands extends Request<Partial<{
+    }
+
+      export class ResetBotCommands extends Request<Partial<{
       scope: Api.TypeBotCommandScope;
       langCode: string;
     }>, Bool> {
       scope: Api.TypeBotCommandScope;
       langCode: string;
-    };
-    export class GetBotCommands extends Request<Partial<{
+    }
+
+      export class GetBotCommands extends Request<Partial<{
       scope: Api.TypeBotCommandScope;
       langCode: string;
     }>, Api.TypeBotCommand[]> {
       scope: Api.TypeBotCommandScope;
       langCode: string;
-    };
-    export class SetBotMenuButton extends Request<Partial<{
+    }
+
+      export class SetBotMenuButton extends Request<Partial<{
       userId: Api.TypeInputUser;
       button: Api.TypeBotMenuButton;
     }>, Bool> {
       userId: Api.TypeInputUser;
       button: Api.TypeBotMenuButton;
-    };
-    export class GetBotMenuButton extends Request<Partial<{
+    }
+
+      export class GetBotMenuButton extends Request<Partial<{
       userId: Api.TypeInputUser;
     }>, Api.TypeBotMenuButton> {
       userId: Api.TypeInputUser;
-    };
-    export class SetBotBroadcastDefaultAdminRights extends Request<Partial<{
+    }
+
+      export class SetBotBroadcastDefaultAdminRights extends Request<Partial<{
       adminRights: Api.TypeChatAdminRights;
     }>, Bool> {
       adminRights: Api.TypeChatAdminRights;
-    };
-    export class SetBotGroupDefaultAdminRights extends Request<Partial<{
+    }
+
+      export class SetBotGroupDefaultAdminRights extends Request<Partial<{
       adminRights: Api.TypeChatAdminRights;
     }>, Bool> {
       adminRights: Api.TypeChatAdminRights;
-    };
+    }
   }
 
   export namespace payments {
@@ -13643,15 +15479,17 @@ namespace Api {
       // flags: undefined;
       invoice: Api.TypeInputInvoice;
       themeParams?: Api.TypeDataJSON;
-    };
-    export class GetPaymentReceipt extends Request<Partial<{
+    }
+
+      export class GetPaymentReceipt extends Request<Partial<{
       peer: Api.TypeInputPeer;
       msgId: int;
     }>, payments.TypePaymentReceipt> {
       peer: Api.TypeInputPeer;
       msgId: int;
-    };
-    export class ValidateRequestedInfo extends Request<Partial<{
+    }
+
+      export class ValidateRequestedInfo extends Request<Partial<{
       // flags: undefined;
       save?: true;
       invoice: Api.TypeInputInvoice;
@@ -13661,8 +15499,9 @@ namespace Api {
       save?: true;
       invoice: Api.TypeInputInvoice;
       info: Api.TypePaymentRequestedInfo;
-    };
-    export class SendPaymentForm extends Request<Partial<{
+    }
+
+      export class SendPaymentForm extends Request<Partial<{
       // flags: undefined;
       formId: long;
       invoice: Api.TypeInputInvoice;
@@ -13678,9 +15517,12 @@ namespace Api {
       shippingOptionId?: string;
       credentials: Api.TypeInputPaymentCredentials;
       tipAmount?: long;
-    };
-    export class GetSavedInfo extends Request<void, payments.TypeSavedInfo> {};
-    export class ClearSavedInfo extends Request<Partial<{
+    }
+
+      export class GetSavedInfo extends Request<void, payments.TypeSavedInfo> {
+      }
+
+      export class ClearSavedInfo extends Request<Partial<{
       // flags: undefined;
       credentials?: true;
       info?: true;
@@ -13688,36 +15530,41 @@ namespace Api {
       // flags: undefined;
       credentials?: true;
       info?: true;
-    };
-    export class GetBankCardData extends Request<Partial<{
+    }
+
+      export class GetBankCardData extends Request<Partial<{
       number: string;
     }>, payments.TypeBankCardData> {
       number: string;
-    };
-    export class ExportInvoice extends Request<Partial<{
+    }
+
+      export class ExportInvoice extends Request<Partial<{
       invoiceMedia: Api.TypeInputMedia;
     }>, payments.TypeExportedInvoice> {
       invoiceMedia: Api.TypeInputMedia;
-    };
-    export class AssignAppStoreTransaction extends Request<Partial<{
+    }
+
+      export class AssignAppStoreTransaction extends Request<Partial<{
       receipt: bytes;
       purpose: Api.TypeInputStorePaymentPurpose;
     }>, Api.TypeUpdates> {
       receipt: bytes;
       purpose: Api.TypeInputStorePaymentPurpose;
-    };
-    export class AssignPlayMarketTransaction extends Request<Partial<{
+    }
+
+      export class AssignPlayMarketTransaction extends Request<Partial<{
       receipt: Api.TypeDataJSON;
       purpose: Api.TypeInputStorePaymentPurpose;
     }>, Api.TypeUpdates> {
       receipt: Api.TypeDataJSON;
       purpose: Api.TypeInputStorePaymentPurpose;
-    };
-    export class CanPurchasePremium extends Request<Partial<{
+    }
+
+      export class CanPurchasePremium extends Request<Partial<{
       purpose: Api.TypeInputStorePaymentPurpose;
     }>, Bool> {
       purpose: Api.TypeInputStorePaymentPurpose;
-    };
+    }
   }
 
   export namespace stickers {
@@ -13743,48 +15590,56 @@ namespace Api {
       thumb?: Api.TypeInputDocument;
       stickers: Api.TypeInputStickerSetItem[];
       software?: string;
-    };
-    export class RemoveStickerFromSet extends Request<Partial<{
+    }
+
+      export class RemoveStickerFromSet extends Request<Partial<{
       sticker: Api.TypeInputDocument;
     }>, messages.TypeStickerSet> {
       sticker: Api.TypeInputDocument;
-    };
-    export class ChangeStickerPosition extends Request<Partial<{
+    }
+
+      export class ChangeStickerPosition extends Request<Partial<{
       sticker: Api.TypeInputDocument;
       position: int;
     }>, messages.TypeStickerSet> {
       sticker: Api.TypeInputDocument;
       position: int;
-    };
-    export class AddStickerToSet extends Request<Partial<{
+    }
+
+      export class AddStickerToSet extends Request<Partial<{
       stickerset: Api.TypeInputStickerSet;
       sticker: Api.TypeInputStickerSetItem;
     }>, messages.TypeStickerSet> {
       stickerset: Api.TypeInputStickerSet;
       sticker: Api.TypeInputStickerSetItem;
-    };
-    export class SetStickerSetThumb extends Request<Partial<{
+    }
+
+      export class SetStickerSetThumb extends Request<Partial<{
       stickerset: Api.TypeInputStickerSet;
       thumb: Api.TypeInputDocument;
     }>, messages.TypeStickerSet> {
       stickerset: Api.TypeInputStickerSet;
       thumb: Api.TypeInputDocument;
-    };
-    export class CheckShortName extends Request<Partial<{
+    }
+
+      export class CheckShortName extends Request<Partial<{
       shortName: string;
     }>, Bool> {
       shortName: string;
-    };
-    export class SuggestShortName extends Request<Partial<{
+    }
+
+      export class SuggestShortName extends Request<Partial<{
       title: string;
     }>, stickers.TypeSuggestedShortName> {
       title: string;
-    };
+    }
   }
 
   export namespace phone {
-    export class GetCallConfig extends Request<void, Api.TypeDataJSON> {};
-    export class RequestCall extends Request<Partial<{
+      export class GetCallConfig extends Request<void, Api.TypeDataJSON> {
+      }
+
+      export class RequestCall extends Request<Partial<{
       // flags: undefined;
       video?: true;
       userId: Api.TypeInputUser;
@@ -13798,8 +15653,9 @@ namespace Api {
       randomId: int;
       gAHash: bytes;
       protocol: Api.TypePhoneCallProtocol;
-    };
-    export class AcceptCall extends Request<Partial<{
+    }
+
+      export class AcceptCall extends Request<Partial<{
       peer: Api.TypeInputPhoneCall;
       gB: bytes;
       protocol: Api.TypePhoneCallProtocol;
@@ -13807,8 +15663,9 @@ namespace Api {
       peer: Api.TypeInputPhoneCall;
       gB: bytes;
       protocol: Api.TypePhoneCallProtocol;
-    };
-    export class ConfirmCall extends Request<Partial<{
+    }
+
+      export class ConfirmCall extends Request<Partial<{
       peer: Api.TypeInputPhoneCall;
       gA: bytes;
       keyFingerprint: long;
@@ -13818,13 +15675,15 @@ namespace Api {
       gA: bytes;
       keyFingerprint: long;
       protocol: Api.TypePhoneCallProtocol;
-    };
-    export class ReceivedCall extends Request<Partial<{
+    }
+
+      export class ReceivedCall extends Request<Partial<{
       peer: Api.TypeInputPhoneCall;
     }>, Bool> {
       peer: Api.TypeInputPhoneCall;
-    };
-    export class DiscardCall extends Request<Partial<{
+    }
+
+      export class DiscardCall extends Request<Partial<{
       // flags: undefined;
       video?: true;
       peer: Api.TypeInputPhoneCall;
@@ -13838,8 +15697,9 @@ namespace Api {
       duration: int;
       reason: Api.TypePhoneCallDiscardReason;
       connectionId: long;
-    };
-    export class SetCallRating extends Request<Partial<{
+    }
+
+      export class SetCallRating extends Request<Partial<{
       // flags: undefined;
       userInitiative?: true;
       peer: Api.TypeInputPhoneCall;
@@ -13851,22 +15711,25 @@ namespace Api {
       peer: Api.TypeInputPhoneCall;
       rating: int;
       comment: string;
-    };
-    export class SaveCallDebug extends Request<Partial<{
+    }
+
+      export class SaveCallDebug extends Request<Partial<{
       peer: Api.TypeInputPhoneCall;
       debug: Api.TypeDataJSON;
     }>, Bool> {
       peer: Api.TypeInputPhoneCall;
       debug: Api.TypeDataJSON;
-    };
-    export class SendSignalingData extends Request<Partial<{
+    }
+
+      export class SendSignalingData extends Request<Partial<{
       peer: Api.TypeInputPhoneCall;
       data: bytes;
     }>, Bool> {
       peer: Api.TypeInputPhoneCall;
       data: bytes;
-    };
-    export class CreateGroupCall extends Request<Partial<{
+    }
+
+      export class CreateGroupCall extends Request<Partial<{
       // flags: undefined;
       rtmpStream?: true;
       peer: Api.TypeInputPeer;
@@ -13880,8 +15743,9 @@ namespace Api {
       randomId: int;
       title?: string;
       scheduleDate?: int;
-    };
-    export class JoinGroupCall extends Request<Partial<{
+    }
+
+      export class JoinGroupCall extends Request<Partial<{
       // flags: undefined;
       muted?: true;
       videoStopped?: true;
@@ -13897,27 +15761,31 @@ namespace Api {
       joinAs: Api.TypeInputPeer;
       inviteHash?: string;
       params: Api.TypeDataJSON;
-    };
-    export class LeaveGroupCall extends Request<Partial<{
+    }
+
+      export class LeaveGroupCall extends Request<Partial<{
       call: Api.TypeInputGroupCall;
       source: int;
     }>, Api.TypeUpdates> {
       call: Api.TypeInputGroupCall;
       source: int;
-    };
-    export class InviteToGroupCall extends Request<Partial<{
+    }
+
+      export class InviteToGroupCall extends Request<Partial<{
       call: Api.TypeInputGroupCall;
       users: Api.TypeInputUser[];
     }>, Api.TypeUpdates> {
       call: Api.TypeInputGroupCall;
       users: Api.TypeInputUser[];
-    };
-    export class DiscardGroupCall extends Request<Partial<{
+    }
+
+      export class DiscardGroupCall extends Request<Partial<{
       call: Api.TypeInputGroupCall;
     }>, Api.TypeUpdates> {
       call: Api.TypeInputGroupCall;
-    };
-    export class ToggleGroupCallSettings extends Request<Partial<{
+    }
+
+      export class ToggleGroupCallSettings extends Request<Partial<{
       // flags: undefined;
       resetInviteHash?: true;
       call: Api.TypeInputGroupCall;
@@ -13927,15 +15795,17 @@ namespace Api {
       resetInviteHash?: true;
       call: Api.TypeInputGroupCall;
       joinMuted?: Bool;
-    };
-    export class GetGroupCall extends Request<Partial<{
+    }
+
+      export class GetGroupCall extends Request<Partial<{
       call: Api.TypeInputGroupCall;
       limit: int;
     }>, phone.TypeGroupCall> {
       call: Api.TypeInputGroupCall;
       limit: int;
-    };
-    export class GetGroupParticipants extends Request<Partial<{
+    }
+
+      export class GetGroupParticipants extends Request<Partial<{
       call: Api.TypeInputGroupCall;
       ids: Api.TypeInputPeer[];
       sources: int[];
@@ -13947,15 +15817,17 @@ namespace Api {
       sources: int[];
       offset: string;
       limit: int;
-    };
-    export class CheckGroupCall extends Request<Partial<{
+    }
+
+      export class CheckGroupCall extends Request<Partial<{
       call: Api.TypeInputGroupCall;
       sources: int[];
     }>, int[]> {
       call: Api.TypeInputGroupCall;
       sources: int[];
-    };
-    export class ToggleGroupCallRecord extends Request<Partial<{
+    }
+
+      export class ToggleGroupCallRecord extends Request<Partial<{
       // flags: undefined;
       start?: true;
       video?: true;
@@ -13969,8 +15841,9 @@ namespace Api {
       call: Api.TypeInputGroupCall;
       title?: string;
       videoPortrait?: Bool;
-    };
-    export class EditGroupCallParticipant extends Request<Partial<{
+    }
+
+      export class EditGroupCallParticipant extends Request<Partial<{
       // flags: undefined;
       call: Api.TypeInputGroupCall;
       participant: Api.TypeInputPeer;
@@ -13990,20 +15863,23 @@ namespace Api {
       videoStopped?: Bool;
       videoPaused?: Bool;
       presentationPaused?: Bool;
-    };
-    export class EditGroupCallTitle extends Request<Partial<{
+    }
+
+      export class EditGroupCallTitle extends Request<Partial<{
       call: Api.TypeInputGroupCall;
       title: string;
     }>, Api.TypeUpdates> {
       call: Api.TypeInputGroupCall;
       title: string;
-    };
-    export class GetGroupCallJoinAs extends Request<Partial<{
+    }
+
+      export class GetGroupCallJoinAs extends Request<Partial<{
       peer: Api.TypeInputPeer;
     }>, phone.TypeJoinAsPeers> {
       peer: Api.TypeInputPeer;
-    };
-    export class ExportGroupCallInvite extends Request<Partial<{
+    }
+
+      export class ExportGroupCallInvite extends Request<Partial<{
       // flags: undefined;
       canSelfUnmute?: true;
       call: Api.TypeInputGroupCall;
@@ -14011,57 +15887,65 @@ namespace Api {
       // flags: undefined;
       canSelfUnmute?: true;
       call: Api.TypeInputGroupCall;
-    };
-    export class ToggleGroupCallStartSubscription extends Request<Partial<{
+    }
+
+      export class ToggleGroupCallStartSubscription extends Request<Partial<{
       call: Api.TypeInputGroupCall;
       subscribed: Bool;
     }>, Api.TypeUpdates> {
       call: Api.TypeInputGroupCall;
       subscribed: Bool;
-    };
-    export class StartScheduledGroupCall extends Request<Partial<{
+    }
+
+      export class StartScheduledGroupCall extends Request<Partial<{
       call: Api.TypeInputGroupCall;
     }>, Api.TypeUpdates> {
       call: Api.TypeInputGroupCall;
-    };
-    export class SaveDefaultGroupCallJoinAs extends Request<Partial<{
+    }
+
+      export class SaveDefaultGroupCallJoinAs extends Request<Partial<{
       peer: Api.TypeInputPeer;
       joinAs: Api.TypeInputPeer;
     }>, Bool> {
       peer: Api.TypeInputPeer;
       joinAs: Api.TypeInputPeer;
-    };
-    export class JoinGroupCallPresentation extends Request<Partial<{
+    }
+
+      export class JoinGroupCallPresentation extends Request<Partial<{
       call: Api.TypeInputGroupCall;
       params: Api.TypeDataJSON;
     }>, Api.TypeUpdates> {
       call: Api.TypeInputGroupCall;
       params: Api.TypeDataJSON;
-    };
-    export class LeaveGroupCallPresentation extends Request<Partial<{
+    }
+
+      export class LeaveGroupCallPresentation extends Request<Partial<{
       call: Api.TypeInputGroupCall;
     }>, Api.TypeUpdates> {
       call: Api.TypeInputGroupCall;
-    };
-    export class GetGroupCallStreamChannels extends Request<Partial<{
+    }
+
+      export class GetGroupCallStreamChannels extends Request<Partial<{
       call: Api.TypeInputGroupCall;
     }>, phone.TypeGroupCallStreamChannels> {
       call: Api.TypeInputGroupCall;
-    };
-    export class GetGroupCallStreamRtmpUrl extends Request<Partial<{
+    }
+
+      export class GetGroupCallStreamRtmpUrl extends Request<Partial<{
       peer: Api.TypeInputPeer;
       revoke: Bool;
     }>, phone.TypeGroupCallStreamRtmpUrl> {
       peer: Api.TypeInputPeer;
       revoke: Bool;
-    };
-    export class SaveCallLog extends Request<Partial<{
+    }
+
+      export class SaveCallLog extends Request<Partial<{
       peer: Api.TypeInputPhoneCall;
       file: Api.TypeInputFile;
     }>, Bool> {
       peer: Api.TypeInputPhoneCall;
       file: Api.TypeInputFile;
-    };
+    }
   }
 
   export namespace langpack {
@@ -14071,8 +15955,9 @@ namespace Api {
     }>, Api.TypeLangPackDifference> {
       langPack: string;
       langCode: string;
-    };
-    export class GetStrings extends Request<Partial<{
+    }
+
+      export class GetStrings extends Request<Partial<{
       langPack: string;
       langCode: string;
       keys: string[];
@@ -14080,8 +15965,9 @@ namespace Api {
       langPack: string;
       langCode: string;
       keys: string[];
-    };
-    export class GetDifference extends Request<Partial<{
+    }
+
+      export class GetDifference extends Request<Partial<{
       langPack: string;
       langCode: string;
       fromVersion: int;
@@ -14089,19 +15975,21 @@ namespace Api {
       langPack: string;
       langCode: string;
       fromVersion: int;
-    };
-    export class GetLanguages extends Request<Partial<{
+    }
+
+      export class GetLanguages extends Request<Partial<{
       langPack: string;
     }>, Api.TypeLangPackLanguage[]> {
       langPack: string;
-    };
-    export class GetLanguage extends Request<Partial<{
+    }
+
+      export class GetLanguage extends Request<Partial<{
       langPack: string;
       langCode: string;
     }>, Api.TypeLangPackLanguage> {
       langPack: string;
       langCode: string;
-    };
+    }
   }
 
   export namespace folders {
@@ -14109,12 +15997,13 @@ namespace Api {
       folderPeers: Api.TypeInputFolderPeer[];
     }>, Api.TypeUpdates> {
       folderPeers: Api.TypeInputFolderPeer[];
-    };
-    export class DeleteFolder extends Request<Partial<{
+    }
+
+      export class DeleteFolder extends Request<Partial<{
       folderId: int;
     }>, Api.TypeUpdates> {
       folderId: int;
-    };
+    }
   }
 
   export namespace stats {
@@ -14126,8 +16015,9 @@ namespace Api {
       // flags: undefined;
       dark?: true;
       channel: Api.TypeInputChannel;
-    };
-    export class LoadAsyncGraph extends Request<Partial<{
+    }
+
+      export class LoadAsyncGraph extends Request<Partial<{
       // flags: undefined;
       token: string;
       x?: long;
@@ -14135,8 +16025,9 @@ namespace Api {
       // flags: undefined;
       token: string;
       x?: long;
-    };
-    export class GetMegagroupStats extends Request<Partial<{
+    }
+
+      export class GetMegagroupStats extends Request<Partial<{
       // flags: undefined;
       dark?: true;
       channel: Api.TypeInputChannel;
@@ -14144,8 +16035,9 @@ namespace Api {
       // flags: undefined;
       dark?: true;
       channel: Api.TypeInputChannel;
-    };
-    export class GetMessagePublicForwards extends Request<Partial<{
+    }
+
+      export class GetMessagePublicForwards extends Request<Partial<{
       channel: Api.TypeInputChannel;
       msgId: int;
       offsetRate: int;
@@ -14159,8 +16051,9 @@ namespace Api {
       offsetPeer: Api.TypeInputPeer;
       offsetId: int;
       limit: int;
-    };
-    export class GetMessageStats extends Request<Partial<{
+    }
+
+      export class GetMessageStats extends Request<Partial<{
       // flags: undefined;
       dark?: true;
       channel: Api.TypeInputChannel;
@@ -14170,7 +16063,7 @@ namespace Api {
       dark?: true;
       channel: Api.TypeInputChannel;
       msgId: int;
-    };
+    }
   }
 
   export type AnyRequest = InvokeAfterMsg | InvokeAfterMsgs | InitConnection | InvokeWithLayer | InvokeWithoutUpdates | InvokeWithMessagesRange | InvokeWithTakeout | ReqPq | ReqPqMulti | ReqPqMultiNew | ReqDHParams | SetClientDHParams | DestroyAuthKey | RpcDropAnswer | GetFutureSalts | Ping | PingDelayDisconnect | DestroySession

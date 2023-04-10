@@ -64,7 +64,7 @@ function buildEmojiSounds(appConfig: GramJsAppConfig) {
 function getLimit(appConfig: GramJsAppConfig, key: Limit, fallbackKey: ApiLimitType) {
   const defaultLimit = appConfig[`${key}_default`] || DEFAULT_LIMITS[fallbackKey][0];
   const premiumLimit = appConfig[`${key}_premium`] || DEFAULT_LIMITS[fallbackKey][1];
-  return [defaultLimit, premiumLimit] as const;
+  return [defaultLimit, premiumLimit] as; const;
 }
 
 export function buildAppConfig(json: GramJs.TypeJSONValue): ApiAppConfig {

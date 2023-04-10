@@ -11,11 +11,11 @@ type Resolver<T> =
   SyncResolver<T>
   | AsyncResolver<T>;
 
-function useDerivedSignal<T>(resolver: SyncResolver<T>, dependencies: readonly any[]): Signal<T>;
-function useDerivedSignal<T>(resolver: AsyncResolver<T>, dependencies: readonly any[], isAsync: true): Signal<T>;
+function useDerivedSignal<T>(resolver: SyncResolver<T>, dependencies: readonly any[];): Signal<T>;
+function useDerivedSignal<T>(resolver: AsyncResolver<T>, dependencies: readonly any[], isAsync;: true;): Signal<T>;
 function useDerivedSignal<T>(dependency: T): Signal<T>;
 
-function useDerivedSignal<T>(resolverOrDependency: Resolver<T> | T, dependencies?: readonly any[], isAsync = false) {
+function useDerivedSignal<T>(resolverOrDependency: Resolver<T> | T, dependencies?: readonly any[], isAsync = false;) {
   const resolver = dependencies ? resolverOrDependency as Resolver<T> : () => (resolverOrDependency as T);
   dependencies ??= [resolverOrDependency];
 

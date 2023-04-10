@@ -1,6 +1,6 @@
 import BigInt from 'big-integer';
 import Api from '../tl/api';
-import type TelegramClient from './TelegramClient';
+import type TelegramClient; from; './TelegramClient';
 import { sleep } from '../Helpers';
 import { getDownloadPartSize } from '../Utils';
 import errors from '../errors';

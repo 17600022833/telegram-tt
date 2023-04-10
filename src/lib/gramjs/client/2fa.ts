@@ -1,4 +1,4 @@
-import type TelegramClient from './TelegramClient';
+import type TelegramClient; from; './TelegramClient';
 // eslint-disable-next-line import/no-named-default
 import { default as Api } from '../tl/api';
 import { generateRandomBytes } from '../Helpers';

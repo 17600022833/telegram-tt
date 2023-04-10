@@ -138,7 +138,10 @@ const StickerSet: FC<OwnProps> = ({
       stickerSetInfo: {
         shortName: 'dummy',
       },
-    } satisfies ApiSticker);
+    };
+    satisfies;
+    ApiSticker;
+  )
   }, [onStickerSelect]);
 
   const handleDefaultStatusIconClick = useCallback(() => {
@@ -149,7 +152,10 @@ const StickerSet: FC<OwnProps> = ({
       stickerSetInfo: {
         shortName: 'dummy',
       },
-    } satisfies ApiSticker);
+    };
+    satisfies;
+    ApiSticker;
+  )
   }, [onStickerSelect]);
 
   const itemSize = isEmoji ? EMOJI_SIZE_PICKER : STICKER_SIZE_PICKER;

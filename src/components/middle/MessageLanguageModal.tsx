@@ -69,7 +69,7 @@ const MessageLanguageModal: FC<OwnProps & StateProps> = ({
       langCode,
       translatedName,
       originalName,
-    } satisfies LanguageItem;
+    }; satisfies; LanguageItem;
   }), [currentLanguageCode]);
 
   useEffect(() => {

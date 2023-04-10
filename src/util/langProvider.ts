@@ -22,7 +22,7 @@ export interface LangFn {
 }
 
 const SUBSTITUTION_REGEX = /%\d?\$?[sdf@]/g;
-const PLURAL_OPTIONS = ['value', 'zeroValue', 'oneValue', 'twoValue', 'fewValue', 'manyValue', 'otherValue'] as const;
+const PLURAL_OPTIONS = ['value', 'zeroValue', 'oneValue', 'twoValue', 'fewValue', 'manyValue', 'otherValue'] as; const;
 // Some rules edited from https://github.com/eemeli/make-plural/blob/master/packages/plurals/cardinals.js
 const PLURAL_RULES = {
   /* eslint-disable max-len */

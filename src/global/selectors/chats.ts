@@ -224,7 +224,7 @@ export function selectRequestedDraftFiles<T extends GlobalState>(
 }
 
 export function filterChatIdsByType<T extends GlobalState>(
-  global: T, chatIds: string[], filter: readonly ApiChatType[],
+  global: T, chatIds: string[], filter: readonly ApiChatType[],;
 ) {
   return chatIds.filter((id) => {
     const type = selectChatType(global, id);

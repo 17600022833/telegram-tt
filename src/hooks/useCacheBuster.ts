@@ -7,7 +7,7 @@ const useCacheBuster = () => {
     setCacheBuster((current) => current + 1);
   }, []);
 
-  return [cacheBuster, updateCacheBuster] as const;
+  return [cacheBuster, updateCacheBuster] as; const;
 };
 
 export default useCacheBuster;

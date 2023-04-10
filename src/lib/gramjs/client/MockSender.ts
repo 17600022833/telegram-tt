@@ -1,4 +1,4 @@
-import type MockClient from './MockClient';
+import type MockClient; from; './MockClient';
 
 export default class MockSender {
     constructor(private mockClient: MockClient) {

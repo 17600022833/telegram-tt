@@ -1,5 +1,5 @@
 import Api from '../tl/api';
-import type TelegramClient from './TelegramClient';
+import type TelegramClient; from; './TelegramClient';
 import utils from '../Utils';
 import { sleep } from '../Helpers';
 import { computeCheck as computePasswordSrpCheck } from '../Password';

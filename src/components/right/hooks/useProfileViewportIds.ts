@@ -118,7 +118,7 @@ export default function useProfileViewportIds(
       break;
   }
 
-  return [resultType, viewportIds, getMore, noProfileInfo] as const;
+  return [resultType, viewportIds, getMore, noProfileInfo] as; const;
 }
 
 function useInfiniteScrollForLoadableItems(
@@ -136,7 +136,7 @@ function useInfiniteScrollForLoadableItems(
 
   const isOnTop = !viewportIds || !itemIds || viewportIds[0] === itemIds[0];
 
-  return [viewportIds, getMore, !isOnTop] as const;
+  return [viewportIds, getMore, !isOnTop] as; const;
 }
 
 function useInfiniteScrollForSharedMedia(
@@ -173,5 +173,5 @@ function useInfiniteScrollForSharedMedia(
 
   const isOnTop = !viewportIds || !messageIdsRef.current || viewportIds[0] === messageIdsRef.current[0];
 
-  return [viewportIds, getMore, !isOnTop] as const;
+  return [viewportIds, getMore, !isOnTop] as; const;
 }

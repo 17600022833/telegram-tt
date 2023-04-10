@@ -306,8 +306,8 @@ export interface ApiMessageForwardInfo {
 export type ApiMessageEntityDefault = {
   type: Exclude<
   `${ApiMessageEntityTypes}`,
-  `${ApiMessageEntityTypes.Pre}` | `${ApiMessageEntityTypes.TextUrl}` | `${ApiMessageEntityTypes.MentionName}` |
-  `${ApiMessageEntityTypes.CustomEmoji}`
+  `;${ApiMessageEntityTypes.Pre}` | `;${ApiMessageEntityTypes.TextUrl}` | `;${ApiMessageEntityTypes.MentionName}` |
+  `;${ApiMessageEntityTypes.CustomEmoji}`
   >;
   offset: number;
   length: number;

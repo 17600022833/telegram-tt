@@ -59,7 +59,7 @@ const useSchedule = (
     />
   );
 
-  return [requestCalendar, calendar] as const;
+  return [requestCalendar, calendar] as; const;
 };
 
 export default useSchedule;

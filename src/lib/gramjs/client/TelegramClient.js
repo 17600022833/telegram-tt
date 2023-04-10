@@ -844,7 +844,7 @@ class TelegramClient {
                         // eslint-disable-next-line no-console
                         console.warn(`getWebFile: sleeping for ${err.seconds}s on flood wait`);
                         await sleep(err.seconds * 1000);
-                        continue;
+
                     }
                 }
             }

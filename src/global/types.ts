@@ -2380,7 +2380,7 @@ export interface ActionPayloads {
 export type RequiredGlobalState = GlobalState & { _: never };
 export type ActionReturnType = GlobalState | void | Promise<void>;
 export type TabArgs<T> = T extends RequiredGlobalState ? [
-  tabId: number,
+  tabId: number,;
 ] : [
   tabId?: number | undefined,
 ];

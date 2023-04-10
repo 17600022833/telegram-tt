@@ -250,7 +250,7 @@ export const TME_WEB_DOMAINS = new Set(['t.me', 'web.t.me', 'a.t.me', 'k.t.me', 
 // eslint-disable-next-line max-len
 export const COUNTRIES_WITH_12H_TIME_FORMAT = new Set(['AU', 'BD', 'CA', 'CO', 'EG', 'HN', 'IE', 'IN', 'JO', 'MX', 'MY', 'NI', 'NZ', 'PH', 'PK', 'SA', 'SV', 'US']);
 
-export const API_CHAT_TYPES = ['bots', 'channels', 'chats', 'users'] as const;
+export const API_CHAT_TYPES = ['bots', 'channels', 'chats', 'users'] as; const;
 
 // MTProto constants
 export const SERVICE_NOTIFICATIONS_USER_ID = '777000';
@@ -265,7 +265,7 @@ export const MAX_ACTIVE_PINNED_CHATS = 5;
 export const SCHEDULED_WHEN_ONLINE = 0x7FFFFFFE;
 export const DEFAULT_LANG_CODE = 'en';
 export const DEFAULT_LANG_PACK = 'android';
-export const LANG_PACKS = ['android', 'ios', 'tdesktop', 'macos'] as const;
+export const LANG_PACKS = ['android', 'ios', 'tdesktop', 'macos'] as; const;
 export const FEEDBACK_URL = 'https://bugs.telegram.org/?tag_ids=41&sort=time';
 export const GENERAL_TOPIC_ID = 1;
 
@@ -280,7 +280,7 @@ export const GROUP_CALL_VOLUME_MULTIPLIER = 100;
 export const GROUP_CALL_DEFAULT_VOLUME = 100 * GROUP_CALL_VOLUME_MULTIPLIER;
 export const GROUP_CALL_THUMB_VIDEO_DISABLED = true;
 
-export const DEFAULT_LIMITS: Record<ApiLimitType, readonly [number, number]> = {
+export const DEFAULT_LIMITS: Record<ApiLimitType, readonly [number, number;]> = {
   uploadMaxFileparts: [4000, 8000],
   stickersFaved: [5, 10],
   savedGifs: [200, 400],

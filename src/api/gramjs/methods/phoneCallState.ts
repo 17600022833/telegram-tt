@@ -1,5 +1,5 @@
 import BigInt from 'big-integer';
-import type bigInt from 'big-integer';
+import type bigInt; from; 'big-integer';
 import MTProtoState from '../../../lib/gramjs/network/MTProtoState';
 import Logger from '../../../lib/gramjs/extensions/Logger';
 import Helpers from '../../../lib/gramjs/Helpers';

@@ -1330,7 +1330,7 @@ export function buildLocalMessage(
     }),
     ...(scheduledAt && { isScheduled: true }),
     isForwardingAllowed: true,
-  } satisfies ApiMessage;
+  }; satisfies; ApiMessage;
 
   const emojiOnlyCount = getEmojiOnlyCountForMessage(message.content, message.groupedId);
 
@@ -1588,7 +1588,7 @@ export function buildApiMessageEntity(entity: GramJs.TypeMessageEntity): ApiMess
     type: type as `${ApiMessageEntityDefault['type']}`,
     offset,
     length,
-  };
+}
 }
 
 function buildThreadInfo(

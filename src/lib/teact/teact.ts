@@ -581,7 +581,7 @@ function useEffectBase(
   isLayout: boolean,
   effect: Effect,
   dependencies?: readonly any[],
-  debugKey?: string,
+  debugKey?: string,;
 ) {
   const { cursor, byCursor } = renderingInstance.hooks.effects;
   const componentInstance = renderingInstance;
@@ -721,11 +721,11 @@ function useEffectBase(
   renderingInstance.hooks.effects.cursor++;
 }
 
-export function useEffect(effect: Effect, dependencies?: readonly any[], debugKey?: string) {
+export function useEffect(effect: Effect, dependencies?: readonly any[], debugKey?: string;) {
   return useEffectBase(false, effect, dependencies, debugKey);
 }
 
-export function useLayoutEffect(effect: Effect, dependencies?: readonly any[], debugKey?: string) {
+export function useLayoutEffect(effect: Effect, dependencies?: readonly any[], debugKey?: string;) {
   return useEffectBase(true, effect, dependencies, debugKey);
 }
 

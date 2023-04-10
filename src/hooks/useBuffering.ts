@@ -1,4 +1,4 @@
-import type React from '../lib/teact/teact';
+import type React; from; '../lib/teact/teact';
 import { useCallback, useMemo, useState } from '../lib/teact/teact';
 import { debounce } from '../util/schedulers';
 import { isSafariPatchInProgress } from '../util/patchSafariProgressiveAudio';

@@ -1,12 +1,12 @@
 // Not sure what they are for.
-const RAW_TYPES = new Set(['Bool', 'X'])
+const RAW_TYPES = new Set(['Bool', 'X']);
 
 const FLAG_REGEX = /flags\d*/;
 
 module.exports = ({ types, constructors, functions }) => {
     function groupByKey(collection, key) {
         return collection.reduce((byKey, member) => {
-            const keyValue = member[key] || '_'
+            const keyValue = member[key] || '_';
 
             if (!byKey[keyValue]) {
                 byKey[keyValue] = [member]
@@ -32,13 +32,13 @@ module.exports = ({ types, constructors, functions }) => {
 
     function renderConstructors(constructors, indent) {
         return constructors.map(({ name, argsConfig }) => {
-            const argKeys = Object.keys(argsConfig)
+            const argKeys = Object.keys(argsConfig);
 
             if (!argKeys.length) {
                 return `export class ${upperFirst(name)} extends VirtualClass<void> {};`
             }
 
-            let hasRequiredArgs = argKeys.some((argName) => !isFlagArg(argName) && !argsConfig[argName].isFlag)
+            let hasRequiredArgs = argKeys.some((argName) => !isFlagArg(argName) && !argsConfig[argName].isFlag);
 
             return `
       export class ${upperFirst(name)} extends VirtualClass<{
@@ -60,14 +60,14 @@ ${indent}};`.trim()
 
     function renderRequests(requests, indent) {
         return requests.map(({ name, argsConfig, result }) => {
-            const argKeys = Object.keys(argsConfig)
+            const argKeys = Object.keys(argsConfig);
             const renderedResult = renderResult(result);
 
             if (!argKeys.length) {
                 return `export class ${upperFirst(name)} extends Request<void, ${renderedResult}> {};`
             }
 
-            let hasRequiredArgs = argKeys.some((argName) => !isFlagArg(argName) && !argsConfig[argName].isFlag)
+            let hasRequiredArgs = argKeys.some((argName) => !isFlagArg(argName) && !argsConfig[argName].isFlag);
 
             return `
       export class ${upperFirst(name)} extends Request<Partial<{
@@ -86,10 +86,10 @@ ${indent}};`.trim()
     }
 
     function renderResult(result) {
-        const vectorMatch = result.match(/[Vv]ector<([\w\d.]+)>/)
-        const isVector = Boolean(vectorMatch)
-        const scalarValue = isVector ? vectorMatch[1] : result
-        const isTlType = Boolean(scalarValue.match(/^[A-Z]/)) || scalarValue.includes('.')
+        const vectorMatch = result.match(/[Vv]ector<([\w\d.]+)>/);
+        const isVector = Boolean(vectorMatch);
+        const scalarValue = isVector ? vectorMatch[1] : result;
+        const isTlType = Boolean(scalarValue.match(/^[A-Z]/)) || scalarValue.includes('.');
 
         return renderValueType(scalarValue, isVector, isTlType)
     }
@@ -97,9 +97,9 @@ ${indent}};`.trim()
     function renderArg(argName, argConfig) {
         const {
             isVector, isFlag, skipConstructorId, type
-        } = argConfig
+        } = argConfig;
 
-        const valueType = renderValueType(type, isVector, !skipConstructorId)
+        const valueType = renderValueType(type, isVector, !skipConstructorId);
 
         return `${isFlagArg(argName) ? '// ' : ''}${argName}${isFlag ? '?' : ''}: ${valueType}`
     }
@@ -109,7 +109,7 @@ ${indent}};`.trim()
             return type
         }
 
-        let resType
+        let resType;
 
         if (typeof type === 'string' && isTlType) {
             resType = renderTypeName(type)
@@ -132,9 +132,9 @@ ${indent}};`.trim()
         return `${str[0].toUpperCase()}${str.slice(1)}`
     }
 
-    const typesByNs = groupByKey(types, 'namespace')
-    const constructorsByNs = groupByKey(constructors, 'namespace')
-    const requestsByNs = groupByKey(functions, 'namespace')
+    const typesByNs = groupByKey(types, 'namespace');
+    const constructorsByNs = groupByKey(constructors, 'namespace');
+    const requestsByNs = groupByKey(functions, 'namespace');
 
     // language=TypeScript
     return `
@@ -189,38 +189,38 @@ namespace Api {
     __response: Response;
   }
 
-  ${renderTypes(typesByNs._, '  ')}
+  ${renderTypes(typesByNs._, '  ')};
   ${Object.keys(typesByNs)
         .map(namespace => namespace !== '_' ? `
   export namespace ${namespace} {
     ${renderTypes(typesByNs[namespace], '    ')}
   }` : '')
-        .join('\n')}
+        .join('\n')};
 
-  ${renderConstructors(constructorsByNs._, '  ')}
+  ${renderConstructors(constructorsByNs._, '  ')};
   ${Object.keys(constructorsByNs)
         .map(namespace => namespace !== '_' ? `
   export namespace ${namespace} {
     ${renderConstructors(constructorsByNs[namespace], '    ')}
   }` : '')
-        .join('\n')}
+        .join('\n')};
 
-  ${renderRequests(requestsByNs._, '  ')}
+  ${renderRequests(requestsByNs._, '  ')};
   ${Object.keys(requestsByNs)
         .map(namespace => namespace !== '_' ? `
   export namespace ${namespace} {
     ${renderRequests(requestsByNs[namespace], '    ')}
   }` : '')
-        .join('\n')}
+        .join('\n')};
 
-  export type AnyRequest = ${requestsByNs._.map(({ name }) => upperFirst(name))
+  export type AnyRequest = ${requestsByNs._.map(({name}) => upperFirst(name))
         .join(' | ')}
     | ${Object.keys(requestsByNs)
         .filter(ns => ns !== '_')
-        .map(ns => requestsByNs[ns].map(({ name }) => `${ns}.${upperFirst(name)}`)
+        .map(ns => requestsByNs[ns].map(({name}) => `${ns}.${upperFirst(name)}`)
             .join(' | '))
         .join('\n    | ')};
 
 }
 `
-}
+};

@@ -70,7 +70,7 @@ export function createSignal<T>(defaultValue?: T) {
     subscribe,
   });
 
-  return [signal, setter] as const;
+  return [signal, setter] as; const;
 }
 
 export function cleanupEffect(effect: NoneToVoidFunction) {
